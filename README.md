@@ -1,6 +1,8 @@
 # KISA 공지 포맷터 확장
 
-운영 담당자가 KISA 보안공지를 빠르게 받아보고, 업무에 활용하기 쉬운 국문·영문 형식으로 확인하고 전달할 수 있도록 돕는 지원 도구입니다. 기존 KISA Telegram 알리미에 선택적으로 연결되며, 새 공지가 생겼을 때만 실행되어 기존 Telegram 메시지에 다음 버튼을 추가합니다.
+이 저장소는 [KISA-Bohonara-Alert](https://github.com/doraemyon/KISA-Bohonara-Alert)의 추가 익스펜션 기능을 제공하는 프로젝트입니다. 기존 프로젝트가 KISA 보안공지를 빠르게 감지해 Telegram으로 알리는 기본 기능을 담당하고, 이 프로젝트는 운영 담당자가 공지를 업무에 활용하기 쉬운 국문·영문 형식으로 확인하고 전달할 수 있도록 후처리 기능을 추가합니다.
+
+이 익스펜션은 선택 사항입니다. `KISA-Bohonara-Alert`는 이 저장소를 연결하지 않아도 기존 공지 알리미로 독립적으로 동작합니다. 두 프로젝트를 연결하면 새 공지가 생겼을 때 이 저장소가 실행되어 기존 Telegram 메시지에 다음 버튼을 추가합니다.
 
 ```text
 공지 열기
@@ -56,7 +58,7 @@
 | `TELEGRAM_BOT_TOKEN` | 기존 알리미가 사용하는 동일한 봇 token |
 | `TELEGRAM_CHAT_ID` | 기존 알리미가 사용하는 동일한 chat ID |
 
-## 4. 기존 알리미에서 확장 호출 허용
+## 4. KISA-Bohonara-Alert에서 확장 호출 허용
 
 Fine-grained PAT를 하나 만듭니다.
 
@@ -65,7 +67,7 @@ Fine-grained PAT를 하나 만듭니다.
 3. Repository permissions는 **Actions → Read and write**만 허용합니다.
 4. 가능한 짧은 만료일로 발급합니다.
 
-그다음 기존 알리미 저장소의 **Settings → Secrets and variables → Actions**에 두 Secret을 등록합니다.
+그다음 [KISA-Bohonara-Alert 저장소](https://github.com/doraemyon/KISA-Bohonara-Alert)의 **Settings → Secrets and variables → Actions**에 두 Secret을 등록합니다.
 
 | 이름 | 값 |
 | --- | --- |
