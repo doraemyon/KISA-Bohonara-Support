@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>올바르지 않은 접근 · KISA Notice</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src https://avatars.githubusercontent.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>저장된 보안공지 목록 · KISA Notice</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/51371743?v=4">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -14,14 +15,28 @@
       <span class="site-mark" aria-hidden="true">
         <svg viewBox="0 0 16 16"><path d="M7.467.133a1.75 1.75 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48v3.772c0 3.716-2.122 6.927-6.053 8.635a2.38 2.38 0 0 1-1.894 0C3.122 14.18 1 10.968 1 7.252V3.48a1.75 1.75 0 0 1 1.217-1.667ZM8.076 1.56a.25.25 0 0 0-.152 0l-5.25 1.68a.25.25 0 0 0-.174.24v3.772c0 3.014 1.668 5.59 5.15 7.103a.88.88 0 0 0 .7 0c3.482-1.513 5.15-4.089 5.15-7.103V3.48a.25.25 0 0 0-.174-.238Z"/></svg>
       </span>
-      <span class="site-name">KISA Notice</span>
+      <a class="site-name" href="./">KISA Notice</a>
     </div>
   </header>
-  <main class="error-layout">
-    <section class="error-panel" aria-labelledby="error-title">
-      <p class="error-code" aria-hidden="true">404</p>
-      <h1 id="error-title">올바르지 않은 접근입니다.</h1>
-      <p>이 페이지에서는 공지 문서를 직접 선택할 수 없습니다.<br>Telegram 알림의 국문 공지 또는 영문 공지 버튼으로 다시 열어 주세요.</p>
+  <main class="page-shell">
+    <section class="list-heading">
+      <div>
+        <p class="list-heading__eyebrow">Security notices</p>
+        <h1>저장된 보안공지 목록</h1>
+      </div>
+      <span class="list-count">총 1건</span>
+    </section>
+    <section class="notice-list" aria-label="저장된 보안공지">
+      <div class="notice-list__header" aria-hidden="true">
+        <span>번호</span>
+        <span>제목</span>
+        <span>문서</span>
+      </div>
+      <div class="notice-list__row">
+        <span class="notice-list__number">72263</span>
+        <a class="notice-list__title" href="notices/72263/ko/">Ivanti 제품 보안 업데이트 권고</a>
+        <div class="notice-list__documents"><a class="button button--compact" href="notices/72263/ko/">국문</a><a class="button button--compact" href="notices/72263/en/">영문</a></div>
+      </div>
     </section>
   </main>
 </body>

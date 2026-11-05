@@ -25,6 +25,7 @@ KISA_HOSTS = {"boho.or.kr", "www.boho.or.kr"}
 MYMEMORY_URL = "https://api.mymemory.translated.net/get"
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
+FAVICON_URL = "https://avatars.githubusercontent.com/u/51371743?v=4"
 MAX_TRANSLATION_BYTES = 450
 FORMAT_VERSION = 4
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
@@ -481,6 +482,14 @@ def english_document(
     return english_title, document, "mymemory"
 
 
+def render_notice_lines(notice_text: str) -> str:
+    return "\n".join(
+        f'        <div class="code-line" data-line="{line_number}">'
+        f'<span class="line-content">{html.escape(line)}</span></div>'
+        for line_number, line in enumerate(notice_text.rstrip().splitlines(), start=1)
+    )
+
+
 def render_page(language: str, title: str, notice_text: str, source_url: str) -> str:
     labels = {
         "ko": {
@@ -506,14 +515,16 @@ def render_page(language: str, title: str, notice_text: str, source_url: str) ->
     }
     label = labels[language]
     line_count = len(notice_text.rstrip().splitlines())
+    notice_lines = render_notice_lines(notice_text)
     return f"""<!doctype html>
 <html lang="{language}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src https://avatars.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>{html.escape(title)}</title>
+  <link rel="icon" href="{FAVICON_URL}">
   <link rel="stylesheet" href="../../../assets/style.css">
 </head>
 <body>
@@ -522,14 +533,14 @@ def render_page(language: str, title: str, notice_text: str, source_url: str) ->
       <span class="site-mark" aria-hidden="true">
         <svg viewBox="0 0 16 16"><path d="M7.467.133a1.75 1.75 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48v3.772c0 3.716-2.122 6.927-6.053 8.635a2.38 2.38 0 0 1-1.894 0C3.122 14.18 1 10.968 1 7.252V3.48a1.75 1.75 0 0 1 1.217-1.667ZM8.076 1.56a.25.25 0 0 0-.152 0l-5.25 1.68a.25.25 0 0 0-.174.24v3.772c0 3.014 1.668 5.59 5.15 7.103a.88.88 0 0 0 .7 0c3.482-1.513 5.15-4.089 5.15-7.103V3.48a.25.25 0 0 0-.174-.238Z"/></svg>
       </span>
-      <span class="site-name">KISA Notice</span>
+      <a class="site-name" href="../../../">KISA Notice</a>
     </div>
   </header>
   <main class="page-shell">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <span>{label['breadcrumb']}</span>
+      <a class="breadcrumbs__link" href="../../../">{label['breadcrumb']}</a>
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg>
-      <span class="breadcrumbs__strong">{label['language']}</span>
+      <a class="breadcrumbs__link breadcrumbs__strong" href="../../../">{label['language']}</a>
     </nav>
     <article class="notice-card">
       <header class="notice-card__header">
@@ -559,13 +570,129 @@ def render_page(language: str, title: str, notice_text: str, source_url: str) ->
         <span>notice.txt · {line_count} lines</span>
         <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
       </div>
-      <pre class="notice-text" id="notice-text">{html.escape(notice_text.rstrip())}</pre>
+      <div class="code-view" id="notice-text" aria-label="notice.txt">
+{notice_lines}
+      </div>
     </article>
   </main>
   <script src="../../../assets/app.js" defer></script>
 </body>
 </html>
 """
+
+
+def stored_notice_entries() -> list[dict[str, str | bool]]:
+    entries: list[dict[str, str | bool]] = []
+    notices_root = SITE_ROOT / "notices"
+    if not notices_root.exists():
+        return entries
+
+    for metadata_path in notices_root.glob("*/metadata.json"):
+        notice_id = metadata_path.parent.name
+        if not re.fullmatch(r"\d+", notice_id):
+            continue
+        try:
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            metadata = {}
+
+        title = str(metadata.get("title", "")).strip()
+        korean_text = metadata_path.parent / "ko" / "notice.txt"
+        if not title and korean_text.exists():
+            lines = korean_text.read_text(encoding="utf-8").splitlines()
+            if len(lines) >= 2 and lines[0].strip() == "제목:":
+                title = lines[1].strip()
+        entries.append(
+            {
+                "notice_id": notice_id,
+                "title": title or f"보안공지 {notice_id}",
+                "has_korean": (metadata_path.parent / "ko" / "index.html").exists(),
+                "has_english": (metadata_path.parent / "en" / "index.html").exists(),
+            }
+        )
+
+    entries.sort(key=lambda entry: int(str(entry["notice_id"])), reverse=True)
+    return entries
+
+
+def render_notice_index(entries: list[dict[str, str | bool]]) -> str:
+    rows: list[str] = []
+    for entry in entries:
+        notice_id = str(entry["notice_id"])
+        title = html.escape(str(entry["title"]))
+        documents: list[str] = []
+        if entry["has_korean"]:
+            documents.append(
+                f'<a class="button button--compact" href="notices/{notice_id}/ko/">국문</a>'
+            )
+        if entry["has_english"]:
+            documents.append(
+                f'<a class="button button--compact" href="notices/{notice_id}/en/">영문</a>'
+            )
+        document_links = "".join(documents) or '<span class="list-muted">준비 중</span>'
+        rows.append(
+            f"""      <div class="notice-list__row">
+        <span class="notice-list__number">{notice_id}</span>
+        <a class="notice-list__title" href="notices/{notice_id}/ko/">{title}</a>
+        <div class="notice-list__documents">{document_links}</div>
+      </div>"""
+        )
+
+    if rows:
+        list_content = "\n".join(rows)
+    else:
+        list_content = (
+            '      <div class="notice-list__empty">아직 저장된 보안공지가 없습니다.</div>'
+        )
+
+    return f"""<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src https://avatars.githubusercontent.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>저장된 보안공지 목록 · KISA Notice</title>
+  <link rel="icon" href="{FAVICON_URL}">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <span class="site-mark" aria-hidden="true">
+        <svg viewBox="0 0 16 16"><path d="M7.467.133a1.75 1.75 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48v3.772c0 3.716-2.122 6.927-6.053 8.635a2.38 2.38 0 0 1-1.894 0C3.122 14.18 1 10.968 1 7.252V3.48a1.75 1.75 0 0 1 1.217-1.667ZM8.076 1.56a.25.25 0 0 0-.152 0l-5.25 1.68a.25.25 0 0 0-.174.24v3.772c0 3.014 1.668 5.59 5.15 7.103a.88.88 0 0 0 .7 0c3.482-1.513 5.15-4.089 5.15-7.103V3.48a.25.25 0 0 0-.174-.238Z"/></svg>
+      </span>
+      <a class="site-name" href="./">KISA Notice</a>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="list-heading">
+      <div>
+        <p class="list-heading__eyebrow">Security notices</p>
+        <h1>저장된 보안공지 목록</h1>
+      </div>
+      <span class="list-count">총 {len(entries)}건</span>
+    </section>
+    <section class="notice-list" aria-label="저장된 보안공지">
+      <div class="notice-list__header" aria-hidden="true">
+        <span>번호</span>
+        <span>제목</span>
+        <span>문서</span>
+      </div>
+{list_content}
+    </section>
+  </main>
+</body>
+</html>
+"""
+
+
+def write_notice_index() -> None:
+    (SITE_ROOT / "index.html").write_text(
+        render_notice_index(stored_notice_entries()),
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 def write_notice(
@@ -592,6 +719,7 @@ def write_notice(
     metadata = {
         "format_version": FORMAT_VERSION,
         "notice_id": notice_id,
+        "title": korean_title,
         "source_url": source_url,
         "translation_provider": translation_provider,
     }
@@ -601,6 +729,7 @@ def write_notice(
         encoding="utf-8",
         newline="\n",
     )
+    write_notice_index()
 
 
 def main() -> None:

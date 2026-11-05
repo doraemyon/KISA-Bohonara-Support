@@ -81,8 +81,45 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('class="notice-card"', page)
         self.assertIn('class="site-header"', page)
         self.assertIn('class="button button--primary"', page)
+        self.assertIn('href="../../../">KISA Notice</a>', page)
+        self.assertIn('rel="icon"', page)
+        self.assertIn('data-line="1"', page)
+        self.assertIn('class="line-content"', page)
+        self.assertNotIn("<pre", page)
         self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", page)
         self.assertNotIn("<script>alert(1)</script>", page)
+
+    def test_notice_index_lists_stored_languages(self) -> None:
+        page = process_notice.render_notice_index(
+            [
+                {
+                    "notice_id": "72263",
+                    "title": "Ivanti 제품 보안 업데이트 권고",
+                    "has_korean": True,
+                    "has_english": True,
+                }
+            ]
+        )
+
+        self.assertIn("저장된 보안공지 목록", page)
+        self.assertIn("총 1건", page)
+        self.assertIn("Ivanti 제품 보안 업데이트 권고", page)
+        self.assertIn('href="notices/72263/ko/">국문</a>', page)
+        self.assertIn('href="notices/72263/en/">영문</a>', page)
+        self.assertIn(process_notice.FAVICON_URL, page)
+
+    def test_copy_script_excludes_generated_line_numbers(self) -> None:
+        script = (
+            Path(__file__).resolve().parents[1] / "site" / "assets" / "app.js"
+        ).read_text(encoding="utf-8")
+        styles = (
+            Path(__file__).resolve().parents[1] / "site" / "assets" / "style.css"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn('querySelectorAll(".line-content")', script)
+        self.assertIn('join("\\n")', script)
+        self.assertIn(".code-line::before", styles)
+        self.assertIn("user-select: none", styles)
 
     def test_translation_chunks_stay_below_provider_byte_limit(self) -> None:
         text = "영향을 받는 사용자는 최신 버전으로 업데이트하시기 바랍니다. " * 30

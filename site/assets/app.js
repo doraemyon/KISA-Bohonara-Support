@@ -5,6 +5,14 @@ const noticeText = document.getElementById("notice-text");
 const copyStatus = document.getElementById("copy-status");
 const copyLabel = copyButton?.querySelector("span");
 
+function getNoticeValue() {
+  const lines = noticeText.querySelectorAll(".line-content");
+  if (lines.length) {
+    return Array.from(lines, (line) => line.textContent || "").join("\n");
+  }
+  return noticeText.textContent || "";
+}
+
 function legacyCopy(value) {
   const temporary = document.createElement("textarea");
   temporary.value = value;
@@ -39,7 +47,7 @@ function legacyCopy(value) {
 }
 
 async function copyNotice() {
-  const value = noticeText.textContent || "";
+  const value = getNoticeValue();
   let copied = legacyCopy(value);
 
   if (!copied && window.isSecureContext && navigator.clipboard?.writeText) {
