@@ -26,6 +26,7 @@ MYMEMORY_URL = "https://api.mymemory.translated.net/get"
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
 FAVICON_URL = "https://avatars.githubusercontent.com/u/51371743?v=4"
+KISA_LOGO_URL = "https://www.kisa.or.kr/resource/kor/images/sub/sub_CI_logo_signature_9.png"
 MAX_TRANSLATION_BYTES = 450
 FORMAT_VERSION = 4
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
@@ -516,13 +517,29 @@ def render_page(language: str, title: str, notice_text: str, source_url: str) ->
     label = labels[language]
     line_count = len(notice_text.rstrip().splitlines())
     notice_lines = render_notice_lines(notice_text)
+    language_options: list[str] = []
+    for language_code, language_name in (("ko", "한국어"), ("en", "English")):
+        is_current = language_code == language
+        current_class = " is-active" if is_current else ""
+        current_attribute = ' aria-current="page"' if is_current else ""
+        check_icon = (
+            '<svg class="language-menu__check" viewBox="0 0 16 16" aria-hidden="true">'
+            '<path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L2.22 7.28a.75.75 0 0 1 1.06-1.06L7 9.94l5.72-5.72a.75.75 0 0 1 1.06 0Z"/></svg>'
+            if is_current
+            else ""
+        )
+        language_options.append(
+            f'<a class="language-menu__option{current_class}" href="../{language_code}/"'
+            f'{current_attribute}><span>{language_name}</span>{check_icon}</a>'
+        )
+    language_menu = "\n          ".join(language_options)
     return f"""<!doctype html>
 <html lang="{language}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src https://avatars.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src https://avatars.githubusercontent.com https://www.kisa.or.kr; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>{html.escape(title)}</title>
   <link rel="icon" href="{FAVICON_URL}">
   <link rel="stylesheet" href="../../../assets/style.css">
@@ -530,17 +547,25 @@ def render_page(language: str, title: str, notice_text: str, source_url: str) ->
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <span class="site-mark" aria-hidden="true">
-        <svg viewBox="0 0 16 16"><path d="M7.467.133a1.75 1.75 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48v3.772c0 3.716-2.122 6.927-6.053 8.635a2.38 2.38 0 0 1-1.894 0C3.122 14.18 1 10.968 1 7.252V3.48a1.75 1.75 0 0 1 1.217-1.667ZM8.076 1.56a.25.25 0 0 0-.152 0l-5.25 1.68a.25.25 0 0 0-.174.24v3.772c0 3.014 1.668 5.59 5.15 7.103a.88.88 0 0 0 .7 0c3.482-1.513 5.15-4.089 5.15-7.103V3.48a.25.25 0 0 0-.174-.238Z"/></svg>
-      </span>
-      <a class="site-name" href="../../../">KISA Notice</a>
+      <a class="site-brand" href="../../../">
+        <span class="site-logo"><img src="{KISA_LOGO_URL}" alt=""></span>
+        <span class="site-name">KISA Notice</span>
+      </a>
     </div>
   </header>
   <main class="page-shell">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a class="breadcrumbs__link" href="../../../">{label['breadcrumb']}</a>
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg>
-      <a class="breadcrumbs__link breadcrumbs__strong" href="../../../">{label['language']}</a>
+      <details class="language-menu">
+        <summary class="language-menu__summary">
+          <span>{label['language']}</span>
+          <svg class="language-menu__chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"/></svg>
+        </summary>
+        <div class="language-menu__popover">
+          {language_menu}
+        </div>
+      </details>
     </nav>
     <article class="notice-card">
       <header class="notice-card__header">
@@ -651,7 +676,7 @@ def render_notice_index(entries: list[dict[str, str | bool]]) -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src https://avatars.githubusercontent.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src https://avatars.githubusercontent.com https://www.kisa.or.kr; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>저장된 보안공지 목록 · KISA Notice</title>
   <link rel="icon" href="{FAVICON_URL}">
   <link rel="stylesheet" href="assets/style.css">
@@ -659,10 +684,10 @@ def render_notice_index(entries: list[dict[str, str | bool]]) -> str:
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <span class="site-mark" aria-hidden="true">
-        <svg viewBox="0 0 16 16"><path d="M7.467.133a1.75 1.75 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48v3.772c0 3.716-2.122 6.927-6.053 8.635a2.38 2.38 0 0 1-1.894 0C3.122 14.18 1 10.968 1 7.252V3.48a1.75 1.75 0 0 1 1.217-1.667ZM8.076 1.56a.25.25 0 0 0-.152 0l-5.25 1.68a.25.25 0 0 0-.174.24v3.772c0 3.014 1.668 5.59 5.15 7.103a.88.88 0 0 0 .7 0c3.482-1.513 5.15-4.089 5.15-7.103V3.48a.25.25 0 0 0-.174-.238Z"/></svg>
-      </span>
-      <a class="site-name" href="./">KISA Notice</a>
+      <a class="site-brand" href="./">
+        <span class="site-logo"><img src="{KISA_LOGO_URL}" alt=""></span>
+        <span class="site-name">KISA Notice</span>
+      </a>
     </div>
   </header>
   <main class="page-shell">

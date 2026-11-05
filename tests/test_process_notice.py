@@ -81,13 +81,26 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('class="notice-card"', page)
         self.assertIn('class="site-header"', page)
         self.assertIn('class="button button--primary"', page)
-        self.assertIn('href="../../../">KISA Notice</a>', page)
+        self.assertIn('class="site-brand" href="../../../"', page)
+        self.assertIn(process_notice.KISA_LOGO_URL, page)
+        self.assertIn('class="language-menu__summary"', page)
+        self.assertIn('href="../ko/" aria-current="page"', page)
+        self.assertIn('href="../en/"', page)
         self.assertIn('rel="icon"', page)
         self.assertIn('data-line="1"', page)
         self.assertIn('class="line-content"', page)
         self.assertNotIn("<pre", page)
         self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", page)
         self.assertNotIn("<script>alert(1)</script>", page)
+
+        english_page = process_notice.render_page(
+            "en",
+            "Test advisory",
+            "Title:\nTest advisory\n\nBody:\nTest body",
+            "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&amp;nttId=1",
+        )
+        self.assertIn('href="../ko/"', english_page)
+        self.assertIn('href="../en/" aria-current="page"', english_page)
 
     def test_notice_index_lists_stored_languages(self) -> None:
         page = process_notice.render_notice_index(
@@ -107,6 +120,7 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('href="notices/72263/ko/">국문</a>', page)
         self.assertIn('href="notices/72263/en/">영문</a>', page)
         self.assertIn(process_notice.FAVICON_URL, page)
+        self.assertIn(process_notice.KISA_LOGO_URL, page)
 
     def test_copy_script_excludes_generated_line_numbers(self) -> None:
         script = (
@@ -120,6 +134,16 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('join("\\n")', script)
         self.assertIn(".code-line::before", styles)
         self.assertIn("user-select: none", styles)
+
+    def test_styles_use_github_dark_palette(self) -> None:
+        styles = (
+            Path(__file__).resolve().parents[1] / "site" / "assets" / "style.css"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("color-scheme: dark", styles)
+        self.assertIn("--canvas-default: #0d1117", styles)
+        self.assertIn("--canvas-subtle: #151b23", styles)
+        self.assertIn("--border-default: #3d444d", styles)
 
     def test_translation_chunks_stay_below_provider_byte_limit(self) -> None:
         text = "영향을 받는 사용자는 최신 버전으로 업데이트하시기 바랍니다. " * 30
