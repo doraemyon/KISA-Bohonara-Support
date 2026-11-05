@@ -37,12 +37,14 @@ jobs:
       - name: Check out formatter
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+      - name: Install free translation library
+        run: python3 -m pip install --disable-pip-version-check --no-cache-dir -r requirements.txt
+
       - name: Generate Korean and English pages
         id: generate
         env:
           NOTICE_URL: ${{ inputs.notice_url }}
           NOTICE_TITLE: ${{ inputs.notice_title }}
-          GOOGLE_TRANSLATE_API_KEY: ${{ secrets.GOOGLE_TRANSLATE_API_KEY }}
         run: python3 scripts/process_notice.py
 
       - name: Save generated pages

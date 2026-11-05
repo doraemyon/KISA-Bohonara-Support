@@ -76,6 +76,5 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", page)
         self.assertNotIn("<script>alert(1)</script>", page)
 
-
 if __name__ == "__main__":
     unittest.main()

@@ -3,8 +3,8 @@
 
 from __future__ import annotations
 
+import asyncio
 import html
-import json
 import os
 import re
 import sys
@@ -19,7 +19,6 @@ from typing import Iterable
 
 MAX_PAGE_BYTES = 2_000_000
 SITE_ROOT = Path("site")
-TRANSLATE_URL = "https://translation.googleapis.com/language/translate/v2"
 KISA_HOSTS = {"boho.or.kr", "www.boho.or.kr"}
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 
@@ -242,9 +241,9 @@ def translation_batches(lines: list[str]) -> Iterable[list[tuple[int, str]]]:
     for index, line in enumerate(lines):
         if not line:
             continue
-        if len(line) > 25_000:
+        if len(line) > 14_000:
             fail("A notice line was too long for the translation service.")
-        if batch and (len(batch) >= 100 or characters + len(line) > 25_000):
+        if batch and (len(batch) >= 50 or characters + len(line) > 25_000):
             yield batch
             batch = []
             characters = 0
@@ -254,45 +253,46 @@ def translation_batches(lines: list[str]) -> Iterable[list[tuple[int, str]]]:
         yield batch
 
 
-def translate_to_english(korean: str, api_key: str) -> str:
-    lines = korean.splitlines()
-    translated = list(lines)
-    endpoint = f"{TRANSLATE_URL}?{urllib.parse.urlencode({'key': api_key})}"
-    for batch in translation_batches(lines):
-        payload = {
-            "q": [line for _, line in batch],
-            "source": "ko",
-            "target": "en",
-            "format": "text",
-        }
-        request = urllib.request.Request(
-            endpoint,
-            data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-            headers={
-                "Content-Type": "application/json; charset=utf-8",
-                "User-Agent": "kisa-notice-formatter/1.0 (+GitHub Actions)",
-            },
-            method="POST",
-        )
-        try:
-            with urllib.request.urlopen(request, timeout=30) as response:
-                result = json.loads(response.read().decode("utf-8"))
-        except urllib.error.HTTPError as error:
-            safe_body = error.read().decode("utf-8", errors="replace")[:500]
-            fail(f"Google Cloud Translation returned HTTP {error.code}: {safe_body}")
-        except urllib.error.URLError as error:
-            fail(f"Could not reach Google Cloud Translation: {error.reason}")
-        except json.JSONDecodeError:
-            fail("Google Cloud Translation returned invalid JSON.")
+async def translate_with_googletrans(lines: list[str]) -> list[str]:
+    try:
+        from googletrans import Translator
+    except ImportError:
+        fail("googletrans is not installed; install requirements.txt first.")
 
-        values = result.get("data", {}).get("translations", [])
-        if not isinstance(values, list) or len(values) != len(batch):
-            fail("Google Cloud Translation returned an unexpected number of lines.")
-        for (index, _), value in zip(batch, values, strict=True):
-            text = value.get("translatedText") if isinstance(value, dict) else None
-            if not isinstance(text, str):
-                fail("Google Cloud Translation returned a malformed line.")
-            translated[index] = html.unescape(text)
+    translated = list(lines)
+    async with Translator(service_urls=["translate.googleapis.com"]) as translator:
+        for batch in translation_batches(lines):
+            values = [line for _, line in batch]
+            results = None
+            last_error: Exception | None = None
+            for attempt in range(3):
+                try:
+                    results = await translator.translate(values, src="ko", dest="en")
+                    break
+                except Exception as error:
+                    last_error = error
+                    if attempt < 2:
+                        await asyncio.sleep(2**attempt)
+            if results is None:
+                fail(f"Free Google translation failed after three attempts: {last_error}")
+            if not isinstance(results, list) or len(results) != len(batch):
+                fail("Free Google translation returned an unexpected number of lines.")
+            for (index, _), result in zip(batch, results, strict=True):
+                text = getattr(result, "text", None)
+                if not isinstance(text, str):
+                    fail("Free Google translation returned a malformed line.")
+                translated[index] = html.unescape(text)
+    return translated
+
+
+def translate_to_english(korean: str) -> str:
+    lines = korean.splitlines()
+    try:
+        translated = asyncio.run(translate_with_googletrans(lines))
+    except RuntimeError as error:
+        if "asyncio.run() cannot be called" not in str(error):
+            raise
+        fail("Translation cannot run inside an existing asyncio event loop.")
     return "\n".join(translated).rstrip() + "\n"
 
 
@@ -353,7 +353,7 @@ def main() -> None:
         english = cached_en.read_text(encoding="utf-8")
         print("Reused the existing English translation.")
     else:
-        english = translate_to_english(korean, required_env("GOOGLE_TRANSLATE_API_KEY"))
+        english = translate_to_english(korean)
 
     write_notice(notice_id, requested_url, title, korean, english)
     write_output("notice_id", notice_id)
