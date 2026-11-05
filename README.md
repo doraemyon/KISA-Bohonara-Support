@@ -17,7 +17,7 @@
 2. 확장이 설정된 경우에만 이 저장소의 Action을 호출합니다.
 3. Action이 KISA 원문을 다시 읽고 도메인·게시판·공지 번호를 검증합니다.
 4. 제목에 `업데이트`가 있고 본문에 CVE, 영향 버전, 해결 버전 또는 조치 방안이 있으면 업데이트 권고용 요약을 사용합니다. 그 외 공지는 일반 요약을 사용합니다.
-5. 무료 `googletrans` 라이브러리로 영문을 생성합니다.
+5. 무료 MyMemory Translation API로 영문을 생성하고, 실제 영문 결과인지 검증합니다.
 6. 국문·영문 페이지를 이 저장소에 저장하고 GitHub Pages에 배포합니다.
 7. 배포 성공 후 이미 전송된 Telegram 메시지의 버튼을 3개로 갱신합니다.
 
@@ -28,8 +28,9 @@
 - 이 저장소와 생성된 국문·영문 문서는 **Public**입니다. 공개하면 안 되는 내용을 템플릿이나 생성 문서에 추가하지 마세요.
 - Public 저장소의 표준 GitHub-hosted runner와 GitHub Pages는 무료입니다.
 - 이 Action은 매분 실행되지 않고 새로운 공지가 있을 때만 실행됩니다.
-- 번역은 API 키와 결제가 필요 없는 `googletrans==4.0.2`를 사용합니다.
-- `googletrans`는 Google 공식 API가 아닌 웹 번역 인터페이스를 이용하므로 Google의 변경, 요청 제한 또는 IP 차단으로 일시적으로 실패할 수 있습니다. 세 번 재시도해도 실패하면 기본 Telegram 알림만 유지됩니다.
+- 번역은 API 키와 결제가 필요 없는 [MyMemory Translation API](https://mymemory.translated.net/doc/spec.php)를 사용합니다.
+- 익명 무료 사용량은 하루 5,000자입니다. 선택적으로 연락용 이메일을 Secret에 등록하면 하루 50,000자로 늘어납니다.
+- 번역 결과가 국문과 같거나 한글 비율이 비정상적으로 높으면 성공으로 처리하지 않습니다. 세 번 재시도해도 실패하면 기본 Telegram 알림만 유지됩니다.
 
 ## 1. Public 저장소 준비
 
@@ -45,9 +46,9 @@
 
 ## 2. 무료 번역 방식
 
-별도의 Google 계정, Cloud 프로젝트, API 키 또는 결제 등록이 필요하지 않습니다. Action이 `requirements.txt`에 고정된 `googletrans` 버전을 설치해 Google 번역 웹 인터페이스를 호출합니다.
+별도의 번역 계정, API 키 또는 결제 등록이 필요하지 않습니다. 공지를 MyMemory의 요청 제한에 맞는 UTF-8 단위로 나눠 번역한 뒤 다시 합칩니다.
 
-무료 방식은 공식 Cloud Translation API보다 안정성이 낮습니다. 향후 Google 측 변경으로 계속 실패한다면 공식 API로 다시 전환하거나 다른 번역 서비스를 검토해야 합니다.
+익명 사용량은 하루 5,000자이므로 일반적인 공지량에는 충분하지만, 같은 날 긴 공지가 여러 건 올라오면 한도에 도달할 수 있습니다. 더 넉넉한 무료 한도가 필요하면 다음 단계의 `MYMEMORY_CONTACT_EMAIL`을 등록합니다.
 
 ## 3. 확장 저장소의 Secrets 등록
 
@@ -57,6 +58,7 @@
 | --- | --- |
 | `TELEGRAM_BOT_TOKEN` | 기존 알리미가 사용하는 동일한 봇 token |
 | `TELEGRAM_CHAT_ID` | 기존 알리미가 사용하는 동일한 chat ID |
+| `MYMEMORY_CONTACT_EMAIL` | 선택 사항. MyMemory 무료 한도를 하루 50,000자로 늘릴 연락용 이메일 |
 
 ## 4. KISA-Bohonara-Alert에서 확장 호출 허용
 
@@ -88,6 +90,7 @@ PAT가 만료되거나 확장이 실패해도 기본 Telegram 공지는 계속 �
 
 - 생성 문서는 인터넷에 공개되므로 민감정보나 비공개 문구를 추가하지 않습니다.
 - Telegram·GitHub token은 GitHub Secret에만 저장합니다.
+- `MYMEMORY_CONTACT_EMAIL`을 등록하면 번역 요청마다 MyMemory에 연락용 이메일로 전달됩니다. 원하지 않으면 등록하지 않습니다.
 - Fine-grained PAT는 확장 저장소 한 개의 Actions write 권한만 허용합니다.
 - PAT에 Contents, Administration, Secrets 등의 추가 권한을 주지 않습니다.
 - Secret 값은 Action 입력값, 커밋, Issue, 스크린샷에 넣지 않습니다.
@@ -103,7 +106,8 @@ python -m unittest discover -s tests -v
 ## 문제 해결
 
 - `Could not find the KISA notice title or body`: KISA 페이지 구조가 바뀌었을 수 있습니다.
-- `Free Google translation failed after three attempts`: 무료 번역 인터페이스가 일시적으로 차단됐거나 변경됐을 수 있습니다. 잠시 후 Action을 다시 실행합니다.
+- `MyMemory translation failed after three attempts`: 무료 사용량 또는 서비스 상태를 확인하고 잠시 후 Action을 다시 실행합니다.
+- `Translation result validation failed`: 번역 서비스가 국문 원문을 그대로 반환해 실패 처리된 것입니다.
 - `Get Pages site failed`: **Settings → Pages → Source**가 `GitHub Actions`인지 확인합니다.
 - Pages 배포 권한 오류: Workflow permissions와 `pages: write`, `id-token: write` 설정을 확인합니다.
 - Telegram 버튼 갱신 실패: 두 저장소의 봇 token과 chat ID가 같은지 확인합니다.

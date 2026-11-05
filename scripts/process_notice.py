@@ -3,11 +3,12 @@
 
 from __future__ import annotations
 
-import asyncio
 import html
+import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -20,6 +21,35 @@ from typing import Iterable
 MAX_PAGE_BYTES = 2_000_000
 SITE_ROOT = Path("site")
 KISA_HOSTS = {"boho.or.kr", "www.boho.or.kr"}
+MYMEMORY_URL = "https://api.mymemory.translated.net/get"
+MAX_TRANSLATION_BYTES = 450
+FORMAT_VERSION = 3
+HEADING_TRANSLATIONS = {
+    "개요": "Overview",
+    "설명": "Description",
+    "영향을 받는 제품 및 해결 방안": "Affected Products and Remediation",
+    "영향받는 제품 및 해결 방안": "Affected Products and Remediation",
+    "참고사이트": "References",
+    "참고 사이트": "References",
+    "문의사항": "Contact",
+}
+SPECIAL_LINE_TRANSLATIONS = {
+    "o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고": (
+        "o Users running an affected version are advised to update to the latest version "
+        "according to the remediation guidance."
+    ),
+    "※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]": (
+        "※ Apply the update by following the reference below [1]"
+    ),
+    "o 한국인터넷진흥원 사이버민원센터 : 국번없이 118": (
+        "o KISA Cyber Civil Complaint Center: 118 (no area code)"
+    ),
+}
+ORGANIZATION_TRANSLATIONS = {
+    "디지털위협대응본부 취약점관리센터": (
+        "Vulnerability Management Center, Digital Threat Response Division"
+    ),
+}
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 
 
@@ -235,65 +265,172 @@ def korean_document(title: str, body: str) -> str:
     return f"제목:\n{title}\n\n요약:\n{summary}\n\n본문:\n{body}\n"
 
 
-def translation_batches(lines: list[str]) -> Iterable[list[tuple[int, str]]]:
-    batch: list[tuple[int, str]] = []
-    characters = 0
-    for index, line in enumerate(lines):
-        if not line:
+def split_utf8_chunks(value: str, max_bytes: int = MAX_TRANSLATION_BYTES) -> list[str]:
+    """Split text on word boundaries below MyMemory's 500-byte request limit."""
+    if len(value.encode("utf-8")) <= max_bytes:
+        return [value]
+
+    chunks: list[str] = []
+    current = ""
+    for word in value.split():
+        candidate = f"{current} {word}".strip()
+        if current and len(candidate.encode("utf-8")) > max_bytes:
+            chunks.append(current)
+            current = ""
+        if len(word.encode("utf-8")) <= max_bytes:
+            current = f"{current} {word}".strip()
             continue
-        if len(line) > 14_000:
-            fail("A notice line was too long for the translation service.")
-        if batch and (len(batch) >= 50 or characters + len(line) > 25_000):
-            yield batch
-            batch = []
-            characters = 0
-        batch.append((index, line))
-        characters += len(line)
-    if batch:
-        yield batch
+
+        # URLs and unusually long tokens have no safe word boundary. Split by
+        # Unicode code point while keeping every request under the byte limit.
+        if current:
+            chunks.append(current)
+            current = ""
+        piece = ""
+        for character in word:
+            if piece and len((piece + character).encode("utf-8")) > max_bytes:
+                chunks.append(piece)
+                piece = ""
+            piece += character
+        current = piece
+    if current:
+        chunks.append(current)
+    return chunks
 
 
-async def translate_with_googletrans(lines: list[str]) -> list[str]:
-    try:
-        from googletrans import Translator
-    except ImportError:
-        fail("googletrans is not installed; install requirements.txt first.")
+def translate_segment(segment: str, contact_email: str = "") -> str:
+    parameters = {"q": segment, "langpair": "ko|en", "mt": "1"}
+    if contact_email:
+        parameters["de"] = contact_email
+    request = urllib.request.Request(
+        f"{MYMEMORY_URL}?{urllib.parse.urlencode(parameters)}",
+        headers={"User-Agent": "kisa-notice-formatter/1.1 (+GitHub Actions)"},
+    )
 
-    translated = list(lines)
-    async with Translator(service_urls=["translate.googleapis.com"]) as translator:
-        for batch in translation_batches(lines):
-            values = [line for _, line in batch]
-            results = None
-            last_error: Exception | None = None
-            for attempt in range(3):
-                try:
-                    results = await translator.translate(values, src="ko", dest="en")
-                    break
-                except Exception as error:
-                    last_error = error
-                    if attempt < 2:
-                        await asyncio.sleep(2**attempt)
-            if results is None:
-                fail(f"Free Google translation failed after three attempts: {last_error}")
-            if not isinstance(results, list) or len(results) != len(batch):
-                fail("Free Google translation returned an unexpected number of lines.")
-            for (index, _), result in zip(batch, results, strict=True):
-                text = getattr(result, "text", None)
-                if not isinstance(text, str):
-                    fail("Free Google translation returned a malformed line.")
-                translated[index] = html.unescape(text)
+    last_error: Exception | None = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                result = json.loads(response.read().decode("utf-8"))
+            status = result.get("responseStatus")
+            translated = result.get("responseData", {}).get("translatedText")
+            if str(status) != "200" or not isinstance(translated, str) or not translated.strip():
+                details = str(result.get("responseDetails", "unknown response"))[:300]
+                raise RuntimeError(f"MyMemory rejected the request: {details}")
+            return html.unescape(translated.strip())
+        except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError, RuntimeError) as error:
+            last_error = error
+            if attempt < 2:
+                time.sleep(2**attempt)
+    fail(f"MyMemory translation failed after three attempts: {last_error}")
+
+
+def looks_like_english_translation(korean: str, english: str) -> bool:
+    if normalize_document(korean) == normalize_document(english):
+        return False
+    source_hangul = len(re.findall(r"[가-힣]", korean))
+    target_hangul = len(re.findall(r"[가-힣]", english))
+    english_letters = len(re.findall(r"[A-Za-z]", english))
+    if source_hangul and target_hangul > max(8, source_hangul // 4):
+        return False
+    minimum_english_letters = max(10, min(30, source_hangul // 2))
+    return english_letters >= minimum_english_letters
+
+
+def translate_version_phrase(value: str) -> str | None:
+    stripped = value.strip()
+    earlier = re.fullmatch(r"(.+?)\s*미만", stripped)
+    if earlier:
+        return f"Earlier than {earlier.group(1).strip()}"
+    later = re.fullmatch(r"(.+?)\s*이상", stripped)
+    if later:
+        return f"{later.group(1).strip()} or later"
+    return None
+
+
+def translate_line(line: str, contact_email: str = "") -> str:
+    stripped = line.strip()
+    if not stripped or re.fullmatch(r"(?:\[\d+\]\s+)?https?://\S+", stripped):
+        return line
+
+    if stripped in SPECIAL_LINE_TRANSLATIONS:
+        return SPECIAL_LINE_TRANSLATIONS[stripped]
+
+    if stripped == "취약점 / 제품명 / 영향받는 버전 / 해결 버전":
+        return "Vulnerability / Product / Affected versions / Fixed versions"
+
+    if " / " in stripped:
+        translated_cells: list[str] = []
+        for cell in stripped.split(" / "):
+            fixed_version = translate_version_phrase(cell)
+            if fixed_version is not None:
+                translated_cells.append(fixed_version)
+            elif re.fullmatch(r"CVE-\d{4}-\d+|[A-Za-z0-9_.+-]+(?:\s+[A-Za-z0-9_.+-]+)*", cell):
+                translated_cells.append(cell)
+            else:
+                translated_cells.append(
+                    " ".join(translate_segment(chunk, contact_email) for chunk in split_utf8_chunks(cell))
+                )
+        return " / ".join(translated_cells)
+
+    if stripped.startswith("□"):
+        heading = stripped.removeprefix("□").strip()
+        if heading.startswith("작성"):
+            organization = heading.split(":", 1)[1].strip() if ":" in heading else heading
+            translated_org = ORGANIZATION_TRANSLATIONS.get(organization)
+            if translated_org is None:
+                translated_org = " ".join(
+                    translate_segment(chunk, contact_email)
+                    for chunk in split_utf8_chunks(organization)
+                )
+            return f"□ Prepared by: {translated_org}"
+        translated_heading = HEADING_TRANSLATIONS.get(heading)
+        if translated_heading is None:
+            translated_heading = " ".join(
+                translate_segment(chunk, contact_email) for chunk in split_utf8_chunks(heading)
+            )
+        return f"□ {translated_heading}"
+
+    prefix = ""
+    content = stripped
+    if stripped.startswith("o "):
+        prefix = "o "
+        content = stripped[2:]
+    translated = " ".join(
+        translate_segment(chunk, contact_email) for chunk in split_utf8_chunks(content)
+    )
+    return prefix + translated
+
+
+def translate_to_english(korean: str, contact_email: str = "") -> str:
+    if contact_email and not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", contact_email):
+        fail("MYMEMORY_CONTACT_EMAIL is not a valid email address.")
+
+    translated_lines = [translate_line(line, contact_email) for line in korean.splitlines()]
+    translated = "\n".join(translated_lines).rstrip() + "\n"
+    if not looks_like_english_translation(korean, translated):
+        fail("Translation result validation failed because the output was not meaningfully English.")
     return translated
 
 
-def translate_to_english(korean: str) -> str:
-    lines = korean.splitlines()
-    try:
-        translated = asyncio.run(translate_with_googletrans(lines))
-    except RuntimeError as error:
-        if "asyncio.run() cannot be called" not in str(error):
-            raise
-        fail("Translation cannot run inside an existing asyncio event loop.")
-    return "\n".join(translated).rstrip() + "\n"
+def english_document(title: str, body: str, contact_email: str = "") -> tuple[str, str]:
+    english_title = translate_line(title, contact_email)
+    english_body = translate_to_english(body, contact_email)
+    if is_update_advisory(title, body):
+        summary = (
+            f'Today, we are forwarding the KISA notice "{english_title}". Personnel responsible '
+            "for affected systems at each affiliated company are advised to apply the update and "
+            "reply if there are any notable issues."
+        )
+    else:
+        summary = (
+            f'Today, we are forwarding the KISA notice "{english_title}". '
+            "Please reply if there are any notable issues."
+        )
+    document = f"Title:\n{english_title}\n\nSummary:\n{summary}\n\nBody:\n{english_body}"
+    if not looks_like_english_translation(korean_document(title, body), document):
+        fail("Final English notice validation failed.")
+    return english_title, document
 
 
 def render_page(language: str, title: str, notice_text: str, source_url: str) -> str:
@@ -310,33 +447,55 @@ def render_page(language: str, title: str, notice_text: str, source_url: str) ->
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>{html.escape(title)}</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="../../../assets/style.css">
 </head>
 <body>
   <main>
     <div class="toolbar">
-      <button id="copy-all" type="button">{copy_label}</button>
+      <button id="copy-all" type="button" data-success="{'복사 완료' if language == 'ko' else 'Copied'}" data-failure="{'복사 실패 — 텍스트를 직접 선택하세요' if language == 'ko' else 'Copy failed — select the text manually'}">{copy_label}</button>
+      <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
       <a class="button secondary" href="./notice.txt" download>{download_label}</a>
       <a class="source" href="{html.escape(source_url, quote=True)}" target="_blank" rel="noreferrer">{source_label}</a>
     </div>
     <pre id="notice-text">{html.escape(notice_text.rstrip())}</pre>
   </main>
-  <script src="/assets/app.js" defer></script>
+  <script src="../../../assets/app.js" defer></script>
 </body>
 </html>
 """
 
 
-def write_notice(notice_id: str, source_url: str, title: str, korean: str, english: str) -> None:
-    for language, text in (("ko", korean), ("en", english)):
+def write_notice(
+    notice_id: str,
+    source_url: str,
+    korean_title: str,
+    english_title: str,
+    korean: str,
+    english: str,
+) -> None:
+    for language, page_title, text in (
+        ("ko", korean_title, korean),
+        ("en", english_title, english),
+    ):
         target = SITE_ROOT / "notices" / notice_id / language
         target.mkdir(parents=True, exist_ok=True)
         (target / "notice.txt").write_text(text, encoding="utf-8", newline="\n")
         (target / "index.html").write_text(
-            render_page(language, title, text, source_url),
+            render_page(language, page_title, text, source_url),
             encoding="utf-8",
             newline="\n",
         )
+    metadata = {
+        "format_version": FORMAT_VERSION,
+        "notice_id": notice_id,
+        "source_url": source_url,
+    }
+    metadata_path = SITE_ROOT / "notices" / notice_id / "metadata.json"
+    metadata_path.write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 def main() -> None:
@@ -349,13 +508,30 @@ def main() -> None:
     korean = korean_document(title, body)
     cached_ko = SITE_ROOT / "notices" / notice_id / "ko" / "notice.txt"
     cached_en = SITE_ROOT / "notices" / notice_id / "en" / "notice.txt"
-    if cached_ko.exists() and cached_en.exists() and cached_ko.read_text(encoding="utf-8") == korean:
-        english = cached_en.read_text(encoding="utf-8")
+    metadata_path = SITE_ROOT / "notices" / notice_id / "metadata.json"
+    cached_english = cached_en.read_text(encoding="utf-8") if cached_en.exists() else ""
+    try:
+        cached_metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        cached_metadata = {}
+    if (
+        cached_ko.exists()
+        and cached_ko.read_text(encoding="utf-8") == korean
+        and looks_like_english_translation(korean, cached_english)
+        and cached_metadata.get("format_version") == FORMAT_VERSION
+    ):
+        english = cached_english
+        english_lines = english.splitlines()
+        english_title = english_lines[1].strip() if len(english_lines) > 1 else title
         print("Reused the existing English translation.")
     else:
-        english = translate_to_english(korean)
+        english_title, english = english_document(
+            title,
+            body,
+            os.environ.get("MYMEMORY_CONTACT_EMAIL", "").strip(),
+        )
 
-    write_notice(notice_id, requested_url, title, korean, english)
+    write_notice(notice_id, requested_url, title, english_title, korean, english)
     write_output("notice_id", notice_id)
     print(f"Generated UTF-8 Korean and English pages for KISA notice {notice_id}.")
 

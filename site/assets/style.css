@@ -48,6 +48,12 @@ button,
   color: #1769e0;
 }
 
+.copy-status {
+  min-height: 1.4em;
+  color: #334155;
+  font-size: 14px;
+}
+
 pre {
   margin: 0;
   padding: clamp(18px, 4vw, 36px);

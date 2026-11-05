@@ -2,29 +2,75 @@
 
 const copyButton = document.getElementById("copy-all");
 const noticeText = document.getElementById("notice-text");
+const copyStatus = document.getElementById("copy-status");
 
-async function copyNotice() {
-  const value = noticeText.textContent;
+function legacyCopy(value) {
+  const temporary = document.createElement("textarea");
+  temporary.value = value;
+  temporary.setAttribute("aria-hidden", "true");
+  temporary.setAttribute("autocomplete", "off");
+  temporary.style.position = "fixed";
+  temporary.style.top = "0";
+  temporary.style.left = "-9999px";
+  temporary.style.width = "1px";
+  temporary.style.height = "1px";
+  temporary.style.opacity = "0";
+  temporary.contentEditable = "true";
+  temporary.readOnly = false;
+  document.body.appendChild(temporary);
+
   try {
-    await navigator.clipboard.writeText(value);
+    temporary.focus({ preventScroll: true });
   } catch (_) {
-    const temporary = document.createElement("textarea");
-    temporary.value = value;
-    temporary.setAttribute("readonly", "");
-    temporary.style.position = "fixed";
-    temporary.style.opacity = "0";
-    document.body.appendChild(temporary);
-    temporary.select();
-    document.execCommand("copy");
-    temporary.remove();
+    temporary.focus();
   }
+  temporary.select();
+  temporary.setSelectionRange(0, value.length);
 
-  const korean = document.documentElement.lang === "ko";
-  const original = korean ? "전체 내용 복사하기" : "Copy all text";
-  copyButton.textContent = korean ? "복사 완료" : "Copied";
-  window.setTimeout(() => {
-    copyButton.textContent = original;
-  }, 1600);
+  let copied = false;
+  try {
+    copied = document.execCommand("copy");
+  } catch (_) {
+    copied = false;
+  }
+  temporary.remove();
+  return copied;
 }
 
-copyButton.addEventListener("click", copyNotice);
+async function copyNotice() {
+  const value = noticeText.textContent || "";
+  let copied = legacyCopy(value);
+
+  if (!copied && window.isSecureContext && navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(value);
+      copied = true;
+    } catch (_) {
+      copied = false;
+    }
+  }
+
+  if (!copied) {
+    const selection = window.getSelection();
+    if (selection) {
+      const range = document.createRange();
+      range.selectNodeContents(noticeText);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  }
+
+  const original = copyButton.textContent;
+  const resultText = copied ? copyButton.dataset.success : copyButton.dataset.failure;
+  copyButton.textContent = resultText;
+  copyStatus.textContent = resultText;
+
+  window.setTimeout(() => {
+    copyButton.textContent = original;
+    copyStatus.textContent = "";
+  }, 2200);
+}
+
+if (copyButton && noticeText && copyStatus) {
+  copyButton.addEventListener("click", copyNotice);
+}

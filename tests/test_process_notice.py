@@ -73,8 +73,46 @@ class ProcessNoticeTests(unittest.TestCase):
 
         self.assertIn('<meta charset="utf-8">', page)
         self.assertIn('id="copy-all"', page)
+        self.assertIn('href="../../../assets/style.css"', page)
+        self.assertIn('src="../../../assets/app.js"', page)
+        self.assertIn('id="copy-status"', page)
         self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", page)
         self.assertNotIn("<script>alert(1)</script>", page)
+
+    def test_translation_chunks_stay_below_provider_byte_limit(self) -> None:
+        text = "영향을 받는 사용자는 최신 버전으로 업데이트하시기 바랍니다. " * 30
+        chunks = process_notice.split_utf8_chunks(text)
+
+        self.assertGreater(len(chunks), 1)
+        self.assertTrue(all(len(chunk.encode("utf-8")) <= 450 for chunk in chunks))
+        self.assertEqual(" ".join(chunks), text.strip())
+
+    def test_rejects_unchanged_korean_as_english_translation(self) -> None:
+        korean = "제목:\n제품 보안 업데이트 권고\n\n본문:\n최신 버전으로 업데이트하십시오."
+        valid_english = "Title:\nProduct Security Update Advisory\n\nBody:\nUpdate to the latest version."
+
+        self.assertFalse(process_notice.looks_like_english_translation(korean, korean))
+        self.assertTrue(process_notice.looks_like_english_translation(korean, valid_english))
+
+    def test_security_headings_and_version_table_use_fixed_terms(self) -> None:
+        self.assertEqual(process_notice.translate_line("□ 개요"), "□ Overview")
+        self.assertEqual(
+            process_notice.translate_line("취약점 / 제품명 / 영향받는 버전 / 해결 버전"),
+            "Vulnerability / Product / Affected versions / Fixed versions",
+        )
+        self.assertEqual(
+            process_notice.translate_line(
+                "CVE-2026-111357 / Connect Secure / 22.8R2.6 미만 / 22.8R2.6 이상"
+            ),
+            "CVE-2026-111357 / Connect Secure / Earlier than 22.8R2.6 / 22.8R2.6 or later",
+        )
+        self.assertEqual(
+            process_notice.translate_line(
+                "o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고"
+            ),
+            "o Users running an affected version are advised to update to the latest version "
+            "according to the remediation guidance.",
+        )
 
 if __name__ == "__main__":
     unittest.main()

@@ -6,12 +6,13 @@
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Ivanti 제품 보안 업데이트 권고</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="../../../assets/style.css">
 </head>
 <body>
   <main>
     <div class="toolbar">
-      <button id="copy-all" type="button">전체 내용 복사하기</button>
+      <button id="copy-all" type="button" data-success="복사 완료" data-failure="복사 실패 — 텍스트를 직접 선택하세요">전체 내용 복사하기</button>
+      <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
       <a class="button secondary" href="./notice.txt" download>텍스트 파일 저장</a>
       <a class="source" href="https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&amp;menuNo=205020&amp;nttId=72263" target="_blank" rel="noreferrer">KISA 원문 열기</a>
     </div>
@@ -49,6 +50,6 @@ o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
 
 □ 작성 : 디지털위협대응본부 취약점관리센터</pre>
   </main>
-  <script src="/assets/app.js" defer></script>
+  <script src="../../../assets/app.js" defer></script>
 </body>
 </html>

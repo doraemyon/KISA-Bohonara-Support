@@ -1,33 +1,33 @@
-제목:
-Ivanti 제품 보안 업데이트 권고
+Title:
+Ivanti Product Security Update Advisory
 
-요약:
-금일 KISA 공지 "Ivanti 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+Summary:
+Today, we are forwarding the KISA notice "Ivanti Product Security Update Advisory". Personnel responsible for affected systems at each affiliated company are advised to apply the update and reply if there are any notable issues.
 
-본문:
-□ 개요
-o Ivanti社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
-o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+Body:
+□ Overview
+o Ivanti announces security updates that address vulnerabilities in its products [1]
+o Users running an affected version are advised to update to the latest version according to the remediation guidance.
 
-□ 설명
-o Ivanti Connect Secure에서 발생하는 Inclusion of Functionality from Untrusted Control Sphere 취약점(CVE-2026-111357) [1][2]
-o Ivanti Connect Secure에서 발생하는 Generation of Predictable Numbers or Identifiers 취약점(CVE-2026-118527) [1]
+□ Description
+o Inclusion of Functionality from Untrusted Control Sphere Vulnerability in Ivanti Connect Secure (CVE-2026-111357) [1] [2]
+o Generation of Predictable Numbers or Identifiers Vulnerability in Ivanti Connect Secure (CVE-2026-118527) [1]
 
-□ 영향을 받는 제품 및 해결 방안
+□ Affected Products and Remediation
 
-취약점 / 제품명 / 영향받는 버전 / 해결 버전
-CVE-2026-111357 / Connect Secure / 22.8R2.6 미만 / 22.8R2.6 이상
-CVE-2026-111357 / Connect Secure / 25.1.1.3 미만 / 25.1.1.3 이상
-CVE-2026-118527 / Connect Secure / 22.8R2.6 미만 / 22.8R2.6 이상
-CVE-2026-118527 / Connect Secure / 25.1.1.3 미만 / 25.1.1.3 이상
+Vulnerability / Product / Affected versions / Fixed versions
+CVE-2026-111357 / Connect Secure / Earlier than 22.8R2.6 / 22.8R2.6 or later
+CVE-2026-111357 / Connect Secure / Earlier than 25.1.1.3 / 25.1.1.3 or later
+CVE-2026-118527 / Connect Secure / Earlier than 22.8R2.6 / 22.8R2.6 or later
+CVE-2026-118527 / Connect Secure / Earlier than 25.1.1.3 / 25.1.1.3 or later
 
-※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+※ Apply the update by following the reference below [1]
 
-□ 참고사이트
+□ References
 [1] https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935
 [2] https://nvd.nist.gov/vuln/detail/CVE-2026-111357
 
-□ 문의사항
-o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+□ Contact
+o KISA Cyber Civil Complaint Center: 118 (no area code)
 
-□ 작성 : 디지털위협대응본부 취약점관리센터
+□ Prepared by: Vulnerability Management Center, Digital Threat Response Division
