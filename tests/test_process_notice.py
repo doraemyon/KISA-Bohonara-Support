@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import json
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -76,6 +78,9 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('href="../../../assets/style.css"', page)
         self.assertIn('src="../../../assets/app.js"', page)
         self.assertIn('id="copy-status"', page)
+        self.assertIn('class="notice-card"', page)
+        self.assertIn('class="site-header"', page)
+        self.assertIn('class="button button--primary"', page)
         self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", page)
         self.assertNotIn("<script>alert(1)</script>", page)
 
@@ -94,25 +99,98 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertFalse(process_notice.looks_like_english_translation(korean, korean))
         self.assertTrue(process_notice.looks_like_english_translation(korean, valid_english))
 
-    def test_security_headings_and_version_table_use_fixed_terms(self) -> None:
-        self.assertEqual(process_notice.translate_line("□ 개요"), "□ Overview")
-        self.assertEqual(
-            process_notice.translate_line("취약점 / 제품명 / 영향받는 버전 / 해결 버전"),
-            "Vulnerability / Product / Affected versions / Fixed versions",
+    def test_mymemory_fallback_translates_unknown_text_dynamically(self) -> None:
+        calls: list[str] = []
+
+        def fake_translate(segment: str, _contact_email: str = "") -> str:
+            calls.append(segment)
+            return f"Translated text {len(calls)}"
+
+        with mock.patch.object(process_notice, "translate_segment", side_effect=fake_translate):
+            translated = process_notice.translate_text_mymemory(
+                "□ 처음 보는 항목\n알 수 없는 값 / Connect Secure"
+            )
+
+        self.assertEqual(len(calls), 2)
+        self.assertIn("Translated text 1", translated)
+        self.assertIn("Translated text 2 / Connect Secure", translated)
+        self.assertNotRegex(translated, r"[가-힣]")
+
+    def test_translation_validation_preserves_security_identifiers(self) -> None:
+        korean = (
+            "제목:\n제품 업데이트\n\n요약:\n공지입니다.\n\n본문:\n"
+            "CVE-2026-111357 / 22.8R2.6 / https://example.com/advisory"
         )
-        self.assertEqual(
-            process_notice.translate_line(
-                "CVE-2026-111357 / Connect Secure / 22.8R2.6 미만 / 22.8R2.6 이상"
-            ),
-            "CVE-2026-111357 / Connect Secure / Earlier than 22.8R2.6 / 22.8R2.6 or later",
+        valid = (
+            "Title:\nProduct Update\n\nSummary:\nSecurity notice.\n\nBody:\n"
+            "CVE-2026-111357 / 22.8R2.6 / https://example.com/advisory\n"
         )
-        self.assertEqual(
-            process_notice.translate_line(
-                "o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고"
-            ),
-            "o Users running an affected version are advised to update to the latest version "
-            "according to the remediation guidance.",
+
+        process_notice.validate_english_document(korean, "Product Update", valid)
+
+        with self.assertRaises(RuntimeError):
+            process_notice.validate_english_document(
+                korean,
+                "Product Update",
+                valid.replace("CVE-2026-111357", "the vulnerability"),
+            )
+
+    def test_gemini_translates_the_complete_document_with_structured_output(self) -> None:
+        korean = (
+            "제목:\n제품 업데이트\n\n요약:\n공지입니다.\n\n본문:\n"
+            "CVE-2026-111357 / 22.8R2.6 / https://example.com/advisory\n"
         )
+        document = (
+            "Title:\nProduct Update\n\nSummary:\nSecurity notice.\n\nBody:\n"
+            "CVE-2026-111357 / 22.8R2.6 / https://example.com/advisory\n"
+        )
+        response_body = {
+            "candidates": [
+                {
+                    "content": {
+                        "parts": [
+                            {
+                                "text": json.dumps(
+                                    {"title": "Product Update", "document": document}
+                                )
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+
+        class FakeResponse:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return False
+
+            def read(self) -> bytes:
+                return json.dumps(response_body).encode("utf-8")
+
+        observed_request = None
+
+        def fake_urlopen(request, timeout=0):
+            nonlocal observed_request
+            observed_request = request
+            self.assertEqual(timeout, 60)
+            return FakeResponse()
+
+        with mock.patch.object(process_notice.urllib.request, "urlopen", side_effect=fake_urlopen):
+            title, translated = process_notice.translate_with_gemini(
+                korean, "test-api-key", "gemini-test-model"
+            )
+
+        self.assertEqual(title, "Product Update")
+        self.assertEqual(translated, document)
+        self.assertEqual(observed_request.get_header("X-goog-api-key"), "test-api-key")
+        request_json = json.loads(observed_request.data.decode("utf-8"))
+        self.assertEqual(
+            request_json["generationConfig"]["responseMimeType"], "application/json"
+        )
+        self.assertIn(korean.strip(), request_json["contents"][0]["parts"][0]["text"])
 
 if __name__ == "__main__":
     unittest.main()

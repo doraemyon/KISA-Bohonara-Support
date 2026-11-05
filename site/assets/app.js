@@ -3,6 +3,7 @@
 const copyButton = document.getElementById("copy-all");
 const noticeText = document.getElementById("notice-text");
 const copyStatus = document.getElementById("copy-status");
+const copyLabel = copyButton?.querySelector("span");
 
 function legacyCopy(value) {
   const temporary = document.createElement("textarea");
@@ -60,13 +61,21 @@ async function copyNotice() {
     }
   }
 
-  const original = copyButton.textContent;
+  const original = copyLabel?.textContent || copyButton.textContent;
   const resultText = copied ? copyButton.dataset.success : copyButton.dataset.failure;
-  copyButton.textContent = resultText;
+  if (copyLabel) {
+    copyLabel.textContent = resultText;
+  } else {
+    copyButton.textContent = resultText;
+  }
   copyStatus.textContent = resultText;
 
   window.setTimeout(() => {
-    copyButton.textContent = original;
+    if (copyLabel) {
+      copyLabel.textContent = original;
+    } else {
+      copyButton.textContent = original;
+    }
     copyStatus.textContent = "";
   }, 2200);
 }

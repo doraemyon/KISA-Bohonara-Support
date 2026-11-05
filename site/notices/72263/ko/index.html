@@ -9,14 +9,49 @@
   <link rel="stylesheet" href="../../../assets/style.css">
 </head>
 <body>
-  <main>
-    <div class="toolbar">
-      <button id="copy-all" type="button" data-success="복사 완료" data-failure="복사 실패 — 텍스트를 직접 선택하세요">전체 내용 복사하기</button>
-      <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
-      <a class="button secondary" href="./notice.txt" download>텍스트 파일 저장</a>
-      <a class="source" href="https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&amp;menuNo=205020&amp;nttId=72263" target="_blank" rel="noreferrer">KISA 원문 열기</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <span class="site-mark" aria-hidden="true">
+        <svg viewBox="0 0 16 16"><path d="M7.467.133a1.75 1.75 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48v3.772c0 3.716-2.122 6.927-6.053 8.635a2.38 2.38 0 0 1-1.894 0C3.122 14.18 1 10.968 1 7.252V3.48a1.75 1.75 0 0 1 1.217-1.667ZM8.076 1.56a.25.25 0 0 0-.152 0l-5.25 1.68a.25.25 0 0 0-.174.24v3.772c0 3.014 1.668 5.59 5.15 7.103a.88.88 0 0 0 .7 0c3.482-1.513 5.15-4.089 5.15-7.103V3.48a.25.25 0 0 0-.174-.238Z"/></svg>
+      </span>
+      <span class="site-name">KISA Notice</span>
     </div>
-    <pre id="notice-text">제목:
+  </header>
+  <main class="page-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <span>보안공지</span>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg>
+      <span class="breadcrumbs__strong">한국어</span>
+    </nav>
+    <article class="notice-card">
+      <header class="notice-card__header">
+        <div class="notice-heading">
+          <h1>Ivanti 제품 보안 업데이트 권고</h1>
+          <div class="notice-meta">
+            <span class="language-badge">한국어</span>
+            <span>UTF-8</span>
+          </div>
+        </div>
+        <div class="toolbar" aria-label="문서 작업">
+          <button class="button button--primary" id="copy-all" type="button" data-success="클립보드에 복사했습니다." data-failure="복사하지 못했습니다. 선택된 텍스트를 직접 복사해 주세요.">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg>
+            <span>전체 내용 복사</span>
+          </button>
+          <a class="button" href="./notice.txt" download>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.69V.75a.75.75 0 0 1 1.5 0v6.94l1.72-1.72a.749.749 0 1 1 1.06 1.06l-3 3a.749.749 0 0 1-1.06 0l-3-3a.749.749 0 1 1 1.06-1.06Z"/></svg>
+            <span>텍스트 저장</span>
+          </a>
+          <a class="button" href="https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&amp;menuNo=205020&amp;nttId=72263" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8.25 1A.75.75 0 0 1 9 .25h4.75c.966 0 1.75.784 1.75 1.75v4.75a.75.75 0 0 1-1.5 0V2.56L8.78 7.78a.749.749 0 1 1-1.06-1.06L12.94 1.5H9A.75.75 0 0 1 8.25 1Z"/><path d="M2.75 3.5a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V9a.75.75 0 0 1 1.5 0v4.25A1.75 1.75 0 0 1 12.25 15h-9.5A1.75 1.75 0 0 1 1 13.25v-9.5C1 2.784 1.784 2 2.75 2H7a.75.75 0 0 1 0 1.5Z"/></svg>
+            <span class="button__label--wide">KISA 원문</span>
+          </a>
+        </div>
+      </header>
+      <div class="notice-card__status">
+        <span>notice.txt · 33 lines</span>
+        <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
+      </div>
+      <pre class="notice-text" id="notice-text">제목:
 Ivanti 제품 보안 업데이트 권고
 
 요약:
@@ -49,6 +84,7 @@ CVE-2026-118527 / Connect Secure / 25.1.1.3 미만 / 25.1.1.3 이상
 o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
 
 □ 작성 : 디지털위협대응본부 취약점관리센터</pre>
+    </article>
   </main>
   <script src="../../../assets/app.js" defer></script>
 </body>

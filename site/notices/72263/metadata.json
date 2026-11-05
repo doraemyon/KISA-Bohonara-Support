@@ -1,5 +1,6 @@
 {
-  "format_version": 3,
+  "format_version": 4,
   "notice_id": "72263",
-  "source_url": "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&menuNo=205020&nttId=72263"
+  "source_url": "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&menuNo=205020&nttId=72263",
+  "translation_provider": "browser-provided"
 }
