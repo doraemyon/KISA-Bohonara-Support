@@ -65,7 +65,7 @@ Fine-grained PAT를 하나 만듭니다.
 1. GitHub **Settings → Developer settings → Personal access tokens → Fine-grained tokens**로 이동합니다.
 2. Repository access에서 **이 확장 저장소 한 개만** 선택합니다.
 3. Repository permissions는 **Actions → Read and write**만 허용합니다.
-4. 가능한 짧은 만료일로 발급합니다.
+4. 가능한 짧은 만료일로 발급합니다. (유출 됐을 때 피해 확산 방지, 개인 용도라면 Never로 해도 무방)
 
 그다음 [KISA-Bohonara-Alert 저장소](https://github.com/doraemyon/KISA-Bohonara-Alert)의 **Settings → Secrets and variables → Actions**에 두 Secret을 등록합니다.
 
