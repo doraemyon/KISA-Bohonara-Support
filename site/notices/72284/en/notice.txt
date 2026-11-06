@@ -2,7 +2,7 @@ Title:
 Estige Product Security Measures Advisory
 
 Summary:
-Today, KISA notice "Estige product security measures recommended" Please reply if you have anything special.
+We are disseminating today's KISA announcement "Estige Product Security Measures Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
 
 Body:
 Course Overview
@@ -16,9 +16,6 @@ o Unauthorized sign-up and inappropriate file upload vulnerabilities in E-GENE I
 
 manufacturers / product name / Affected version / Action plan
 Estige / E-GENE ITSM / 7.0 or less / Registration Features and File Upload Extension Restrictions
-
-How to patch □ security
-o Contact the manufacturer to discuss the schedule and apply the security patch
 
 How to workaround before applying □ patches
 1. Set restrictions on the ability to register

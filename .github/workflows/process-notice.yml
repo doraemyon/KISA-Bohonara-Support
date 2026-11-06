@@ -28,7 +28,7 @@ concurrency:
 jobs:
   process:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -36,6 +36,9 @@ jobs:
     steps:
       - name: Check out formatter
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Generate Korean and English pages
         id: generate
@@ -45,7 +48,18 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           MYMEMORY_CONTACT_EMAIL: ${{ secrets.MYMEMORY_CONTACT_EMAIL }}
-        run: python3 scripts/process_notice.py
+        shell: bash
+        run: |
+          for attempt in 1 2; do
+            if python3 scripts/process_notice.py; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 2 ]; then
+              echo "Generation failed temporarily; retrying in 10 seconds."
+              sleep 10
+            fi
+          done
+          exit 1
 
       - name: Save generated pages
         run: |
@@ -56,7 +70,7 @@ jobs:
             echo "Notice pages are already current."
           else
             git commit -m "content: add KISA notice ${{ steps.generate.outputs.notice_id }}"
-            git push
+            git push origin HEAD:main
           fi
 
       - name: Configure GitHub Pages

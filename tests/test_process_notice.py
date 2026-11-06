@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -46,6 +47,44 @@ class ProcessNoticeTests(unittest.TestCase):
 
         self.assertTrue(process_notice.is_update_advisory(title, body))
         self.assertIn("영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고", document)
+
+    def test_explicit_update_advisory_does_not_depend_on_body_keywords(self) -> None:
+        title = "제품 보안 업데이트 권고"
+        body = "□ 개요\no 제조사가 제품 관련 보안 공지를 발표했습니다."
+
+        self.assertTrue(process_notice.is_update_advisory(title, body))
+        self.assertIn(
+            "영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고",
+            process_notice.korean_document(title, body),
+        )
+
+    def test_security_action_advisory_with_patch_details_uses_update_summary(self) -> None:
+        title = "에스티이지 제품 보안 조치 권고"
+        body = (
+            "□ 영향을 받는 제품 및 조치 방안\n"
+            "o 영향받는 버전은 제조사의 보안 패치 또는 임시 조치를 적용"
+        )
+
+        self.assertTrue(process_notice.is_update_advisory(title, body))
+        self.assertIn(
+            "영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고",
+            process_notice.korean_document(title, body),
+        )
+
+    def test_english_update_summary_matches_the_generated_korean_template(self) -> None:
+        summary = process_notice.english_summary(
+            "제품 보안 업데이트 권고",
+            "Product Security Update Advisory",
+            "□ 개요\no 보안 업데이트 발표",
+        )
+
+        self.assertEqual(
+            summary,
+            "We are disseminating today's KISA announcement "
+            '"Product Security Update Advisory". We recommend that representatives at '
+            "each affiliated company using an affected version update, and please reply "
+            "if you have any specific issues.",
+        )
 
     def test_non_update_notice_uses_general_summary(self) -> None:
         title = "최근 사이버공격 대비 기업 보안강화 권고"
@@ -135,6 +174,55 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('href="notices/72263/en/">영문</a>', page)
         self.assertIn(process_notice.FAVICON_URL, page)
         self.assertIn(process_notice.KISA_LOGO_URL, page)
+
+    def test_refresh_stored_pages_uses_each_document_title(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            site_root = Path(directory)
+            notice_root = site_root / "notices" / "72284"
+            (notice_root / "ko").mkdir(parents=True)
+            (notice_root / "en").mkdir(parents=True)
+            (notice_root / "metadata.json").write_text(
+                json.dumps(
+                    {
+                        "title": "에스티이지 제품 보안 조치 권고",
+                        "source_url": (
+                            "https://www.boho.or.kr/kr/bbs/view.do?"
+                            "bbsId=B0000133&nttId=72284"
+                        ),
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            (notice_root / "ko" / "notice.txt").write_text(
+                "제목:\n에스티이지 제품 보안 조치 권고\n\n"
+                "요약:\n이전 요약\n\n본문:\n영향받는 버전의 보안 패치 적용\n",
+                encoding="utf-8",
+            )
+            (notice_root / "en" / "notice.txt").write_text(
+                "Title:\nSTEG Product Security Action Advisory\n\n"
+                "Summary:\nPrevious summary\n\nBody:\nApply the security patch.\n",
+                encoding="utf-8",
+            )
+
+            with mock.patch.object(process_notice, "SITE_ROOT", site_root):
+                process_notice.refresh_stored_notice_pages()
+
+            korean_page = (notice_root / "ko" / "index.html").read_text(encoding="utf-8")
+            english_page = (notice_root / "en" / "index.html").read_text(encoding="utf-8")
+            self.assertIn(
+                'download="에스티이지 제품 보안 조치 권고.txt"', korean_page
+            )
+            self.assertIn(
+                'download="STEG Product Security Action Advisory.txt"', english_page
+            )
+            normalized_english = (notice_root / "en" / "notice.txt").read_text(
+                encoding="utf-8"
+            )
+            self.assertIn(
+                "representatives at each affiliated company using an affected version",
+                normalized_english,
+            )
 
     def test_copy_script_excludes_generated_line_numbers(self) -> None:
         script = (

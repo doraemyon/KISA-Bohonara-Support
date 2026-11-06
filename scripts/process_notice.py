@@ -28,7 +28,7 @@ DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
 FAVICON_URL = "https://avatars.githubusercontent.com/u/51371743?v=4"
 KISA_LOGO_URL = "https://www.kisa.or.kr/resource/kor/images/sub/sub_CI_logo_signature_9.png"
 MAX_TRANSLATION_BYTES = 450
-FORMAT_VERSION = 4
+FORMAT_VERSION = 5
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 
 
@@ -223,14 +223,31 @@ def fetch_notice(url: str) -> tuple[str, str]:
 
 
 def is_update_advisory(title: str, body: str) -> bool:
-    title_matches = re.search(r"업데이트(?:\s*권고)?", title) is not None
+    normalized_title = normalize_inline(title)
+
+    # An explicit KISA "업데이트 권고" title is authoritative even when the
+    # body uses a new table heading that the secondary checks do not know yet.
+    if re.search(r"업데이트\s*권고", normalized_title, flags=re.IGNORECASE):
+        return True
+
     remediation_matches = re.search(
-        r"CVE-\d{4}-\d+|영향(?:을\s*)?받는\s*버전|영향받는\s*제품|"
-        r"취약\s*버전|해결\s*버전|조치\s*방안|해결\s*방안|최신\s*버전",
+        r"CVE-\d{4}-\d+|영향(?:을\s*)?받는\s*(?:제품|버전)|"
+        r"취약\s*버전|해결\s*버전|조치\s*방안|해결\s*방안|"
+        r"보안\s*패치|패치\s*적용|임시\s*조치|최신\s*버전",
         body,
         flags=re.IGNORECASE,
     ) is not None
-    return title_matches and remediation_matches
+    if not remediation_matches:
+        return False
+
+    # Product advisories can say "보안 조치 권고" or "보안 패치 권고"
+    # instead of "업데이트 권고" while still providing patch instructions.
+    return re.search(
+        r"업데이트|업그레이드|(?:제품\s*)?보안\s*(?:조치|패치)\s*권고|"
+        r"취약점\s*(?:조치|패치)\s*권고",
+        normalized_title,
+        flags=re.IGNORECASE,
+    ) is not None
 
 
 def korean_summary(title: str, body: str) -> str:
@@ -245,6 +262,23 @@ def korean_summary(title: str, body: str) -> str:
 def korean_document(title: str, body: str) -> str:
     summary = korean_summary(title, body)
     return f"제목:\n{title}\n\n요약:\n{summary}\n\n본문:\n{body}\n"
+
+
+def english_summary(korean_title: str, english_title: str, body: str) -> str:
+    prefix = f'We are disseminating today\'s KISA announcement "{english_title}".'
+    if is_update_advisory(korean_title, body):
+        return (
+            f"{prefix} We recommend that representatives at each affiliated company using "
+            "an affected version update, and please reply if you have any specific issues."
+        )
+    return f"{prefix} Please reply if you have any specific issues."
+
+
+def replace_english_summary(document: str, summary: str) -> str:
+    pattern = re.compile(r"(\n\nSummary:\n).*?(\n\nBody:\n)", flags=re.DOTALL)
+    if not pattern.search(document):
+        fail("English translation did not preserve its Summary section.")
+    return pattern.sub(lambda match: f"{match.group(1)}{summary}{match.group(2)}", document, count=1)
 
 
 def split_utf8_chunks(value: str, max_bytes: int = MAX_TRANSLATION_BYTES) -> list[str]:
@@ -455,10 +489,10 @@ Korean notice:
 
 def translate_with_mymemory(title: str, body: str, contact_email: str) -> tuple[str, str]:
     english_title = translate_text_mymemory(title, contact_email)
-    english_summary = translate_text_mymemory(korean_summary(title, body), contact_email)
     english_body = translate_text_mymemory(body, contact_email)
     document = (
-        f"Title:\n{english_title}\n\nSummary:\n{english_summary}\n\nBody:\n{english_body}\n"
+        f"Title:\n{english_title}\n\nSummary:\n"
+        f"{english_summary(title, english_title, body)}\n\nBody:\n{english_body}\n"
     )
     validate_english_document(korean_document(title, body), english_title, document)
     return english_title, document
@@ -475,6 +509,10 @@ def english_document(
     if gemini_api_key:
         try:
             english_title, document = translate_with_gemini(korean, gemini_api_key, gemini_model)
+            document = replace_english_summary(
+                document, english_summary(title, english_title, body)
+            )
+            validate_english_document(korean, english_title, document)
             return english_title, document, "gemini"
         except RuntimeError as error:
             print(f"WARNING: {error} Falling back to MyMemory.", file=sys.stderr)
@@ -744,6 +782,93 @@ def write_notice_index() -> None:
     )
 
 
+def document_title(notice_text: str, language: str, fallback: str = "") -> str:
+    label = "제목:" if language == "ko" else "Title:"
+    lines = notice_text.splitlines()
+    if len(lines) >= 2 and lines[0].strip() == label and lines[1].strip():
+        return lines[1].strip()
+    return fallback.strip()
+
+
+def korean_document_parts(notice_text: str) -> tuple[str, str]:
+    match = re.fullmatch(
+        r"제목:\n(?P<title>[^\n]+)\n\n요약:\n.*?\n\n본문:\n(?P<body>.*)\n?",
+        notice_text,
+        flags=re.DOTALL,
+    )
+    if not match:
+        return "", ""
+    return match.group("title").strip(), match.group("body").strip()
+
+
+def refresh_stored_notice_pages() -> None:
+    """Re-render stored HTML pages without making translation API calls."""
+    notices_root = SITE_ROOT / "notices"
+    if not notices_root.exists():
+        return
+
+    for metadata_path in notices_root.glob("*/metadata.json"):
+        try:
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+
+        source_url = str(metadata.get("source_url", "")).strip()
+        if not source_url:
+            continue
+
+        korean_path = metadata_path.parent / "ko" / "notice.txt"
+        english_path = metadata_path.parent / "en" / "notice.txt"
+        migrated_metadata = False
+        if korean_path.exists() and english_path.exists():
+            korean_text = korean_path.read_text(encoding="utf-8")
+            english_text = english_path.read_text(encoding="utf-8")
+            korean_title, body = korean_document_parts(korean_text)
+            english_title = document_title(english_text, "en")
+            if korean_title and body and english_title:
+                try:
+                    normalized_english = replace_english_summary(
+                        english_text,
+                        english_summary(korean_title, english_title, body),
+                    )
+                except RuntimeError:
+                    normalized_english = english_text
+                else:
+                    metadata["format_version"] = FORMAT_VERSION
+                    metadata["english_title"] = english_title
+                    migrated_metadata = True
+                if normalized_english != english_text:
+                    english_path.write_text(
+                        normalized_english, encoding="utf-8", newline="\n"
+                    )
+
+        if migrated_metadata:
+            metadata_path.write_text(
+                json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+
+        fallbacks = {
+            "ko": str(metadata.get("title", "")),
+            "en": str(metadata.get("english_title", "")),
+        }
+        for language in ("ko", "en"):
+            target = metadata_path.parent / language
+            notice_path = target / "notice.txt"
+            if not notice_path.exists():
+                continue
+            notice_text = notice_path.read_text(encoding="utf-8")
+            page_title = document_title(notice_text, language, fallbacks[language])
+            if not page_title:
+                page_title = f"KISA security notice {metadata_path.parent.name}"
+            (target / "index.html").write_text(
+                render_page(language, page_title, notice_text, source_url),
+                encoding="utf-8",
+                newline="\n",
+            )
+
+
 def write_notice(
     notice_id: str,
     source_url: str,
@@ -769,6 +894,7 @@ def write_notice(
         "format_version": FORMAT_VERSION,
         "notice_id": notice_id,
         "title": korean_title,
+        "english_title": english_title,
         "source_url": source_url,
         "translation_provider": translation_provider,
     }
@@ -778,6 +904,7 @@ def write_notice(
         encoding="utf-8",
         newline="\n",
     )
+    refresh_stored_notice_pages()
     write_notice_index()
 
 

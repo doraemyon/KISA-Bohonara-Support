@@ -16,11 +16,13 @@
 1. 기존 알리미가 Telegram 공지를 먼저 즉시 전송합니다.
 2. 확장이 설정된 경우에만 이 저장소의 Action을 호출합니다.
 3. Action이 KISA 원문을 다시 읽고 도메인·게시판·공지 번호를 검증합니다.
-4. 제목에 `업데이트`가 있고 본문에 CVE, 영향 버전, 해결 버전 또는 조치 방안이 있으면 업데이트 권고용 요약을 사용합니다. 그 외 공지는 일반 요약을 사용합니다.
+4. 제목이 `업데이트 권고`이면 본문 표현과 관계없이 업데이트 권고용 요약을 사용합니다. 제목이 `업데이트`, `업그레이드`, `보안 조치 권고` 또는 `보안 패치 권고` 계열인 경우에는 본문에 CVE, 영향 제품·버전, 해결 버전, 패치나 조치 방안이 있는지 추가 확인합니다. 그 외 공지는 일반 요약을 사용합니다.
 5. Gemini API 무료 티어로 공지 전체 문맥을 영문으로 번역하고, URL·CVE·버전 정보가 보존됐는지 검증합니다.
 6. Gemini를 사용할 수 없을 때만 무료 MyMemory Translation API로 자동 대체합니다.
 7. 국문·영문 페이지를 이 저장소에 저장하고 GitHub Pages에 배포합니다.
 8. 배포 성공 후 이미 전송된 Telegram 메시지의 버튼을 3개로 갱신합니다.
+
+업데이트 권고로 판정된 공지는 항상 `영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고` 문구가 포함된 요약을 사용합니다. 거의 동시에 여러 공지가 들어와도 Action을 직렬로 실행하고, 각 실행은 시작 시점의 최신 `main`을 체크아웃해 생성 문서 커밋이 서로 충돌하지 않도록 합니다.
 
 확장 처리나 번역이 실패해도 최초 Telegram 알림과 `공지 열기` 버튼은 그대로 남습니다.
 
@@ -122,6 +124,8 @@ python -m unittest discover -s tests -v
 - `Could not find the KISA notice title or body`: KISA 페이지 구조가 바뀌었을 수 있습니다.
 - `Gemini translation failed`: API key, 무료 티어 한도 또는 모델 이름을 확인합니다. 이 오류 뒤에는 MyMemory로 자동 대체를 시도합니다.
 - `MyMemory translation failed after three attempts`: 대체 번역기의 무료 사용량 또는 서비스 상태를 확인하고 잠시 후 Action을 다시 실행합니다.
+- 생성 단계의 일시적인 네트워크·번역 오류: workflow가 10초 뒤 한 번 자동 재시도합니다. 두 번 모두 실패한 경우에만 Action이 실패합니다.
+- `non-fast-forward` 또는 `fetch first`: 최신 workflow에는 동시 공지를 직렬 처리하고 최신 `main`을 체크아웃하는 설정이 포함되어 있습니다. 이전 실패 실행은 **Re-run jobs** 대신 새 workflow를 실행하세요.
 - `Translation result validation failed`: 번역 서비스가 국문 원문을 그대로 반환해 실패 처리된 것입니다.
 - `Get Pages site failed`: **Settings → Pages → Source**가 `GitHub Actions`인지 확인합니다.
 - Pages 배포 권한 오류: Workflow permissions와 `pages: write`, `id-token: write` 설정을 확인합니다.

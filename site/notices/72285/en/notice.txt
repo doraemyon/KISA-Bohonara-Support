@@ -1,0 +1,54 @@
+Title:
+M2Soft Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "M2Soft Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+Course Overview
+o M2Soft announces a security update addressing vulnerabilities in its products [1] [2]
+o Users with lower versions are advised to act according to the manufacturer's resolution guidance
+
+Description
+o Malicious file upload and executability vulnerability in ers DataServer and ers ReportingServer Engine (JavaViewer) [1] [2]
+
+Affected products:
+
+manufacturers / product name / Affected version / RESOURCES
+M2Soft / ERS DataServer / 6.4.5.494 or less / 6.4.5.495 or later (Latest version: 6.4.5.506)
+M2Soft / ERS DataServer / 7.4.4.684 or less / 7.4.4.685 or later (latest version: 7.4.4.707)
+M2Soft / ERS DataServer / 8.2.2.328 or less / 8.2.2.329 or later (latest version: 8.2.2.359)
+M2Soft / Ers ReportingServer Engine (JavaViewer) / Crownix Report&ERS 6 - Java Engine Version: 5.x or later 5.5.14.1070 or later / Crownix Report&ERS 6 - Java Engine Version: 5.5.14.1071 or later (Latest Version: 5.5.14.1108)
+M2Soft / Ers ReportingServer Engine (JavaViewer) / Crownix Report&ERS 7 - Java Engine Version: 7.x or later 7.4.3.960 or earlier / Crownix Report&ERS 7 - Java Engine Version: 7.4.3.961 or later (Latest Version: 7.4.3.1109)
+M2Soft / Ers ReportingServer Engine (JavaViewer) / Crownix Report&ERS 8 - Java Engine Version: 8.x or later 8.2.0.345 or earlier / Crownix Report&ERS 8 - Java Engine Version: 8.2.0.346 or later (Latest Version: 8.2.3.664)
+
+※ Contact M2Soft below for the solved version and install it
+
+How to □ take action
+(1) Update to Fixed Version
+(2) Apply additional actions below
+o ERS DataServer
+(1) Change directory path
+./DataServer/manager → ./DataServer/WEB-INF/manager
+./DataServer/formmanager → ./DataServer/WEB-INF/formmanager
+(2) Library patch
+Get the latest version library files (ers-data-core.jar, etc.). Deploy to/DataServer/WEB-INF/lib path (overwrite)
+(3) Remove
+./DataServer/uploadf.jsp
+o ers ReportingServer Engine (JavaViewer)
+(1) Change directory path
+./ReportingServer/manager → ./ReportingServer/WEB-INF/manager
+(2) Library patch
+Get the latest version library files (javard.jar, etc.). Deploy to/ReportingServer/WEB-INF/lib path (overwrite)
+
+※ For more information, contact M2Soft below
+
+□ Reference sites
+[1] https://support.m2soft.co.kr/bbs/board.php?bo_table=notice&wr_id=61
+[2] https://support.m2soft.co.kr/bbs/board.php?bo_table=notice&wr_id=56
+
+Question and inquiries
+o M2Soft Technical Support: 1 after connecting 02-2188-8500
+o M2Soft Email: report@m2soft.co.kr
+
+□ Created by Vulnerability Management Center, Digital Threat Response Center
