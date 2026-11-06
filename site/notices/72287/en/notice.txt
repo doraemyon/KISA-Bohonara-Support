@@ -1,0 +1,29 @@
+Title:
+enspirit product security update advisory
+
+Summary:
+Today, we will disseminate the KISA notice "enspirit Product Security Update Advisory", so we recommend updating the affected version to the person in charge of each affiliate who is available, and if you have any special issues, please reply.
+
+Body:
+Course Overview
+enspirit announces a security update that addresses vulnerabilities in its products [1]
+o Users with affected versions are advised to update to the latest version as a workaround
+
+Description
+cross-site Scripting and Code Injection Vulnerability in o elo (CVE-2026-44267) [1] [2]
+
+□ Affected Products and Solutions
+
+Vulnerability / product name / Affected version / Resolved version
+CVE-2026-44267 / elo / Less than 1.0.1 / 1.0.1 or higher
+
+※ Check the reference site below to perform the update [1]
+
+□ Reference sites
+[1] https://github.com/enspirit/elo/security/advisories/GHSA-33r5-xmm8-v6x5
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-44267
+
+Question and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 without area code
+
+□ Created by Vulnerability Management Center, Digital Threat Response Center
