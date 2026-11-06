@@ -1,0 +1,35 @@
+Title:
+Estige Product Security Measures Advisory
+
+Summary:
+Today, KISA notice "Estige product security measures recommended" Please reply if you have anything special.
+
+Body:
+Course Overview
+o Estige recommends action on security vulnerabilities found in its products
+o Recommend security measures, such as limiting file upload extensions, according to manufacturer's recommendations for users who are using the product
+
+Description
+o Unauthorized sign-up and inappropriate file upload vulnerabilities in E-GENE ITSM
+
+□ Affected products and actions
+
+manufacturers / product name / Affected version / Action plan
+Estige / E-GENE ITSM / 7.0 or less / Registration Features and File Upload Extension Restrictions
+
+How to patch □ security
+o Contact the manufacturer to discuss the schedule and apply the security patch
+
+How to workaround before applying □ patches
+1. Set restrictions on the ability to register
+- After temporarily blocking the registration function, new user registration is replaced by manual registration.
+2. File upload extension limitations
+- Apply whitelist-based verification for the extensions you want to allow
+※ For other security measures, apply security patches according to the manufacturer's instructions.
+
+Question and inquiries
+o Estige Technical Support: 02-811-2211
+o Estige email: sd@steg.co.kr
+o Korea Internet & Security Agency Cyber Complaint Center: 118 without area code
+
+□ Created by Vulnerability Management Center, Digital Threat Response Center
