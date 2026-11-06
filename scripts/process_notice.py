@@ -491,6 +491,28 @@ def render_notice_lines(notice_text: str) -> str:
     )
 
 
+def safe_text_filename(title: str) -> str:
+    """Return a cross-platform UTF-8 text filename derived from a notice title."""
+    filename = re.sub(r'[\x00-\x1f<>:"/\\|?*]', " ", title)
+    filename = re.sub(r"\s+", " ", filename).strip(" .")
+    if not filename:
+        filename = "KISA security notice"
+
+    windows_reserved = {
+        "CON",
+        "PRN",
+        "AUX",
+        "NUL",
+        *(f"COM{number}" for number in range(1, 10)),
+        *(f"LPT{number}" for number in range(1, 10)),
+    }
+    if filename.upper() in windows_reserved:
+        filename = f"_{filename}"
+
+    filename = filename[:120].rstrip(" .")
+    return f"{filename}.txt"
+
+
 def render_page(language: str, title: str, notice_text: str, source_url: str) -> str:
     labels = {
         "ko": {
@@ -516,6 +538,8 @@ def render_page(language: str, title: str, notice_text: str, source_url: str) ->
     }
     label = labels[language]
     line_count = len(notice_text.rstrip().splitlines())
+    download_filename = safe_text_filename(title)
+    escaped_download_filename = html.escape(download_filename, quote=True)
     notice_lines = render_notice_lines(notice_text)
     language_options: list[str] = []
     for language_code, language_name in (("ko", "한국어"), ("en", "English")):
@@ -581,7 +605,7 @@ def render_page(language: str, title: str, notice_text: str, source_url: str) ->
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg>
             <span>{label['copy']}</span>
           </button>
-          <a class="button" href="./notice.txt" download>
+          <a class="button" href="./notice.txt" download="{escaped_download_filename}">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.69V.75a.75.75 0 0 1 1.5 0v6.94l1.72-1.72a.749.749 0 1 1 1.06 1.06l-3 3a.749.749 0 0 1-1.06 0l-3-3a.749.749 0 1 1 1.06-1.06Z"/></svg>
             <span>{label['download']}</span>
           </a>
@@ -592,10 +616,10 @@ def render_page(language: str, title: str, notice_text: str, source_url: str) ->
         </div>
       </header>
       <div class="notice-card__status">
-        <span>notice.txt · {line_count} lines</span>
+        <span>{html.escape(download_filename)} · {line_count} lines</span>
         <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
       </div>
-      <div class="code-view" id="notice-text" aria-label="notice.txt">
+      <div class="code-view" id="notice-text" aria-label="{escaped_download_filename}">
 {notice_lines}
       </div>
     </article>

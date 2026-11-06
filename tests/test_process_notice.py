@@ -90,6 +90,9 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('data-line="1"', page)
         self.assertIn('class="line-content"', page)
         self.assertNotIn("<pre", page)
+        self.assertIn('href="./notice.txt" download="제목 테스트.txt"', page)
+        self.assertIn("제목 테스트.txt · 1 lines", page)
+        self.assertIn('aria-label="제목 테스트.txt"', page)
         self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", page)
         self.assertNotIn("<script>alert(1)</script>", page)
 
@@ -101,6 +104,17 @@ class ProcessNoticeTests(unittest.TestCase):
         )
         self.assertIn('href="../ko/"', english_page)
         self.assertIn('href="../en/" aria-current="page"', english_page)
+        self.assertIn('download="Test advisory.txt"', english_page)
+        self.assertIn("Test advisory.txt · 5 lines", english_page)
+
+    def test_download_filename_is_safe_on_common_desktop_platforms(self) -> None:
+        self.assertEqual(
+            process_notice.safe_text_filename('제품: 보안/업데이트? "권고"'),
+            "제품 보안 업데이트 권고.txt",
+        )
+        self.assertEqual(process_notice.safe_text_filename("CON"), "_CON.txt")
+        self.assertEqual(process_notice.safe_text_filename("..."), "KISA security notice.txt")
+        self.assertLessEqual(len(process_notice.safe_text_filename("가" * 200)), 124)
 
     def test_notice_index_lists_stored_languages(self) -> None:
         page = process_notice.render_notice_index(
