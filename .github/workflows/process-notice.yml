@@ -11,10 +11,6 @@ on:
         description: KISA notice title
         required: true
         type: string
-      telegram_message_id:
-        description: Telegram message to enhance
-        required: true
-        type: string
 
 permissions:
   contents: write
@@ -84,13 +80,3 @@ jobs:
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
-
-      - name: Add language buttons to Telegram
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_MESSAGE_ID: ${{ inputs.telegram_message_id }}
-          NOTICE_ID: ${{ steps.generate.outputs.notice_id }}
-          NOTICE_URL: ${{ inputs.notice_url }}
-          PUBLIC_BASE_URL: ${{ steps.deployment.outputs.page_url }}
-        run: python3 scripts/update_telegram_buttons.py

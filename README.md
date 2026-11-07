@@ -2,7 +2,7 @@
 
 이 저장소는 [KISA-Bohonara-Alert](https://github.com/doraemyon/KISA-Bohonara-Alert)의 추가 익스펜션 기능을 제공하는 프로젝트입니다. 기존 프로젝트가 KISA 보안공지를 빠르게 감지해 Telegram으로 알리는 기본 기능을 담당하고, 이 프로젝트는 운영 담당자가 공지를 업무에 활용하기 쉬운 국문·영문 형식으로 확인하고 전달할 수 있도록 후처리 기능을 추가합니다.
 
-이 익스펜션은 선택 사항입니다. `KISA-Bohonara-Alert`는 이 저장소를 연결하지 않아도 기존 공지 알리미로 독립적으로 동작합니다. 두 프로젝트를 연결하면 새 공지가 생겼을 때 이 저장소가 실행되어 기존 Telegram 메시지에 다음 버튼을 추가합니다.
+이 익스펜션은 선택 사항입니다. `KISA-Bohonara-Alert`는 이 저장소를 연결하지 않아도 기존 공지 알리미로 독립적으로 동작합니다. 두 프로젝트를 연결하면 기본 알리미가 첫 Telegram 메시지부터 다음 버튼을 표시하고, 이 저장소는 해당 링크의 문서를 생성합니다.
 
 ```text
 공지 열기
@@ -13,18 +13,18 @@
 
 ## 동작 방식
 
-1. 기존 알리미가 Telegram 공지를 먼저 즉시 전송합니다.
-2. 확장이 설정된 경우에만 이 저장소의 Action을 호출합니다.
+1. 기존 알리미가 `공지 열기`, `국문 공지`, `영문 공지` 버튼을 포함한 Telegram 공지를 즉시 전송합니다.
+2. 확장이 설정된 경우에만 이 저장소의 Action을 호출합니다. 국문·영문 링크는 공지 번호로 미리 계산되므로 두 저장소의 Telegram chat ID를 맞출 필요가 없습니다.
 3. Action이 KISA 원문을 다시 읽고 도메인·게시판·공지 번호를 검증합니다.
 4. 제목이 `업데이트 권고`이면 본문 표현과 관계없이 업데이트 권고용 요약을 사용합니다. 제목이 `업데이트`, `업그레이드`, `보안 조치 권고` 또는 `보안 패치 권고` 계열인 경우에는 본문에 CVE, 영향 제품·버전, 해결 버전, 패치나 조치 방안이 있는지 추가 확인합니다. 그 외 공지는 일반 요약을 사용합니다.
 5. Gemini API 무료 티어로 공지 전체 문맥을 영문으로 번역하고, URL·CVE·버전 정보가 보존됐는지 검증합니다.
 6. Gemini를 사용할 수 없을 때만 무료 MyMemory Translation API로 자동 대체합니다.
 7. 국문·영문 페이지를 이 저장소에 저장하고 GitHub Pages에 배포합니다.
-8. 배포 성공 후 이미 전송된 Telegram 메시지의 버튼을 3개로 갱신합니다.
+8. 배포가 완료되면 최초 Telegram 메시지에 이미 들어 있던 국문·영문 링크가 정상 문서로 열립니다.
 
 업데이트 권고로 판정된 공지는 항상 `영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고` 문구가 포함된 요약을 사용합니다. 거의 동시에 여러 공지가 들어와도 Action을 직렬로 실행하고, 각 실행은 시작 시점의 최신 `main`을 체크아웃해 생성 문서 커밋이 서로 충돌하지 않도록 합니다.
 
-확장 처리나 번역이 실패해도 최초 Telegram 알림과 `공지 열기` 버튼은 그대로 남습니다.
+알림 전송과 문서 생성은 분리되어 있어 Telegram 알림은 지연되지 않습니다. 알림 직후 국문·영문 버튼을 누르면 문서가 아직 준비 중일 수 있으며, 확장 처리나 번역이 실패하면 해당 링크는 열리지 않지만 기본 알림과 `공지 열기` 버튼은 그대로 유지됩니다.
 
 ## 공개 범위와 비용
 
@@ -61,16 +61,16 @@
 
 Google Cloud Translation도 기본 NMT 번역은 월 500,000자까지 무료 크레딧이 적용되지만, 사용하려면 Google Cloud 결제 계정을 연결해야 합니다. 이 프로젝트는 예상치 못한 과금을 피하기 위해 사용하지 않습니다.
 
-## 3. 확장 저장소의 Secrets 등록
+## 3. 확장 저장소의 번역 설정
 
 이 저장소의 **Settings → Secrets and variables → Actions → New repository secret**에서 등록합니다.
 
 | 이름 | 값 |
 | --- | --- |
-| `TELEGRAM_BOT_TOKEN` | 기존 알리미가 사용하는 동일한 봇 token |
-| `TELEGRAM_CHAT_ID` | 기존 알리미가 사용하는 동일한 chat ID |
 | `GEMINI_API_KEY` | 권장. Google AI Studio에서 발급한 무료 티어 API key |
 | `MYMEMORY_CONTACT_EMAIL` | 선택 사항. MyMemory 무료 한도를 하루 50,000자로 늘릴 연락용 이메일 |
+
+Telegram bot token과 chat ID는 이 저장소에 등록하지 않습니다. 기존에 등록한 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` Secret은 삭제해도 됩니다. Telegram 발송과 버튼 구성은 `KISA-Bohonara-Alert`가 한 번에 처리하고, 이 저장소는 공개 문서 생성과 Pages 배포만 담당합니다.
 
 모델을 직접 지정해야 하는 경우에만 저장소 **Settings → Secrets and variables → Actions → Variables**에 `GEMINI_MODEL`을 추가합니다. 설정하지 않으면 `gemini-2.5-flash`를 사용합니다.
 
@@ -96,14 +96,14 @@ PAT가 만료되거나 확장이 실패해도 기본 Telegram 공지는 계속 �
 
 1. 기존 알리미 저장소의 **Actions → KISA security notices to Telegram → Run workflow**를 엽니다.
 2. `Send an optional notice-extension test`만 체크하고 실행합니다.
-3. Telegram에 테스트 알림이 먼저 오는지 확인합니다.
-4. 확장 저장소의 Action과 Pages 배포가 끝나면 같은 메시지에 `국문 공지`, `영문 공지` 버튼이 추가됩니다.
-5. 두 버튼을 눌러 UTF-8 표시, 전체 내용 복사와 텍스트 저장을 확인합니다.
+3. Telegram 테스트 알림에 `공지 열기`, `국문 공지`, `영문 공지` 버튼이 처음부터 모두 보이는지 확인합니다.
+4. 확장 저장소의 Action과 Pages 배포가 끝날 때까지 기다립니다.
+5. 국문·영문 버튼을 눌러 UTF-8 표시, 전체 내용 복사와 텍스트 저장을 확인합니다.
 
 ## 보안 체크리스트
 
 - 생성 문서는 인터넷에 공개되므로 민감정보나 비공개 문구를 추가하지 않습니다.
-- Telegram·GitHub token은 GitHub Secret에만 저장합니다.
+- GitHub token은 GitHub Secret에만 저장합니다.
 - Gemini API key는 코드나 Repository variable이 아닌 `GEMINI_API_KEY` Secret에만 저장합니다.
 - Gemini 무료 티어는 입력 데이터가 Google 제품 개선에 사용될 수 있으므로 공개 KISA 공지 외의 내용은 보내지 않습니다.
 - `MYMEMORY_CONTACT_EMAIL`을 등록하면 번역 요청마다 MyMemory에 연락용 이메일로 전달됩니다. 원하지 않으면 등록하지 않습니다.
@@ -129,5 +129,6 @@ python -m unittest discover -s tests -v
 - `Translation result validation failed`: 번역 서비스가 국문 원문을 그대로 반환해 실패 처리된 것입니다.
 - `Get Pages site failed`: **Settings → Pages → Source**가 `GitHub Actions`인지 확인합니다.
 - Pages 배포 권한 오류: Workflow permissions와 `pages: write`, `id-token: write` 설정을 확인합니다.
-- Telegram 버튼 갱신 실패: 두 저장소의 봇 token과 chat ID가 같은지 확인합니다.
+- Telegram에 국문·영문 버튼이 없음: 기본 알리미 저장소가 최신 버전인지 확인하고 `NOTICE_EXTENSION_REPOSITORY`, `NOTICE_EXTENSION_TOKEN` 두 Secret을 확인합니다.
+- 버튼을 누르면 404가 표시됨: 문서 생성이나 Pages 배포가 아직 진행 중이거나 실패한 상태입니다. 이 저장소의 Action 실행 결과를 확인하세요.
 - 확장 Action이 시작되지 않음: Fine-grained PAT의 대상 저장소, Actions write 권한과 만료일을 확인합니다.
