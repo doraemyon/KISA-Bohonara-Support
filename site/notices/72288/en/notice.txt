@@ -1,0 +1,44 @@
+Title:
+OpenSSH Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "OpenSSH Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+Course Overview
+o Alpine Linux announces a security update that resolves an authentication bypass vulnerability in OpenSSH
+o Users with affected versions are advised to update to the latest version as soon as possible in accordance with the resolution
+
+Description
+o Authentication Bypass Vulnerability Due to Password Processing Error in OpenSSH (CVE-2026-123158)
+※ Applicable if password authentication is enabled in a Linux environment (such as Alpine Linux default settings) that is based on the musl C library and does not use Pam
+※ Glibc-based Linux distributions (RHEL, Ubuntu, Debian, etc.) and Pam-enabled environments (UsePAM yes) are not affected
+
+□ Affected Products and Solutions
+
+Vulnerability / product name / Affected version / Resolved version
+CVE-2026-123158 / OpenSSH (musl based Linux) / 10.6p1 or less / 10.6p2
+CVE-2026-123158 / Alpine Linux edge (openssh) / Less than 10.6_p2-r0 / 10.6_p2-r0
+CVE-2026-123158 / Alpine Linux 3.24 (openssh) / Less than 10.3_p1-r2 / 10.3_p1-r2
+CVE-2026-123158 / Alpine Linux 3.23 (openssh) / Less than 10.2_p1-r1 / 10.2_p1-r1
+CVE-2026-123158 / Alpine Linux 3.22 (openssh) / Less than 10.0_p1-r11 / 10.0_p1-r11
+CVE-2026-123158 / Alpine Linux 3.21 (openssh) / Less than 9.9_p2-r1 / 9.9_p2-r1
+CVE-2026-123158 / Alpine Linux 3.20 (openssh) / Less than 9.7_p1-r6 / 9.7_p1-r6
+CVE-2026-123158 / Alpine Linux 3.19 (openssh) / Less than 9.6_p1-r3 / 9.6_p1-r3
+CVE-2026-123158 / Alpine Linux 3.18 (openssh) / Less than 9.3_p2-r4 / 9.3_p2-r4
+CVE-2026-123158 / Alpine Linux 3.17 (openssh) / Less than 9.1_p1-r7 / 9.1_p1-r7
+CVE-2026-123158 / Alpine Linux 3.16 (openssh) / Less than 9.0_p1-r6 / 9.0_p1-r6
+CVE-2026-123158 / Alpine Linux 3.15 or earlier (openssh) / All Versions / Migrate to Resolved Version
+
+※ Check the reference site below to perform the update [1] [2]
+※ SSH service (sshd) restart is required after update
+
+□ Reference sites
+[1] https://security.alpinelinux.org/vuln/CVE-2026-123158
+[2] https://www.openssh.com/releasenotes.html
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-123158
+
+Question and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 without area code
+
+□ Created by Vulnerability Management Center, Digital Threat Response Center

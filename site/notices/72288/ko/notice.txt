@@ -1,0 +1,44 @@
+제목:
+OpenSSH 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "OpenSSH 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Alpine Linux는 OpenSSH에서 발생하는 인증 우회 취약점을 해결한 보안 업데이트 발표
+o 영향받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 신속히 업데이트 권고
+
+□ 설명
+o OpenSSH에서 비밀번호 처리 오류로 인해 발생하는 인증 우회 취약점(CVE-2026-123158)
+※ musl C 라이브러리 기반이며 PAM을 사용하지 않는 리눅스 환경(Alpine Linux 기본 설정 등)에서 비밀번호 인증이 활성화된 경우에 해당
+※ glibc 기반 리눅스 배포판(RHEL, Ubuntu, Debian 등) 및 PAM 사용 환경(UsePAM yes)은 영향 없음
+
+□ 영향을 받는 제품 및 해결 방안
+
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-123158 / OpenSSH (musl 기반 리눅스) / 10.6p1 이하 / 10.6p2
+CVE-2026-123158 / Alpine Linux edge (openssh) / 10.6_p2-r0 미만 / 10.6_p2-r0
+CVE-2026-123158 / Alpine Linux 3.24 (openssh) / 10.3_p1-r2 미만 / 10.3_p1-r2
+CVE-2026-123158 / Alpine Linux 3.23 (openssh) / 10.2_p1-r1 미만 / 10.2_p1-r1
+CVE-2026-123158 / Alpine Linux 3.22 (openssh) / 10.0_p1-r11 미만 / 10.0_p1-r11
+CVE-2026-123158 / Alpine Linux 3.21 (openssh) / 9.9_p2-r1 미만 / 9.9_p2-r1
+CVE-2026-123158 / Alpine Linux 3.20 (openssh) / 9.7_p1-r6 미만 / 9.7_p1-r6
+CVE-2026-123158 / Alpine Linux 3.19 (openssh) / 9.6_p1-r3 미만 / 9.6_p1-r3
+CVE-2026-123158 / Alpine Linux 3.18 (openssh) / 9.3_p2-r4 미만 / 9.3_p2-r4
+CVE-2026-123158 / Alpine Linux 3.17 (openssh) / 9.1_p1-r7 미만 / 9.1_p1-r7
+CVE-2026-123158 / Alpine Linux 3.16 (openssh) / 9.0_p1-r6 미만 / 9.0_p1-r6
+CVE-2026-123158 / Alpine Linux 3.15 이하 (openssh) / 전 버전 / 해결 버전으로 마이그레이션
+
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][2]
+※ 업데이트 후 반드시 SSH 서비스(sshd) 재시작 필요
+
+□ 참고사이트
+[1] https://security.alpinelinux.org/vuln/CVE-2026-123158
+[2] https://www.openssh.com/releasenotes.html
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-123158
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
