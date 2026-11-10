@@ -1,0 +1,38 @@
+제목:
+SonicWall 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "SonicWall 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o SonicWall社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o SonicOS에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-82308) [1][2]
+o SonicOS에서 발생하는 Reliance on IP Address for Authentication 취약점(CVE-2026-107154) [1][3]
+o SonicOS에서 발생하는 Permissive Cross-domain Security Policy with Untrusted Domains 취약점(CVE-2026-107155) [1][4]
+
+□ 영향을 받는 제품 및 해결 방안
+
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-82308 / SonicOS (Gen7) / 7.3.3-7015 이하 / 7.3.4-7013 이상
+CVE-2026-82308 / SonicOS (Gen8) / 8.2.2-8015 이하 / 8.2.3-8015 이상
+CVE-2026-107154 / SonicOS (Gen7) / 7.3.3-7015 이하 / 7.3.4-7013 이상
+CVE-2026-107154 / SonicOS (Gen8) / 8.2.2-8015 이하 / 8.2.3-8015 이상
+CVE-2026-107155 / SonicOS (Gen7) / 7.3.3-7015 이하 / 7.3.4-7013 이상
+CVE-2026-107155 / SonicOS (Gen8) / 8.2.2-8015 이하 / 8.2.3-8015 이상
+
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+
+□ 참고사이트
+[1] https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0014
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-82308
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-107154
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-107155
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
