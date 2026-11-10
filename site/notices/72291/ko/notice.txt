@@ -1,0 +1,30 @@
+제목:
+OWASP 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "OWASP 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o OWASP 재단은 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o ModSecurity에서 발생하는 Interpretation Conflict 취약점(CVE-2026-104269) [1][3]
+
+□ 영향을 받는 제품 및 해결 방안
+
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-104269 / ModSecurity / 3.0.0 이상 3.0.17 미만 / 3.0.17 이상
+
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][2]
+
+□ 참고사이트
+[1] https://github.com/owasp-modsecurity/ModSecurity/security/advisories/GHSA-5pww-8rfg-9crf
+[2] https://github.com/owasp-modsecurity/ModSecurity/releases/tag/v3.0.17
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-104269
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
