@@ -7,6 +7,11 @@ on:
     paths:
       - "site/**"
       - ".github/workflows/deploy-pages.yml"
+  workflow_run:
+    workflows:
+      - "Process KISA notice"
+    types:
+      - completed
   workflow_dispatch:
 
 permissions:
@@ -20,6 +25,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     environment:
@@ -29,6 +35,8 @@ jobs:
     steps:
       - name: Check out pages
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0

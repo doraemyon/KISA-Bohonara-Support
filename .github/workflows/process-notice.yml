@@ -14,8 +14,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: kisa-notice-formatter
@@ -25,9 +23,6 @@ jobs:
   process:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Check out formatter
@@ -46,13 +41,13 @@ jobs:
           MYMEMORY_CONTACT_EMAIL: ${{ secrets.MYMEMORY_CONTACT_EMAIL }}
         shell: bash
         run: |
-          for attempt in 1 2; do
+          for attempt in 1 2 3; do
             if python3 scripts/process_notice.py; then
               exit 0
             fi
-            if [ "$attempt" -lt 2 ]; then
-              echo "Generation failed temporarily; retrying in 10 seconds."
-              sleep 10
+            if [ "$attempt" -lt 3 ]; then
+              echo "Generation failed temporarily; retrying in 15 seconds."
+              sleep 15
             fi
           done
           exit 1
@@ -68,15 +63,3 @@ jobs:
             git commit -m "content: add KISA notice ${{ steps.generate.outputs.notice_id }}"
             git push origin HEAD:main
           fi
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
-        with:
-          path: site
-
-      - name: Deploy GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

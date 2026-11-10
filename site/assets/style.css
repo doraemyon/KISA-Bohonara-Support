@@ -513,6 +513,79 @@ a {
   text-align: center;
 }
 
+.pending-card {
+  max-width: 680px;
+  margin: 48px auto 0;
+  padding: 36px;
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  background: var(--canvas-default);
+  box-shadow: var(--shadow-small);
+}
+
+.pending-card__mark {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-default);
+  border-radius: 50%;
+  color: var(--accent-fg);
+  background: var(--canvas-subtle);
+}
+
+.pending-card__mark svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.pending-card__eyebrow {
+  margin: 0 0 6px;
+  color: var(--fg-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pending-card h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.pending-card__description {
+  max-width: 560px;
+  margin: 12px 0 0;
+  color: var(--fg-muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.pending-card__actions {
+  display: flex;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pending-card__status {
+  min-height: 20px;
+  margin: 16px 0 0;
+  color: var(--fg-muted);
+  font-size: 12px;
+}
+
+.button[disabled] {
+  cursor: wait;
+  opacity: 0.65;
+}
+
 @media (max-width: 760px) {
   .site-header__inner,
   .page-shell {
@@ -635,6 +708,24 @@ a {
 
   .notice-list__documents {
     align-self: center;
+  }
+
+  .pending-card {
+    margin-top: 20px;
+    padding: 24px 20px;
+  }
+
+  .pending-card h1 {
+    font-size: 21px;
+  }
+
+  .pending-card__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pending-card__actions .button--primary {
+    grid-column: 1 / -1;
   }
 }
 
