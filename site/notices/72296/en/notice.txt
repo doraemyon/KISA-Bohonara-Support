@@ -1,0 +1,127 @@
+Title:
+MongoDB Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "MongoDB Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+Course Overview
+o MongoDB announces security updates that address vulnerabilities in its products [1]
+o Users with affected versions are advised to update to the latest version as a workaround
+
+Description
+o Use After Free vulnerability in MongoDB Server (CVE-2026-118383) [1] [2]
+o Allocation of Resources Without Limits or Throttling vulnerability on MongoDB Server (CVE-2026-120828) [1] [3]
+o Incorrect Authorization Vulnerability on MongoDB Server (CVE-2026-120826) [1] [4]
+o Missing Authorization Vulnerability on MongoDB Server (CVE-2026-120825) [1] [5]
+o Use After Free vulnerability in MongoDB Server (CVE-2026-120824) [1] [6]
+o Incorrect Authorization Vulnerability on MongoDB Server (CVE-2026-120822) [1] [7]
+o Use After Free vulnerability in MongoDB Server (CVE-2026-120821) [1] [8]
+o Use After Free vulnerability in MongoDB Server (CVE-2026-120818) [1] [9]
+o Race Condition Vulnerability in MongoDB Server (CVE-2026-120817) [1] [10]
+o Incorrect Authorization Vulnerability on MongoDB Server (CVE-2026-120815) [1] [11]
+o Execution with Unnecessary Privileges Vulnerability on MongoDB Server (CVE-2026-120814) [1] [12]
+o Interpretation Conflict Vulnerability in MongoDB Server (CVE-2026-120813) [1] [13]
+o Allocation of Resources Without Limits or Throttling vulnerability on MongoDB Server (CVE-2026-120810) [1] [14]
+o Improper Certificate Validation vulnerability in MongoDB Server (CVE-2026-120808) [1] [15]
+o Improper Check for Unusual or Exceptional Conditions vulnerability in MongoDB Server (CVE-2026-120807) [1] [16]
+o Incomplete Cleanup Vulnerability in MongoDB Server (CVE-2026-120806) [1] [17]
+o Missing Release of Resource after Effective Lifetime Vulnerability on MongoDB Server (CVE-2026-120804) [1] [18]
+o Use After Free vulnerability in MongoDB Server (CVE-2026-120803) [1] [19]
+
+□ Affected Products and Solutions
+
+Vulnerability / product name / Affected version / Resolved version
+CVE-2026-118383 / MongoDB Server / 4.4.0 to less than 4.4.32 / 4.4.32 or more
+CVE-2026-118383 / MongoDB Server / 5.0.0 to less than 5.0.35 / 5.0.35 or more
+CVE-2026-118383 / MongoDB Server / 6.0.0 to less than 6.0.30 / 6.0.30 or more
+CVE-2026-118383 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-118383 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-118383 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-118383 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120828 / MongoDB Server / 4.4.0 to less than 4.4.32 / 4.4.32 or more
+CVE-2026-120828 / MongoDB Server / 5.0.0 to less than 5.0.35 / 5.0.35 or more
+CVE-2026-120828 / MongoDB Server / 6.0.0 to less than 6.0.30 / 6.0.30 or more
+CVE-2026-120828 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120828 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120828 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120828 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120826 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120825 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120824 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120824 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120824 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120824 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120822 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120822 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120822 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120822 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120821 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120818 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120818 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120818 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120817 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120817 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120817 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120817 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120815 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120815 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120815 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120815 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120814 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120814 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120814 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120813 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120813 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120813 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120813 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120810 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120810 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120810 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120810 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120808 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120808 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120808 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120808 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120807 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120807 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120807 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120807 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120806 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120806 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120806 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120806 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120804 / MongoDB Server / 7.0.0 to less than 7.0.48 / 7.0.48 or more
+CVE-2026-120804 / MongoDB Server / 8.0.0 to less than 8.0.37 / 8.0.37 or more
+CVE-2026-120804 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120804 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+CVE-2026-120803 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
+CVE-2026-120803 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
+
+※ Check the reference site below to perform the update [1]
+
+□ Reference sites
+[1] https://www.mongodb.com/resources/products/alerts
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-118383
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-120828
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-120826
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-120825
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-120824
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-120822
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-120821
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-120818
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-120817
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-120815
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-120814
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-120813
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-120810
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-120808
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-120807
+[17] https://nvd.nist.gov/vuln/detail/CVE-2026-120806
+[18] https://nvd.nist.gov/vuln/detail/CVE-2026-120804
+[19] https://nvd.nist.gov/vuln/detail/CVE-2026-120803
+
+Question and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 without area code
+
+□ Created by Vulnerability Management Center, Digital Threat Response Center
