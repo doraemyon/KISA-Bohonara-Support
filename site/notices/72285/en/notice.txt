@@ -5,14 +5,14 @@ Summary:
 We are disseminating today's KISA announcement "M2Soft Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
 
 Body:
-Course Overview
+□ Overview
 o M2Soft announces a security update addressing vulnerabilities in its products [1] [2]
 o Users with lower versions are advised to act according to the manufacturer's resolution guidance
 
-Description
+□ Description
 o Malicious file upload and executability vulnerability in ers DataServer and ers ReportingServer Engine (JavaViewer) [1] [2]
 
-Affected products:
+□ Affected products
 
 manufacturers / product name / Affected version / RESOURCES
 M2Soft / ERS DataServer / 6.4.5.494 or less / 6.4.5.495 or later (Latest version: 6.4.5.506)
@@ -24,7 +24,7 @@ M2Soft / Ers ReportingServer Engine (JavaViewer) / Crownix Report&ERS 8 - Java E
 
 ※ Contact M2Soft below for the solved version and install it
 
-How to □ take action
+□ Remediation steps
 (1) Update to Fixed Version
 (2) Apply additional actions below
 o ERS DataServer
@@ -47,7 +47,7 @@ Get the latest version library files (javard.jar, etc.). Deploy to/ReportingServ
 [1] https://support.m2soft.co.kr/bbs/board.php?bo_table=notice&wr_id=61
 [2] https://support.m2soft.co.kr/bbs/board.php?bo_table=notice&wr_id=56
 
-Question and inquiries
+□ Questions and inquiries
 o M2Soft Technical Support: 1 after connecting 02-2188-8500
 o M2Soft Email: report@m2soft.co.kr
 

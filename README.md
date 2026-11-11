@@ -9,23 +9,25 @@
 국문 공지 | 영문 공지
 ```
 
-국문·영문 문서는 UTF-8 GitHub Pages로 제공되며 줄번호, `전체 내용 복사`와 텍스트 파일 저장 기능을 지원합니다. 저장된 공지는 사이트 첫 화면의 목록에서도 다시 열 수 있습니다. 알림 직후 아직 문서가 생성되지 않았으면 404 대신 준비 상태를 표시하고, 게시가 끝나는 즉시 같은 주소에서 자동으로 문서를 엽니다.
+국문·영문 문서는 UTF-8 GitHub Pages로 제공되며 발행일, 줄번호, `전체 내용 복사`와 텍스트 파일 저장 기능을 지원합니다. 저장된 공지는 발행일과 함께 사이트 첫 화면의 목록에서도 다시 열 수 있습니다. 알림 직후 아직 문서가 생성되지 않았으면 404 대신 준비 상태를 표시하고, 게시가 끝나는 즉시 같은 주소에서 자동으로 문서를 엽니다.
 
 ## 동작 방식
 
 1. 기존 알리미가 `공지 열기`, `국문 공지`, `영문 공지` 버튼을 포함한 Telegram 공지를 즉시 전송합니다.
 2. 확장이 설정된 경우에만 이 저장소의 Action을 호출합니다. 국문·영문 링크는 공지 번호로 미리 계산되므로 두 저장소의 Telegram chat ID를 맞출 필요가 없습니다.
-3. Action이 KISA 원문을 다시 읽고 도메인·게시판·공지 번호를 검증합니다.
+3. Action이 KISA 원문을 다시 읽고 도메인·게시판·공지 번호·발행일을 검증합니다.
 4. 제목이 `업데이트 권고`이면 본문 표현과 관계없이 업데이트 권고용 요약을 사용합니다. 제목이 `업데이트`, `업그레이드`, `보안 조치 권고` 또는 `보안 패치 권고` 계열인 경우에는 본문에 CVE, 영향 제품·버전, 해결 버전, 패치나 조치 방안이 있는지 추가 확인합니다. 그 외 공지는 일반 요약을 사용합니다.
-5. URL·CVE·버전 정보는 번역 전에 보호 토큰으로 치환하고, Gemini API 무료 티어로 공지 전체 문맥을 영문으로 번역한 뒤 원래 값으로 정확히 복원·검증합니다.
-6. Gemini를 사용할 수 없을 때만 무료 MyMemory Translation API로 자동 대체합니다.
-7. 국문·영문 페이지를 이 저장소에 저장합니다. 번역 서비스가 모두 일시적으로 실패해도 국문 페이지와 명시적인 영문 번역 대기 페이지를 먼저 게시합니다.
+5. `□`, `o`, `※`, URL, CVE와 버전 정보는 번역기가 변경하지 못하도록 분리·보호하고, 번역 후 원래 위치와 개수를 검증합니다.
+6. 번역은 Gemini 무료 티어 → 선택적 Cloudflare Workers AI 번역 모델 → Google Translate 웹 경로 → MyMemory 순서로 시도합니다. 각 경로는 최대 세 번 재시도합니다.
+7. 국문과 검증을 통과한 영문이 모두 완성된 경우에만 두 페이지를 한 번에 저장합니다. 번역 대기 문서나 한국어 본문을 넣은 가짜 영문 페이지는 게시하지 않습니다.
 8. 공지 처리 성공을 확인한 별도 Pages workflow가 최신 `main`을 배포합니다.
 9. 배포가 완료되면 최초 Telegram 메시지에 이미 들어 있던 국문·영문 링크가 정상 문서로 전환됩니다.
 
 업데이트 권고로 판정된 공지는 항상 `영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고` 문구가 포함된 요약을 사용합니다. 거의 동시에 여러 공지가 들어와도 Action을 직렬로 실행하고, 각 실행은 시작 시점의 최신 `main`을 체크아웃해 생성 문서 커밋이 서로 충돌하지 않도록 합니다.
 
-알림 전송과 문서 생성은 분리되어 있어 Telegram 알림은 지연되지 않습니다. 알림 직후 국문·영문 버튼을 누르면 준비 상태가 표시되며, 게시 완료 여부를 5초마다 확인해 실제 문서로 자동 전환합니다. 번역만 실패한 경우에는 국문 공지를 즉시 게시하고 영문 페이지에 번역 대기 상태를 명확히 표시합니다. 대기 중인 번역은 매시 23분에 자동 재시도하며, 완료되면 같은 영문 URL이 갱신됩니다. KISA 원문 수집 자체가 실패해도 준비 화면의 원문 링크와 기본 알림의 `공지 열기` 버튼은 그대로 유지됩니다.
+알림 전송과 문서 생성은 분리되어 있어 Telegram 알림은 지연되지 않습니다. 알림 직후 국문·영문 버튼을 누르면 준비 상태가 표시되며, 게시 완료 여부를 5초마다 확인해 실제 문서로 자동 전환합니다. 한 번의 번역기 오류는 같은 실행에서 다음 제공자로 전환합니다. KISA 원문 수집 자체가 실패해도 준비 화면의 원문 링크와 기본 알림의 `공지 열기` 버튼은 그대로 유지됩니다.
+
+30분마다 최근 RSS와 저장된 국문·영문 쌍을 비교하는 복구 workflow도 실행됩니다. 최초 처리 실행이 완전히 실패해 저장소에 흔적을 남기지 못한 공지도 RSS에 남아 있는 동안 자동으로 다시 생성합니다. 복구할 공지가 없거나 외부 서비스가 계속 불안정하면 변경 없이 정상 종료하므로 같은 실패 메일을 반복해서 만들지 않습니다.
 
 ## 공개 범위와 비용
 
@@ -33,10 +35,12 @@
 - Public 저장소의 표준 GitHub-hosted runner와 GitHub Pages는 무료입니다.
 - 이 Action은 매분 실행되지 않고 새로운 공지가 있을 때만 실행됩니다.
 - 권장 번역기는 결제 계정 연결 없이 사용할 수 있는 [Gemini API 무료 티어](https://ai.google.dev/gemini-api/docs/pricing)입니다. 무료 티어의 요청 한도 안에서는 요금이 발생하지 않습니다.
-- Gemini API 키가 없거나 일시적으로 실패하면 [MyMemory Translation API](https://mymemory.translated.net/doc/spec.php)로 대체합니다. MyMemory는 익명 기준 하루 5,000자이며, 연락용 이메일을 전달하면 하루 50,000자입니다.
+- Cloudflare를 설정하면 [Workers AI의 M2M100 번역 전용 모델](https://developers.cloudflare.com/workers-ai/models/m2m100-1.2b/)을 두 번째 경로로 사용합니다. Workers Free는 하루 10,000 Neurons 무료 할당량을 초과하면 추가 과금 대신 호출이 중단됩니다.
+- Google Translate 웹 경로는 별도 API key나 결제 계정 없이 사용하는 세 번째 경로입니다. 공식 Cloud Translation API가 아니므로 별도 SLA는 없지만, 구조·보안 식별자 검증을 통과한 결과만 사용합니다.
+- MyMemory는 별도 키 없이 사용하는 마지막 경로입니다. 익명 기준 하루 5,000자이며, 연락용 이메일을 전달하면 하루 50,000자입니다.
 - Gemini 무료 티어에 보낸 데이터는 Google 제품 개선에 사용될 수 있습니다. 이 프로젝트는 인터넷에 이미 공개된 KISA 공지만 번역 대상으로 사용합니다.
-- 무료 티어의 실제 요청 한도는 모델과 프로젝트에 따라 달라질 수 있으며 Google AI Studio에서 확인할 수 있습니다. 한도에 도달하면 MyMemory 대체 번역을 시도합니다.
-- 번역 결과가 국문과 같거나 한글 비율이 비정상적으로 높으면 성공으로 처리하지 않습니다. 번역 서비스가 모두 실패하면 국문 공지와 영문 번역 대기 페이지를 먼저 게시하고, 예약 workflow가 과금 없이 자동 재시도합니다.
+- 무료 티어의 실제 요청 한도는 모델과 프로젝트에 따라 달라질 수 있으며 Google AI Studio에서 확인할 수 있습니다. 한도에 도달하면 다음 제공자로 자동 전환합니다.
+- 번역 결과가 국문과 같거나, 한글 비율이 비정상적으로 높거나, 구조 표식·URL·CVE·버전이 하나라도 빠지면 성공으로 처리하지 않습니다.
 
 ## 1. Public 저장소 준비
 
@@ -58,7 +62,7 @@
 2. **Create API key**를 눌러 키를 발급합니다.
 3. 다음 단계에서 확장 저장소의 `GEMINI_API_KEY` Secret으로 등록합니다.
 
-번역은 공지 전체를 문맥 단위로 처리합니다. 특정 공지의 문장이나 제품명을 코드에 고정해 두지 않으며, URL, CVE 번호와 버전 값은 번역기에 보내기 전에 임시 보호 토큰으로 바꾸고 번역 후 원래 값으로 복원합니다. 복원 뒤에도 누락 여부를 다시 검사합니다. Gemini가 실패할 때만 MyMemory가 문장과 표 셀을 동적으로 번역합니다.
+번역은 공지 전체를 문맥 단위로 처리합니다. 특정 공지의 문장이나 제품명을 코드에 고정해 두지 않습니다. 구조 표식과 보안 식별자는 번역기에 보내지 않고 그대로 결합하며, 복원 뒤 원문과 개수를 다시 비교합니다. 안정적인 KISA 표준 섹션명만 `□ Overview`, `□ Description`, `□ Questions and inquiries`처럼 일관되게 정규화합니다.
 
 Google Cloud Translation도 기본 NMT 번역은 월 500,000자까지 무료 크레딧이 적용되지만, 사용하려면 Google Cloud 결제 계정을 연결해야 합니다. 이 프로젝트는 예상치 못한 과금을 피하기 위해 사용하지 않습니다.
 
@@ -69,6 +73,8 @@ Google Cloud Translation도 기본 NMT 번역은 월 500,000자까지 무료 크
 | 이름 | 값 |
 | --- | --- |
 | `GEMINI_API_KEY` | 권장. Google AI Studio에서 발급한 무료 티어 API key |
+| `CLOUDFLARE_ACCOUNT_ID` | 선택. Cloudflare Workers AI 계정 ID |
+| `CLOUDFLARE_API_TOKEN` | 선택. Workers AI 실행 권한만 가진 API token |
 | `MYMEMORY_CONTACT_EMAIL` | 선택 사항. MyMemory 무료 한도를 하루 50,000자로 늘릴 연락용 이메일 |
 
 Telegram bot token과 chat ID는 이 저장소에 등록하지 않습니다. 기존에 등록한 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` Secret은 삭제해도 됩니다. Telegram 발송과 버튼 구성은 `KISA-Bohonara-Alert`가 한 번에 처리하고, 이 저장소는 공개 문서 생성과 Pages 배포만 담당합니다.
@@ -106,6 +112,7 @@ PAT가 만료되거나 확장이 실패해도 기본 Telegram 공지는 계속 �
 - 생성 문서는 인터넷에 공개되므로 민감정보나 비공개 문구를 추가하지 않습니다.
 - GitHub token은 GitHub Secret에만 저장합니다.
 - Gemini API key는 코드나 Repository variable이 아닌 `GEMINI_API_KEY` Secret에만 저장합니다.
+- Cloudflare를 사용할 경우 Account ID와 API token을 모두 GitHub Secret에만 저장하고 Workers AI 실행 외 권한은 부여하지 않습니다.
 - Gemini 무료 티어는 입력 데이터가 Google 제품 개선에 사용될 수 있으므로 공개 KISA 공지 외의 내용은 보내지 않습니다.
 - `MYMEMORY_CONTACT_EMAIL`을 등록하면 번역 요청마다 MyMemory에 연락용 이메일로 전달됩니다. 원하지 않으면 등록하지 않습니다.
 - Fine-grained PAT는 확장 저장소 한 개의 Actions write 권한만 허용합니다.
@@ -122,13 +129,13 @@ python -m unittest discover -s tests -v
 
 ## 문제 해결
 
-- `Could not find the KISA notice title or body`: KISA 페이지 구조가 바뀌었을 수 있습니다.
-- `Gemini translation failed`: API key, 무료 티어 한도 또는 모델 이름을 확인합니다. 이 오류 뒤에는 MyMemory로 자동 대체를 시도합니다.
-- `MyMemory translation failed after three attempts`: 대체 번역기의 무료 사용량 또는 서비스 상태를 확인하고 잠시 후 Action을 다시 실행합니다.
+- `Could not find the KISA notice title, published date, or body`: KISA 페이지 구조가 바뀌었을 수 있습니다.
+- `Gemini translation failed`: API key, 무료 티어 한도 또는 모델 이름을 확인합니다. 이 오류 뒤에는 Cloudflare 또는 MyMemory로 자동 전환합니다.
+- `MyMemory translation failed after three attempts`: 앞선 Gemini·Cloudflare·Google Translate 경로까지 모두 실패한 뒤 마지막 제공자의 무료 한도 또는 서비스 상태도 사용할 수 없는 경우입니다. workflow 전체가 최대 세 차례 다시 시도합니다.
 - KISA 원문 수집의 일시적인 네트워크 오류: workflow가 15초 간격으로 최대 세 번 자동 재시도합니다.
-- 번역 서비스 오류 또는 식별자 누락: 국문 페이지와 영문 번역 대기 페이지를 먼저 게시한 뒤 `Retry pending translations` workflow가 매시간 자동으로 다시 시도합니다. 번역 대기는 실패 실행으로 처리하지 않으므로 반복 실패 메일을 만들지 않습니다.
+- 번역 서비스 오류 또는 구조·식별자 누락: 해당 제공자 결과를 폐기하고 다음 제공자로 넘어갑니다. 모든 경로가 실패하면 국문만 단독 게시하지 않고, 30분 간격 복구 workflow가 최근 RSS에서 누락 건을 찾아 다시 시도합니다.
 - `non-fast-forward` 또는 `fetch first`: 최신 workflow에는 동시 공지를 직렬 처리하고 최신 `main`을 체크아웃하는 설정이 포함되어 있습니다. 이전 실패 실행은 **Re-run jobs** 대신 새 workflow를 실행하세요.
-- `Translation result validation failed`: 번역 서비스가 국문 원문을 그대로 반환한 경우입니다. 현재 workflow는 페이지를 누락시키지 않고 번역 대기 상태로 전환합니다.
+- `Translation result validation failed`: 번역 서비스가 국문 원문을 그대로 반환했거나 구조를 손상한 경우입니다. 해당 결과는 게시하지 않고 다음 제공자를 사용합니다.
 - `Get Pages site failed`: **Settings → Pages → Source**가 `GitHub Actions`인지 확인합니다.
 - Pages 배포 권한 오류: Workflow permissions와 `pages: write`, `id-token: write` 설정을 확인합니다.
 - Telegram에 국문·영문 버튼이 없음: 기본 알리미 저장소가 최신 버전인지 확인하고 `NOTICE_EXTENSION_REPOSITORY`, `NOTICE_EXTENSION_TOKEN` 두 Secret을 확인합니다.

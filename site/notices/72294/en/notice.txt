@@ -5,11 +5,11 @@ Summary:
 We are disseminating today's KISA announcement "IBM Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
 
 Body:
-Course Overview
+□ Overview
 o IBM announces security updates that address vulnerabilities in its products [1] - [4]
 o Users with affected versions are advised to update to the latest version as a workaround
 
-Description
+□ Description
 o Improper Input Validation vulnerability in IBM MQ (CVE-2026-11724) [1] [5]
 o Unrestricted Upload of File with Dangerous Type vulnerability (CVE-2026-17399) in IBM API Connect [2] [3] [6]
 o Improper Authentication vulnerability in IBM API Connect (CVE-2026-16720) [2] [3] [7]
@@ -42,7 +42,7 @@ CVE-2026-123218 / Aspera Faspex / 5.0.0 or more and 5.0.19 or less / 5.0.19 PL1 
 [7] https://nvd.nist.gov/vuln/detail/CVE-2026-16720
 [8] https://nvd.nist.gov/vuln/detail/CVE-2026-123218
 
-Question and inquiries
+□ Questions and inquiries
 o Korea Internet & Security Agency Cyber Complaint Center: 118 without area code
 
 □ Created by Vulnerability Management Center, Digital Threat Response Center

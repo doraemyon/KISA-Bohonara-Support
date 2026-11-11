@@ -1,8 +1,9 @@
 {
-  "format_version": 5,
+  "format_version": 6,
   "notice_id": "72285",
   "title": "엠투소프트 제품 보안 업데이트 권고",
   "source_url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72285",
   "translation_provider": "mymemory",
-  "english_title": "M2Soft Product Security Update Advisory"
+  "english_title": "M2Soft Product Security Update Advisory",
+  "published_date": "2026-11-06"
 }

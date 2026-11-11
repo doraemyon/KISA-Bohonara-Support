@@ -1,8 +1,8 @@
-name: Retry pending translations
+name: Recover missing KISA notices
 
 on:
   schedule:
-    - cron: "23 * * * *"
+    - cron: "11,41 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -15,9 +15,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  retry:
+  recover:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     outputs:
       pages_changed: ${{ steps.save.outputs.pages_changed }}
 
@@ -28,14 +28,16 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Retry pending English translations
+      - name: Recover recent missing notices
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           MYMEMORY_CONTACT_EMAIL: ${{ secrets.MYMEMORY_CONTACT_EMAIL }}
-        run: python3 scripts/retry_pending_translations.py
+        run: python3 scripts/recover_missing_notices.py
 
-      - name: Save completed translations
+      - name: Save recovered pages
         id: save
         shell: bash
         run: |
@@ -44,16 +46,16 @@ jobs:
           git add site/index.html site/notices
           if git diff --cached --quiet; then
             echo "pages_changed=false" >> "$GITHUB_OUTPUT"
-            echo "No translation pages changed."
+            echo "No notice pages changed."
           else
-            git commit -m "content: complete pending KISA translations"
+            git commit -m "content: recover missing KISA notices"
             git push origin HEAD:main
             echo "pages_changed=true" >> "$GITHUB_OUTPUT"
           fi
 
   deploy:
-    needs: retry
-    if: ${{ needs.retry.outputs.pages_changed == 'true' }}
+    needs: recover
+    if: ${{ needs.recover.outputs.pages_changed == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     environment:

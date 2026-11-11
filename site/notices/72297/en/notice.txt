@@ -5,11 +5,11 @@ Summary:
 We are disseminating today's KISA announcement "Ivanti Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
 
 Body:
-Course Overview
+□ Overview
 o Ivanti announces security updates that address vulnerabilities in its products [1] - [4]
 o Users with affected versions are advised to update to the latest version as a workaround
 
-Description
+□ Description
 o OS Command Injection vulnerability (CVE-2026-105425) in Ivanti Sentry, Ivanti Endpoint Manager Mobile (EPMM) [1] [2] [5]
 o SQL Injection Vulnerability in Ivanti Endpoint Manager (EPM) (CVE-2026-121653) [3] [6]
 o Missing Authentication for Critical Function vulnerability in Ivanti Cloud Services Application (CSA) (CVE-2026-121683) [4] [7]
@@ -35,7 +35,7 @@ CVE-2026-121683 / Cloud Services Application / 5.0.8 / 5.0.8.1 and above
 [6] https://nvd.nist.gov/vuln/detail/CVE-2026-121653
 [7] https://nvd.nist.gov/vuln/detail/CVE-2026-121683
 
-Question and inquiries
+□ Questions and inquiries
 o Korea Internet & Security Agency Cyber Complaint Center: 118 without area code
 
 □ Created by Vulnerability Management Center, Digital Threat Response Center

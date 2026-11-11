@@ -16,7 +16,7 @@ import process_notice  # noqa: E402
 SAMPLE_HTML = """<!doctype html>
 <html lang="ko"><body>
 <section id="View" class="bbs">
-  <div class="b_title"><h2>Ivanti 제품 보안 업데이트 권고</h2></div>
+  <div class="b_title"><h2>Ivanti 제품 보안 업데이트 권고</h2><span>2026-11-10</span></div>
   <div class="content"><div class="content_html">
     <div><p>□ 개요<br><span> </span>o 보안 업데이트 발표 [1]<br>
     <span> </span>o 영향을 받는 버전은 최신 버전으로 업데이트 권고</p>
@@ -29,10 +29,20 @@ SAMPLE_HTML = """<!doctype html>
 
 
 class ProcessNoticeTests(unittest.TestCase):
+    def test_product_security_update_title_is_stable_across_providers(self) -> None:
+        self.assertEqual(
+            process_notice.normalize_english_title(
+                "IBM 제품 보안 업데이트 권고",
+                "IBM product security update advisories",
+            ),
+            "IBM Product Security Update Advisory",
+        )
+
     def test_extracts_title_paragraphs_and_table_as_utf8_text(self) -> None:
-        title, body = process_notice.parse_notice_document(SAMPLE_HTML)
+        title, body, published_date = process_notice.parse_notice_document(SAMPLE_HTML)
 
         self.assertEqual(title, "Ivanti 제품 보안 업데이트 권고")
+        self.assertEqual(published_date, "2026-11-10")
         self.assertIn("□ 개요\no 보안 업데이트 발표 [1]", body)
         self.assertIn(
             "취약점 / 제품명 / 영향받는 버전 / 해결 버전\n"
@@ -42,7 +52,7 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn("[1] https://example.com", body)
 
     def test_update_advisory_uses_update_summary(self) -> None:
-        title, body = process_notice.parse_notice_document(SAMPLE_HTML)
+        title, body, _published_date = process_notice.parse_notice_document(SAMPLE_HTML)
         document = process_notice.korean_document(title, body)
 
         self.assertTrue(process_notice.is_update_advisory(title, body))
@@ -110,6 +120,7 @@ class ProcessNoticeTests(unittest.TestCase):
             "제목 <테스트>",
             "본문 <script>alert(1)</script>",
             "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&amp;nttId=1",
+            "2026-11-10",
         )
 
         self.assertIn('<meta charset="utf-8">', page)
@@ -119,6 +130,7 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('id="copy-status"', page)
         self.assertIn('class="notice-card"', page)
         self.assertIn('class="site-header"', page)
+        self.assertIn('<time datetime="2026-11-10">발행일 2026-11-10</time>', page)
         self.assertIn('class="button button--primary"', page)
         self.assertIn('class="site-brand" href="../../../"', page)
         self.assertIn(process_notice.KISA_LOGO_URL, page)
@@ -161,6 +173,7 @@ class ProcessNoticeTests(unittest.TestCase):
                 {
                     "notice_id": "72263",
                     "title": "Ivanti 제품 보안 업데이트 권고",
+                    "published_date": "2026-11-10",
                     "has_korean": True,
                     "has_english": True,
                 }
@@ -172,6 +185,7 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn("Ivanti 제품 보안 업데이트 권고", page)
         self.assertIn('href="notices/72263/ko/">국문</a>', page)
         self.assertIn('href="notices/72263/en/">영문</a>', page)
+        self.assertIn('<time datetime="2026-11-10">2026-11-10</time>', page)
         self.assertIn(process_notice.FAVICON_URL, page)
         self.assertIn(process_notice.KISA_LOGO_URL, page)
 
@@ -185,6 +199,7 @@ class ProcessNoticeTests(unittest.TestCase):
                 json.dumps(
                     {
                         "title": "에스티이지 제품 보안 조치 권고",
+                        "published_date": "2026-11-10",
                         "source_url": (
                             "https://www.boho.or.kr/kr/bbs/view.do?"
                             "bbsId=B0000133&nttId=72284"
@@ -216,6 +231,7 @@ class ProcessNoticeTests(unittest.TestCase):
             self.assertIn(
                 'download="STEG Product Security Action Advisory.txt"', english_page
             )
+            self.assertIn("Published 2026-11-10", english_page)
             normalized_english = (notice_root / "en" / "notice.txt").read_text(
                 encoding="utf-8"
             )
@@ -275,9 +291,35 @@ class ProcessNoticeTests(unittest.TestCase):
             )
 
         self.assertEqual(len(calls), 2)
-        self.assertIn("Translated text 1", translated)
+        self.assertIn("□ Translated text 1", translated)
         self.assertIn("Translated text 2 / Connect Secure", translated)
         self.assertNotRegex(translated, r"[가-힣]")
+
+    def test_google_translate_response_is_parsed_without_a_library_dependency(self) -> None:
+        response_body = [[
+            ["Apply security updates.", "보안 업데이트를 적용하십시오.", None, None]
+        ], None, "ko"]
+
+        class FakeGoogleResponse:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return False
+
+            def read(self) -> bytes:
+                return json.dumps(response_body, ensure_ascii=False).encode("utf-8")
+
+        with mock.patch.object(
+            process_notice.urllib.request,
+            "urlopen",
+            return_value=FakeGoogleResponse(),
+        ):
+            translated = process_notice.translate_segment_google(
+                "보안 업데이트를 적용하십시오."
+            )
+
+        self.assertEqual(translated, "Apply security updates.")
 
     def test_translation_validation_preserves_security_identifiers(self) -> None:
         korean = (
@@ -298,6 +340,43 @@ class ProcessNoticeTests(unittest.TestCase):
                 valid.replace("CVE-2026-111357", "the vulnerability"),
             )
 
+    def test_translation_validation_rejects_missing_structure_markers(self) -> None:
+        korean = (
+            "제목:\n제품 업데이트\n\n요약:\n공지입니다.\n\n본문:\n"
+            "□ 개요\no 보안 업데이트 발표\n※ 참고"
+        )
+        valid = (
+            "Title:\nProduct Update\n\nSummary:\nSecurity notice.\n\nBody:\n"
+            "□ Overview\no Security update released\n※ Reference\n"
+        )
+
+        process_notice.validate_english_document(korean, "Product Update", valid)
+        with self.assertRaises(RuntimeError):
+            process_notice.validate_english_document(
+                korean, "Product Update", valid.replace("□ Overview", "Overview")
+            )
+
+    def test_legacy_translation_structure_is_repaired_without_changing_content(self) -> None:
+        korean = (
+            "제목:\n제품 업데이트\n\n요약:\n공지\n\n본문:\n"
+            "□ 개요\no 보안 업데이트 발표\n□ 설명\no 취약점 설명\n"
+            "□ 조치 방법\no 최신 버전 적용"
+        )
+        legacy = (
+            "Title:\nProduct Update\n\nSummary:\nNotice\n\nBody:\n"
+            "Course Overview\nSecurity update released\nDescription\n"
+            "Vulnerability details\nHow to □ take action\no Apply the latest version\n"
+        )
+
+        normalized = process_notice.normalize_english_sections(legacy)
+        repaired = process_notice.repair_legacy_english_bullets(korean, normalized)
+
+        self.assertIn("□ Overview", repaired)
+        self.assertIn("□ Description", repaired)
+        self.assertIn("□ Remediation steps", repaired)
+        self.assertIn("o Security update released", repaired)
+        self.assertIn("o Vulnerability details", repaired)
+
     def test_translation_placeholders_restore_urls_cves_and_versions(self) -> None:
         source = (
             "CVE-2026-11724 / 9.4.5.1 / "
@@ -315,16 +394,7 @@ class ProcessNoticeTests(unittest.TestCase):
             source,
         )
 
-    def test_pending_translation_page_is_explicit_and_keeps_korean_source(self) -> None:
-        korean = "제목:\n제품 보안 업데이트 권고\n\n본문:\n9.4.5.1 미만"
-
-        title, document = process_notice.pending_english_document(korean)
-
-        self.assertEqual(title, "English translation pending")
-        self.assertIn("updated automatically", document)
-        self.assertIn(korean, document)
-
-    def test_main_publishes_korean_page_when_translation_provider_is_down(self) -> None:
+    def test_main_publishes_nothing_until_both_languages_are_ready(self) -> None:
         title = "IBM 제품 보안 업데이트 권고"
         body = "□ 개요\no 9.4.5.1 미만 버전은 최신 버전으로 업데이트 권고"
         notice_url = (
@@ -336,7 +406,11 @@ class ProcessNoticeTests(unittest.TestCase):
             site_root = Path(temporary_directory) / "site"
             with (
                 mock.patch.object(process_notice, "SITE_ROOT", site_root),
-                mock.patch.object(process_notice, "fetch_notice", return_value=(title, body)),
+                mock.patch.object(
+                    process_notice,
+                    "fetch_notice",
+                    return_value=(title, body, "2026-11-10"),
+                ),
                 mock.patch.object(
                     process_notice,
                     "english_document",
@@ -352,24 +426,44 @@ class ProcessNoticeTests(unittest.TestCase):
                     },
                 ),
             ):
-                process_notice.main()
+                with self.assertRaises(TimeoutError):
+                    process_notice.main()
 
-            metadata = json.loads(
-                (site_root / "notices" / "72294" / "metadata.json").read_text(
-                    encoding="utf-8"
-                )
-            )
-            korean = (site_root / "notices" / "72294" / "ko" / "notice.txt").read_text(
-                encoding="utf-8"
-            )
-            english = (site_root / "notices" / "72294" / "en" / "notice.txt").read_text(
-                encoding="utf-8"
+            self.assertFalse((site_root / "notices" / "72294").exists())
+
+    def test_google_translation_is_used_when_configured_providers_fail(self) -> None:
+        google_document = (
+            "Title:\nProduct Update\n\nSummary:\nSecurity notice.\n\nBody:\n"
+            "□ Overview\no Apply the update.\n"
+        )
+        with (
+            mock.patch.object(process_notice, "translate_with_gemini", side_effect=RuntimeError("down")),
+            mock.patch.object(process_notice, "translate_with_cloudflare", side_effect=RuntimeError("down")),
+            mock.patch.object(
+                process_notice,
+                "translate_with_google",
+                return_value=("Product Update", google_document),
+            ),
+            mock.patch.object(process_notice, "translate_with_mymemory") as mymemory,
+        ):
+            title, document, provider = process_notice.english_document(
+                "제품 업데이트 권고",
+                "□ 개요\no 업데이트를 적용하십시오.",
+                "gemini-key",
+                process_notice.DEFAULT_GEMINI_MODEL,
+                "0123456789abcdef0123456789abcdef",
+                "cloudflare-token",
+                "",
             )
 
-        self.assertEqual(metadata["translation_status"], "pending")
-        self.assertEqual(metadata["translation_provider"], "pending")
-        self.assertIn("영향 버전을 가용중인 각 관계사 담당자 분들께", korean)
-        self.assertIn("English translation pending", english)
+        self.assertEqual(title, "Product Update")
+        self.assertIn(
+            'Summary:\nWe are disseminating today\'s KISA announcement "Product Update".',
+            document,
+        )
+        self.assertIn("Body:\n□ Overview\no Apply the update.", document)
+        self.assertEqual(provider, "google-translate-web")
+        mymemory.assert_not_called()
 
     def test_gemini_translates_the_complete_document_with_structured_output(self) -> None:
         korean = (

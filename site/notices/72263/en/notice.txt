@@ -13,7 +13,7 @@ o Users of affected versions are advised to update to the latest version followi
 o Inclusion of Functionality from Untrusted Control Sphere vulnerability (CVE-2026-111357) in Ivanti Connect Secure [1][2]
 o Generation of Predictable Numbers or Identifiers vulnerability (CVE-2026-118527) in Ivanti Connect Secure [1]
 
-□ Affected Products and Workaround
+□ Affected Products and Solutions
 
 Vulnerability / Product Name / Affected Version / Workaround Version
 CVE-2026-111357 / Connect Secure / Less than 22.8R2.6 / 22.8R2.6 or higher
@@ -23,11 +23,11 @@ CVE-2026-118527 / Connect Secure / Below 25.1.1.3 / 25.1.1.3 or higher
 
 ※ Please check the reference sites below to perform the update [1]
 
-□ Reference Sites
+□ Reference sites
 [1] https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935
 [2] https://nvd.nist.gov/vuln/detail/CVE-2026-111357
 
-□ Inquiries
+□ Questions and inquiries
 o Korea Internet & Security Agency Cyber Civil Service Center: 118 (no area code required)
 
 □ Written by: Vulnerability Management Center, Digital Threat Response Division
