@@ -298,6 +298,79 @@ class ProcessNoticeTests(unittest.TestCase):
                 valid.replace("CVE-2026-111357", "the vulnerability"),
             )
 
+    def test_translation_placeholders_restore_urls_cves_and_versions(self) -> None:
+        source = (
+            "CVE-2026-11724 / 9.4.5.1 / "
+            "https://example.com/security/CVE-2026-11724?version=9.4.5.1"
+        )
+
+        masked, replacements = process_notice.mask_protected_tokens(source)
+
+        self.assertNotIn("CVE-2026-11724", masked)
+        self.assertNotIn("9.4.5.1", masked)
+        self.assertNotIn("https://", masked)
+        self.assertGreaterEqual(masked.count("KISAPROTECTEDTOKEN"), 3)
+        self.assertEqual(
+            process_notice.restore_protected_tokens(masked.lower(), replacements),
+            source,
+        )
+
+    def test_pending_translation_page_is_explicit_and_keeps_korean_source(self) -> None:
+        korean = "제목:\n제품 보안 업데이트 권고\n\n본문:\n9.4.5.1 미만"
+
+        title, document = process_notice.pending_english_document(korean)
+
+        self.assertEqual(title, "English translation pending")
+        self.assertIn("updated automatically", document)
+        self.assertIn(korean, document)
+
+    def test_main_publishes_korean_page_when_translation_provider_is_down(self) -> None:
+        title = "IBM 제품 보안 업데이트 권고"
+        body = "□ 개요\no 9.4.5.1 미만 버전은 최신 버전으로 업데이트 권고"
+        notice_url = (
+            "https://www.boho.or.kr/kr/bbs/view.do?"
+            "bbsId=B0000133&menuNo=205020&nttId=72294"
+        )
+
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            site_root = Path(temporary_directory) / "site"
+            with (
+                mock.patch.object(process_notice, "SITE_ROOT", site_root),
+                mock.patch.object(process_notice, "fetch_notice", return_value=(title, body)),
+                mock.patch.object(
+                    process_notice,
+                    "english_document",
+                    side_effect=TimeoutError("translation provider timed out"),
+                ),
+                mock.patch.dict(
+                    process_notice.os.environ,
+                    {
+                        "NOTICE_URL": notice_url,
+                        "NOTICE_TITLE": title,
+                        "GITHUB_OUTPUT": "",
+                        "GEMINI_API_KEY": "test-key",
+                    },
+                ),
+            ):
+                process_notice.main()
+
+            metadata = json.loads(
+                (site_root / "notices" / "72294" / "metadata.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            korean = (site_root / "notices" / "72294" / "ko" / "notice.txt").read_text(
+                encoding="utf-8"
+            )
+            english = (site_root / "notices" / "72294" / "en" / "notice.txt").read_text(
+                encoding="utf-8"
+            )
+
+        self.assertEqual(metadata["translation_status"], "pending")
+        self.assertEqual(metadata["translation_provider"], "pending")
+        self.assertIn("영향 버전을 가용중인 각 관계사 담당자 분들께", korean)
+        self.assertIn("English translation pending", english)
+
     def test_gemini_translates_the_complete_document_with_structured_output(self) -> None:
         korean = (
             "제목:\n제품 업데이트\n\n요약:\n공지입니다.\n\n본문:\n"
@@ -353,7 +426,11 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertEqual(
             request_json["generationConfig"]["responseMimeType"], "application/json"
         )
-        self.assertIn(korean.strip(), request_json["contents"][0]["parts"][0]["text"])
+        prompt = request_json["contents"][0]["parts"][0]["text"]
+        self.assertIn("제품 업데이트", prompt)
+        self.assertNotIn("CVE-2026-111357", prompt)
+        self.assertNotIn("22.8R2.6", prompt)
+        self.assertIn("KISAPROTECTEDTOKEN", prompt)
 
 if __name__ == "__main__":
     unittest.main()

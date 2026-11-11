@@ -1,0 +1,79 @@
+name: Retry pending translations
+
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kisa-notice-formatter
+  cancel-in-progress: false
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      pages_changed: ${{ steps.save.outputs.pages_changed }}
+
+    steps:
+      - name: Check out formatter
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Retry pending English translations
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          MYMEMORY_CONTACT_EMAIL: ${{ secrets.MYMEMORY_CONTACT_EMAIL }}
+        run: python3 scripts/retry_pending_translations.py
+
+      - name: Save completed translations
+        id: save
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/index.html site/notices
+          if git diff --cached --quiet; then
+            echo "pages_changed=false" >> "$GITHUB_OUTPUT"
+            echo "No translation pages changed."
+          else
+            git commit -m "content: complete pending KISA translations"
+            git push origin HEAD:main
+            echo "pages_changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: retry
+    if: ${{ needs.retry.outputs.pages_changed == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Check out pages
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.0

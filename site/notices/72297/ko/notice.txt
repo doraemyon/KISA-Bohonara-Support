@@ -1,0 +1,41 @@
+제목:
+Ivanti 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Ivanti 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Ivanti社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[4]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Ivanti Sentry, Ivanti Endpoint Manager Mobile(EPMM)에서 발생하는 OS Command Injection 취약점(CVE-2026-105425) [1][2][5]
+o Ivanti Endpoint Manager(EPM)에서 발생하는 SQL Injection 취약점(CVE-2026-121653) [3][6]
+o Ivanti Cloud Services Application(CSA)에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-121683) [4][7]
+
+□ 영향을 받는 제품 및 해결 방안
+
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-105425 / Sentry / 10.7.4 미만 / 10.7.4 이상 또는 11.0.0
+CVE-2026-105425 / Sentry / 10.8.0 이상 10.8.3 미만 / 10.8.3 이상 또는 11.0.0
+CVE-2026-105425 / Endpoint Manager Mobile / 12.9.0.3 미만 / 12.9.0.3 이상 또는 12.11.0.0
+CVE-2026-105425 / Endpoint Manager Mobile / 12.10.0.0 / 12.10.0.1 이상 또는 12.11.0.0
+CVE-2026-121653 / Endpoint Manager / 2024 SU8 미만 / 2024 SU8 이상
+CVE-2026-121683 / Cloud Services Application / 5.0.8 / 5.0.8.1 이상
+
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]~[4]
+
+□ 참고사이트
+[1] https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-105425-CVE-2026-105669-CVE-2026-123179-and-CVE-2026-123181
+[2] https://hub.ivanti.com/s/article/November-2026-Security-Advisory-Ivanti-EPMM-Multiple-CVEs
+[3] https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-EPM-November-2026
+[4] https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-CSA-CVE-2026-121683
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-105425
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-121653
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-121683
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
