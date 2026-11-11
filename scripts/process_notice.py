@@ -1405,6 +1405,7 @@ def main() -> None:
     write_output("notice_id", notice_id)
     write_output("translation_provider", translation_provider)
     write_output("translation_status", translation_status)
+    write_output("generation_status", "complete")
     print(
         f"Generated UTF-8 Korean and English pages for KISA notice {notice_id} "
         f"using {translation_provider}."

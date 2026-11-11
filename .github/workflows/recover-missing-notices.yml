@@ -43,14 +43,18 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/index.html site/notices
+          git add site/index.html site/notices data/recovery_queue.json
           if git diff --cached --quiet; then
             echo "pages_changed=false" >> "$GITHUB_OUTPUT"
             echo "No notice pages changed."
           else
+            if git diff --cached --name-only -- site | grep -q .; then
+              echo "pages_changed=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "pages_changed=false" >> "$GITHUB_OUTPUT"
+            fi
             git commit -m "content: recover missing KISA notices"
             git push origin HEAD:main
-            echo "pages_changed=true" >> "$GITHUB_OUTPUT"
           fi
 
   deploy:

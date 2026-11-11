@@ -11,6 +11,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 import process_notice
+import recovery_queue
 
 
 RSS_URL = "https://www.boho.or.kr/kr/rss.do?bbsId=B0000133"
@@ -54,7 +55,17 @@ def is_complete(notice_id: str) -> bool:
 
 
 def main() -> None:
-    missing = [notice for notice in recent_notices() if not is_complete(notice[0])]
+    queued = recovery_queue.load_queue()
+    candidates = {notice[0]: notice for notice in queued}
+    for notice in recent_notices():
+        candidates.setdefault(notice[0], notice)
+
+    missing: list[tuple[str, str, str]] = []
+    for notice in candidates.values():
+        if is_complete(notice[0]):
+            recovery_queue.remove_notice(notice[0])
+        else:
+            missing.append(notice)
     if not missing:
         print("No recent KISA notices need recovery.")
         return
@@ -67,8 +78,10 @@ def main() -> None:
         os.environ["NOTICE_TITLE"] = title
         try:
             process_notice.main()
+            recovery_queue.remove_notice(notice_id)
             recovered += 1
         except Exception as error:
+            recovery_queue.add_notice(link, title)
             print(
                 f"WARNING: Notice {notice_id} is still unavailable and will be retried: {error}",
                 file=sys.stderr,

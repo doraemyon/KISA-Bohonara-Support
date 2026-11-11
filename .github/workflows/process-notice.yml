@@ -52,16 +52,24 @@ jobs:
               sleep 15
             fi
           done
-          exit 1
+          echo "All immediate attempts failed; saving the request for automatic recovery."
+          python3 scripts/recovery_queue.py add
 
       - name: Save generated pages
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/index.html site/notices
+          if [ "${{ steps.generate.outputs.generation_status }}" = "complete" ]; then
+            python3 scripts/recovery_queue.py remove "${{ steps.generate.outputs.notice_id }}"
+          fi
+          git add site/index.html site/notices data/recovery_queue.json
           if git diff --cached --quiet; then
             echo "Notice pages are already current."
           else
-            git commit -m "content: add KISA notice ${{ steps.generate.outputs.notice_id }}"
+            if [ "${{ steps.generate.outputs.generation_status }}" = "queued" ]; then
+              git commit -m "queue: retry KISA notice ${{ steps.generate.outputs.notice_id }}"
+            else
+              git commit -m "content: add KISA notice ${{ steps.generate.outputs.notice_id }}"
+            fi
             git push origin HEAD:main
           fi

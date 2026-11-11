@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 import process_notice  # noqa: E402
 import recover_missing_notices  # noqa: E402
+import recovery_queue  # noqa: E402
 
 
 class FakeResponse:
@@ -29,6 +30,19 @@ class FakeResponse:
 
 
 class RecoverMissingNoticesTests(unittest.TestCase):
+    def test_recovery_queue_persists_until_explicitly_removed(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            queue_path = Path(temporary_directory) / "recovery_queue.json"
+            with mock.patch.object(recovery_queue, "QUEUE_PATH", queue_path):
+                notice_id = recovery_queue.add_notice(
+                    "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&nttId=72294",
+                    "IBM 제품 보안 업데이트 권고",
+                )
+                self.assertEqual(notice_id, "72294")
+                self.assertEqual(recovery_queue.load_queue()[0][0], "72294")
+                recovery_queue.remove_notice("72294")
+                self.assertEqual(recovery_queue.load_queue(), [])
+
     def test_reads_recent_notice_from_rss(self) -> None:
         rss = """<?xml version="1.0" encoding="UTF-8"?>
         <rss><channel><item>
@@ -68,12 +82,18 @@ class RecoverMissingNoticesTests(unittest.TestCase):
             "IBM 제품 보안 업데이트 권고",
             "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&nttId=72294",
         )
-        with (
-            mock.patch.object(recover_missing_notices, "recent_notices", return_value=[notice]),
-            mock.patch.object(recover_missing_notices, "is_complete", return_value=False),
-            mock.patch.object(process_notice, "main", side_effect=RuntimeError("temporary")),
-        ):
-            recover_missing_notices.main()
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            queue_path = Path(temporary_directory) / "recovery_queue.json"
+            with (
+                mock.patch.object(recovery_queue, "QUEUE_PATH", queue_path),
+                mock.patch.object(
+                    recover_missing_notices, "recent_notices", return_value=[notice]
+                ),
+                mock.patch.object(recover_missing_notices, "is_complete", return_value=False),
+                mock.patch.object(process_notice, "main", side_effect=RuntimeError("temporary")),
+            ):
+                recover_missing_notices.main()
+                self.assertEqual(recovery_queue.load_queue()[0][0], "72294")
 
 
 if __name__ == "__main__":
