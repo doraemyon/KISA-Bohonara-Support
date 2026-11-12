@@ -394,6 +394,28 @@ class ProcessNoticeTests(unittest.TestCase):
             source,
         )
 
+    def test_hyphenated_builds_keep_their_full_values_and_comparison_bounds(self) -> None:
+        source = "CVE-2026-12345 / DSM 7.2.1 / 7.2.1-69057-13 미만 / 7.2.1-69057-13이상"
+        translator = mock.Mock(side_effect=AssertionError("Version cells must stay local."))
+
+        translated = process_notice.translate_text_linewise(source, translator)
+
+        self.assertEqual(
+            translated,
+            "CVE-2026-12345 / DSM 7.2.1 / Below 7.2.1-69057-13 / 7.2.1-69057-13 or later",
+        )
+        self.assertEqual(
+            process_notice.protected_tokens(translated), process_notice.protected_tokens(source)
+        )
+        translator.assert_not_called()
+
+    def test_translation_validation_rejects_a_changed_build_suffix(self) -> None:
+        korean = "제목:\n제품 업데이트\n\n요약:\n공지입니다.\n\n본문:\n7.3.2-86009-5 이상"
+        english = "Title:\nProduct Update\n\nSummary:\nSecurity notice.\n\nBody:\n7.3.2-86009-6 or later\n"
+
+        with self.assertRaisesRegex(RuntimeError, "omitted protected values: 7.3.2-86009-5"):
+            process_notice.validate_english_document(korean, "Product Update", english)
+
     def test_main_publishes_nothing_until_both_languages_are_ready(self) -> None:
         title = "IBM 제품 보안 업데이트 권고"
         body = "□ 개요\no 9.4.5.1 미만 버전은 최신 버전으로 업데이트 권고"

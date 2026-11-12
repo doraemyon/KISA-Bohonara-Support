@@ -15,6 +15,7 @@ import urllib.request
 from collections import Counter
 from dataclasses import dataclass, field
 from datetime import date
+from functools import cache
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Callable, Iterable
@@ -36,12 +37,26 @@ KISA_LOGO_URL = "https://www.kisa.or.kr/resource/kor/images/sub/sub_CI_logo_sign
 MAX_TRANSLATION_BYTES = 450
 FORMAT_VERSION = 6
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
+VERSION_TOKEN_PATTERN = (
+    r"(?<![A-Za-z0-9_])v?[0-9]+(?:\.[A-Za-z0-9]+)+"
+    r"(?:[-+][A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*)*(?![A-Za-z0-9_])"
+)
+SECURITY_TOKEN_PATTERN = rf"https?://[^\s]+|CVE-\d{{4}}-\d+|{VERSION_TOKEN_PATTERN}"
 PROTECTED_TOKEN_PATTERN = re.compile(
-    r"^(?:□|o|※)(?=\s)|https?://[^\s]+|CVE-\d{4}-\d+|"
-    r"\b\d+(?:\.[A-Za-z0-9]+){1,}\b",
+    rf"^(?:□|o|※)(?=\s)|{SECURITY_TOKEN_PATTERN}",
     flags=re.IGNORECASE | re.MULTILINE,
 )
 PROTECTED_PLACEHOLDER_PATTERN = re.compile(r"KISAPROTECTEDTOKEN\d{4}END", re.IGNORECASE)
+VERSION_COMPARISONS = {
+    "미만": "Below {version}",
+    "이상": "{version} or later",
+    "이하": "{version} or earlier",
+    "초과": "Later than {version}",
+}
+VERSION_COMPARISON_PATTERN = re.compile(
+    rf"(?P<version>{VERSION_TOKEN_PATTERN})\s*(?P<comparison>{'|'.join(VERSION_COMPARISONS)})",
+    flags=re.IGNORECASE,
+)
 STANDARD_SECTION_TRANSLATIONS = {
     "개요": "□ Overview",
     "설명": "□ Description",
@@ -452,15 +467,7 @@ def translate_text_mymemory(value: str, contact_email: str = "") -> str:
 
 
 def protected_tokens(value: str) -> Counter[str]:
-    patterns = (
-        r"https?://[^\s]+",
-        r"CVE-\d{4}-\d+",
-        r"\b\d+(?:\.[A-Za-z0-9]+){1,}\b",
-    )
-    tokens: list[str] = []
-    for pattern in patterns:
-        tokens.extend(re.findall(pattern, value, flags=re.IGNORECASE))
-    return Counter(tokens)
+    return Counter(re.findall(SECURITY_TOKEN_PATTERN, value, flags=re.IGNORECASE))
 
 
 def mask_protected_tokens(value: str) -> tuple[str, dict[str, str]]:
@@ -492,10 +499,16 @@ def translate_preserving_tokens(
     value: str, translator: Callable[[str], str], max_bytes: int = MAX_TRANSLATION_BYTES
 ) -> str:
     """Translate natural-language fragments without sending protected values to a provider."""
+    comparison = VERSION_COMPARISON_PATTERN.fullmatch(value)
+    if comparison:
+        return VERSION_COMPARISONS[comparison["comparison"]].format(
+            version=comparison["version"]
+        )
+
     masked, replacements = mask_protected_tokens(value)
     translated_parts: list[str] = []
     parts = re.split(f"({PROTECTED_PLACEHOLDER_PATTERN.pattern})", masked)
-    for part in parts:
+    for index, part in enumerate(parts):
         if not part:
             continue
         if PROTECTED_PLACEHOLDER_PATTERN.fullmatch(part):
@@ -510,12 +523,19 @@ def translate_preserving_tokens(
         translated = " ".join(
             translator(chunk) for chunk in split_utf8_chunks(content, max_bytes)
         )
+        previous_token = replacements.get(parts[index - 1], "") if index else ""
+        following_token = replacements.get(parts[index + 1], "") if index + 1 < len(parts) else ""
+        if not leading and previous_token[-1:].isalnum() and translated[:1].isalnum():
+            leading = " "
+        if not trailing and translated[-1:].isalnum() and following_token[:1].isalnum():
+            trailing = " "
         translated_parts.append(f"{leading}{translated}{trailing}")
     return restore_protected_tokens("".join(translated_parts), replacements)
 
 
 def translate_text_linewise(value: str, translator: Callable[[str], str]) -> str:
     """Translate a document line-by-line while retaining table and security structure."""
+    translate_fragment = cache(translator)
     translated_lines: list[str] = []
     for line in value.splitlines():
         stripped = line.strip()
@@ -531,7 +551,7 @@ def translate_text_linewise(value: str, translator: Callable[[str], str]) -> str
 
         cells = stripped.split(" / ") if " / " in stripped else [stripped]
         translated_cells = [
-            translate_preserving_tokens(cell, translator)
+            translate_preserving_tokens(cell, translate_fragment)
             if re.search(r"[가-힣]", cell)
             else cell
             for cell in cells
