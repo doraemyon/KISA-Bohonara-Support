@@ -1,0 +1,34 @@
+Title:
+VMware Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "VMware Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Broadcom announces security update that addresses vulnerabilities in its products [1]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o Insufficient Logging vulnerability in VMware Telco Cloud Platform, VMware Cloud Foundation, VMware ESX, and VMware vSphere Foundation (CVE-2026-41709) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-41709 / VMware Telco Cloud Platform / 5.0.x / 8.0 U3j and above
+CVE-2026-41709 / VMware Telco Cloud Platform / 5.1.x / 8.0 U3j and above
+CVE-2026-41709 / VMware Cloud Foundation / 5.x / 5.2.4 or later
+CVE-2026-41709 / VMware ESX / 8.0 / ESXi80U3j-25429389 and later
+CVE-2026-41709 / VMware Cloud Foundation / 9.0.x.x / ESXi-9.0.2.0100-25595025 more
+CVE-2026-41709 / VMware vSphere Foundation / 9.0.x.x / ESXi-9.0.2.0100-25595025 more
+CVE-2026-41709 / VMware Cloud Foundation / 9.1.x.x / ESXi-9.1.0.0-25370933 more
+CVE-2026-41709 / VMware vSphere Foundation / 9.1.x.x / ESXi-9.1.0.0-25370933 more
+※ Check the reference site below to perform updates [1]
+
+□ Reference sites
+[1] https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-41709
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

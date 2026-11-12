@@ -1,21 +1,6 @@
 {
   "notices": [
     {
-      "notice_id": "72259",
-      "title": "Atlassian 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=4&categoryCode=&nttId=72259"
-    },
-    {
-      "notice_id": "72258",
-      "title": "Oracle 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=4&categoryCode=&nttId=72258"
-    },
-    {
-      "notice_id": "72257",
-      "title": "VMware 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=4&categoryCode=&nttId=72257"
-    },
-    {
       "notice_id": "72256",
       "title": "Linux 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=4&categoryCode=&nttId=72256"

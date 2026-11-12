@@ -1,0 +1,45 @@
+Title:
+Atlassian Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Atlassian Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Atlassian announces security update that addresses vulnerabilities in its products [1]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o Files or Directories Accessible to External Parties vulnerabilities occurring in Bitbucket Data Center, Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible, and Fisheye (CVE-2026-21589) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-21589 / Bitbucket Data Center / Below 9.4.26 / 9.4.26 or later
+CVE-2026-21589 / Bitbucket Data Center / Below 10.2.8 / 10.2.8 or later
+CVE-2026-21589 / Bitbucket Data Center / Below 10.5.1 / 10.5.1 or later
+CVE-2026-21589 / Confluence Data Center / Below 9.2.26 / 9.2.26 or later
+CVE-2026-21589 / Confluence Data Center / Below 10.2.19 / 10.2.19 or later
+CVE-2026-21589 / Jira Service Management Data Center / Below 5.12.40 / 5.12.40 or later
+CVE-2026-21589 / Jira Service Management Data Center / Below 10.3.26 / 10.3.26 or later
+CVE-2026-21589 / Jira Service Management Data Center / Below 11.3.12 / 11.3.12 or later
+CVE-2026-21589 / Jira Software Data Center / Below 9.12.40 / 9.12.40 or later
+CVE-2026-21589 / Jira Software Data Center / Below 10.3.26 / 10.3.26 or later
+CVE-2026-21589 / Jira Software Data Center / Below 11.3.12 / 11.3.12 or later
+CVE-2026-21589 / Bamboo Data Center / Below 10.2.24 / 10.2.24 or later
+CVE-2026-21589 / Bamboo Data Center / Below 12.1.12 / 12.1.12 or later
+CVE-2026-21589 / Crowd Data Center / Below 6.3.7 / 6.3.7 or later
+CVE-2026-21589 / Crowd Data Center / Below 7.0.3 / 7.0.3 or later
+CVE-2026-21589 / Crowd Data Center / Below 7.1.7 / 7.1.7 or later
+CVE-2026-21589 / Crowd Data Center / Below 7.2.4 / 7.2.4 or later
+CVE-2026-21589 / Crucible / Below 4.9.15 / 4.9.15 or later
+CVE-2026-21589 / Fisheye / Below 4.9.15 / 4.9.15 or later
+※ Check the reference site below to perform updates [1]
+
+□ Reference sites
+[1] https://confluence.atlassian.com/security/cve-2026-21589-arbitrary-file-access-vulnerability-impacts-multiple-products-1870495748.html
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-21589
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

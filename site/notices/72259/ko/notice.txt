@@ -1,0 +1,45 @@
+제목:
+Atlassian 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Atlassian 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Atlassian社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Bitbucket Data Center, Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible, Fisheye에서 발생하는 Files or Directories Accessible to External Parties 취약점(CVE-2026-21589) [1][2]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-21589 / Bitbucket Data Center / 9.4.26 미만 / 9.4.26 이상
+CVE-2026-21589 / Bitbucket Data Center / 10.2.8 미만 / 10.2.8 이상
+CVE-2026-21589 / Bitbucket Data Center / 10.5.1 미만 / 10.5.1 이상
+CVE-2026-21589 / Confluence Data Center / 9.2.26 미만 / 9.2.26 이상
+CVE-2026-21589 / Confluence Data Center / 10.2.19 미만 / 10.2.19 이상
+CVE-2026-21589 / Jira Service Management Data Center / 5.12.40 미만 / 5.12.40 이상
+CVE-2026-21589 / Jira Service Management Data Center / 10.3.26 미만 / 10.3.26 이상
+CVE-2026-21589 / Jira Service Management Data Center / 11.3.12 미만 / 11.3.12 이상
+CVE-2026-21589 / Jira Software Data Center / 9.12.40 미만 / 9.12.40 이상
+CVE-2026-21589 / Jira Software Data Center / 10.3.26 미만 / 10.3.26 이상
+CVE-2026-21589 / Jira Software Data Center / 11.3.12 미만 / 11.3.12 이상
+CVE-2026-21589 / Bamboo Data Center / 10.2.24 미만 / 10.2.24 이상
+CVE-2026-21589 / Bamboo Data Center / 12.1.12 미만 / 12.1.12 이상
+CVE-2026-21589 / Crowd Data Center / 6.3.7 미만 / 6.3.7 이상
+CVE-2026-21589 / Crowd Data Center / 7.0.3 미만 / 7.0.3 이상
+CVE-2026-21589 / Crowd Data Center / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-21589 / Crowd Data Center / 7.2.4 미만 / 7.2.4 이상
+CVE-2026-21589 / Crucible / 4.9.15 미만 / 4.9.15 이상
+CVE-2026-21589 / Fisheye / 4.9.15 미만 / 4.9.15 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+
+□ 참고사이트
+[1] https://confluence.atlassian.com/security/cve-2026-21589-arbitrary-file-access-vulnerability-impacts-multiple-products-1870495748.html
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-21589
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
