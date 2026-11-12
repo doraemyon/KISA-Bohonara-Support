@@ -44,11 +44,13 @@ def write_queue(notices: list[tuple[str, str, str]]) -> None:
         ]
     }
     QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    QUEUE_PATH.write_text(
+    temporary = QUEUE_PATH.with_suffix(".tmp")
+    temporary.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
         newline="\n",
     )
+    temporary.replace(QUEUE_PATH)
 
 
 def add_notice(url: str, title: str) -> str:

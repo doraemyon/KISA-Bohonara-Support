@@ -33,7 +33,7 @@ CLOUDFLARE_URL = (
     "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/run/"
     "@cf/meta/m2m100-1.2b"
 )
-DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
+DEFAULT_GEMINI_MODEL = "gemini-3.5-flash-lite"
 FAVICON_URL = "https://avatars.githubusercontent.com/u/51371743?v=4"
 KISA_LOGO_URL = "https://www.kisa.or.kr/resource/kor/images/sub/sub_CI_logo_signature_9.png"
 MAX_TRANSLATION_BYTES = 450

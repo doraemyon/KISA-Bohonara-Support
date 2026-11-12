@@ -131,6 +131,23 @@ class RecoverMissingNoticesTests(unittest.TestCase):
             recover_missing_notices.main(limit=1)
             self.assertEqual([item[0] for item in recovery_queue.load_queue()], ["72293", "72294"])
 
+    def test_discovery_records_missing_notice_before_starting_translation(self) -> None:
+        entry = notice_catalog.Notice(
+            "72294", "IBM notice", "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&nttId=72294",
+            date(2026, 11, 12), 1,
+        )
+        with (
+            tempfile.TemporaryDirectory() as temporary_directory,
+            mock.patch.object(recovery_queue, "QUEUE_PATH", Path(temporary_directory) / "queue.json"),
+            mock.patch.object(notice_catalog, "official_notices", return_value=[entry]),
+            mock.patch.object(recover_missing_notices, "is_complete", return_value=False),
+            mock.patch.object(process_notice, "write_notice_index"),
+            mock.patch.object(subprocess, "run") as translate,
+        ):
+            recover_missing_notices.main(full_scan=True, discover_only=True)
+            self.assertEqual(recovery_queue.load_queue(), [entry.request()])
+            translate.assert_not_called()
+
 
 if __name__ == "__main__":
     unittest.main()

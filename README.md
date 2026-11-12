@@ -18,25 +18,25 @@
 3. Action이 KISA 원문을 다시 읽고 도메인·게시판·공지 번호·발행일을 검증합니다.
 4. 제목이 `업데이트 권고`이면 본문 표현과 관계없이 업데이트 권고용 요약을 사용합니다. 제목이 `업데이트`, `업그레이드`, `보안 조치 권고` 또는 `보안 패치 권고` 계열인 경우에는 본문에 CVE, 영향 제품·버전, 해결 버전, 패치나 조치 방안이 있는지 추가 확인합니다. 그 외 공지는 일반 요약을 사용합니다.
 5. `□`, `o`, `※`, URL, CVE, 참조 번호와 전체 빌드 버전을 보호합니다. 번역 후 표의 행·열과 각 칸의 식별자가 원문과 일치하는지 확인합니다.
-6. Gemini 키를 설정하면 문서 단위 번역을 먼저 시도합니다. 그 외에는 선택적 Cloudflare Workers AI → Google Translate 웹 경로 → MyMemory → 오프라인 OPUS-MT 순으로 문장 조각을 번역합니다. 검증을 통과한 조각을 재사용하고, 오류가 난 조각만 다음 경로로 넘깁니다.
+6. Cloudflare Workers AI가 설정돼 있으면 먼저 사용하고, 이어 Google Translate 웹 경로를 시도합니다. 이 경로로 문서를 완성하지 못하면 등록된 Gemini 키로 문서 번역을 한 번 시도합니다. Gemini 요청은 연결과 읽기에 20초 제한을 적용하며, 실패하면 MyMemory와 오프라인 OPUS-MT로 넘어갑니다.
 7. 국문과 검증을 통과한 영문이 모두 완성된 경우에만 두 페이지를 한 번에 저장합니다. 번역 대기 문서나 한국어 본문을 넣은 가짜 영문 페이지는 게시하지 않습니다.
 8. 공지 처리 성공을 확인한 별도 Pages workflow가 최신 `main`을 배포합니다.
 9. 배포가 완료되면 최초 Telegram 메시지에 이미 들어 있던 국문·영문 링크가 정상 문서로 전환됩니다.
 
 업데이트 권고로 판정된 공지는 항상 `영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고` 문구가 포함된 요약을 사용합니다. 거의 동시에 여러 공지가 들어와도 Action을 직렬로 실행하고, 각 실행은 시작 시점의 최신 `main`을 체크아웃해 생성 문서 커밋이 서로 충돌하지 않도록 합니다.
 
-알림 전송과 문서 생성은 분리되어 있어 Telegram 알림은 지연되지 않습니다. 알림 직후 국문·영문 버튼을 누르면 준비 상태가 표시되며, 게시 완료 여부를 5초마다 확인해 실제 문서로 자동 전환합니다. 한 번의 번역기 오류는 같은 실행에서 다음 제공자로 전환합니다. KISA 원문 수집 자체가 실패해도 준비 화면의 원문 링크와 기본 알림의 `공지 열기` 버튼은 그대로 유지됩니다.
+알림 전송과 문서 생성은 분리되어 있어 Telegram 알림은 지연되지 않습니다. 알림 직후 국문·영문 버튼을 누르면 준비 화면이 열립니다. 두 언어의 페이지와 다운로드가 모두 준비되면 실제 문서로 자동 전환합니다. 확인 간격은 실패가 이어질 때 최대 60초까지 늘어납니다. 운영 주소의 `/notices/<공지 번호>/status.json`에서 게시 완료(200), 준비 중(404), 보관소 장애(503)를 확인할 수 있습니다.
 
-30분마다 최근 RSS와 저장된 국문·영문 쌍을 비교하는 복구 workflow도 실행됩니다. 최초 처리 실행이 완전히 실패하면 공개 KISA 공지 URL과 제목만 `data/recovery_queue.json`에 남겨 RSS 목록에서 밀려난 뒤에도 성공할 때까지 재시도합니다. 복구할 공지가 없거나 외부 서비스가 계속 불안정하면 정상 종료하므로 같은 실패 메일을 반복해서 만들지 않습니다.
+복구 workflow는 30분마다 KISA 공식 게시판의 최근 14일을 대조합니다. 매일 한 번과 수동 실행에서는 최근 3개월을 확인합니다. 누락된 공지 번호, 공개 URL과 제목은 번역 전에 `data/recovery_queue.json`에 저장합니다. 번역은 공지당 최대 120초로 제한하고, 실패 항목을 대기열 뒤로 보내 아직 시도하지 않은 공지를 먼저 처리합니다. Actions 실행 요약에서 시도·복구·대기 건수를 확인할 수 있습니다.
 
 ## 공개 범위와 비용
 
 - 이 저장소와 생성된 국문·영문 문서는 **Public**입니다. 공개하면 안 되는 내용을 템플릿이나 생성 문서에 추가하지 마세요.
 - Public 저장소의 표준 GitHub-hosted runner와 GitHub Pages는 무료입니다.
 - 이 Action은 매분 실행되지 않고 새로운 공지가 있을 때만 실행됩니다.
-- 권장 번역기는 결제 계정 연결 없이 사용할 수 있는 [Gemini API 무료 티어](https://ai.google.dev/gemini-api/docs/pricing)입니다. 무료 티어의 요청 한도 안에서는 요금이 발생하지 않습니다.
-- Cloudflare를 설정하면 [Workers AI의 M2M100 번역 전용 모델](https://developers.cloudflare.com/workers-ai/models/m2m100-1.2b/)을 두 번째 경로로 사용합니다. Workers Free는 하루 10,000 Neurons 무료 할당량을 초과하면 추가 과금 대신 호출이 중단됩니다.
-- Google Translate 웹 경로는 별도 API key나 결제 계정 없이 사용하는 세 번째 경로입니다. 공식 Cloud Translation API가 아니므로 별도 SLA는 없지만, 구조·보안 식별자 검증을 통과한 결과만 사용합니다.
+- 결제 계정 연결 없이 사용할 수 있는 [Gemini API 무료 티어](https://ai.google.dev/gemini-api/docs/pricing)를 보조 경로로 설정할 수 있습니다.
+- Cloudflare를 설정하면 [Workers AI의 M2M100 번역 전용 모델](https://developers.cloudflare.com/workers-ai/models/m2m100-1.2b/)을 먼저 사용합니다. Workers Free는 하루 10,000 Neurons 무료 할당량을 초과하면 추가 과금 대신 호출이 중단됩니다.
+- Google Translate 웹 경로는 별도 API key나 결제 계정 없이 사용합니다. 구조·보안 식별자 검증을 통과한 결과를 사용합니다.
 - MyMemory는 별도 키 없이 사용할 수 있습니다. 익명 기준 하루 5,000자이며, 연락용 이메일을 전달하면 하루 50,000자입니다.
 - 마지막 경로는 무료 Linux 러너에서 실행하는 오프라인 번역입니다. 헬싱키대학교의 [한국어→영어 OPUS-MT 모델](https://huggingface.co/Helsinki-NLP/opus-mt-tc-big-ko-en)(CC BY 4.0)을 CTranslate2 INT8로 변환해 캐시하며, 번역 요청에 API 키나 결제 계정이 필요하지 않습니다.
 - Gemini 무료 티어에 보낸 데이터는 Google 제품 개선에 사용될 수 있습니다. 이 프로젝트는 인터넷에 이미 공개된 KISA 공지만 번역 대상으로 사용합니다.
@@ -80,7 +80,7 @@ Google Cloud Translation도 기본 NMT 번역은 월 500,000자까지 무료 크
 
 Telegram bot token과 chat ID는 이 저장소에 등록하지 않습니다. 기존에 등록한 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` Secret은 삭제해도 됩니다. Telegram 발송과 버튼 구성은 `KISA-Bohonara-Alert`가 한 번에 처리하고, 이 저장소는 공개 문서 생성과 Pages 배포만 담당합니다.
 
-모델을 직접 지정해야 하는 경우에만 저장소 **Settings → Secrets and variables → Actions → Variables**에 `GEMINI_MODEL`을 추가합니다. 설정하지 않으면 `gemini-2.5-flash`를 사용합니다.
+모델을 직접 지정해야 하는 경우에만 저장소 **Settings → Secrets and variables → Actions → Variables**에 `GEMINI_MODEL`을 추가합니다. 설정하지 않으면 `gemini-3.5-flash-lite`를 사용합니다.
 
 ## 4. KISA-Bohonara-Alert에서 확장 호출 허용
 
@@ -131,11 +131,11 @@ python -m unittest discover -s tests -v
 ## 문제 해결
 
 - `Could not find the KISA notice title, published date, or body`: KISA 페이지 구조가 바뀌었을 수 있습니다.
-- `Gemini translation failed`: API key, 무료 티어 한도 또는 모델 이름을 확인합니다. 이 오류 뒤에는 Cloudflare 또는 MyMemory로 자동 전환합니다.
+- `Gemini translation failed`: API key, 무료 티어 한도 또는 모델 이름을 확인합니다. 이 오류 뒤에는 MyMemory 또는 오프라인 모델로 자동 전환합니다.
 - `MyMemory translation failed`: MyMemory의 무료 한도나 서비스 상태를 확인합니다. 해당 실행에서는 오프라인 모델로 이어집니다.
 - `Offline translation model is not prepared`: Action의 `Prepare offline translation` 로그에서 모델 다운로드, 체크섬 검증, 변환 단계를 확인합니다. 온라인 번역은 계속 사용할 수 있습니다.
 - KISA 원문 수집의 일시적인 네트워크 오류: workflow가 15초 간격으로 최대 세 번 자동 재시도합니다.
-- 번역 서비스 오류 또는 구조·식별자 누락: 해당 제공자 결과를 폐기하고 다음 제공자로 넘어갑니다. 모든 경로가 실패하면 국문만 단독 게시하지 않고, 30분 간격 복구 workflow가 최근 RSS에서 누락 건을 찾아 다시 시도합니다.
+- 번역 서비스 오류 또는 구조·식별자 누락: 다음 제공자로 넘어갑니다. 모든 경로가 실패하면 공식 게시판과 대기열을 대조하는 복구 workflow에서 다시 시도합니다.
 - `non-fast-forward` 또는 `fetch first`: 최신 workflow에는 동시 공지를 직렬 처리하고 최신 `main`을 체크아웃하는 설정이 포함되어 있습니다. 이전 실패 실행은 **Re-run jobs** 대신 새 workflow를 실행하세요.
 - `Translation result validation failed`: 번역 서비스가 국문 원문을 그대로 반환했거나 구조를 손상한 경우입니다. 해당 결과는 게시하지 않고 다음 제공자를 사용합니다.
 - `Get Pages site failed`: **Settings → Pages → Source**가 `GitHub Actions`인지 확인합니다.

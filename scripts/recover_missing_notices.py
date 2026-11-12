@@ -75,7 +75,7 @@ def is_complete(notice_id: str) -> bool:
     )
 
 
-def main(*, full_scan: bool = False, limit: int = 12) -> None:
+def reconcile(full_scan: bool) -> list[tuple[str, str, str]]:
     today = datetime.now(KOREA).date()
     since = three_months_before(today) if full_scan else today - timedelta(days=14)
     try:
@@ -94,6 +94,18 @@ def main(*, full_scan: bool = False, limit: int = 12) -> None:
     # Repair an index that is stale even when all document files are present.
     if discovered:
         process_notice.write_notice_index()
+    return missing
+
+
+def main(
+    *, full_scan: bool = False, limit: int = 12,
+    discover_only: bool = False, queued_only: bool = False,
+) -> None:
+    missing = recovery_queue.load_queue() if queued_only else reconcile(full_scan)
+    if discover_only:
+        recovery_queue.write_output("pending", str(len(missing)))
+        print(f"Discovered {len(missing)} pending KISA notice(s).")
+        return
     if not missing:
         print("No KISA notices need recovery.")
         return
@@ -139,5 +151,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--full-scan", action="store_true")
     parser.add_argument("--limit", type=int, choices=range(1, 121), default=12, metavar="1..120")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--discover-only", action="store_true")
+    mode.add_argument("--queued-only", action="store_true")
     args = parser.parse_args()
-    main(full_scan=args.full_scan, limit=args.limit)
+    main(
+        full_scan=args.full_scan, limit=args.limit,
+        discover_only=args.discover_only, queued_only=args.queued_only,
+    )
