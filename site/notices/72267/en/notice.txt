@@ -1,0 +1,41 @@
+Title:
+Advisory to beware of ransomware attacks targeting Synology NAS
+
+Summary:
+We are disseminating today's KISA announcement "Advisory to beware of ransomware attacks targeting Synology NAS". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+○ Recently, ransomware attacks targeting Synology NAS have resulted in damage to stored files being encrypted, so users need to be cautious.
+○ To prevent damage, we recommend applying Synology security updates in accordance with the existing “Synology Product Security Update Recommendations” and implementing the security measures below.
+
+□ signs of infection
+○ Files stored on the NAS suddenly cannot be opened, the file name or extension is abnormally changed*, and a notice asking for money in exchange for file recovery appears.
+* Cases of similar but changed to various types of extensions such as L0CK3D, locked, lock3d, lock3D, etc.
+
+□ Preventive and security measures
+○ (Security Update) Devices showing no signs of infection are updated with the latest DSM and installation package supported by the model according to the manufacturer's instructions.
+- Check the detailed update number of DSM and consider switching to a supported version or replacing equipment when using a version that has ended support.
+※ Related vulnerability/patch information: Refer to Bohanara’s “Synology Product Security Update Recommendation”
+
+○ (Restrict external access) Minimize direct exposure of the NAS management screen to the Internet and disable unnecessary port forwarding, remote access, and services.
+- If remote access is necessary, use a controlled access path such as VPN and restrict access targets and services through a firewall.
+○ (Account protection) Disable the default administrator account, use a strong password that is different from other services, and set up multi-authentication.
+○ (Backup protection) Store important data in an offline storage device separate from the NAS or in a backup with restricted modification and deletion, and perform regular restoration checks.
+※ Data synchronized with storage devices always connected to the NAS may also be damaged, so separate protection is required.
+
+□ How to respond if infection is suspected
+○ (Immediate quarantine) When signs of infection, such as file encryption or ransom notes, are discovered, the NAS's network connection is blocked and connected synchronization and backup operations are stopped.
+○ (On-site preservation) Preserve ransom notes, encrypted files, system and access logs, and record discovery time, equipment model, DSM version, and action details.
+- Arbitrary initialization, formatting, reinstallation and deletion/overwriting of encrypted files are prohibited.
+- Avoid unnecessary power shutdowns, reboots, and updates, report infringement incidents to KISA, request damage response and recovery support, and take measures to prevent additional damage and preserve evidence according to KISA's guidance.
+○ (Recovery Caution) Beware of using private recovery companies that ask for money by guaranteeing recovery or executing recovery programs from unknown sources.
+
+□ Infringement incident report
+○ ‘KISA Internet Protection Nation & KrCERT’ website (www.boho.or.kr) → Report infringement incident → Report → Ransomware
+
+[Reference materials]
+[1] KISA Bohanara recommends security updates for Synology products
+https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&menuNo=205020&nttId=72254&pageIndex=1
+[2] Synology announces ransomware attack targeting older version DSM and security update
+https://www.synology.com/en-us/company/news/article/C3RB3R/Synology%20urges%20users%20to%20apply%20security%20updates%2C%20extends%20PHP2Shell%20fixes%20to%20older%20DSM%20releases

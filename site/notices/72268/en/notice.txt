@@ -1,0 +1,46 @@
+Title:
+Linux Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Linux Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Linux Foundation releases security update that addresses vulnerabilities in its products [1]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+□ Description
+o Use After Free vulnerability in Linux kernel (CVE-2026-43499) [1][2]
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-43499 / Linux Kernel / 2.6.39 or later and below 5.10.261 / 5.10.261 or later
+CVE-2026-43499 / Linux Kernel / 5.11 or later and below 5.15.212 / 5.15.212 or later
+CVE-2026-43499 / Linux Kernel / 5.16 or later and below 6.1.175 / 6.1.175 or later
+CVE-2026-43499 / Linux Kernel / 6.2 or later and below 6.6.140 / 6.6.140 or later
+CVE-2026-43499 / Linux Kernel / 6.7 or later and below 6.12.86 / 6.12.86 or later
+CVE-2026-43499 / Linux Kernel / 6.13 or later and below 6.18.27 / 6.18.27 or later
+CVE-2026-43499 / Linux Kernel / 6.19 or later and below 7.0.4 / 7.0.4 or later
+CVE-2026-43499 / Linux Kernel / Below 7.1 / 7.1 or later
+
+※ Check the reference site below to perform updates [1]
+※ If you are running an operating system for which security updates have been released, refer to the reference site and perform security measures or updates (refer to the links below for detailed security update versions for each OS).
+
+1. Debian [3]
+2. Ubuntu [4]
+
+3. Red Hat/CentOS [5]
+
+4. SUSE/openSUSE [6]
+
+5. Amazon [7]
+
+□ Reference sites
+[1] https://git.kernel.org/pub/scm/linux/security/vulns.git/tree/cve/published/2026/CVE-2026-43499.dyad
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-43499
+[3] https://security-tracker.debian.org/tracker/CVE-2026-43499
+[4] https://ubuntu.com/security/CVE-2026-43499
+[5] https://access.redhat.com/security/cve/cve-2026-43499
+[6] https://www.suse.com/ko-kr/security/cve/CVE-2026-43499.html
+[7] https://explore.alas.aws.amazon.com/CVE-2026-43499.html
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

@@ -1,0 +1,47 @@
+Title:
+WordPress Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "WordPress Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o WordPress Foundation Announces Security Update Addressing Vulnerabilities in Its Products [1][2]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+□ Description
+o Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in WordPress (CVE-2026-119977) [1]~[3]
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-119977 / WordPress / 4.7.0 or later and 4.7.38 or earlier / 4.7.39 or later
+CVE-2026-119977 / WordPress / 4.8.0 or later and 4.8.33 or earlier / 4.8.34 or later
+CVE-2026-119977 / WordPress / 4.9.0 or later and 4.9.34 or earlier / 4.9.35 or later
+CVE-2026-119977 / WordPress / 5.0.0 or later and 5.0.30 or earlier / 5.0.31 or later
+CVE-2026-119977 / WordPress / 5.1.0 or later and 5.1.27 or earlier / 5.1.28 or later
+CVE-2026-119977 / WordPress / 5.2.0 or later and 5.2.29 or earlier / 5.2.30 or later
+CVE-2026-119977 / WordPress / 5.3.0 or later and 5.3.26 or earlier / 5.3.27 or later
+CVE-2026-119977 / WordPress / 5.4.0 or later and 5.4.24 or earlier / 5.4.25 or later
+CVE-2026-119977 / WordPress / 5.5.0 or later and 5.5.23 or earlier / 5.5.24 or later
+CVE-2026-119977 / WordPress / 5.6.0 or later and 5.6.22 or earlier / 5.6.23 or later
+CVE-2026-119977 / WordPress / 5.7.0 or later and 5.7.20 or earlier / 5.7.21 or later
+CVE-2026-119977 / WordPress / 5.8.0 or later and 5.8.18 or earlier / 5.8.19 or later
+CVE-2026-119977 / WordPress / 5.9.0 or later and 5.9.19 or earlier / 5.9.20 or later
+CVE-2026-119977 / WordPress / 6.0.0 or later and 6.0.17 or earlier / 6.0.18 or later
+CVE-2026-119977 / WordPress / 6.1.0 or later and 6.1.15 or earlier / 6.1.16 or later
+CVE-2026-119977 / WordPress / 6.2.0 or later and 6.2.14 or earlier / 6.2.15 or later
+CVE-2026-119977 / WordPress / 6.3.0 or later and 6.3.13 or earlier / 6.3.14 or later
+CVE-2026-119977 / WordPress / 6.4.0 or later and 6.4.13 or earlier / 6.4.14 or later
+CVE-2026-119977 / WordPress / 6.5.0 or later and 6.5.13 or earlier / 6.5.14 or later
+CVE-2026-119977 / WordPress / 6.6.0 or later and 6.6.10 or earlier / 6.6.11 or later
+CVE-2026-119977 / WordPress / 6.7.0 or later and 6.7.10 or earlier / 6.7.11 or later
+CVE-2026-119977 / WordPress / 6.8.0 or later and 6.8.11 or earlier / 6.8.12 or later
+CVE-2026-119977 / WordPress / 6.9.0 or later and 6.9.10 or earlier / 6.9.11 or later
+CVE-2026-119977 / WordPress / 7.0.0 or later and 7.0.7 or earlier / 7.0.8 or later
+CVE-2026-119977 / WordPress / 7.1.0 or later and 7.1.3 or earlier / 7.1.4 or later
+※ Check the reference site below to perform updates [1][2]
+□ Reference sites
+[1] https://wordpress.org/news/2026/10/wordpress-7-1-4/
+[2] https://wordpress.org/documentation/wordpress-version/version-7-1-4/
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-119977
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

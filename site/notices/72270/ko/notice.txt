@@ -1,0 +1,59 @@
+제목:
+Apache 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Apache 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Apache 재단은 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[8]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명
+o Apache Fineract에서 발생하는 SQL Injection 취약점(CVE-2026-64618) [1][9]
+o Apache Fineract에서 발생하는 SQL Injection 취약점(CVE-2026-65874) [2][10]
+o Apache Tomcat에서 발생하는 Time-of-check Time-of-use (TOCTOU) Race Condition 취약점(CVE-2026-80353) [3][11]
+o Apache Tomcat에서 발생하는 Incomplete Cleanup 취약점(CVE-2026-88041) [4][12]
+o Apache Tomcat에서 발생하는 Incomplete Cleanup 취약점(CVE-2026-93446) [5][13]
+o Apache Tomcat에서 발생하는 Missing Critical Step in Authentication 취약점(CVE-2026-101296) [6][14]
+o Apache Tomcat에서 발생하는 Race Condition 취약점(CVE-2026-101356) [7][15]
+o Apache Tomcat에서 발생하는 Buffer Under-read 취약점(CVE-2026-103119) [8][16]
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-64618 / Apache Fineract / 1.15.0 이하 / 1.16.1 이상
+CVE-2026-65874 / Apache Fineract / 1.15.0 이하 / 1.16.1 이상
+CVE-2026-80353 / Apache Tomcat / 9.0.47 이상 9.0.123 미만 / 9.0.123 이상
+CVE-2026-88041 / Apache Tomcat / 11.0.0-M23 이상 11.0.27 미만 / 11.0.27 이상
+CVE-2026-88041 / Apache Tomcat / 10.1.27 이상 10.1.61 미만 / 10.1.61 이상
+CVE-2026-88041 / Apache Tomcat / 9.0.92 이상 9.0.123 미만 / 9.0.123 이상
+CVE-2026-93446 / Apache Tomcat / 11.0.0-M21 이상 11.0.27 미만 / 11.0.27 이상
+CVE-2026-93446 / Apache Tomcat / 10.1.25 이상 10.1.61 미만 / 10.1.61 이상
+CVE-2026-93446 / Apache Tomcat / 9.0.90 이상 9.0.123 미만 / 9.0.123 이상
+CVE-2026-101296 / Apache Tomcat / 11.0.0-M1 이상 11.0.27 미만 / 11.0.27 이상
+CVE-2026-101296 / Apache Tomcat / 10.1.0-M1 이상 10.1.61 미만 / 10.1.61 이상
+CVE-2026-101296 / Apache Tomcat / 9.0.0.M1 이상 9.0.123 미만 / 9.0.123 이상
+CVE-2026-101356 / Apache Tomcat / 11.0.22 이상 11.0.27 미만 / 11.0.27 이상
+CVE-2026-101356 / Apache Tomcat / 10.1.55 이상 10.1.61 미만 / 10.1.61 이상
+CVE-2026-101356 / Apache Tomcat / 9.0.118 이상 9.0.123 미만 / 9.0.123 이상
+CVE-2026-103119 / Apache Tomcat / 11.0.0-M25 이상 11.0.27 미만 / 11.0.27 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]~[8]
+□ 참고사이트
+[1] https://lists.apache.org/thread/s8orckszcd9x4d1qsloc046ppf5q9oc7
+[2] https://lists.apache.org/thread/c4q539mkm5blnp5vdb72tzq6r9qg7bdh
+[3] https://lists.apache.org/thread/tr0q87qwvs80p9hc53tkwpzvnx0ywftr
+[4] https://lists.apache.org/thread/dnmm9l3byytg3l66nk1jrqfrl7jty7n1
+[5] https://lists.apache.org/thread/zh87okr5qspv4byzfpy2w6dqrokrnxzw
+[6] https://lists.apache.org/thread/bl52b9go9ckoov8x4v3dt6rkm573cygd
+[7] https://lists.apache.org/thread/d1xjt7bbjqw7y7n5mcb4fm815hpfgc27
+[8] https://lists.apache.org/thread/sk2cg4k077fwcqbm6tqz2n700nq06h80
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-64618
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-65874
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-80353
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-88041
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-93446
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-101296
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-101356
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-103119
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+□ 작성 : 디지털위협대응본부 취약점관리센터

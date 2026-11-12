@@ -1,0 +1,51 @@
+제목:
+Debian 및 Ubuntu 패키지 매니저 APT 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Debian 및 Ubuntu 패키지 매니저 APT 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o 리눅스 운영체제에서 응용 SW 설치 또는 업데이트를 위해 사용하는 패키지 매니저(APT)에서 취약점이 발견 [1] ~ [4]
+※ APT(Advanced Packaging Tool) : 응용 프로그램 설치, 업데이트, 업그레이드를 수행하는 리눅스 패키지 매니저
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o APT에서 발생하는 UNIX Hard Link 취약점(CVE-2026-109518) [1] ~ [5]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-109518 / APT (Debian) / 1.2.36 미만 / 1.2.36 이상
+CVE-2026-109518 / APT (Debian) / 1.4.0 이상 1.4.12 미만 / 1.4.12 이상
+CVE-2026-109518 / APT (Debian) / 1.6.0 이상 1.6.19 미만 / 1.6.19 이상
+CVE-2026-109518 / APT (Debian) / 1.8.0 이상 1.8.2.4 미만 / 1.8.2.4 이상
+CVE-2026-109518 / APT (Debian) / 1.8.3 이상 1.8.5 이하 / 패치 미발표 ※지원 버전으로 전환 검토
+CVE-2026-109518 / APT (Debian) / 2.0.0 이상 2.0.12 미만 / 2.0.12 이상
+CVE-2026-109518 / APT (Debian) / 2.2.0 이상 2.2.5 미만 / 2.2.5 이상
+CVE-2026-109518 / APT (Debian) / 2.4.0 이상 2.4.15 미만 / 2.4.15 이상
+CVE-2026-109518 / APT (Debian) / 2.6.0 이상 2.6.2 미만 / 2.6.2 이상
+CVE-2026-109518 / APT (Debian) / 2.8.0 이상 2.8.4 미만 / 2.8.4 이상
+CVE-2026-109518 / APT (Debian) / 3.0.0 이상 3.0.4 미만 / 3.0.4 이상
+CVE-2026-109518 / APT (Debian) / 3.2.0 이상 3.2.1 미만 / 3.2.1 이상
+CVE-2026-109518 / APT (Debian) / 3.3.0 이상 3.3.6 미만 / 3.3.6 이상
+CVE-2026-109518 / APT (Ubuntu) / 1.0.1ubuntu2.24+esm4 미만 / 1.0.1ubuntu2.24+esm4 이상
+CVE-2026-109518 / APT (Ubuntu) / 1.2.0 이상 1.2.36+esm1 미만 / 1.2.36+esm1 이상
+CVE-2026-109518 / APT (Ubuntu) / 1.6.0 이상 1.6.19+esm1 미만 / 1.6.19+esm1 이상
+CVE-2026-109518 / APT (Ubuntu) / 2.0.0 이상 2.0.12+esm1 미만 / 2.0.12+esm1 이상
+CVE-2026-109518 / APT (Ubuntu) / 2.4.0 이상 2.4.15ubuntu0.1 미만 / 2.4.15ubuntu0.1 이상
+CVE-2026-109518 / APT (Ubuntu) / 2.8.0 이상 2.8.4ubuntu0.1 미만 / 2.8.4ubuntu0.1 이상
+CVE-2026-109518 / APT (Ubuntu) / 3.2.0 이상 3.2.1ubuntu0.1 미만 / 3.2.1ubuntu0.1 이상
+CVE-2026-109518 / APT (Ubuntu) / 3.3.0 이상 3.3.3ubuntu0.1 미만 / 3.3.3ubuntu0.1 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1] ~ [4]
+
+□ 참고사이트
+[1] https://lists.debian.org/deity/2026/11/msg00005.html
+[2] https://lists.debian.org/debian-security-announce/2026/msg00526.html
+[3] https://lists.debian.org/debian-lts-announce/2026/11/msg00004.html
+[4] https://ubuntu.com/security/notices/USN-8996-1
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-109518
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터

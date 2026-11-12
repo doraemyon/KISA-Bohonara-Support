@@ -1,0 +1,51 @@
+Title:
+Debian and Ubuntu Package Manager APT Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Debian and Ubuntu Package Manager APT Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o A vulnerability was discovered in the package manager (APT) used to install or update application SW in the Linux operating system. [1] ~ [4]
+※ APT (Advanced Packaging Tool): Linux package manager that performs application installation, updates, and upgrades.
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o UNIX Hard Link Vulnerability Caused by APT (CVE-2026-109518) [1] ~ [5]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-109518 / APT (Debian) / Below 1.2.36 / 1.2.36 or later
+CVE-2026-109518 / APT (Debian) / 1.4.0 or later and below 1.4.12 / 1.4.12 or later
+CVE-2026-109518 / APT (Debian) / 1.6.0 or later and below 1.6.19 / 1.6.19 or later
+CVE-2026-109518 / APT (Debian) / 1.8.0 or later and below 1.8.2.4 / 1.8.2.4 or later
+CVE-2026-109518 / APT (Debian) / 1.8.3 or later and 1.8.5 or earlier / Patch not announced ※Considering conversion to supported version
+CVE-2026-109518 / APT (Debian) / 2.0.0 or later and below 2.0.12 / 2.0.12 or later
+CVE-2026-109518 / APT (Debian) / 2.2.0 or later and below 2.2.5 / 2.2.5 or later
+CVE-2026-109518 / APT (Debian) / 2.4.0 or later and below 2.4.15 / 2.4.15 or later
+CVE-2026-109518 / APT (Debian) / 2.6.0 or later and below 2.6.2 / 2.6.2 or later
+CVE-2026-109518 / APT (Debian) / 2.8.0 or later and below 2.8.4 / 2.8.4 or later
+CVE-2026-109518 / APT (Debian) / 3.0.0 or later and below 3.0.4 / 3.0.4 or later
+CVE-2026-109518 / APT (Debian) / 3.2.0 or later and below 3.2.1 / 3.2.1 or later
+CVE-2026-109518 / APT (Debian) / 3.3.0 or later and below 3.3.6 / 3.3.6 or later
+CVE-2026-109518 / APT (Ubuntu) / Below 1.0.1ubuntu2.24+esm4 / 1.0.1ubuntu2.24+esm4 or later
+CVE-2026-109518 / APT (Ubuntu) / 1.2.0 or later and below 1.2.36+esm1 / 1.2.36+esm1 or later
+CVE-2026-109518 / APT (Ubuntu) / 1.6.0 or later and below 1.6.19+esm1 / 1.6.19+esm1 or later
+CVE-2026-109518 / APT (Ubuntu) / 2.0.0 or later and below 2.0.12+esm1 / 2.0.12+esm1 or later
+CVE-2026-109518 / APT (Ubuntu) / 2.4.0 or later and below 2.4.15ubuntu0.1 / 2.4.15ubuntu0.1 or later
+CVE-2026-109518 / APT (Ubuntu) / 2.8.0 or later and below 2.8.4ubuntu0.1 / 2.8.4ubuntu0.1 or later
+CVE-2026-109518 / APT (Ubuntu) / 3.2.0 or later and below 3.2.1ubuntu0.1 / 3.2.1ubuntu0.1 or later
+CVE-2026-109518 / APT (Ubuntu) / 3.3.0 or later and below 3.3.3ubuntu0.1 / 3.3.3ubuntu0.1 or later
+※ Check the reference site below to perform updates [1] ~ [4]
+
+□ Reference sites
+[1] https://lists.debian.org/deity/2026/11/msg00005.html
+[2] https://lists.debian.org/debian-security-announce/2026/msg00526.html
+[3] https://lists.debian.org/debian-lts-announce/2026/11/msg00004.html
+[4] https://ubuntu.com/security/notices/USN-8996-1
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-109518
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

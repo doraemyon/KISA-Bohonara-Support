@@ -1,0 +1,34 @@
+제목:
+TeamViewer 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "TeamViewer 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o TeamViewer社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o TeamViewer Full Client, Portable, Remote Control App에서 발생하는 Integer Overflow or Wraparound 취약점(CVE-2026-111585) [1][2]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-111585 / Full Client Legacy/Maintenance (Windows) / 13.2 / 13.2.36231 이상
+CVE-2026-111585 / Full Client Legacy/Maintenance (macOS) / 13.2 / 13.2.154007 이상
+CVE-2026-111585 / Full Client Legacy/Maintenance (Linux) / 13.2 / 13.2.154008 이상
+CVE-2026-111585 / Full Client Legacy/Maintenance (Windows, Linux, macOS) / 14.7 / 14.7.48868 이상
+CVE-2026-111585 / Full Client Legacy/Maintenance (Windows 7 & 8) / 15.64 / 15.64.10 이상
+CVE-2026-111585 / Full Client (Windows, Linux, macOS) / 15.83 미만 / 15.83 이상
+CVE-2026-111585 / Portable (Windows) / 15.83 미만 / 15.83 이상
+CVE-2026-111585 / Remote Control App (Android) / 15.83 미만 / 15.83 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+
+□ 참고사이트
+[1] https://www.teamviewer.com/en/resources/trust-center/security-bulletins/tv-2026-1011/
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-111585
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터

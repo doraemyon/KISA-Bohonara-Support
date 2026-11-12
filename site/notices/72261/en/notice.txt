@@ -1,0 +1,27 @@
+Title:
+Dow Technology Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Dow Technology Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Dow Technology provides security patches that resolve vulnerabilities occurring in its products.
+o Users using the affected version should follow Dow Technical Support to apply the patch.
+
+□ Description
+o Insufficient access control vulnerability occurring in DaouOffice
+
+□ Affected Products and Solutions
+Manufacturer / Product Name / Affected Version / solution
+Dow Technology / DaouOffice / 3.6.8.5 or earlier / Apply patches according to Dow Technical Support
+※ As security patches are being distributed sequentially, it is recommended that you contact the manufacturer to apply the patch.
+※ Additional security updates and version updates may be provided by the manufacturer, so it is recommended to continuously check for the latest guidance.
+※ Recommend blocking access to the system from external network until patch is applied
+
+□ Questions and inquiries
+o Dow Technology main phone number: 1599-9460
+o Daou Technology Email Inquiry: help@daouoffice.com
+o Dow Technology Online Inquiry: Customer Care Lounge (https://manual.daouoffice.co.kr)
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

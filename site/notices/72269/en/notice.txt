@@ -1,0 +1,43 @@
+Title:
+Jiranjigyo Soft product security measures recommended
+
+Summary:
+We are disseminating today's KISA announcement "Jiranjigyo Soft product security measures recommended". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Jiranjigyo Soft announced measures to address security vulnerabilities found in its products [1]
+o Users using the product are advised to take security measures such as deleting sample files according to the manufacturer's recommendations.
+
+□ Description
+o Improper file upload vulnerability in CrossUploader [1]
+
+□ Affected products and remediation
+Manufacturer / Product Name / Affected Version / action plan
+Jiranjigyo Soft / CrossUploader / 1.0.00 or later and 3.0.09 or earlier / Delete sample file (UploadProcess.jsp) and set security
+□ Security measures
+1. If the sample folder below exists in the operating environment, it is recommended to be deleted. [1]
+- /NamoCrossUploaderH5Samples
+- /NamoCrossUploaderJaSamples
+2. After checking whether the UploadProcess.jsp file exists in paths other than the default installation path, it is recommended to delete unnecessary files.
+3. It is recommended to check the call history of the file in the web access log and check whether any abnormal script files such as JSP have been created in the upload path.
+4. When using the sample file for actual service, it is recommended to apply the security measures below.
+- Only file extensions required for business purposes are allowed to be uploaded.
+- Verification of user authentication and access rights for upload requests
+- Verification of server-side file extension, content, and file name
+- Save the uploaded file in a path that cannot be directly accessed from the web.
+- Block execution of server-side scripts such as JSP in the upload folder
+
+※ The sample folder is for functional testing purposes. If it is not used for actual service, deleting it will not affect the normal operation of the product.
+※ If the sample file is being used in an actual service, check whether it affects the service before deleting it and take action.
+※ A separate security update version was not announced, and sample files recommended by the manufacturer must be removed and security measures taken.
+
+□ Reference sites
+[1] https://jiran.tistory.com/1752
+
+□ Questions and inquiries
+o Jiranjigyo Soft Technical Support: 031-608-4100
+o Jiran Jigyo Soft Email: crosseditor@namoeditor.co.kr
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center
