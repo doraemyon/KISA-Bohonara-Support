@@ -1,0 +1,140 @@
+Title:
+Corporate Security Response Guidelines for PHP Vulnerabilities (PHP2Shell)
+
+Summary:
+We are disseminating today's KISA announcement "Corporate Security Response Guidelines for PHP Vulnerabilities (PHP2Shell)". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+
+- A critical security vulnerability in PHP that allows external users to execute desired commands on the server without logging in (CVE-2026-109618, CVE-2026-109619, CVSS 9.2 Found [1][2][3][5]
+
+- Vulnerability information was leaked before the security update was distributed, and attempts at attacks are being reported, mainly by overseas security companies. If an attack is successful, it could lead to the installation of a remote control file (web shell), leakage of customer information, tampering with the website, or infiltration of the internal network.
+
+- Companies using PHP are advised to take immediate action in accordance with the response guidelines below.
+
+※ If a hosting company or equipment/solution manufacturer manages PHP, check with the company whether the following measures apply and request them.
+
+※ It is recommended to apply the patch after conducting a preliminary impact assessment and testing, as compatibility and stability issues with the existing system may cause service disruptions when the patch is applied.
+
+□ Corporate Security Response Guidelines
+
+1. Check the current status of PHP in use
+
+- Check whether all websites and systems published on the internet use PHP and their versions
+
+- Includes outsourced sites, sites created long ago and no longer maintained, event and test servers, and admin pages
+
+- Do not rely solely on the asset management list, but check based on the servers that are actually in operation.
+
+- Separately verify equipment and solutions with built-in PHP (e.g., network equipment management screens, installation packages for Windows that include PHP) as well as container images (e.g., Docker) obtained externally. [4]
+
+2. Update to the latest version and restart
+
+- Resolved version: PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35 or later (including updates provided by Linux distributions and manufacturers)
+
+- Prioritize servers that are publicly accessible on the internet.
+
+- After the update, be sure to restart all web services that run PHP (PHP-FPM, Apache mod_php, php-cgi, FrankenPHP, LiteSpeed, etc.).
+
+- If you do not restart, the previous version remaining in memory will continue to run, leaving the system still vulnerable.
+
+- The container environment redistributes new images.
+
+- After the update, check whether the PHP version actually used by the web service has changed.
+
+※ Since the version identified by the command (php -v) and the version used by the web service may differ, if multiple PHP versions are installed on a single server, verify each version separately.
+
+※ Since the version number of packages provided by Linux distributions and vendors may not change even after applying security patches, check the package change history to see if CVEs have been reflected.
+
+3. Older version (PHP 8.1 below) will be switched to a supported version
+
+- PHP 8.1 Switch to the supported version as official updates are not provided for versions below.
+
+- PHP 8.2 Degree 2026.12.31. Security support is scheduled to end. 8.3 Recommended to switch to a later version
+
+- If the transition takes time, apply the security patches provided by Linux distributions and Long-Term Support (LTS) vendors, or the security fixes released by the PHP Security Team 7.4·8.0·8.1 Temporarily apply the source patch for and develop a migration plan [1]
+
+- If there is no patch to apply, apply the temporary measures in Rule 4. If that is also difficult, consider blocking external access or temporarily suspending the service.
+
+4. Temporary measures are requested when immediate updates are difficult.
+
+- Limit the request size (including requests without request size information) at the front end of PHP, such as web firewalls, web servers, and proxies, and block file upload (multipart) requests for services that do not require file uploads.
+
+- If you are using a web firewall, check that the latest blocking rules have been applied.
+
+- Restart all PHP processes after applying the official PHP runtime settings to php.ini, PHP-FPM pool settings, or web server settings. [1][2][3]
+
+- session.upload_progress.enabled = 0 (Disable file upload progress display feature)
+
+- memory_limit = -1 (Set as an administrator setting so that the program cannot change it, e.g., php_admin_value in the PHP-FPM pool)
+
+- Set post_max_size to a low value (8M if uploads are not required, or 32M if they are). Keep upload_max_filesize smaller than post_max_size.
+
+- PHP 8.5 Add fatal_error_backtraces = 0 when using
+
+※ Temporary measures do not completely prevent attacks, so updates are recommended.
+
+- If even temporary measures are difficult to implement, we recommend considering blocking external access or temporarily suspending the service until the update is completed.
+
+5. Check the log after the update
+
+MIN 10.20 Review all records after (date of vulnerability information leak) and, if possible, check records prior to that date as well.
+
+- Key Inspection Items
+
+- Abnormally large requests to a PHP page followed by repeated server errors (HTTP 500)
+
+- PHP program restart/abnormal termination (segfault) or out-of-memory error for unknown reasons
+
+- Traces of the web server executing a command shell (sh, bash, etc.) or a file download tool
+
+- Newly created or modified PHP files (webshells) in the web folder, upload folder, or temporary folder
+
+- External scripts secretly added to the homepage or payment page
+
+- Traces of a new connection from the web server to an unknown external address
+
+※ Even if there are no issues in the records, security is not guaranteed, so updates and credential changes should be carried out together.
+
+6. Changing Important Credentials
+
+- This vulnerability can lead to the leakage of passwords, access authentication values (tokens), and external service integration keys (API keys) stored in the server's memory. [3]
+
+- For servers that were exposed to the internet before the update, it is recommended to change the DB password, external service integration key, and administrator account password.
+
+- Servers with signs of compromise must be replaced.
+
+7. In the event of a breach, respond in the following order:
+
+1 Isolation: Do not turn off or restart the server; only block external access from the network.
+
+2 Report: [Bohonara (https://boho.or.kr)] Report via → [Report Security Incident] → [Report]
+
+3. Secure evidence: Preserve server records (logs), list of running programs, and network connection information.
+
+※ When the server is restarted, any traces of the attack remaining in the memory will disappear, so evidence should be secured before updating and restarting.
+
+4 Actions: Update and restart, remove web shells, replace credentials
+
+8. Avoid running PoCs with unclear sources
+
+- Among the PoCs circulating on the internet, many are fake with hidden malware.
+
+- Whether a vulnerability exists is determined by checking the version and reviewing records instead of conducting a PoC.
+
+- If analysis is absolutely necessary, it should only be performed in an environment separate from the business network.
+
+□ Reference sites
+
+- [1] https://www.php.net/archive/2026.php#2026-10-21-5
+
+- [2] https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w
+
+- [3] https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp
+
+- [4] https://github.com/NCSC-NL/php2shell
+
+- [5] https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72227
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Headquarters

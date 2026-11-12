@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src https://avatars.githubusercontent.com https://www.kisa.or.kr; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>PHP 보안취약점(PHP2Shell) 관련 기업 보안 대응 수칙</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/51371743?v=4">
+  <link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-brand" href="../../../">
+        <span class="site-logo"><img src="https://www.kisa.or.kr/resource/kor/images/sub/sub_CI_logo_signature_9.png" alt=""></span>
+        <span class="site-name">KISA Notice</span>
+      </a>
+    </div>
+  </header>
+  <main class="page-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a class="breadcrumbs__link" href="../../../">보안공지</a>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg>
+      <details class="language-menu">
+        <summary class="language-menu__summary">
+          <span>한국어</span>
+          <svg class="language-menu__chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"/></svg>
+        </summary>
+        <div class="language-menu__popover">
+          <a class="language-menu__option is-active" href="../ko/" aria-current="page"><span>한국어</span><svg class="language-menu__check" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L2.22 7.28a.75.75 0 0 1 1.06-1.06L7 9.94l5.72-5.72a.75.75 0 0 1 1.06 0Z"/></svg></a>
+          <a class="language-menu__option" href="../en/"><span>English</span></a>
+        </div>
+      </details>
+    </nav>
+    <article class="notice-card">
+      <header class="notice-card__header">
+        <div class="notice-heading">
+          <h1>PHP 보안취약점(PHP2Shell) 관련 기업 보안 대응 수칙</h1>
+          <div class="notice-meta">
+            <span class="language-badge">한국어</span>
+            <span><time datetime="2026-10-22">발행일 2026-10-22</time></span>
+            <span>UTF-8</span>
+          </div>
+        </div>
+        <div class="toolbar" aria-label="문서 작업">
+          <button class="button button--primary" id="copy-all" type="button" data-success="클립보드에 복사했습니다." data-failure="복사하지 못했습니다. 선택된 텍스트를 직접 복사해 주세요.">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg>
+            <span>전체 내용 복사</span>
+          </button>
+          <a class="button" href="./notice.txt" download="PHP 보안취약점(PHP2Shell) 관련 기업 보안 대응 수칙.txt">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.69V.75a.75.75 0 0 1 1.5 0v6.94l1.72-1.72a.749.749 0 1 1 1.06 1.06l-3 3a.749.749 0 0 1-1.06 0l-3-3a.749.749 0 1 1 1.06-1.06Z"/></svg>
+            <span>텍스트 저장</span>
+          </a>
+          <a class="button" href="https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&amp;menuNo=205020&amp;nttId=72230" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8.25 1A.75.75 0 0 1 9 .25h4.75c.966 0 1.75.784 1.75 1.75v4.75a.75.75 0 0 1-1.5 0V2.56L8.78 7.78a.749.749 0 1 1-1.06-1.06L12.94 1.5H9A.75.75 0 0 1 8.25 1Z"/><path d="M2.75 3.5a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V9a.75.75 0 0 1 1.5 0v4.25A1.75 1.75 0 0 1 12.25 15h-9.5A1.75 1.75 0 0 1 1 13.25v-9.5C1 2.784 1.784 2 2.75 2H7a.75.75 0 0 1 0 1.5Z"/></svg>
+            <span class="button__label--wide">KISA 원문</span>
+          </a>
+        </div>
+      </header>
+      <div class="notice-card__status">
+        <span>PHP 보안취약점(PHP2Shell) 관련 기업 보안 대응 수칙.txt · 140 lines</span>
+        <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
+      </div>
+      <div class="code-view" id="notice-text" aria-label="PHP 보안취약점(PHP2Shell) 관련 기업 보안 대응 수칙.txt">
+        <div class="code-line" data-line="1"><span class="line-content">제목:</span></div>
+        <div class="code-line" data-line="2"><span class="line-content">PHP 보안취약점(PHP2Shell) 관련 기업 보안 대응 수칙</span></div>
+        <div class="code-line" data-line="3"><span class="line-content"></span></div>
+        <div class="code-line" data-line="4"><span class="line-content">요약:</span></div>
+        <div class="code-line" data-line="5"><span class="line-content">금일 KISA 공지 &quot;PHP 보안취약점(PHP2Shell) 관련 기업 보안 대응 수칙&quot; 전파드리오니, 특이사항 있으시면 회신 바랍니다.</span></div>
+        <div class="code-line" data-line="6"><span class="line-content"></span></div>
+        <div class="code-line" data-line="7"><span class="line-content">본문:</span></div>
+        <div class="code-line" data-line="8"><span class="line-content">□ 개요</span></div>
+        <div class="code-line" data-line="9"><span class="line-content"></span></div>
+        <div class="code-line" data-line="10"><span class="line-content">- PHP에서 로그인 없이 외부에서 서버에 원하는 명령을 실행할 수 있는 치명적 보안 취약점 (CVE-2026-109618, CVE-2026-109619, CVSS 9.2) 발견 [1][2][3][5]</span></div>
+        <div class="code-line" data-line="11"><span class="line-content"></span></div>
+        <div class="code-line" data-line="12"><span class="line-content">- 보안 업데이트 배포 전 취약점 정보가 유출되었고 해외 보안업체를 중심으로 공격 시도가 보고되고 있으며, 공격에 성공하면 원격조종 파일(웹셸) 설치, 고객정보 유출, 홈페이지 변조, 내부망 침투 등 가능</span></div>
+        <div class="code-line" data-line="13"><span class="line-content"></span></div>
+        <div class="code-line" data-line="14"><span class="line-content">- PHP를 사용하는 기업은 아래 대응 수칙에 따라 즉시 조치할 것을 권고</span></div>
+        <div class="code-line" data-line="15"><span class="line-content"></span></div>
+        <div class="code-line" data-line="16"><span class="line-content">※ 호스팅 업체나 장비·솔루션 제조사가 PHP를 관리하는 경우, 해당 업체에 아래 조치의 적용 여부를 확인하고 요청</span></div>
+        <div class="code-line" data-line="17"><span class="line-content"></span></div>
+        <div class="code-line" data-line="18"><span class="line-content">※ 패치 적용 시 기존 시스템과의 호환성 및 안정성 문제로 서비스 장애가 발생할 수 있으므로, 사전 영향도 검토 및 테스트 후 적용 권고</span></div>
+        <div class="code-line" data-line="19"><span class="line-content"></span></div>
+        <div class="code-line" data-line="20"><span class="line-content">□ 기업 보안 대응 수칙</span></div>
+        <div class="code-line" data-line="21"><span class="line-content"></span></div>
+        <div class="code-line" data-line="22"><span class="line-content">1. 운영 중인 PHP 사용 현황 확인</span></div>
+        <div class="code-line" data-line="23"><span class="line-content"></span></div>
+        <div class="code-line" data-line="24"><span class="line-content">- 인터넷에 공개된 모든 홈페이지와 시스템의 PHP 사용 여부와 버전 확인</span></div>
+        <div class="code-line" data-line="25"><span class="line-content"></span></div>
+        <div class="code-line" data-line="26"><span class="line-content">- 외주 제작 사이트, 오래전에 만들어 두고 관리하지 않는 사이트, 이벤트·테스트 서버, 관리자 페이지 포함</span></div>
+        <div class="code-line" data-line="27"><span class="line-content"></span></div>
+        <div class="code-line" data-line="28"><span class="line-content">- 자산 관리 목록에만 의존하지 말고, 실제 동작 중인 서버를 기준으로 확인</span></div>
+        <div class="code-line" data-line="29"><span class="line-content"></span></div>
+        <div class="code-line" data-line="30"><span class="line-content">- PHP가 내장된 장비·솔루션(네트워크 장비 관리 화면, PHP가 포함된 윈도우용 설치 패키지 등)과 외부에서 받아 쓰는 컨테이너 이미지(도커 등)도 별도 확인 [4]</span></div>
+        <div class="code-line" data-line="31"><span class="line-content"></span></div>
+        <div class="code-line" data-line="32"><span class="line-content">2. 최신 버전 업데이트 및 재시작</span></div>
+        <div class="code-line" data-line="33"><span class="line-content"></span></div>
+        <div class="code-line" data-line="34"><span class="line-content">- 해결 버전: PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35 이상 (리눅스 배포판·제조사 제공 업데이트 포함)</span></div>
+        <div class="code-line" data-line="35"><span class="line-content"></span></div>
+        <div class="code-line" data-line="36"><span class="line-content">- 인터넷에 공개된 서버부터 우선 조치</span></div>
+        <div class="code-line" data-line="37"><span class="line-content"></span></div>
+        <div class="code-line" data-line="38"><span class="line-content">- 업데이트 후 PHP를 실행하는 모든 웹 서비스(PHP-FPM, Apache mod_php, php-cgi, FrankenPHP, LiteSpeed 등)를 반드시 재시작</span></div>
+        <div class="code-line" data-line="39"><span class="line-content"></span></div>
+        <div class="code-line" data-line="40"><span class="line-content">- 재시작하지 않으면 메모리에 남은 이전 버전이 계속 동작해 여전히 취약</span></div>
+        <div class="code-line" data-line="41"><span class="line-content"></span></div>
+        <div class="code-line" data-line="42"><span class="line-content">- 컨테이너 환경은 신규 이미지 재배포</span></div>
+        <div class="code-line" data-line="43"><span class="line-content"></span></div>
+        <div class="code-line" data-line="44"><span class="line-content">- 업데이트 후 웹 서비스가 실제로 사용하는 PHP의 버전이 바뀌었는지 확인</span></div>
+        <div class="code-line" data-line="45"><span class="line-content"></span></div>
+        <div class="code-line" data-line="46"><span class="line-content">※ 명령어( php -v )로 확인되는 버전과 웹 서비스가 사용하는 버전이 다를 수 있으므로, 한 서버에 PHP가 여러 개 설치된 경우 각각 확인</span></div>
+        <div class="code-line" data-line="47"><span class="line-content"></span></div>
+        <div class="code-line" data-line="48"><span class="line-content">※ 리눅스 배포판·제조사 제공 패키지는 보안 패치를 적용해도 버전 번호가 바뀌지 않을 수 있으므로, 패키지 변경 이력에서 CVE 반영 여부 확인</span></div>
+        <div class="code-line" data-line="49"><span class="line-content"></span></div>
+        <div class="code-line" data-line="50"><span class="line-content">3. 구버전(PHP 8.1 이하)은 지원 버전으로 전환</span></div>
+        <div class="code-line" data-line="51"><span class="line-content"></span></div>
+        <div class="code-line" data-line="52"><span class="line-content">- PHP 8.1 이하는 공식 업데이트가 제공되지 않으므로 지원 버전으로 전환</span></div>
+        <div class="code-line" data-line="53"><span class="line-content"></span></div>
+        <div class="code-line" data-line="54"><span class="line-content">- PHP 8.2도 2026.12.31. 보안 지원이 종료될 예정이므로 8.3 이상 버전으로 전환 권장</span></div>
+        <div class="code-line" data-line="55"><span class="line-content"></span></div>
+        <div class="code-line" data-line="56"><span class="line-content">- 전환에 시간이 걸리는 경우, 리눅스 배포판·장기지원(LTS) 업체가 제공하는 보안 패치 또는 PHP 보안팀이 공개한 7.4·8.0·8.1용 소스 패치를 임시로 적용하고 전환 계획 수립 [1]</span></div>
+        <div class="code-line" data-line="57"><span class="line-content"></span></div>
+        <div class="code-line" data-line="58"><span class="line-content">- 적용할 패치가 없다면 수칙 4의 임시 조치를 적용하고, 그것도 어려우면 외부 접속 차단 또는 서비스 일시 중단 검토를 권고</span></div>
+        <div class="code-line" data-line="59"><span class="line-content"></span></div>
+        <div class="code-line" data-line="60"><span class="line-content">4. 즉시 업데이트가 어려울 시 임시 조치 요망</span></div>
+        <div class="code-line" data-line="61"><span class="line-content"></span></div>
+        <div class="code-line" data-line="62"><span class="line-content">- 웹 방화벽·웹 서버·프록시 등 PHP 앞단에서 요청 크기를 제한(요청 크기 정보가 없는 요청 포함)하고, 파일 업로드가 필요 없는 서비스는 파일 업로드(multipart) 요청을 차단</span></div>
+        <div class="code-line" data-line="63"><span class="line-content"></span></div>
+        <div class="code-line" data-line="64"><span class="line-content">- 웹 방화벽을 이용 중이라면 최신 차단 규칙이 적용되었는지 확인</span></div>
+        <div class="code-line" data-line="65"><span class="line-content"></span></div>
+        <div class="code-line" data-line="66"><span class="line-content">- PHP 공식 임시 설정을 php.ini, PHP-FPM pool 설정 또는 웹 서버 설정에 적용한 후 모든 PHP 프로세스 재시작 [1][2][3]</span></div>
+        <div class="code-line" data-line="67"><span class="line-content"></span></div>
+        <div class="code-line" data-line="68"><span class="line-content">- session.upload_progress.enabled = 0 (파일 업로드 진행률 표시 기능 끄기)</span></div>
+        <div class="code-line" data-line="69"><span class="line-content"></span></div>
+        <div class="code-line" data-line="70"><span class="line-content">- memory_limit = -1 (프로그램이 바꿀 수 없도록 관리자 설정으로 지정, 예: PHP-FPM pool의 php_admin_value)</span></div>
+        <div class="code-line" data-line="71"><span class="line-content"></span></div>
+        <div class="code-line" data-line="72"><span class="line-content">- post_max_size 낮게 설정 (업로드가 필요 없으면 8M, 필요하면 32M 수준), upload_max_filesize는 post_max_size보다 작게 유지</span></div>
+        <div class="code-line" data-line="73"><span class="line-content"></span></div>
+        <div class="code-line" data-line="74"><span class="line-content">- PHP 8.5 사용 시 fatal_error_backtraces = 0 추가</span></div>
+        <div class="code-line" data-line="75"><span class="line-content"></span></div>
+        <div class="code-line" data-line="76"><span class="line-content">※ 임시 조치는 공격을 완전히 막지 못하므로, 업데이트 권고</span></div>
+        <div class="code-line" data-line="77"><span class="line-content"></span></div>
+        <div class="code-line" data-line="78"><span class="line-content">- 임시 조치도 적용하기 어렵다면, 업데이트 전까지 외부 접속 차단 또는 서비스 일시 중단 검토를 권고</span></div>
+        <div class="code-line" data-line="79"><span class="line-content"></span></div>
+        <div class="code-line" data-line="80"><span class="line-content">5. 업데이트 후 로그 점검</span></div>
+        <div class="code-line" data-line="81"><span class="line-content"></span></div>
+        <div class="code-line" data-line="82"><span class="line-content">- 최소 10.20.(취약점 정보 유출일) 이후의 기록 전체를 점검하고, 가능하면 그 이전 기록까지 확인</span></div>
+        <div class="code-line" data-line="83"><span class="line-content"></span></div>
+        <div class="code-line" data-line="84"><span class="line-content">- 주요 점검 항목</span></div>
+        <div class="code-line" data-line="85"><span class="line-content"></span></div>
+        <div class="code-line" data-line="86"><span class="line-content">- PHP 페이지로 들어온 비정상적으로 큰 요청과 그 뒤에 반복된 서버 오류(HTTP 500)</span></div>
+        <div class="code-line" data-line="87"><span class="line-content"></span></div>
+        <div class="code-line" data-line="88"><span class="line-content">- 원인을 알 수 없는 PHP 프로그램 재시작·비정상 종료(segfault)나 메모리 부족 오류</span></div>
+        <div class="code-line" data-line="89"><span class="line-content"></span></div>
+        <div class="code-line" data-line="90"><span class="line-content">- 웹 서버가 명령 실행 프로그램(sh, bash 등)이나 파일 다운로드 도구를 실행한 흔적</span></div>
+        <div class="code-line" data-line="91"><span class="line-content"></span></div>
+        <div class="code-line" data-line="92"><span class="line-content">- 웹 폴더, 업로드 폴더, 임시 폴더에 새로 생기거나 바뀐 PHP 파일(웹셸)</span></div>
+        <div class="code-line" data-line="93"><span class="line-content"></span></div>
+        <div class="code-line" data-line="94"><span class="line-content">- 홈페이지나 결제 페이지에 몰래 추가된 외부 스크립트</span></div>
+        <div class="code-line" data-line="95"><span class="line-content"></span></div>
+        <div class="code-line" data-line="96"><span class="line-content">- 웹 서버에서 알 수 없는 외부 주소로 새로 연결한 흔적</span></div>
+        <div class="code-line" data-line="97"><span class="line-content"></span></div>
+        <div class="code-line" data-line="98"><span class="line-content">※ 기록상 이상이 없더라도 안전이 보장되지 않으므로, 업데이트와 인증정보 교체를 함께 진행</span></div>
+        <div class="code-line" data-line="99"><span class="line-content"></span></div>
+        <div class="code-line" data-line="100"><span class="line-content">6. 중요 인증정보 교체</span></div>
+        <div class="code-line" data-line="101"><span class="line-content"></span></div>
+        <div class="code-line" data-line="102"><span class="line-content">- 이번 취약점은 서버 메모리에 담긴 비밀번호, 접속 인증값(토큰), 외부 서비스 연동 키(API 키) 등을 유출시킬 수 있음 [3]</span></div>
+        <div class="code-line" data-line="103"><span class="line-content"></span></div>
+        <div class="code-line" data-line="104"><span class="line-content">- 업데이트 전까지 인터넷에 노출되었던 서버는 DB 비밀번호, 외부 서비스 연동 키, 관리자 계정 비밀번호 교체 권장</span></div>
+        <div class="code-line" data-line="105"><span class="line-content"></span></div>
+        <div class="code-line" data-line="106"><span class="line-content">- 침해 흔적이 발견된 서버는 반드시 교체</span></div>
+        <div class="code-line" data-line="107"><span class="line-content"></span></div>
+        <div class="code-line" data-line="108"><span class="line-content">7. 침해사고 발생 시 아래 순서대로 대응</span></div>
+        <div class="code-line" data-line="109"><span class="line-content"></span></div>
+        <div class="code-line" data-line="110"><span class="line-content">① 격리: 서버를 끄거나 재시작하지 말고, 네트워크에서 외부 접속만 차단</span></div>
+        <div class="code-line" data-line="111"><span class="line-content"></span></div>
+        <div class="code-line" data-line="112"><span class="line-content">② 신고: [보호나라(https://boho.or.kr)] → [침해사고 신고] → [신고하기]를 통해 신고</span></div>
+        <div class="code-line" data-line="113"><span class="line-content"></span></div>
+        <div class="code-line" data-line="114"><span class="line-content">③ 증거 확보: 서버 기록(로그), 실행 중인 프로그램 목록, 네트워크 연결 정보 보존</span></div>
+        <div class="code-line" data-line="115"><span class="line-content"></span></div>
+        <div class="code-line" data-line="116"><span class="line-content">※ 서버를 재시작하면 메모리에 남은 공격 흔적이 사라지므로, 업데이트·재시작 전에 증거를 먼저 확보</span></div>
+        <div class="code-line" data-line="117"><span class="line-content"></span></div>
+        <div class="code-line" data-line="118"><span class="line-content">④ 조치: 업데이트 및 재시작, 웹셸 제거, 인증정보 교체</span></div>
+        <div class="code-line" data-line="119"><span class="line-content"></span></div>
+        <div class="code-line" data-line="120"><span class="line-content">8. 출처가 불분명한 PoC 실행 지양</span></div>
+        <div class="code-line" data-line="121"><span class="line-content"></span></div>
+        <div class="code-line" data-line="122"><span class="line-content">- 인터넷에 유포되는 PoC 중에는 악성코드가 숨겨진 가짜가 많음</span></div>
+        <div class="code-line" data-line="123"><span class="line-content"></span></div>
+        <div class="code-line" data-line="124"><span class="line-content">- 취약 여부는 PoC 실행 대신 버전 확인과 기록 점검으로 판단</span></div>
+        <div class="code-line" data-line="125"><span class="line-content"></span></div>
+        <div class="code-line" data-line="126"><span class="line-content">- 분석이 꼭 필요한 경우 업무망과 분리된 환경에서만 수행</span></div>
+        <div class="code-line" data-line="127"><span class="line-content"></span></div>
+        <div class="code-line" data-line="128"><span class="line-content">□ 참고사이트</span></div>
+        <div class="code-line" data-line="129"><span class="line-content"></span></div>
+        <div class="code-line" data-line="130"><span class="line-content">- [1] https://www.php.net/archive/2026.php#2026-10-21-5</span></div>
+        <div class="code-line" data-line="131"><span class="line-content"></span></div>
+        <div class="code-line" data-line="132"><span class="line-content">- [2] https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w</span></div>
+        <div class="code-line" data-line="133"><span class="line-content"></span></div>
+        <div class="code-line" data-line="134"><span class="line-content">- [3] https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp</span></div>
+        <div class="code-line" data-line="135"><span class="line-content"></span></div>
+        <div class="code-line" data-line="136"><span class="line-content">- [4] https://github.com/NCSC-NL/php2shell</span></div>
+        <div class="code-line" data-line="137"><span class="line-content"></span></div>
+        <div class="code-line" data-line="138"><span class="line-content">- [5] https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&amp;bbsId=B0000133&amp;searchWrd=&amp;menuNo=205020&amp;pageIndex=1&amp;categoryCode=&amp;nttId=72227</span></div>
+        <div class="code-line" data-line="139"><span class="line-content"></span></div>
+        <div class="code-line" data-line="140"><span class="line-content">□ 작성 : 디지털위협대응본부 취약점관리센터</span></div>
+      </div>
+    </article>
+  </main>
+  <script src="../../../assets/app.js" defer></script>
+</body>
+</html>
