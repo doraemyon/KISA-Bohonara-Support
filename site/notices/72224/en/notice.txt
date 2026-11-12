@@ -1,0 +1,62 @@
+Title:
+F5 Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "F5 Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o F5 releases security updates to address vulnerabilities in its products [1]~[5]
+o Users running an affected version are advised to update to the latest version according to the workaround.
+
+□ Description
+o Heap-based Buffer Overflow Vulnerability in NGINX Plus and NGINX Open Source (CVE-2026-15176) [1][6]
+o Heap-based Buffer Overflow Vulnerability in NGINX Plus and NGINX Open Source (CVE-2026-93479) [2][7]
+o Use-After-Free Vulnerability in NGINX Plus and NGINX Open Source (CVE-2026-97205) [3][8]
+o Encoding Error Vulnerability in NGINX Plus and NGINX Open Source (CVE-2026-95101) [4][9]
+o Use of Uninitialized Resource Vulnerability in NGINX Plus and NGINX Open Source (CVE-2026-97629) [5][10]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-15176 / NGINX Plus / R33 or higher, R36 or lower / Migrate to the resolved version
+CVE-2026-15176 / NGINX Plus / 37.0.0 or later and 37.0.4 or earlier / 37.0.5.1 or later
+CVE-2026-15176 / NGINX Open Source / 0.1.29 or later and 0.9.9 or earlier / Migrate to the resolved version
+CVE-2026-15176 / NGINX Open Source / 1.0.0 or later and 1.30.5 or earlier / 1.30.6 or later
+CVE-2026-15176 / NGINX Open Source / 1.31.0 or later and 1.31.6 or earlier / 1.31.7 or later
+CVE-2026-93479 / NGINX Plus / R33 or higher, R36 or lower / Migrate to the resolved version
+CVE-2026-93479 / NGINX Plus / 37.0.0 or later and 37.0.4 or earlier / 37.0.5.1 or later
+CVE-2026-93479 / NGINX Open Source / 1.30.0 or later and 1.30.5 or earlier / 1.30.6 or later
+CVE-2026-93479 / NGINX Open Source / 1.31.2 or later and 1.31.6 or earlier / 1.31.7 or later
+CVE-2026-97205 / NGINX Plus / R33 or higher, R36 or lower / Migrate to the resolved version
+CVE-2026-97205 / NGINX Plus / 37.0.0 or later and 37.0.4 or earlier / 37.0.5.1 or later
+CVE-2026-97205 / NGINX Open Source / 1.30.0 or later and 1.30.5 or earlier / 1.30.6 or later
+CVE-2026-97205 / NGINX Open Source / 1.31.0 or later and 1.31.6 or earlier / 1.31.7 or later
+CVE-2026-95101 / NGINX Plus / R33 or higher, R36 or lower / Migrate to the resolved version
+CVE-2026-95101 / NGINX Plus / 37.0.0 or later and 37.0.6 or earlier / 37.0.7.1 or later
+CVE-2026-95101 / NGINX Plus / 37.1.0 or later and 37.1.1 or earlier / 37.2.0.1 or later
+CVE-2026-95101 / NGINX Open Source / 1.25.0 or later and 1.28.3 or earlier / Migrate to the resolved version
+CVE-2026-95101 / NGINX Open Source / 1.30.0 or later and 1.30.5 or earlier / 1.30.6 or later
+CVE-2026-95101 / NGINX Open Source / 1.31.0 or later and 1.31.6 or earlier / 1.31.7 or later
+CVE-2026-97629 / NGINX Plus / R33 or higher, R36 or lower / Migrate to the resolved version
+CVE-2026-97629 / NGINX Plus / 37.0.0 or later and 37.0.4 or earlier / 37.0.5.1 or later
+CVE-2026-97629 / NGINX Open Source / 1.23.3 / Migrate to the resolved version
+CVE-2026-97629 / NGINX Open Source / 1.30.0 or later and 1.30.5 or earlier / 1.30.6 or later
+CVE-2026-97629 / NGINX Open Source / 1.31.0 or later and 1.31.6 or earlier / 1.31.7 or later
+※ Perform updates by referring to the sites listed below. [1]~[5]
+
+□ Reference sites
+[1] https://my.f5.com/manage/s/article/K000162416
+[2] https://my.f5.com/manage/s/article/K000162607
+[3] https://my.f5.com/manage/s/article/K000162608
+[4] https://my.f5.com/manage/s/article/K000162613
+[5] https://my.f5.com/manage/s/article/K000162606
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-15176
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-93479
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-97205
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-95101
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-97629
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code)
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Headquarters

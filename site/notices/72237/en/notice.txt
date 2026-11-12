@@ -1,0 +1,32 @@
+Title:
+New PHP Vulnerability (CVE-2026-115560) Recommendation for Interim Measures
+
+Summary:
+We are disseminating today's KISA announcement "New PHP Vulnerability (CVE-2026-115560) Recommendation for Interim Measures". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+o The PHP development team has announced a workaround for a remote code execution vulnerability in its product. [1]
+o As a security update has not been released for this vulnerability, users with the affected settings are advised to apply temporary measures according to the workaround.
+※ This notice will be updated when additional information, such as affected versions and security updates, is disclosed.
+
+□ Description
+o Remote code execution vulnerability occurring during PHP session processing (CVE-2026-115560) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-115560 / PHP / Manufacturer not disclosed / Not yet released (scheduled for the next regular update)
+※ Only affected if all of the following conditions are met [1]
+※ To be updated when the manufacturer releases the affected versions and the fixed versions
+
+o Specify session.serialize_handler as php_binary or php_serialize in the configuration file
+o Change the value to php using ini_set() before calling session_start().
+o session.upload_progress.enabled Enabled (Default)
+※ Before deploying the security update, set session.upload_progress.enabled=0 in php.ini, PHP-FPM pool settings, etc., and then restart all PHP workers. [1]
+※ 10.21. Deployed security updates (8.5.12, 8.4.27, 8.3.36, 8.2.35) does not resolve the issue, and PHP2Shell (CVE-2026-109619) If the above settings have already been applied as a temporary measure, no further action is required.
+
+□ Reference sites
+[1] https://www.php.net/archive/2026.php#2026-10-23-1
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-115560
+
+□ Prepared by: Vulnerability Management Center, Digital Threat Response Headquarters

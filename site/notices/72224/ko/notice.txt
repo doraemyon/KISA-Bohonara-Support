@@ -1,0 +1,62 @@
+제목:
+F5 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "F5 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o F5社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[5]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o NGINX Plus, NGINX Open Source에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-15176) [1][6]
+o NGINX Plus, NGINX Open Source에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-93479) [2][7]
+o NGINX Plus, NGINX Open Source에서 발생하는 Use After Free 취약점(CVE-2026-97205) [3][8]
+o NGINX Plus, NGINX Open Source에서 발생하는 Encoding Error 취약점(CVE-2026-95101) [4][9]
+o NGINX Plus, NGINX Open Source에서 발생하는 Use of Uninitialized Resource 취약점(CVE-2026-97629) [5][10]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-15176 / NGINX Plus / R33 이상 R36 이하 / 해결 버전으로 마이그레이션
+CVE-2026-15176 / NGINX Plus / 37.0.0 이상 37.0.4 이하 / 37.0.5.1 이상
+CVE-2026-15176 / NGINX Open Source / 0.1.29 이상 0.9.9 이하 / 해결 버전으로 마이그레이션
+CVE-2026-15176 / NGINX Open Source / 1.0.0 이상 1.30.5 이하 / 1.30.6 이상
+CVE-2026-15176 / NGINX Open Source / 1.31.0 이상 1.31.6 이하 / 1.31.7 이상
+CVE-2026-93479 / NGINX Plus / R33 이상 R36 이하 / 해결 버전으로 마이그레이션
+CVE-2026-93479 / NGINX Plus / 37.0.0 이상 37.0.4 이하 / 37.0.5.1 이상
+CVE-2026-93479 / NGINX Open Source / 1.30.0 이상 1.30.5 이하 / 1.30.6 이상
+CVE-2026-93479 / NGINX Open Source / 1.31.2 이상 1.31.6 이하 / 1.31.7 이상
+CVE-2026-97205 / NGINX Plus / R33 이상 R36 이하 / 해결 버전으로 마이그레이션
+CVE-2026-97205 / NGINX Plus / 37.0.0 이상 37.0.4 이하 / 37.0.5.1 이상
+CVE-2026-97205 / NGINX Open Source / 1.30.0 이상 1.30.5 이하 / 1.30.6 이상
+CVE-2026-97205 / NGINX Open Source / 1.31.0 이상 1.31.6 이하 / 1.31.7 이상
+CVE-2026-95101 / NGINX Plus / R33 이상 R36 이하 / 해결 버전으로 마이그레이션
+CVE-2026-95101 / NGINX Plus / 37.0.0 이상 37.0.6 이하 / 37.0.7.1 이상
+CVE-2026-95101 / NGINX Plus / 37.1.0 이상 37.1.1 이하 / 37.2.0.1 이상
+CVE-2026-95101 / NGINX Open Source / 1.25.0 이상 1.28.3 이하 / 해결 버전으로 마이그레이션
+CVE-2026-95101 / NGINX Open Source / 1.30.0 이상 1.30.5 이하 / 1.30.6 이상
+CVE-2026-95101 / NGINX Open Source / 1.31.0 이상 1.31.6 이하 / 1.31.7 이상
+CVE-2026-97629 / NGINX Plus / R33 이상 R36 이하 / 해결 버전으로 마이그레이션
+CVE-2026-97629 / NGINX Plus / 37.0.0 이상 37.0.4 이하 / 37.0.5.1 이상
+CVE-2026-97629 / NGINX Open Source / 1.23.3 / 해결 버전으로 마이그레이션
+CVE-2026-97629 / NGINX Open Source / 1.30.0 이상 1.30.5 이하 / 1.30.6 이상
+CVE-2026-97629 / NGINX Open Source / 1.31.0 이상 1.31.6 이하 / 1.31.7 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]~[5]
+
+□ 참고사이트
+[1] https://my.f5.com/manage/s/article/K000162416
+[2] https://my.f5.com/manage/s/article/K000162607
+[3] https://my.f5.com/manage/s/article/K000162608
+[4] https://my.f5.com/manage/s/article/K000162613
+[5] https://my.f5.com/manage/s/article/K000162606
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-15176
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-93479
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-97205
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-95101
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-97629
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터

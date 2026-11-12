@@ -1,0 +1,43 @@
+제목:
+Oracle 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Oracle 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Oracle社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition, OpenJDK에서 발생하는 Use of a Broken or Risky Cryptographic Algorithm 취약점(CVE-2026-91403) [1][2][3]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-91403 / Java SE / 8u511 이하 / Oracle 보안 패치 적용
+CVE-2026-91403 / Java SE / 8u511-perf 이하 / Oracle 보안 패치 적용
+CVE-2026-91403 / Java SE / 11.0.33 이하 / Oracle 보안 패치 적용
+CVE-2026-91403 / Java SE / 17.0.21 이하 / Oracle 보안 패치 적용
+CVE-2026-91403 / Java SE / 21.0.13 이하 / Oracle 보안 패치 적용
+CVE-2026-91403 / Java SE / 25.0.5 이하 / Oracle 보안 패치 적용
+CVE-2026-91403 / Java SE / 27.0.1 이하 / Oracle 보안 패치 적용
+CVE-2026-91403 / GraalVM for JDK / 17.0.21 이하 / Oracle 보안 패치 적용
+CVE-2026-91403 / GraalVM for JDK / 21.0.13 이하 / Oracle 보안 패치 적용
+CVE-2026-91403 / GraalVM Enterprise Edition / 21.3.20 이하 / Oracle 보안 패치 적용
+CVE-2026-91403 / OpenJDK / 8u504 이하 / 벤더 보안 업데이트 적용
+CVE-2026-91403 / OpenJDK / 11.0.32.1 이하 / 벤더 보안 업데이트 적용
+CVE-2026-91403 / OpenJDK / 17.0.21 이하 / 벤더 보안 업데이트 적용
+CVE-2026-91403 / OpenJDK / 21.0.13 이하 / 벤더 보안 업데이트 적용
+CVE-2026-91403 / OpenJDK / 25.0.5 이하 / 벤더 보안 업데이트 적용
+CVE-2026-91403 / OpenJDK / 27.0.1 이하 / 벤더 보안 업데이트 적용
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][2]
+
+□ 참고사이트
+[1] https://www.oracle.com/security-alerts/alert-cve-2026-91403.html
+[2] https://openjdk.org/groups/vulnerability/advisories/2026-10-21
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-91403
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터

@@ -1,0 +1,28 @@
+Title:
+Laravel Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Laravel Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o The Laravel project has announced security updates to address vulnerabilities occurring in its products [1]
+o Users utilizing affected versions are advised to update to the latest version according to the mitigation measures
+
+□ Description
+o Improper Authentication vulnerability occurring in Laravel Framework (CVE-2026-114509) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Resolved Version
+CVE-2026-114509 / Laravel Framework / Below 12.68.0 / 12.68.0 or higher
+CVE-2026-114509 / Laravel Framework / 13.0.0 or higher and below 13.29.0 / 13.29.0 or higher
+※ Perform the update by checking the reference sites below [1]
+
+□ Reference sites
+[1] https://github.com/laravel/framework/security/advisories/GHSA-f9x3-7vq9-cph6
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-114509
+
+□ Questions and inquiries
+o Korea Internet & Security Agency (KISA) Cyber Civil Center: 118 without area code
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Division

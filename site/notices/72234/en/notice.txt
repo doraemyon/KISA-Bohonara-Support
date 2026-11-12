@@ -1,0 +1,43 @@
+Title:
+Oracle Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Oracle Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Oracle has released security updates to address vulnerabilities occurring in its products [1][2]
+o Users utilizing affected versions are recommended to update to the latest version according to the mitigation measures
+
+□ Description
+o Use of a Broken or Risky Cryptographic Algorithm vulnerability occurring in Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition, OpenJDK (CVE-2026-91403) [1][2][3]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Mitigation Version
+CVE-2026-91403 / Java SE / 8u511 and earlier / Apply Oracle security patch
+CVE-2026-91403 / Java SE / 8u511-perf and earlier / Apply Oracle security patch
+CVE-2026-91403 / Java SE / 11.0.33 and earlier / Apply Oracle security patch
+CVE-2026-91403 / Java SE / 17.0.21 and earlier / Apply Oracle security patch
+CVE-2026-91403 / Java SE / 21.0.13 and earlier / Apply Oracle security patch
+CVE-2026-91403 / Java SE / 25.0.5 and earlier / Apply Oracle security patch
+CVE-2026-91403 / Java SE / 27.0.1 and earlier / Apply Oracle security patch
+CVE-2026-91403 / GraalVM for JDK / 17.0.21 and earlier / Apply Oracle security patch
+CVE-2026-91403 / GraalVM for JDK / 21.0.13 and earlier / Apply Oracle security patch
+CVE-2026-91403 / GraalVM Enterprise Edition / 21.3.20 and earlier / Apply Oracle security patch
+CVE-2026-91403 / OpenJDK / 8u504 and earlier / Apply vendor security update
+CVE-2026-91403 / OpenJDK / 11.0.32.1 and earlier / Apply vendor security update
+CVE-2026-91403 / OpenJDK / 17.0.21 and earlier / Apply vendor security update
+CVE-2026-91403 / OpenJDK / 21.0.13 and earlier / Apply vendor security update
+CVE-2026-91403 / OpenJDK / 25.0.5 and earlier / Apply vendor security update
+CVE-2026-91403 / OpenJDK / 27.0.1 and earlier / Apply vendor security update
+※ Check the reference sites below to perform updates [1][2]
+
+□ Reference sites
+[1] https://www.oracle.com/security-alerts/alert-cve-2026-91403.html
+[2] https://openjdk.org/groups/vulnerability/advisories/2026-10-21
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-91403
+
+□ Questions and inquiries
+o Korea Internet & Security Agency (KISA) Cyber Civil Center: Dial 118 without area code
+
+□ Author: Vulnerability Management Center, Digital Threat Response Division

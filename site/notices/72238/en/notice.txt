@@ -1,0 +1,33 @@
+Title:
+Google Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Google Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Google has released security updates to address vulnerabilities in its products [1]
+o Users running affected versions are advised to update to the latest version according to the mitigation measures
+
+□ Description
+o Out-of-bounds Write vulnerability in Google Brotli (CVE-2026-111497) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Versions / Resolved Version
+CVE-2026-111497 / Brotli / 1.0.3 or later and 1.0.10 before / 1.0.10
+CVE-2026-111497 / Brotli / 1.1.0 or later and 1.1.1 before / 1.1.1
+CVE-2026-111497 / Brotli / 1.2.0 or later and 1.2.1 before / 1.2.1
+※ Check the reference sites below to perform the update [1]
+※ Since some products applied backported vulnerability fix codes without changing the Brotli version, action is required by checking the security update details for each manufacturer [4]
+※ If the automatic HTTP response decompression feature via cURL is enabled in PHP for Windows, it may be affected by this vulnerability, so updating to PHP 8.2.35-1, 8.3.36-1, 8.4.27-1, 8.5.12-1 versions is recommended [3]
+
+□ Reference sites
+[1] https://github.com/google/brotli/releases
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-111497
+[3] https://www.php.net/archive/2026.php#2026-10-26-1
+[4] https://nodejs.org/en/blog/vulnerability/october-2026-security-releases
+
+□ Questions and inquiries
+o Korea Internet & Security Agency (KISA) Cyber Civil Center: Dial 118 without area code
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Division
