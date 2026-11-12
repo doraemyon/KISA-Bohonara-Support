@@ -1,0 +1,75 @@
+제목:
+Zyxel 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Zyxel 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Zyxel社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명
+o GS1900 시리즈 스위치에서 발생하는 Out-of-bounds Write 취약점(CVE-2026-107441) [1][3]
+o AP, FWA7, Security Router에서 발생하는 Classic Buffer Overflow 취약점(CVE-2026-76955) [2][4]
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-107441 / GS1900-8 / 2.90(AAHH.2)C0 이하 / 2.90(AAHH.3)C0 이상
+CVE-2026-107441 / GS1900-8HP / 2.90(AAHI.2)C0 이하 / 2.90(AAHI.3)C0 이상
+CVE-2026-107441 / GS1900-10HP / 2.90(AAZI.2)C0 이하 / 2.90(AAZI.3)C0 이상
+CVE-2026-107441 / GS1900-16 / 2.90(AAHJ.2)C0 이하 / 2.90(AAHJ.3)C0 이상
+CVE-2026-107441 / GS1900-24 / 2.90(AAHL.2)C0 이하 / 2.90(AAHL.3)C0 이상
+CVE-2026-107441 / GS1900-24E / 2.90(AAHK.2)C0 이하 / 2.90(AAHK.3)C0 이상
+CVE-2026-107441 / GS1900-24EP / 2.90(ABTO.2)C0 이하 / 2.90(ABTO.3)C0 이상
+CVE-2026-107441 / GS1900-24HPv2 / 2.90(ABTP.2)C0 이하 / 2.90(ABTP.3)C0 이상
+CVE-2026-107441 / GS1900-48 / 2.90(AAHN.2)C0 이하 / 2.90(AAHN.3)C0 이상
+CVE-2026-107441 / GS1900-48HPv2 / 2.90(ABTQ.2)C0 이하 / 2.90(ABTQ.3)C0 이상
+CVE-2026-76955 / IAP500BE / 7.40(ACPJ.1)C0 이하 / 7.40(ACPJ.2)C0 이상
+CVE-2026-76955 / NWA110AX / 7.12(ABTG.0)C0 이하 / 7.12(ABTG.1)C0 이상
+CVE-2026-76955 / NWA110BE / 7.40(ACLZ.1)C0 이하 / 7.40(ACLZ.2)C0 이상
+CVE-2026-76955 / NWA130BE / 7.40(ACIL.1)C0 이하 / 7.40(ACIL.2)C0 이상
+CVE-2026-76955 / NWA210AX / 7.12(ABTD.0)C0 이하 / 7.12(ABTD.1)C0 이상
+CVE-2026-76955 / NWA210AXv2 / 7.40(ACSR.1)C0 이하 / 7.40(ACSR.2)C0 이상
+CVE-2026-76955 / NWA210BE / 7.40(ACLY.1)C0 이하 / 7.40(ACLY.2)C0 이상
+CVE-2026-76955 / NWA220AX-6E / 7.12(ACCO.0)C0 이하 / 7.12(ACCO.1)C0 이상
+CVE-2026-76955 / NWA240BE / 7.40(ACQG.1)C0 이하 / 7.40(ACQG.2)C0 이상
+CVE-2026-76955 / NWA30BE / 7.40(ACPI.1)C0 이하 / 7.40(ACPI.2)C0 이상
+CVE-2026-76955 / NWA50AX / 7.12(ABYW.0)C0 이하 / 7.12(ABYW.1)C0 이상
+CVE-2026-76955 / NWA50AX PRO / 7.12(ACGE.0)C0 이하 / 7.12(ACGE.1)C0 이상
+CVE-2026-76955 / NWA50BE / 7.40(ACPB.1)C0 이하 / 7.40(ACPB.2)C0 이상
+CVE-2026-76955 / NWA50BE MAX / 7.40(ACTP.1)C0 이하 / 7.40(ACTP.2)C0 이상
+CVE-2026-76955 / NWA50BE PRO / 7.40(ACPC.1)C0 이하 / 7.40(ACPC.2)C0 이상
+CVE-2026-76955 / NWA55AX PRO / 7.12(ACSP.0)C0 이하 / 7.12(ACSP.1)C0 이상
+CVE-2026-76955 / NWA55AX PTP / 7.12(ACSQ.0)C0 이하 / 7.12(ACSQ.1)C0 이상
+CVE-2026-76955 / NWA55AXE / 7.12(ABZL.0)C0 이하 / 7.12(ABZL.1)C0 이상
+CVE-2026-76955 / NWA55BE / 7.40(ACPH.1)C0 이하 / 7.40(ACPH.2)C0 이상
+CVE-2026-76955 / NWA90AX / 7.12(ACCV.0)C0 이하 / 7.12(ACCV.1)C0 이상
+CVE-2026-76955 / NWA90AX PRO / 7.12(ACGF.0)C0 이하 / 7.12(ACGF.1)C0 이상
+CVE-2026-76955 / NWA90BE / 7.40(ACPD.1)C0 이하 / 7.40(ACPD.2)C0 이상
+CVE-2026-76955 / NWA90BE MAX / 7.40(ACTQ.1)C0 이하 / 7.40(ACTQ.2)C0 이상
+CVE-2026-76955 / NWA90BE PRO / 7.40(ACPE.1)C0 이하 / 7.40(ACPE.2)C0 이상
+CVE-2026-76955 / WAC500H / 6.70(ABWA.7)C0 이하 / 핫픽스 적용(벤더 문의)
+CVE-2026-76955 / WAX300H / 7.12(ACHF.0)C0 이하 / 7.12(ACHF.1)C0 이상
+CVE-2026-76955 / WAX510D / 7.12(ABTF.0)C0 이하 / 7.12(ABTF.1)C0 이상
+CVE-2026-76955 / WAX610D / 7.12(ABTE.0)C0 이하 / 7.12(ABTE.1)C0 이상
+CVE-2026-76955 / WAX620D-6E / 7.12(ACCN.0)C0 이하 / 7.12(ACCN.1)C0 이상
+CVE-2026-76955 / WAX630S / 7.12(ABZD.0)C0 이하 / 7.12(ABZD.1)C0 이상
+CVE-2026-76955 / WAX640S-6E / 7.12(ACCM.0)C0 이하 / 7.12(ACCM.1)C0 이상
+CVE-2026-76955 / WAX650S / 7.12(ABRM.0)C0 이하 / 7.12(ABRM.1)C0 이상
+CVE-2026-76955 / WAX655E / 7.12(ACDO.0)C0 이하 / 7.12(ACDO.1)C0 이상
+CVE-2026-76955 / WBE510D / 7.40(ACLX.1)C0 이하 / 7.40(ACLX.2)C0 이상
+CVE-2026-76955 / WBE530 / 7.40(ACLE.1)C0 이하 / 7.40(ACLE.2)C0 이상
+CVE-2026-76955 / WBE630S / 7.40(ACLW.1)C0 이하 / 7.40(ACLW.2)C0 이상
+CVE-2026-76955 / WBE660S / 7.40(ACGG.1)C0 이하 / 7.40(ACGG.2)C0 이상
+CVE-2026-76955 / WBE665S / 7.40(ACQJ.1)C0 이하 / 7.40(ACQJ.2)C0 이상
+CVE-2026-76955 / FWA7 Leaf Plus / 7.40(ACQL.1)C0 이하 / 7.40(ACQL.2)C0 이상
+CVE-2026-76955 / FWA7 Root / 7.40(ACUJ.1)C0 이하 / 7.40(ACUJ.2)C0 이상
+CVE-2026-76955 / FWA7 Root Plus / 7.40(ACQK.1)C0 이하 / 7.40(ACQK.2)C0 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][2]
+□ 참고사이트
+[1] https://www.zyxel.com/global/en/support/security-advisories/zyxel-security-advisory-for-out-of-bounds-write-vulnerability-in-gs1900-series-switches-11-03-2026
+[2] https://www.zyxel.com/global/en/support/security-advisories/zyxel-security-advisory-for-buffer-overflow-vulnerability-in-certain-aps-fwa7-and-security-routers-11-03-2026
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-107441
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-76955
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+□ 작성 : 디지털위협대응본부 취약점관리센터
