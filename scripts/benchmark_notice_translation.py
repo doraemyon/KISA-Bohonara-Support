@@ -40,13 +40,18 @@ def validation(korean: str, english: str) -> str | None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--baseline-only", action="store_true")
+    parser.add_argument("--notice-ids", default="")
     args = parser.parse_args()
+    selected = args.notice_ids.split(",") if args.notice_ids else list(CASES)
+    if any(notice_id not in CASES for notice_id in selected):
+        parser.error("Unknown notice ID in --notice-ids.")
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     model = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
     output = Path("benchmark-results")
     output.mkdir(exist_ok=True)
     metrics: list[dict[str, object]] = []
-    for index, (notice_id, category) in enumerate(CASES.items()):
+    for index, notice_id in enumerate(selected):
+        category = CASES[notice_id]
         root = Path("site/notices") / notice_id
         korean = (root / "ko/notice.txt").read_text(encoding="utf-8")
         title, body = formatter.korean_document_parts(korean)

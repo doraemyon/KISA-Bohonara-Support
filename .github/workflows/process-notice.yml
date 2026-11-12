@@ -9,6 +9,9 @@ on:
       notice_title:
         description: Reference notice title
         type: string
+      notice_ids:
+        description: Optional comma-separated subset of benchmark cases
+        type: string
 
 permissions:
   contents: read
@@ -26,7 +29,8 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.5-flash-lite
-        run: python3 scripts/benchmark_notice_translation.py
+          BENCHMARK_NOTICE_IDS: ${{ inputs.notice_ids }}
+        run: python3 scripts/benchmark_notice_translation.py --notice-ids "$BENCHMARK_NOTICE_IDS"
       - name: Save results
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
