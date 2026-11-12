@@ -1,0 +1,35 @@
+제목:
+Apache 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Apache 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Apache 재단은 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Apache HTTP Server에서 발생하는 Race Condition 취약점(CVE-2026-119618) [1][2]
+o Apache HTTP Server에서 발생하는 NULL Pointer Dereference 취약점(CVE-2026-106023) [1][3]
+o Apache HTTP Server에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-109163) [1][4]
+
+□ 영향을 받는 제품 및 해결 방안
+
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-119618 / Apache HTTP Server / 2.4.55 이상 2.4.71 미만 / 2.4.71 이상
+CVE-2026-106023 / Apache HTTP Server / 2.4.30 이상 2.4.71 미만 / 2.4.71 이상
+CVE-2026-109163 / Apache HTTP Server / 2.4.69 이상 2.4.71 미만 / 2.4.71 이상
+
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+
+□ 참고사이트
+[1] https://httpd.apache.org/security/vulnerabilities_24.html
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-119618
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-106023
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-109163
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
