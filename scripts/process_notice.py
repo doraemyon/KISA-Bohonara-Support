@@ -20,6 +20,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Callable, Iterable
 
+import offline_translation
+
 
 MAX_PAGE_BYTES = 2_000_000
 SITE_ROOT = Path("site")
@@ -39,11 +41,13 @@ FORMAT_VERSION = 6
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 VERSION_TOKEN_PATTERN = (
     r"(?<![A-Za-z0-9_])v?[0-9]+(?:\.[A-Za-z0-9]+)+"
-    r"(?:[-+][A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*)*(?![A-Za-z0-9_])"
+    r"(?:[-+][A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*)*"
+    r"(?:[ \t]+(?:PL|SP|Patch|Update)[ \t]*[0-9]+)?(?![A-Za-z0-9_])"
 )
-SECURITY_TOKEN_PATTERN = rf"https?://[^\s]+|CVE-\d{{4}}-\d+|{VERSION_TOKEN_PATTERN}"
+CVE_TOKEN_PATTERN = r"CVE-\d{4}-\d+"
+SECURITY_TOKEN_PATTERN = rf"https?://[^\s]+|{CVE_TOKEN_PATTERN}|\[\d+\]|{VERSION_TOKEN_PATTERN}"
 PROTECTED_TOKEN_PATTERN = re.compile(
-    rf"^(?:□|o|※)(?=\s)|{SECURITY_TOKEN_PATTERN}",
+    rf"^(?:□|o|※)(?=\s)|\({CVE_TOKEN_PATTERN}\)|{SECURITY_TOKEN_PATTERN}",
     flags=re.IGNORECASE | re.MULTILINE,
 )
 PROTECTED_PLACEHOLDER_PATTERN = re.compile(r"KISAPROTECTEDTOKEN\d{4}END", re.IGNORECASE)
@@ -56,6 +60,43 @@ VERSION_COMPARISONS = {
 VERSION_COMPARISON_PATTERN = re.compile(
     rf"(?P<version>{VERSION_TOKEN_PATTERN})\s*(?P<comparison>{'|'.join(VERSION_COMPARISONS)})",
     flags=re.IGNORECASE,
+)
+VERSION_RANGE_PATTERN = re.compile(
+    rf"(?P<lower>{VERSION_TOKEN_PATTERN})\s*(?P<lower_bound>이상|초과)\s*[,~·]?\s*"
+    rf"(?P<upper>{VERSION_TOKEN_PATTERN})\s*(?P<upper_bound>이하|미만)"
+    r"(?P<track>[ \t]+(?:[A-Za-z][A-Za-z0-9_-]*|\([A-Za-z0-9 -]+\)))?",
+    flags=re.IGNORECASE,
+)
+STANDARD_TABLE_LABELS = {
+    "취약점": "Vulnerability",
+    "제조사": "Manufacturer",
+    "제품": "Product",
+    "제품명": "Product Name",
+    "제품군": "Product Family",
+    "제품 카테고리": "Product Category",
+    "중요도": "Severity",
+    "영향": "Impact",
+    "CVE 번호": "CVE ID",
+    "CVE 제목": "CVE Title",
+    "영향받는 버전": "Affected Version",
+    "영향을 받는 버전": "Affected Version",
+    "해결 버전": "Fixed Version",
+    "긴급": "Critical",
+    "중요": "Important",
+    "보통": "Moderate",
+    "낮음": "Low",
+}
+SECURITY_IMPACTS = {
+    "권한 상승": "Elevation of Privilege",
+    "원격 코드 실행": "Remote Code Execution",
+    "정보 유출": "Information Disclosure",
+    "서비스 거부": "Denial of Service",
+    "보안 기능 우회": "Security Feature Bypass",
+    "스푸핑": "Spoofing",
+    "변조": "Tampering",
+}
+IMPACT_TITLE_PATTERN = re.compile(
+    rf"(?P<product>.+) (?P<impact>{'|'.join(SECURITY_IMPACTS)}) 취약(?:성|점)"
 )
 STANDARD_SECTION_TRANSLATIONS = {
     "개요": "□ Overview",
@@ -418,6 +459,8 @@ def split_utf8_chunks(value: str, max_bytes: int = MAX_TRANSLATION_BYTES) -> lis
 def translate_segment(segment: str, contact_email: str = "") -> str:
     parameters = {"q": segment, "langpair": "ko|en", "mt": "1"}
     if contact_email:
+        if not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", contact_email):
+            fail("MYMEMORY_CONTACT_EMAIL is not a valid email address.")
         parameters["de"] = contact_email
     request = urllib.request.Request(
         f"{MYMEMORY_URL}?{urllib.parse.urlencode(parameters)}",
@@ -425,9 +468,9 @@ def translate_segment(segment: str, contact_email: str = "") -> str:
     )
 
     last_error: Exception | None = None
-    for attempt in range(3):
+    for attempt in range(2):
         try:
-            with urllib.request.urlopen(request, timeout=30) as response:
+            with urllib.request.urlopen(request, timeout=10) as response:
                 result = json.loads(response.read().decode("utf-8"))
             status = result.get("responseStatus")
             translated = result.get("responseData", {}).get("translatedText")
@@ -435,11 +478,11 @@ def translate_segment(segment: str, contact_email: str = "") -> str:
                 details = str(result.get("responseDetails", "unknown response"))[:300]
                 raise RuntimeError(f"MyMemory rejected the request: {details}")
             return html.unescape(translated.strip())
-        except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError, RuntimeError) as error:
+        except (OSError, json.JSONDecodeError, RuntimeError) as error:
             last_error = error
-            if attempt < 2:
+            if attempt == 0:
                 time.sleep(2**attempt)
-    fail(f"MyMemory translation failed after three attempts: {last_error}")
+    fail(f"MyMemory translation failed: {last_error}")
 
 
 def looks_like_english_translation(korean: str, english: str) -> bool:
@@ -452,18 +495,6 @@ def looks_like_english_translation(korean: str, english: str) -> bool:
         return False
     minimum_english_letters = max(10, min(30, source_hangul // 2))
     return english_letters >= minimum_english_letters
-
-
-def translate_text_mymemory(value: str, contact_email: str = "") -> str:
-    if contact_email and not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", contact_email):
-        fail("MYMEMORY_CONTACT_EMAIL is not a valid email address.")
-
-    translated = translate_text_linewise(
-        value, lambda segment: translate_segment(segment, contact_email)
-    )
-    if re.search(r"[가-힣]", value) and not looks_like_english_translation(value, translated):
-        fail("MyMemory result validation failed because the output was not meaningfully English.")
-    return translated
 
 
 def protected_tokens(value: str) -> Counter[str]:
@@ -505,6 +536,18 @@ def translate_preserving_tokens(
             version=comparison["version"]
         )
 
+    version_range = VERSION_RANGE_PATTERN.fullmatch(value)
+    if version_range:
+        lower = VERSION_COMPARISONS[version_range["lower_bound"]].format(
+            version=version_range["lower"]
+        )
+        upper = VERSION_COMPARISONS[version_range["upper_bound"]].format(
+            version=version_range["upper"]
+        )
+        if version_range["upper_bound"] == "미만":
+            upper = f"below {version_range['upper']}"
+        return f"{lower} and {upper}{version_range['track'] or ''}"
+
     masked, replacements = mask_protected_tokens(value)
     translated_parts: list[str] = []
     parts = re.split(f"({PROTECTED_PLACEHOLDER_PATTERN.pattern})", masked)
@@ -527,10 +570,24 @@ def translate_preserving_tokens(
         following_token = replacements.get(parts[index + 1], "") if index + 1 < len(parts) else ""
         if not leading and previous_token[-1:].isalnum() and translated[:1].isalnum():
             leading = " "
-        if not trailing and translated[-1:].isalnum() and following_token[:1].isalnum():
+        if (
+            not trailing
+            and translated[-1:].isalnum()
+            and (following_token[:1].isalnum() or following_token.upper().startswith("(CVE-"))
+        ):
             trailing = " "
         translated_parts.append(f"{leading}{translated}{trailing}")
     return restore_protected_tokens("".join(translated_parts), replacements)
+
+
+def translate_table_label(cell: str) -> str | None:
+    label = STANDARD_TABLE_LABELS.get(cell) or SECURITY_IMPACTS.get(cell)
+    if label:
+        return label
+    title = IMPACT_TITLE_PATTERN.fullmatch(cell)
+    if title and not re.search(r"[가-힣]", title["product"]):
+        return f"{title['product']} {SECURITY_IMPACTS[title['impact']]} Vulnerability"
+    return None
 
 
 def translate_text_linewise(value: str, translator: Callable[[str], str]) -> str:
@@ -550,12 +607,15 @@ def translate_text_linewise(value: str, translator: Callable[[str], str]) -> str
             continue
 
         cells = stripped.split(" / ") if " / " in stripped else [stripped]
-        translated_cells = [
-            translate_preserving_tokens(cell, translate_fragment)
-            if re.search(r"[가-힣]", cell)
-            else cell
-            for cell in cells
-        ]
+        translated_cells: list[str] = []
+        for cell in cells:
+            label = translate_table_label(cell) if len(cells) > 1 else None
+            if label:
+                translated_cells.append(label)
+            elif re.search(r"[가-힣]", cell):
+                translated_cells.append(translate_preserving_tokens(cell, translate_fragment))
+            else:
+                translated_cells.append(cell)
         translated_lines.append(" / ".join(translated_cells))
     return "\n".join(translated_lines).strip()
 
@@ -670,6 +730,22 @@ def validate_english_document(korean: str, english_title: str, english: str) -> 
     missing = [token for token, count in source_tokens.items() if target_tokens[token] < count]
     if missing:
         fail(f"English translation omitted protected values: {', '.join(missing[:5])}")
+    unexpected = list(target_tokens - source_tokens)
+    if unexpected:
+        fail(f"English translation introduced protected values: {', '.join(unexpected[:5])}")
+
+
+    def table_signature(body: str) -> list[list[Counter[str]]]:
+        return [
+            [protected_tokens(cell) for cell in line.split(" / ")]
+            for line in body.splitlines()
+            if " / " in line
+        ]
+
+    if table_signature(korean.partition("\n\n본문:\n")[2]) != table_signature(
+        english.partition("\n\nBody:\n")[2]
+    ):
+        fail("English translation changed the table layout or moved protected values between cells.")
 
 
 def translate_with_gemini(korean: str, api_key: str, model: str) -> tuple[str, str]:
@@ -752,20 +828,6 @@ Korean notice:
     fail(f"Gemini translation failed: {last_error}")
 
 
-def translate_with_mymemory(title: str, body: str, contact_email: str) -> tuple[str, str]:
-    english_title = translate_text_mymemory(title, contact_email)
-    english_body = translate_text_mymemory(body, contact_email)
-    document = (
-        f"Title:\n{english_title}\n\nSummary:\n"
-        f"{english_summary(title, english_title, body)}\n\nBody:\n{english_body}\n"
-    )
-    document = normalize_english_sections(document)
-    korean = korean_document(title, body)
-    document = enforce_standard_section_headings(korean, document)
-    validate_english_document(korean, english_title, document)
-    return english_title, document
-
-
 def translate_segment_google(segment: str) -> str:
     parameters = {
         "client": "gtx",
@@ -785,9 +847,9 @@ def translate_segment_google(segment: str) -> str:
     )
 
     last_error: Exception | None = None
-    for attempt in range(3):
+    for attempt in range(2):
         try:
-            with urllib.request.urlopen(request, timeout=30) as response:
+            with urllib.request.urlopen(request, timeout=10) as response:
                 payload = json.loads(response.read().decode("utf-8"))
             segments = payload[0] if isinstance(payload, list) and payload else []
             translated = "".join(
@@ -799,29 +861,15 @@ def translate_segment_google(segment: str) -> str:
                 raise RuntimeError("Google Translate returned no translated text.")
             return translated
         except (
-            urllib.error.HTTPError,
-            urllib.error.URLError,
+            OSError,
             json.JSONDecodeError,
             IndexError,
             RuntimeError,
         ) as error:
             last_error = error
-            if attempt < 2:
+            if attempt == 0:
                 time.sleep(2**attempt)
-    fail(f"Google Translate failed after three attempts: {last_error}")
-
-
-def translate_with_google(title: str, body: str) -> tuple[str, str]:
-    english_title = translate_text_linewise(title, translate_segment_google)
-    english_body = translate_text_linewise(body, translate_segment_google)
-    document = normalize_english_sections(
-        f"Title:\n{english_title}\n\nSummary:\n"
-        f"{english_summary(title, english_title, body)}\n\nBody:\n{english_body}\n"
-    )
-    korean = korean_document(title, body)
-    document = enforce_standard_section_headings(korean, document)
-    validate_english_document(korean, english_title, document)
-    return english_title, document
+    fail(f"Google Translate failed: {last_error}")
 
 
 def translate_segment_cloudflare(segment: str, account_id: str, api_token: str) -> str:
@@ -858,20 +906,13 @@ def translate_segment_cloudflare(segment: str, account_id: str, api_token: str) 
     fail(f"Cloudflare translation failed after three attempts: {last_error}")
 
 
-def translate_with_cloudflare(
-    title: str, body: str, account_id: str, api_token: str
-) -> tuple[str, str]:
-    translator = lambda segment: translate_segment_cloudflare(segment, account_id, api_token)
-    english_title = translate_text_linewise(title, translator)
-    english_body = translate_text_linewise(body, translator)
-    document = normalize_english_sections(
-        f"Title:\n{english_title}\n\nSummary:\n"
-        f"{english_summary(title, english_title, body)}\n\nBody:\n{english_body}\n"
+def acceptable_english_fragment(source: str, target: str) -> bool:
+    return (
+        bool(re.search(r"[A-Za-z]", target))
+        and not re.search(r"[가-힣]", target)
+        and " / " not in target
+        and protected_tokens(target) == protected_tokens(source)
     )
-    korean = korean_document(title, body)
-    document = enforce_standard_section_headings(korean, document)
-    validate_english_document(korean, english_title, document)
-    return english_title, document
 
 
 def english_document(
@@ -896,40 +937,52 @@ def english_document(
             errors.append(f"Gemini: {error}")
             print(f"WARNING: {error} Trying the next translation provider.", file=sys.stderr)
 
+    providers: list[tuple[str, Callable[[str], str]]] = []
     if cloudflare_account_id and cloudflare_api_token:
-        try:
-            english_title, document = translate_with_cloudflare(
-                title, body, cloudflare_account_id, cloudflare_api_token
-            )
-            english_title, document = finalize_english_document(
-                title, body, english_title, document
-            )
-            return english_title, document, "cloudflare-m2m100"
-        except Exception as error:
-            errors.append(f"Cloudflare: {error}")
-            print(f"WARNING: {error} Trying the next translation provider.", file=sys.stderr)
+        providers.append((
+            "cloudflare-m2m100",
+            lambda text: translate_segment_cloudflare(text, cloudflare_account_id, cloudflare_api_token),
+        ))
+    providers.extend([
+        ("google-translate-web", translate_segment_google),
+        ("mymemory", lambda text: translate_segment(text, contact_email)),
+        ("offline-opus-mt", lambda text: offline_translation.translate(
+            text, lambda candidate: acceptable_english_fragment(text, normalize_inline(candidate))
+        )),
+    ])
+    unavailable: dict[str, str] = {}
+    used: dict[str, None] = {}
 
-    try:
-        english_title, document = translate_with_google(title, body)
-        english_title, document = finalize_english_document(
-            title, body, english_title, document
-        )
-        return english_title, document, "google-translate-web"
-    except Exception as error:
-        errors.append(f"Google Translate: {error}")
-        print(f"WARNING: {error} Trying the next translation provider.", file=sys.stderr)
+    def translate_fragment(fragment: str) -> str:
+        rejected: list[str] = []
+        for name, translate in providers:
+            if name in unavailable:
+                continue
+            try:
+                result = normalize_inline(translate(fragment))
+            except (OSError, RuntimeError, ValueError) as error:
+                unavailable[name] = str(error)
+                print(f"WARNING: {name} unavailable: {error}", file=sys.stderr)
+                continue
+            if not acceptable_english_fragment(fragment, result):
+                rejected.append(name)
+                continue
+            used[name] = None
+            return result
 
-    try:
-        english_title, document = translate_with_mymemory(title, body, contact_email)
-        english_title, document = finalize_english_document(
-            title, body, english_title, document
-        )
-        return english_title, document, "mymemory"
-    except Exception as error:
-        errors.append(f"MyMemory: {error}")
-        print(f"WARNING: {error} No translation provider succeeded.", file=sys.stderr)
+        reasons = errors + [f"{name}: {error}" for name, error in unavailable.items()]
+        if rejected:
+            reasons.append("Invalid fragment from " + ", ".join(rejected))
+        fail("No valid English translation for a required fragment. " + " | ".join(reasons))
 
-    fail("All English translation providers failed. " + " | ".join(errors))
+    english_title = normalize_english_title(title, translate_text_linewise(title, translate_fragment))
+    english_body = translate_text_linewise(body, translate_fragment)
+    document = (
+        f"Title:\n{english_title}\n\nSummary:\n"
+        f"{english_summary(title, english_title, body)}\n\nBody:\n{english_body}\n"
+    )
+    validate_english_document(korean, english_title, document)
+    return english_title, document, "+".join(used) or "source"
 
 
 def render_notice_lines(notice_text: str) -> str:

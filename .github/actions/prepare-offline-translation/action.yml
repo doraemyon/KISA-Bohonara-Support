@@ -1,0 +1,32 @@
+name: Prepare offline translation
+description: Cache the Korean-to-English OPUS-MT model and its CPU runtime
+
+runs:
+  using: composite
+  steps:
+    - name: Identify the runner Python
+      id: python
+      shell: bash
+      run: echo "abi=$(python3 -c 'import sys; print(sys.implementation.cache_tag)')" >> "$GITHUB_OUTPUT"
+
+    - name: Restore translation model and runtime
+      uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      with:
+        path: ${{ runner.temp }}/kisa-offline-translation
+        key: kisa-offline-ko-en-${{ runner.os }}-${{ runner.arch }}-${{ steps.python.outputs.abi }}-${{ hashFiles('scripts/offline_translation.py', '.github/actions/prepare-offline-translation/action.yml') }}
+
+    - name: Prepare the pinned CPU model
+      shell: bash
+      run: |
+        set -euo pipefail
+        root="$RUNNER_TEMP/kisa-offline-translation"
+        export PYTHONPATH="$root/python${PYTHONPATH:+:$PYTHONPATH}"
+        export KISA_OFFLINE_MODEL_DIR="$root/model"
+        if ! python3 -c 'import ctranslate2, sentencepiece' 2>/dev/null; then
+          python3 -m pip install --disable-pip-version-check --only-binary=:all: \
+            --retries 1 --timeout 15 --upgrade --target "$root/python" \
+            ctranslate2==4.9.0 sentencepiece==0.2.3
+        fi
+        timeout 180s python3 scripts/offline_translation.py
+        echo "PYTHONPATH=$PYTHONPATH" >> "$GITHUB_ENV"
+        echo "KISA_OFFLINE_MODEL_DIR=$KISA_OFFLINE_MODEL_DIR" >> "$GITHUB_ENV"

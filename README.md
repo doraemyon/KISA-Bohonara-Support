@@ -17,8 +17,8 @@
 2. 확장이 설정된 경우에만 이 저장소의 Action을 호출합니다. 국문·영문 링크는 공지 번호로 미리 계산되므로 두 저장소의 Telegram chat ID를 맞출 필요가 없습니다.
 3. Action이 KISA 원문을 다시 읽고 도메인·게시판·공지 번호·발행일을 검증합니다.
 4. 제목이 `업데이트 권고`이면 본문 표현과 관계없이 업데이트 권고용 요약을 사용합니다. 제목이 `업데이트`, `업그레이드`, `보안 조치 권고` 또는 `보안 패치 권고` 계열인 경우에는 본문에 CVE, 영향 제품·버전, 해결 버전, 패치나 조치 방안이 있는지 추가 확인합니다. 그 외 공지는 일반 요약을 사용합니다.
-5. `□`, `o`, `※`, URL, CVE와 버전 정보는 번역기가 변경하지 못하도록 분리·보호하고, 번역 후 원래 위치와 개수를 검증합니다.
-6. 번역은 Gemini 무료 티어 → 선택적 Cloudflare Workers AI 번역 모델 → Google Translate 웹 경로 → MyMemory 순서로 시도합니다. 각 경로는 최대 세 번 재시도합니다.
+5. `□`, `o`, `※`, URL, CVE, 참조 번호와 전체 빌드 버전을 보호합니다. 번역 후 표의 행·열과 각 칸의 식별자가 원문과 일치하는지 확인합니다.
+6. Gemini 키를 설정하면 문서 단위 번역을 먼저 시도합니다. 그 외에는 선택적 Cloudflare Workers AI → Google Translate 웹 경로 → MyMemory → 오프라인 OPUS-MT 순으로 문장 조각을 번역합니다. 검증을 통과한 조각을 재사용하고, 오류가 난 조각만 다음 경로로 넘깁니다.
 7. 국문과 검증을 통과한 영문이 모두 완성된 경우에만 두 페이지를 한 번에 저장합니다. 번역 대기 문서나 한국어 본문을 넣은 가짜 영문 페이지는 게시하지 않습니다.
 8. 공지 처리 성공을 확인한 별도 Pages workflow가 최신 `main`을 배포합니다.
 9. 배포가 완료되면 최초 Telegram 메시지에 이미 들어 있던 국문·영문 링크가 정상 문서로 전환됩니다.
@@ -37,7 +37,8 @@
 - 권장 번역기는 결제 계정 연결 없이 사용할 수 있는 [Gemini API 무료 티어](https://ai.google.dev/gemini-api/docs/pricing)입니다. 무료 티어의 요청 한도 안에서는 요금이 발생하지 않습니다.
 - Cloudflare를 설정하면 [Workers AI의 M2M100 번역 전용 모델](https://developers.cloudflare.com/workers-ai/models/m2m100-1.2b/)을 두 번째 경로로 사용합니다. Workers Free는 하루 10,000 Neurons 무료 할당량을 초과하면 추가 과금 대신 호출이 중단됩니다.
 - Google Translate 웹 경로는 별도 API key나 결제 계정 없이 사용하는 세 번째 경로입니다. 공식 Cloud Translation API가 아니므로 별도 SLA는 없지만, 구조·보안 식별자 검증을 통과한 결과만 사용합니다.
-- MyMemory는 별도 키 없이 사용하는 마지막 경로입니다. 익명 기준 하루 5,000자이며, 연락용 이메일을 전달하면 하루 50,000자입니다.
+- MyMemory는 별도 키 없이 사용할 수 있습니다. 익명 기준 하루 5,000자이며, 연락용 이메일을 전달하면 하루 50,000자입니다.
+- 마지막 경로는 무료 Linux 러너에서 실행하는 오프라인 번역입니다. 헬싱키대학교의 [한국어→영어 OPUS-MT 모델](https://huggingface.co/Helsinki-NLP/opus-mt-tc-big-ko-en)(CC BY 4.0)을 CTranslate2 INT8로 변환해 캐시하며, 번역 요청에 API 키나 결제 계정이 필요하지 않습니다.
 - Gemini 무료 티어에 보낸 데이터는 Google 제품 개선에 사용될 수 있습니다. 이 프로젝트는 인터넷에 이미 공개된 KISA 공지만 번역 대상으로 사용합니다.
 - 무료 티어의 실제 요청 한도는 모델과 프로젝트에 따라 달라질 수 있으며 Google AI Studio에서 확인할 수 있습니다. 한도에 도달하면 다음 제공자로 자동 전환합니다.
 - 번역 결과가 국문과 같거나, 한글 비율이 비정상적으로 높거나, 구조 표식·URL·CVE·버전이 하나라도 빠지면 성공으로 처리하지 않습니다.
@@ -131,7 +132,8 @@ python -m unittest discover -s tests -v
 
 - `Could not find the KISA notice title, published date, or body`: KISA 페이지 구조가 바뀌었을 수 있습니다.
 - `Gemini translation failed`: API key, 무료 티어 한도 또는 모델 이름을 확인합니다. 이 오류 뒤에는 Cloudflare 또는 MyMemory로 자동 전환합니다.
-- `MyMemory translation failed after three attempts`: 앞선 Gemini·Cloudflare·Google Translate 경로까지 모두 실패한 뒤 마지막 제공자의 무료 한도 또는 서비스 상태도 사용할 수 없는 경우입니다. workflow 전체가 최대 세 차례 다시 시도합니다.
+- `MyMemory translation failed`: MyMemory의 무료 한도나 서비스 상태를 확인합니다. 해당 실행에서는 오프라인 모델로 이어집니다.
+- `Offline translation model is not prepared`: Action의 `Prepare offline translation` 로그에서 모델 다운로드, 체크섬 검증, 변환 단계를 확인합니다. 온라인 번역은 계속 사용할 수 있습니다.
 - KISA 원문 수집의 일시적인 네트워크 오류: workflow가 15초 간격으로 최대 세 번 자동 재시도합니다.
 - 번역 서비스 오류 또는 구조·식별자 누락: 해당 제공자 결과를 폐기하고 다음 제공자로 넘어갑니다. 모든 경로가 실패하면 국문만 단독 게시하지 않고, 30분 간격 복구 workflow가 최근 RSS에서 누락 건을 찾아 다시 시도합니다.
 - `non-fast-forward` 또는 `fetch first`: 최신 workflow에는 동시 공지를 직렬 처리하고 최신 `main`을 체크아웃하는 설정이 포함되어 있습니다. 이전 실패 실행은 **Re-run jobs** 대신 새 workflow를 실행하세요.

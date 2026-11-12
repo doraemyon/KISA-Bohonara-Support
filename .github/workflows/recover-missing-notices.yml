@@ -28,6 +28,10 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: Prepare offline translation
+        uses: ./.github/actions/prepare-offline-translation
+        continue-on-error: true
+
       - name: Recover recent missing notices
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

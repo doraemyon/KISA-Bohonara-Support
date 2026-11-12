@@ -278,22 +278,53 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertFalse(process_notice.looks_like_english_translation(korean, korean))
         self.assertTrue(process_notice.looks_like_english_translation(korean, valid_english))
 
-    def test_mymemory_fallback_translates_unknown_text_dynamically(self) -> None:
-        calls: list[str] = []
-
-        def fake_translate(segment: str, _contact_email: str = "") -> str:
-            calls.append(segment)
-            return f"Translated text {len(calls)}"
-
-        with mock.patch.object(process_notice, "translate_segment", side_effect=fake_translate):
-            translated = process_notice.translate_text_mymemory(
-                "□ 처음 보는 항목\n알 수 없는 값 / Connect Secure"
+    def test_invalid_online_fragment_is_retried_without_retranslating_good_fragments(self) -> None:
+        google_results = {
+            "제품 업데이트 권고": "Product Update",
+            "처음 보는 항목": "New information",
+            "알 수 없는 값": "알 수 없는 값",
+            "업데이트를 적용하십시오.": "Apply the update.",
+        }
+        with (
+            mock.patch.object(
+                process_notice, "translate_segment_google", side_effect=google_results.__getitem__
+            ) as google,
+            mock.patch.object(process_notice, "translate_segment", return_value="Unknown value") as mymemory,
+            mock.patch.object(process_notice.offline_translation, "translate") as offline,
+        ):
+            _, translated, provider = process_notice.english_document(
+                "제품 업데이트 권고",
+                "□ 처음 보는 항목\n알 수 없는 값 / Connect Secure\no 업데이트를 적용하십시오. [1]",
             )
 
-        self.assertEqual(len(calls), 2)
-        self.assertIn("□ Translated text 1", translated)
-        self.assertIn("Translated text 2 / Connect Secure", translated)
-        self.assertNotRegex(translated, r"[가-힣]")
+        self.assertEqual(google.call_count, 4)
+        mymemory.assert_called_once_with("알 수 없는 값", "")
+        offline.assert_not_called()
+        self.assertEqual(provider, "google-translate-web+mymemory")
+        self.assertIn("□ New information", translated)
+        self.assertIn("Unknown value / Connect Secure", translated)
+        self.assertIn("o Apply the update. [1]", translated)
+
+    def test_online_outage_uses_the_offline_model_and_keeps_both_languages_valid(self) -> None:
+        local = {"제품 업데이트 권고": "Product Update", "업데이트를 적용하십시오.": "Apply the update."}
+        body = (
+            "□ 개요\no 업데이트를 적용하십시오. [1]\n"
+            "CVE-2026-12345 / Product / 7.2.1-69057-13 미만 / 7.2.1-69057-13 이상"
+        )
+        with (
+            mock.patch.object(process_notice, "translate_segment_google", side_effect=TimeoutError) as google,
+            mock.patch.object(process_notice, "translate_segment", side_effect=RuntimeError("quota")) as mymemory,
+            mock.patch.object(process_notice.offline_translation, "translate", side_effect=lambda text, _accepts: local[text]),
+        ):
+            title, translated, provider = process_notice.english_document("제품 업데이트 권고", body)
+
+        google.assert_called_once()
+        mymemory.assert_called_once()
+        self.assertEqual(provider, "offline-opus-mt")
+        self.assertIn("Below 7.2.1-69057-13 / 7.2.1-69057-13 or later", translated)
+        process_notice.validate_english_document(
+            process_notice.korean_document("제품 업데이트 권고", body), title, translated
+        )
 
     def test_google_translate_response_is_parsed_without_a_library_dependency(self) -> None:
         response_body = [[
@@ -416,6 +447,53 @@ class ProcessNoticeTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "omitted protected values: 7.3.2-86009-5"):
             process_notice.validate_english_document(korean, "Product Update", english)
 
+    def test_translation_validation_rejects_versions_swapped_between_columns(self) -> None:
+        korean = (
+            "제목:\n제품 업데이트\n\n요약:\n공지입니다.\n\n본문:\n"
+            "CVE-2026-12345 / Product / 1.2.3 / 1.2.4"
+        )
+        english = (
+            "Title:\nProduct Update\n\nSummary:\nSecurity notice.\n\nBody:\n"
+            "CVE-2026-12345 / Product / 1.2.4 / 1.2.3\n"
+        )
+        with self.assertRaisesRegex(RuntimeError, "moved protected values between cells"):
+            process_notice.validate_english_document(korean, "Product Update", english)
+
+    def test_table_headers_and_range_inclusivity_do_not_depend_on_the_provider(self) -> None:
+        source = (
+            "취약점 / 제품명 / 영향받는 버전 / 해결 버전\n"
+            "CVE-2026-12345 / Product / 19.0.0 이상 19.0R2.9 미만 / 19.0.9 PL1 이상"
+        )
+        translator = mock.Mock(side_effect=AssertionError("Table labels and bounds are structured."))
+
+        translated = process_notice.translate_text_linewise(source, translator)
+
+        self.assertEqual(
+            translated,
+            "Vulnerability / Product Name / Affected Version / Fixed Version\n"
+            "CVE-2026-12345 / Product / 19.0.0 or later and below 19.0R2.9 / 19.0.9 PL1 or later",
+        )
+        translator.assert_not_called()
+
+    def test_parentheses_around_a_cve_are_preserved_outside_the_provider(self) -> None:
+        translator = mock.Mock(return_value="Memory read vulnerability")
+        translated = process_notice.translate_text_linewise("o 메모리 읽기 취약점(CVE-2026-12345) [1]", translator)
+        self.assertEqual(translated, "o Memory read vulnerability (CVE-2026-12345) [1]")
+        translator.assert_called_once_with("메모리 읽기 취약점")
+
+    def test_cve_table_uses_standard_impact_terms_and_retains_the_product_name(self) -> None:
+        source = (
+            "제품 카테고리 / CVE 번호 / CVE 제목\n"
+            "Windows / CVE-2026-12345 / Windows DPAPI (Data Protection API) 권한 상승 취약성"
+        )
+        translator = mock.Mock(side_effect=AssertionError("Known table terms stay local."))
+        self.assertEqual(
+            process_notice.translate_text_linewise(source, translator),
+            "Product Category / CVE ID / CVE Title\n"
+            "Windows / CVE-2026-12345 / Windows DPAPI (Data Protection API) Elevation of Privilege Vulnerability",
+        )
+        translator.assert_not_called()
+
     def test_main_publishes_nothing_until_both_languages_are_ready(self) -> None:
         title = "IBM 제품 보안 업데이트 권고"
         body = "□ 개요\no 9.4.5.1 미만 버전은 최신 버전으로 업데이트 권고"
@@ -454,19 +532,16 @@ class ProcessNoticeTests(unittest.TestCase):
             self.assertFalse((site_root / "notices" / "72294").exists())
 
     def test_google_translation_is_used_when_configured_providers_fail(self) -> None:
-        google_document = (
-            "Title:\nProduct Update\n\nSummary:\nSecurity notice.\n\nBody:\n"
-            "□ Overview\no Apply the update.\n"
-        )
+        translations = {"제품 업데이트 권고": "Product Update", "업데이트를 적용하십시오.": "Apply the update."}
         with (
             mock.patch.object(process_notice, "translate_with_gemini", side_effect=RuntimeError("down")),
-            mock.patch.object(process_notice, "translate_with_cloudflare", side_effect=RuntimeError("down")),
+            mock.patch.object(process_notice, "translate_segment_cloudflare", side_effect=RuntimeError("down")),
             mock.patch.object(
                 process_notice,
-                "translate_with_google",
-                return_value=("Product Update", google_document),
+                "translate_segment_google",
+                side_effect=translations.__getitem__,
             ),
-            mock.patch.object(process_notice, "translate_with_mymemory") as mymemory,
+            mock.patch.object(process_notice, "translate_segment") as mymemory,
         ):
             title, document, provider = process_notice.english_document(
                 "제품 업데이트 권고",

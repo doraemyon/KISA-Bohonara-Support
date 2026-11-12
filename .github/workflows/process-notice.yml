@@ -31,6 +31,10 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: Prepare offline translation
+        uses: ./.github/actions/prepare-offline-translation
+        continue-on-error: true
+
       - name: Generate Korean and English pages
         id: generate
         env:
