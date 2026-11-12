@@ -15,7 +15,6 @@ o Reliance on IP Address for Authentication vulnerability in SonicOS (CVE-2026-1
 o Permissive Cross-domain Security Policy with Untrusted Domains Vulnerability on SonicOS (CVE-2026-107155) [1] [4]
 
 □ Affected Products and Solutions
-
 Vulnerability / product name / Affected version / Resolved version
 CVE-2026-82308 / SonicOS (Gen7) / 7.3.3-7015 or less / 7.3.4-7013 or later
 CVE-2026-82308 / SonicOS (Gen8) / 8.2.2-8015 or less / 8.2.3-8015 or more
@@ -23,7 +22,6 @@ CVE-2026-107154 / SonicOS (Gen7) / 7.3.3-7015 or less / 7.3.4-7013 or later
 CVE-2026-107154 / SonicOS (Gen8) / 8.2.2-8015 or less / 8.2.3-8015 or more
 CVE-2026-107155 / SonicOS (Gen7) / 7.3.3-7015 or less / 7.3.4-7013 or later
 CVE-2026-107155 / SonicOS (Gen8) / 8.2.2-8015 or less / 8.2.3-8015 or more
-
 ※ Check the reference site below to perform the update [1]
 
 □ Reference sites

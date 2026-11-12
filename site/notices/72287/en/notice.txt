@@ -13,10 +13,8 @@ o Users with affected versions are advised to update to the latest version as a 
 o cross-site Scripting and Code Injection Vulnerability in o elo (CVE-2026-44267) [1] [2]
 
 □ Affected Products and Solutions
-
 Vulnerability / product name / Affected version / Resolved version
 CVE-2026-44267 / elo / Less than 1.0.1 / 1.0.1 or higher
-
 ※ Check the reference site below to perform the update [1]
 
 □ Reference sites

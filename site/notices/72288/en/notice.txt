@@ -15,7 +15,6 @@ o Authentication Bypass Vulnerability Due to Password Processing Error in OpenSS
 ※ Glibc-based Linux distributions (RHEL, Ubuntu, Debian, etc.) and Pam-enabled environments (UsePAM yes) are not affected
 
 □ Affected Products and Solutions
-
 Vulnerability / product name / Affected version / Resolved version
 CVE-2026-123158 / OpenSSH (musl based Linux) / 10.6p1 or less / 10.6p2
 CVE-2026-123158 / Alpine Linux edge (openssh) / Less than 10.6_p2-r0 / 10.6_p2-r0
@@ -29,7 +28,6 @@ CVE-2026-123158 / Alpine Linux 3.18 (openssh) / Less than 9.3_p2-r4 / 9.3_p2-r4
 CVE-2026-123158 / Alpine Linux 3.17 (openssh) / Less than 9.1_p1-r7 / 9.1_p1-r7
 CVE-2026-123158 / Alpine Linux 3.16 (openssh) / Less than 9.0_p1-r6 / 9.0_p1-r6
 CVE-2026-123158 / Alpine Linux 3.15 or earlier (openssh) / All Versions / Migrate to Resolved Version
-
 ※ Check the reference site below to perform the update [1] [2]
 ※ SSH service (sshd) restart is required after update
 

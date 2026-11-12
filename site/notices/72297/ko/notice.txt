@@ -15,7 +15,6 @@ o Ivanti Endpoint Manager(EPM)에서 발생하는 SQL Injection 취약점(CVE-20
 o Ivanti Cloud Services Application(CSA)에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-121683) [4][7]
 
 □ 영향을 받는 제품 및 해결 방안
-
 취약점 / 제품명 / 영향받는 버전 / 해결 버전
 CVE-2026-105425 / Sentry / 10.7.4 미만 / 10.7.4 이상 또는 11.0.0
 CVE-2026-105425 / Sentry / 10.8.0 이상 10.8.3 미만 / 10.8.3 이상 또는 11.0.0
@@ -23,7 +22,6 @@ CVE-2026-105425 / Endpoint Manager Mobile / 12.9.0.3 미만 / 12.9.0.3 이상 �
 CVE-2026-105425 / Endpoint Manager Mobile / 12.10.0.0 / 12.10.0.1 이상 또는 12.11.0.0
 CVE-2026-121653 / Endpoint Manager / 2024 SU8 미만 / 2024 SU8 이상
 CVE-2026-121683 / Cloud Services Application / 5.0.8 / 5.0.8.1 이상
-
 ※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]~[4]
 
 □ 참고사이트

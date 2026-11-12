@@ -14,11 +14,9 @@ o Improper Input Validation Vulnerability in Zoom Workplace for Windows (CVE-202
 o Origin Validation Error vulnerability in Zoom Workplace for Windows (CVE-2026-108187) [2][4]
 
 □ Affected Products and Solutions
-
 Vulnerability / Product Name / Affected Version / Fixed Version
 CVE-2026-108186 / Zoom Workplace for Windows / 7.1.0 or later and below 7.1.8 / 7.1.8 or later
 CVE-2026-108187 / Zoom Workplace for Windows / Below 7.1.5 / 7.1.5 or later
-
 ※ Check the reference site below to perform updates [1][2]
 
 □ Reference sites

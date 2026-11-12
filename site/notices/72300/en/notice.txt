@@ -22,7 +22,6 @@ o Access of Uninitialized Pointer vulnerability in Synology DiskStation Manager 
 o OS Command Injection vulnerability occurring in Synology DiskStation Manager (DSM) (CVE-2026-75785) [2][12]
 
 □ Affected Products and Solutions
-
 vulnerability / Product name / Affected Version / solved version
 CVE-2026-76954 / DSM 7.2.1 / Below 7.2.1-69057-13 / 7.2.1-69057-13 or later
 CVE-2026-76954 / DSM 7.2.2 / Below 7.2.2-72806-10 / 7.2.2-72806-10 or later
@@ -48,7 +47,6 @@ CVE-2026-18633 / DSM 7.3 / Below 7.3.2-86009-5 / 7.3.2-86009-5 or later
 CVE-2026-18633 / DSM 7.4 / Below 7.4.1-90080-1 / 7.4.1-90080-1 or later
 CVE-2026-75785 / DSM 7.3 / Below 7.3.2-86009-5 / 7.3.2-86009-5 or later
 CVE-2026-75785 / DSM 7.4 / Below 7.4.1-90080-1 / 7.4.1-90080-1 or later
-
 ※ Check the reference site below to perform updates [1][2]
 
 □ Reference sites

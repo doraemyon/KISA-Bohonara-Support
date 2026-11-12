@@ -30,7 +30,6 @@ o Missing Release of Resource after Effective Lifetime Vulnerability on MongoDB 
 o Use After Free vulnerability in MongoDB Server (CVE-2026-120803) [1] [19]
 
 □ Affected Products and Solutions
-
 Vulnerability / product name / Affected version / Resolved version
 CVE-2026-118383 / MongoDB Server / 4.4.0 to less than 4.4.32 / 4.4.32 or more
 CVE-2026-118383 / MongoDB Server / 5.0.0 to less than 5.0.35 / 5.0.35 or more
@@ -97,7 +96,6 @@ CVE-2026-120804 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
 CVE-2026-120804 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
 CVE-2026-120803 / MongoDB Server / 8.3.0 to less than 8.3.16 / 8.3.16 or more
 CVE-2026-120803 / MongoDB Server / 9.0.0 to less than 9.0.7 / 9.0.7 or more
-
 ※ Check the reference site below to perform the update [1]
 
 □ Reference sites

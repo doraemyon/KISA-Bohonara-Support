@@ -13,10 +13,8 @@ o Users with affected versions are advised to update to the latest version as a 
 o Interpretation Conflict Vulnerability in ModSecurity (CVE-2026-104269) [1] [3]
 
 □ Affected Products and Solutions
-
 Vulnerability / product name / Affected version / Resolved version
 CVE-2026-104269 / ModSecurity / 3.0.0 to less than 3.0.17 / 3.0.17 or more
-
 ※ Check the reference site below to perform the update [1] [2]
 
 □ Reference sites

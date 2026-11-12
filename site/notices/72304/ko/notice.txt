@@ -15,12 +15,10 @@ o Apache HTTP Server에서 발생하는 NULL Pointer Dereference 취약점(CVE-2
 o Apache HTTP Server에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-109163) [1][4]
 
 □ 영향을 받는 제품 및 해결 방안
-
 취약점 / 제품명 / 영향받는 버전 / 해결 버전
 CVE-2026-119618 / Apache HTTP Server / 2.4.55 이상 2.4.71 미만 / 2.4.71 이상
 CVE-2026-106023 / Apache HTTP Server / 2.4.30 이상 2.4.71 미만 / 2.4.71 이상
 CVE-2026-109163 / Apache HTTP Server / 2.4.69 이상 2.4.71 미만 / 2.4.71 이상
-
 ※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
 
 □ 참고사이트

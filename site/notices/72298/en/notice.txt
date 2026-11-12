@@ -13,7 +13,6 @@ o Users using the affected version are advised to update to the latest version a
 o Deserialization of Untrusted Data vulnerability occurring in React Server Components (CVE-2026-126187) [1][2]
 
 □ Affected Products and Solutions
-
 vulnerability / Product name / Affected Version / solved version
 CVE-2026-126187 / react-server-dom-webpack / 19.0.0 more 19.0.9 under / 19.0.9 more
 CVE-2026-126187 / react-server-dom-parcel / 19.0.0 more 19.0.9 under / 19.0.9 more
@@ -27,7 +26,6 @@ CVE-2026-126187 / react-server-dom-turbopack / 19.2.0 more 19.2.9 under / 19.2.9
 CVE-2026-126187 / react-server-dom-webpack / 19.3.0 / 19.3.1 more
 CVE-2026-126187 / react-server-dom-parcel / 19.3.0 / 19.3.1 more
 CVE-2026-126187 / react-server-dom-turbopack / 19.3.0 / 19.3.1 more
-
 ※ Check the reference site below to perform updates [1]
 
 □ Reference sites

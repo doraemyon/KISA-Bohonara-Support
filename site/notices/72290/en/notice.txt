@@ -13,11 +13,9 @@ o Users with affected versions are advised to update to the latest version as a 
 o Use of Single-factor Authentication vulnerability in SonicOS (CVE-2026-19868) [1] [2]
 
 □ Affected Products and Solutions
-
 Vulnerability / product name / Affected version / Resolved version
 CVE-2026-19868 / SonicOS (Gen7) / 7.3.3-7015 or less / 7.3.4-7013 or later
 CVE-2026-19868 / SonicOS (Gen8) / 8.2.2-8015 or less / 8.2.3-8015 or more
-
 ※ Check the reference site below to perform the update [1]
 
 □ Reference sites

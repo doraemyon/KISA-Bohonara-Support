@@ -30,7 +30,6 @@ o MongoDB Server에서 발생하는 Missing Release of Resource after Effective 
 o MongoDB Server에서 발생하는 Use After Free 취약점(CVE-2026-120803) [1][19]
 
 □ 영향을 받는 제품 및 해결 방안
-
 취약점 / 제품명 / 영향받는 버전 / 해결 버전
 CVE-2026-118383 / MongoDB Server / 4.4.0 이상 4.4.32 미만 / 4.4.32 이상
 CVE-2026-118383 / MongoDB Server / 5.0.0 이상 5.0.35 미만 / 5.0.35 이상
@@ -97,7 +96,6 @@ CVE-2026-120804 / MongoDB Server / 8.3.0 이상 8.3.16 미만 / 8.3.16 이상
 CVE-2026-120804 / MongoDB Server / 9.0.0 이상 9.0.7 미만 / 9.0.7 이상
 CVE-2026-120803 / MongoDB Server / 8.3.0 이상 8.3.16 미만 / 8.3.16 이상
 CVE-2026-120803 / MongoDB Server / 9.0.0 이상 9.0.7 미만 / 9.0.7 이상
-
 ※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
 
 □ 참고사이트

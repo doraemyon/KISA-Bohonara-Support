@@ -14,11 +14,9 @@ o INFINITT ULite에서 발생하는 Cross-site Scripting 취약점(CVE-2026-1987
 o INFINITT ULite에서 발생하는 비밀번호 무차별 대입(Brute Force) 취약점(CVE-2026-19877) [1][3]
 
 □ 영향을 받는 제품 및 해결 방안
-
 취약점 / 제품명 / 영향받는 버전 / 해결 버전
 CVE-2026-19876 / INFINITT ULite / 5.0.2.1_BN48_20260528 이하 / 5.0.2.1 BN50 이상
 CVE-2026-19877 / INFINITT ULite / 5.0.2.1_BN48_20260528 이하 / 5.0.2.1 BN50 이상
-
 ※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
 
 □ 참고사이트

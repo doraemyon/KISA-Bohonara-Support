@@ -24,7 +24,6 @@ Microsoft .NET / 중요 / 서비스 거부
 Microsoft Visual Studio / 중요 / 원격 코드 실행
 Microsoft Dynamics 365 / 중요 / 권한 상승
 Microsoft Azure / 긴급 / 권한 상승
-
 [참고 사이트]
 [1] (한글) https://msrc.microsoft.com/update-guide/ko-kr/
 [2] (영문) https://msrc.microsoft.com/update-guide/en-us/
@@ -1292,5 +1291,4 @@ Microsoft Edge (Chromium-based) / CVE-2026-121254 / Information leak
 Microsoft Edge (Chromium-based) / CVE-2026-121255 / Incorrect authorization
 Microsoft Edge (Chromium-based) / CVE-2026-121256 / Use of released resource
 Microsoft Edge (Chromium-based) / CVE-2026-121257 / Use after free
-
 □ 작성 : 디지털위협대응본부 취약점관리센터

@@ -13,7 +13,6 @@ o Recommend security measures, such as limiting file upload extensions, accordin
 o Unauthorized sign-up and inappropriate file upload vulnerabilities in E-GENE ITSM
 
 □ Affected products and remediation
-
 manufacturers / product name / Affected version / Action plan
 Estige / E-GENE ITSM / 7.0 or less / Registration Features and File Upload Extension Restrictions
 

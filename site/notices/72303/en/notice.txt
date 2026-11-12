@@ -16,13 +16,11 @@ o Cross-site Scripting vulnerability occurring in Elementor Website Builder (CVE
 o Ninja Forms - Path Traversal Vulnerability Occurring in File Uploads (CVE-2026-126537) [4][8]
 
 □ Affected Products and Solutions
-
 Vulnerability / Product Name / Affected Version / Fixed Version
 CVE-2026-76877 / WPML Multilingual CMS / 4.9.7 or earlier / 5.0.0 or later
 CVE-2026-93389 / LiteSpeed Cache / 7.9.1 or earlier / 7.9.2 or later
 CVE-2026-109883 / Elementor Website Builder / 4.3.5 or earlier / 4.3.6 or later
 CVE-2026-126537 / Ninja Forms - File Uploads / 3.3.36 or earlier / 3.3.37 or later
-
 ※ Check the reference site below to perform updates [1]~[4]
 
 □ Reference sites

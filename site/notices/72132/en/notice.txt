@@ -6,41 +6,27 @@ We are disseminating today's KISA announcement "Request to strengthen prevention
 
 Body:
 □ Overview
-
 ○ As cloud services and software development collaboration environments expand, there are incidents where credentials such as access keys, authentication tokens, API keys, etc. are exposed to source code repositories and collaboration tools or stolen from developer terminals, leading to infringements on major information resource systems, requiring special attention from companies and institutions.
-
 ○ In a cloud environment, key assets such as internal servers, databases, cloud management consoles, code repositories, and continuous integration/continuous delivery (CI/CD) pipelines can be accessed with just one credential, so there is a risk of secondary damage such as source code leakage and supply chain contamination.
-
 * Credential: Information proving system/service access rights, including access key, password, API key, authentication token, secret key, certificate, etc.
-
 * Major information resource systems: Core business systems such as internal servers, databases, cloud management console, code repositories, and build/deployment systems
 
 □ Highlights
-
 ○ (Exposure/theft route) Direct entry (hard coding) of credentials in source code stored in development collaboration tools such as cloud services or GitHub, uploading of configuration files and certificates to the code repository, sharing through collaboration tools (messenger, issue management, document tools), infection with extension programs in developer terminals and development tools (IDE).
-
 ○ (Primary damage) Unauthorized access to and seizure of major information resource systems using exposed credentials and leakage of core corporate assets such as source code, design information, and internal documents.
-
 ○ (Secondary damage) Based on the leaked source code and remaining credentials, internal structure is identified and additional vulnerabilities are discovered, lateral movement and linked systems are expanded, and infringements on customers and users through supply chain attacks are continuously expanded.
-
 ○ (Note) If credentials are uploaded to the code repository by mistake, the information may remain in the configuration management history (commit history) even if the file is deleted from the workspace, so simply deleting the file does not complete the action and the credentials must be destroyed or replaced.
 
 □ Prevention measures
-
 ○ Prevent storage and exposure of credentials - Do not hard-code credentials such as access keys, passwords, and API keys into the source code, but manage them in a confidential information management solution or secure repository and inject them at the time of execution - Prevent certificates and configuration files (.env) from being uploaded through code repository exclusion settings (.gitignore for GitHub) - Use an automatic detection tool for confidential information before uploading Check for exposure. Secret scanning and push blocking functions are provided as standard for public storage, but private and internal storage require separate application, so check whether the detection policy is applied to the entire organization's storage - Establish internal regulations to avoid sharing credentials with collaboration tools (messenger, issues, documents) and check existing sharing history
-
 ○ Apply temporary credentials and minimum privileges - Use temporary credentials that automatically expire after a certain period of time instead of long-term credentials (IAM role-based access control, etc.) - Apply multi-factor authentication (MFA) to major systems such as databases, cloud management consoles, code repositories, and distribution systems - Authorize according to the principle of least privilege, and use constant access keys with administrator-level privileges. Avoid - Reduce storage access rights from disclosure to the entire organization to the scope necessary for work, and minimize the scope and validity period of CI/CD tokens.
-
 ○ Strengthen access control and usage history monitoring - Prevent external unauthorized use by restricting IP addresses and network sections where credentials can be used - Regularly inspect credential use history and immediately retrieve unnecessary or long-term unused access rights - Collect and store cloud audit logs at all times, and monitor abnormal API calls (enumeration of permissions, creation of new users/roles, policy changes, large-scale instances) Detection and notification policy settings for (creation, etc.)
-
 ○ Development environment and human security - Development tool (IDE) extension programs and open source packages are introduced after confirming the distributor and publisher and verifying version fixation and integrity - Applying multi-factor authentication to developer accounts (code repository, package repository, collaboration tool), operating malware detection and response systems (EDR, etc.) for developer terminals - Checking whether hard-coded credentials are included during code review, and developer Conduct regular security training for targets
 
 □ Infringement incident report
-
 ○ ‘KISA Internet Protection Nation & KrCERT’ website (www.boho.or.kr﻿) → Consultation and report → Report hacking incident
 
 □ Other inquiries
-
 ○ Korea Internet & Security Agency 118 (118 without area code)
 
 □ Written by: Threat Analysis Group AI Comprehensive Analysis Team

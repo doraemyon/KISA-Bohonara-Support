@@ -206,12 +206,14 @@ def render_table(node: Node) -> str:
         ]
         if cells:
             lines.append(" / ".join(cells))
-    return "\n".join(lines) + ("\n\n" if lines else "")
+    return "\n".join(lines) + ("\n" if lines else "")
 
 
 def render_body(node: Node | str) -> str:
     if isinstance(node, str):
-        return re.sub(r"[\t\r\f\v ]+", " ", node)
+        # Preserve list items written as plain text inside a paragraph.
+        items = re.split(r"\r?\n(?=[ \t\xa0]*(?:[-○□•※*]|o)[ \t\xa0])", node)
+        return "\n".join(re.sub(r"\s+", " ", item) for item in items)
     if node.tag == "br":
         return "\n"
     if node.tag == "table":
@@ -219,8 +221,11 @@ def render_body(node: Node | str) -> str:
     if node.tag in {"script", "style", "noscript"}:
         return ""
     rendered = "".join(render_body(child) for child in node.children)
-    if node.tag in {"p", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote"}:
-        return rendered + "\n\n"
+    if node.tag in {"p", "div", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote"}:
+        rendered = rendered.rstrip(" ")
+        if not rendered.strip():
+            return "\n" if node.tag == "p" else rendered
+        return rendered if rendered.endswith("\n") else rendered + "\n"
     if node.tag == "li":
         return f"- {rendered.strip()}\n"
     return rendered

@@ -24,7 +24,6 @@ Microsoft .NET / importance / denial of service
 Microsoft Visual Studio / importance / Remote code execution
 Microsoft Dynamics 365 / importance / elevation of privilege
 Microsoft Azure / emergency / elevation of privilege
-
 [Reference site]
 [1] (Korean) https://msrc.microsoft.com/update-guide/ko-kr/
 [2] (English) https://msrc.microsoft.com/update-guide/en-us/
@@ -1292,5 +1291,4 @@ Microsoft Edge (Chromium-based) / CVE-2026-121254 / Information leak
 Microsoft Edge (Chromium-based) / CVE-2026-121255 / Incorrect authorization
 Microsoft Edge (Chromium-based) / CVE-2026-121256 / Use of released resource
 Microsoft Edge (Chromium-based) / CVE-2026-121257 / Use after free
-
 □ Written by: Digital Threat Response Headquarters Vulnerability Management Center

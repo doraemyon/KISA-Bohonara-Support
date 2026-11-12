@@ -13,10 +13,8 @@ o Users with affected versions are advised to update to the latest version as a 
 o Unrestricted Upload of File with Dangerous Type vulnerability in Contact Form 7 (CVE-2026-114432) [1] [2]
 
 □ Affected Products and Solutions
-
 Vulnerability / product name / Affected version / Resolved version
 CVE-2026-114432 / Contact Form 7 / 6.2.0 to less than 6.2.4 / 6.2.4 or more
-
 ※ Check the reference site below to perform the update [1]
 
 □ Reference sites

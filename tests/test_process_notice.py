@@ -51,6 +51,26 @@ class ProcessNoticeTests(unittest.TestCase):
         )
         self.assertIn("[1] https://example.com", body)
 
+    def test_keeps_explicit_breaks_without_padding_each_paragraph(self) -> None:
+        paragraphs = """
+            <p>□ 개요</p>
+            <p>○ 첫 항목</p>
+            <p>○ 둘째
+            항목<br>추가 안내<br><br>별도 문단</p>
+            <p>&nbsp;</p>
+            <div><p>□ 대응 방안</p><p>○ 대응 절차를 확인합니다.
+            - 하위 항목을 확인합니다.</p></div>
+        """
+        source = SAMPLE_HTML.partition('<div class="content_html">')[0]
+        _title, body, _date = process_notice.parse_notice_document(
+            source + '<div class="content_html">' + paragraphs + "</div></div></section>"
+        )
+        self.assertEqual(
+            body,
+            "□ 개요\n○ 첫 항목\n○ 둘째 항목\n추가 안내\n\n별도 문단\n\n"
+            "□ 대응 방안\n○ 대응 절차를 확인합니다.\n- 하위 항목을 확인합니다.",
+        )
+
     def test_update_advisory_uses_update_summary(self) -> None:
         title, body, _published_date = process_notice.parse_notice_document(SAMPLE_HTML)
         document = process_notice.korean_document(title, body)

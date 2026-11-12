@@ -14,11 +14,9 @@ o Zoom Workplace for Windows에서 발생하는 Improper Input Validation 취약
 o Zoom Workplace for Windows에서 발생하는 Origin Validation Error 취약점(CVE-2026-108187) [2][4]
 
 □ 영향을 받는 제품 및 해결 방안
-
 취약점 / 제품명 / 영향받는 버전 / 해결 버전
 CVE-2026-108186 / Zoom Workplace for Windows / 7.1.0 이상 7.1.8 미만 / 7.1.8 이상
 CVE-2026-108187 / Zoom Workplace for Windows / 7.1.5 미만 / 7.1.5 이상
-
 ※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][2]
 
 □ 참고사이트

@@ -15,7 +15,6 @@ o OpenSSH에서 비밀번호 처리 오류로 인해 발생하는 인증 우회 
 ※ glibc 기반 리눅스 배포판(RHEL, Ubuntu, Debian 등) 및 PAM 사용 환경(UsePAM yes)은 영향 없음
 
 □ 영향을 받는 제품 및 해결 방안
-
 취약점 / 제품명 / 영향받는 버전 / 해결 버전
 CVE-2026-123158 / OpenSSH (musl 기반 리눅스) / 10.6p1 이하 / 10.6p2
 CVE-2026-123158 / Alpine Linux edge (openssh) / 10.6_p2-r0 미만 / 10.6_p2-r0
@@ -29,7 +28,6 @@ CVE-2026-123158 / Alpine Linux 3.18 (openssh) / 9.3_p2-r4 미만 / 9.3_p2-r4
 CVE-2026-123158 / Alpine Linux 3.17 (openssh) / 9.1_p1-r7 미만 / 9.1_p1-r7
 CVE-2026-123158 / Alpine Linux 3.16 (openssh) / 9.0_p1-r6 미만 / 9.0_p1-r6
 CVE-2026-123158 / Alpine Linux 3.15 이하 (openssh) / 전 버전 / 해결 버전으로 마이그레이션
-
 ※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][2]
 ※ 업데이트 후 반드시 SSH 서비스(sshd) 재시작 필요
 

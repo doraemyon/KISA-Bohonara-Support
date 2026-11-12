@@ -14,11 +14,9 @@ o Cross-site Scripting (XSS) vulnerability in Apache Juneau (CVE-2026-96677) [1]
 o Insertion of Sensitive Information into Log File vulnerability in Apache Juneau (CVE-2026-73100) [1] [3]
 
 □ Affected Products and Solutions
-
 Vulnerability / product name / Affected version / Resolved version
 CVE-2026-96677 / Apache Juneau / Less than 9.2.1 / 9.2.1 or later
 CVE-2026-73100 / Apache Juneau / Less than 9.2.1 / 9.2.1 or later
-
 ※ Check the reference site below to perform the update [1]
 
 □ Reference sites
