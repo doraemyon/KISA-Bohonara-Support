@@ -72,13 +72,13 @@
         <div class="code-line" data-line="7"><span class="line-content">Body:</span></div>
         <div class="code-line" data-line="8"><span class="line-content">□ Overview</span></div>
         <div class="code-line" data-line="9"><span class="line-content"></span></div>
-        <div class="code-line" data-line="10"><span class="line-content">- A critical security vulnerability in PHP that allows external users to execute desired commands on the server without logging in (CVE-2026-109618, CVE-2026-109619, CVSS 9.2 Found [1][2][3][5]</span></div>
+        <div class="code-line" data-line="10"><span class="line-content">- Critical PHP vulnerabilities allow unauthenticated remote attackers to run commands on affected servers (CVE-2026-109618, CVE-2026-109619, CVSS 9.2). [1][2][3][5]</span></div>
         <div class="code-line" data-line="11"><span class="line-content"></span></div>
         <div class="code-line" data-line="12"><span class="line-content">- Vulnerability information was leaked before the security update was distributed, and attempts at attacks are being reported, mainly by overseas security companies. If an attack is successful, it could lead to the installation of a remote control file (web shell), leakage of customer information, tampering with the website, or infiltration of the internal network.</span></div>
         <div class="code-line" data-line="13"><span class="line-content"></span></div>
         <div class="code-line" data-line="14"><span class="line-content">- Companies using PHP are advised to take immediate action in accordance with the response guidelines below.</span></div>
         <div class="code-line" data-line="15"><span class="line-content"></span></div>
-        <div class="code-line" data-line="16"><span class="line-content">※ If a hosting company or equipment/solution manufacturer manages PHP, check with the company whether the following measures apply and request them.</span></div>
+        <div class="code-line" data-line="16"><span class="line-content">※ If a hosting company or equipment/solution manufacturer manages PHP, ask that provider whether it has implemented the measures below and request any outstanding action.</span></div>
         <div class="code-line" data-line="17"><span class="line-content"></span></div>
         <div class="code-line" data-line="18"><span class="line-content">※ It is recommended to apply the patch after conducting a preliminary impact assessment and testing, as compatibility and stability issues with the existing system may cause service disruptions when the patch is applied.</span></div>
         <div class="code-line" data-line="19"><span class="line-content"></span></div>
@@ -86,17 +86,17 @@
         <div class="code-line" data-line="21"><span class="line-content"></span></div>
         <div class="code-line" data-line="22"><span class="line-content">1. Check the current status of PHP in use</span></div>
         <div class="code-line" data-line="23"><span class="line-content"></span></div>
-        <div class="code-line" data-line="24"><span class="line-content">- Check whether all websites and systems published on the internet use PHP and their versions</span></div>
+        <div class="code-line" data-line="24"><span class="line-content">- Check all public-facing websites and systems to see whether they run PHP and which versions they use.</span></div>
         <div class="code-line" data-line="25"><span class="line-content"></span></div>
-        <div class="code-line" data-line="26"><span class="line-content">- Includes outsourced sites, sites created long ago and no longer maintained, event and test servers, and admin pages</span></div>
+        <div class="code-line" data-line="26"><span class="line-content">- Include outsourced websites, older unmaintained sites, event and test servers, and administration pages.</span></div>
         <div class="code-line" data-line="27"><span class="line-content"></span></div>
-        <div class="code-line" data-line="28"><span class="line-content">- Do not rely solely on the asset management list, but check based on the servers that are actually in operation.</span></div>
+        <div class="code-line" data-line="28"><span class="line-content">- Verify the servers that are actually running in addition to consulting the asset inventory.</span></div>
         <div class="code-line" data-line="29"><span class="line-content"></span></div>
         <div class="code-line" data-line="30"><span class="line-content">- Separately verify equipment and solutions with built-in PHP (e.g., network equipment management screens, installation packages for Windows that include PHP) as well as container images (e.g., Docker) obtained externally. [4]</span></div>
         <div class="code-line" data-line="31"><span class="line-content"></span></div>
         <div class="code-line" data-line="32"><span class="line-content">2. Update to the latest version and restart</span></div>
         <div class="code-line" data-line="33"><span class="line-content"></span></div>
-        <div class="code-line" data-line="34"><span class="line-content">- Resolved version: PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35 or later (including updates provided by Linux distributions and manufacturers)</span></div>
+        <div class="code-line" data-line="34"><span class="line-content">- Fixed versions: PHP 8.5.12, 8.4.27, 8.3.36, and 8.2.35 or later in the corresponding release branch, including updates provided by Linux distributions and vendors.</span></div>
         <div class="code-line" data-line="35"><span class="line-content"></span></div>
         <div class="code-line" data-line="36"><span class="line-content">- Prioritize servers that are publicly accessible on the internet.</span></div>
         <div class="code-line" data-line="37"><span class="line-content"></span></div>
@@ -104,25 +104,25 @@
         <div class="code-line" data-line="39"><span class="line-content"></span></div>
         <div class="code-line" data-line="40"><span class="line-content">- If you do not restart, the previous version remaining in memory will continue to run, leaving the system still vulnerable.</span></div>
         <div class="code-line" data-line="41"><span class="line-content"></span></div>
-        <div class="code-line" data-line="42"><span class="line-content">- The container environment redistributes new images.</span></div>
+        <div class="code-line" data-line="42"><span class="line-content">- For container deployments, redeploy using updated images.</span></div>
         <div class="code-line" data-line="43"><span class="line-content"></span></div>
         <div class="code-line" data-line="44"><span class="line-content">- After the update, check whether the PHP version actually used by the web service has changed.</span></div>
         <div class="code-line" data-line="45"><span class="line-content"></span></div>
         <div class="code-line" data-line="46"><span class="line-content">※ Since the version identified by the command (php -v) and the version used by the web service may differ, if multiple PHP versions are installed on a single server, verify each version separately.</span></div>
         <div class="code-line" data-line="47"><span class="line-content"></span></div>
-        <div class="code-line" data-line="48"><span class="line-content">※ Since the version number of packages provided by Linux distributions and vendors may not change even after applying security patches, check the package change history to see if CVEs have been reflected.</span></div>
+        <div class="code-line" data-line="48"><span class="line-content">※ Since the version number of packages provided by Linux distributions and vendors may not change even after applying security patches, check the package changelog to confirm that the fixes for the CVEs are included.</span></div>
         <div class="code-line" data-line="49"><span class="line-content"></span></div>
-        <div class="code-line" data-line="50"><span class="line-content">3. Older version (PHP 8.1 below) will be switched to a supported version</span></div>
+        <div class="code-line" data-line="50"><span class="line-content">3. Migrate PHP 8.1 and earlier to a supported version</span></div>
         <div class="code-line" data-line="51"><span class="line-content"></span></div>
-        <div class="code-line" data-line="52"><span class="line-content">- PHP 8.1 Switch to the supported version as official updates are not provided for versions below.</span></div>
+        <div class="code-line" data-line="52"><span class="line-content">- Migrate to a supported version because PHP 8.1 and earlier no longer receive official updates.</span></div>
         <div class="code-line" data-line="53"><span class="line-content"></span></div>
-        <div class="code-line" data-line="54"><span class="line-content">- PHP 8.2 Degree 2026.12.31. Security support is scheduled to end. 8.3 Recommended to switch to a later version</span></div>
+        <div class="code-line" data-line="54"><span class="line-content">- Security support for PHP 8.2 is scheduled to end on 2026.12.31. Plan to migrate to PHP 8.3 or later.</span></div>
         <div class="code-line" data-line="55"><span class="line-content"></span></div>
-        <div class="code-line" data-line="56"><span class="line-content">- If the transition takes time, apply the security patches provided by Linux distributions and Long-Term Support (LTS) vendors, or the security fixes released by the PHP Security Team 7.4·8.0·8.1 Temporarily apply the source patch for and develop a migration plan [1]</span></div>
+        <div class="code-line" data-line="56"><span class="line-content">- If migration will take time, temporarily apply security patches from your Linux distribution or long-term support (LTS) vendor, or the PHP Security Team&#x27;s source patches for 7.4·8.0·8.1. Prepare a migration plan. [1]</span></div>
         <div class="code-line" data-line="57"><span class="line-content"></span></div>
         <div class="code-line" data-line="58"><span class="line-content">- If there is no patch to apply, apply the temporary measures in Rule 4. If that is also difficult, consider blocking external access or temporarily suspending the service.</span></div>
         <div class="code-line" data-line="59"><span class="line-content"></span></div>
-        <div class="code-line" data-line="60"><span class="line-content">4. Temporary measures are requested when immediate updates are difficult.</span></div>
+        <div class="code-line" data-line="60"><span class="line-content">4. Apply temporary mitigations if you cannot update immediately</span></div>
         <div class="code-line" data-line="61"><span class="line-content"></span></div>
         <div class="code-line" data-line="62"><span class="line-content">- Limit the request size (including requests without request size information) at the front end of PHP, such as web firewalls, web servers, and proxies, and block file upload (multipart) requests for services that do not require file uploads.</span></div>
         <div class="code-line" data-line="63"><span class="line-content"></span></div>
@@ -136,17 +136,17 @@
         <div class="code-line" data-line="71"><span class="line-content"></span></div>
         <div class="code-line" data-line="72"><span class="line-content">- Set post_max_size to a low value (8M if uploads are not required, or 32M if they are). Keep upload_max_filesize smaller than post_max_size.</span></div>
         <div class="code-line" data-line="73"><span class="line-content"></span></div>
-        <div class="code-line" data-line="74"><span class="line-content">- PHP 8.5 Add fatal_error_backtraces = 0 when using</span></div>
+        <div class="code-line" data-line="74"><span class="line-content">- For PHP 8.5, also set fatal_error_backtraces = 0.</span></div>
         <div class="code-line" data-line="75"><span class="line-content"></span></div>
         <div class="code-line" data-line="76"><span class="line-content">※ Temporary measures do not completely prevent attacks, so updates are recommended.</span></div>
         <div class="code-line" data-line="77"><span class="line-content"></span></div>
         <div class="code-line" data-line="78"><span class="line-content">- If even temporary measures are difficult to implement, we recommend considering blocking external access or temporarily suspending the service until the update is completed.</span></div>
         <div class="code-line" data-line="79"><span class="line-content"></span></div>
-        <div class="code-line" data-line="80"><span class="line-content">5. Check the log after the update</span></div>
+        <div class="code-line" data-line="80"><span class="line-content">5. Review logs after updating</span></div>
         <div class="code-line" data-line="81"><span class="line-content"></span></div>
-        <div class="code-line" data-line="82"><span class="line-content">MIN 10.20 Review all records after (date of vulnerability information leak) and, if possible, check records prior to that date as well.</span></div>
+        <div class="code-line" data-line="82"><span class="line-content">- Review all logs from 10.20 (the date the vulnerability information leaked) onward. Review earlier logs as well if available.</span></div>
         <div class="code-line" data-line="83"><span class="line-content"></span></div>
-        <div class="code-line" data-line="84"><span class="line-content">- Key Inspection Items</span></div>
+        <div class="code-line" data-line="84"><span class="line-content">- Look for the following signs:</span></div>
         <div class="code-line" data-line="85"><span class="line-content"></span></div>
         <div class="code-line" data-line="86"><span class="line-content">- Abnormally large requests to a PHP page followed by repeated server errors (HTTP 500)</span></div>
         <div class="code-line" data-line="87"><span class="line-content"></span></div>
@@ -168,25 +168,25 @@
         <div class="code-line" data-line="103"><span class="line-content"></span></div>
         <div class="code-line" data-line="104"><span class="line-content">- For servers that were exposed to the internet before the update, it is recommended to change the DB password, external service integration key, and administrator account password.</span></div>
         <div class="code-line" data-line="105"><span class="line-content"></span></div>
-        <div class="code-line" data-line="106"><span class="line-content">- Servers with signs of compromise must be replaced.</span></div>
+        <div class="code-line" data-line="106"><span class="line-content">- For any server showing signs of compromise, rotate these credentials.</span></div>
         <div class="code-line" data-line="107"><span class="line-content"></span></div>
         <div class="code-line" data-line="108"><span class="line-content">7. In the event of a breach, respond in the following order:</span></div>
         <div class="code-line" data-line="109"><span class="line-content"></span></div>
-        <div class="code-line" data-line="110"><span class="line-content">1 Isolation: Do not turn off or restart the server; only block external access from the network.</span></div>
+        <div class="code-line" data-line="110"><span class="line-content">① Isolate the server by blocking external network access. Leave the server running.</span></div>
         <div class="code-line" data-line="111"><span class="line-content"></span></div>
-        <div class="code-line" data-line="112"><span class="line-content">2 Report: [Bohonara (https://boho.or.kr)] Report via → [Report Security Incident] → [Report]</span></div>
+        <div class="code-line" data-line="112"><span class="line-content">② Report the incident through [Bohonara (https://boho.or.kr)] → [Report Security Incident] → [Report].</span></div>
         <div class="code-line" data-line="113"><span class="line-content"></span></div>
-        <div class="code-line" data-line="114"><span class="line-content">3. Secure evidence: Preserve server records (logs), list of running programs, and network connection information.</span></div>
+        <div class="code-line" data-line="114"><span class="line-content">③ Preserve evidence, including server logs, the list of running processes, and network connection information.</span></div>
         <div class="code-line" data-line="115"><span class="line-content"></span></div>
         <div class="code-line" data-line="116"><span class="line-content">※ When the server is restarted, any traces of the attack remaining in the memory will disappear, so evidence should be secured before updating and restarting.</span></div>
         <div class="code-line" data-line="117"><span class="line-content"></span></div>
-        <div class="code-line" data-line="118"><span class="line-content">4 Actions: Update and restart, remove web shells, replace credentials</span></div>
+        <div class="code-line" data-line="118"><span class="line-content">④ Remediate by updating and restarting the server, removing web shells, and rotating credentials.</span></div>
         <div class="code-line" data-line="119"><span class="line-content"></span></div>
         <div class="code-line" data-line="120"><span class="line-content">8. Avoid running PoCs with unclear sources</span></div>
         <div class="code-line" data-line="121"><span class="line-content"></span></div>
         <div class="code-line" data-line="122"><span class="line-content">- Among the PoCs circulating on the internet, many are fake with hidden malware.</span></div>
         <div class="code-line" data-line="123"><span class="line-content"></span></div>
-        <div class="code-line" data-line="124"><span class="line-content">- Whether a vulnerability exists is determined by checking the version and reviewing records instead of conducting a PoC.</span></div>
+        <div class="code-line" data-line="124"><span class="line-content">- Check versions and review logs to determine whether a system is vulnerable.</span></div>
         <div class="code-line" data-line="125"><span class="line-content"></span></div>
         <div class="code-line" data-line="126"><span class="line-content">- If analysis is absolutely necessary, it should only be performed in an environment separate from the business network.</span></div>
         <div class="code-line" data-line="127"><span class="line-content"></span></div>
