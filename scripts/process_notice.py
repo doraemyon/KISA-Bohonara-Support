@@ -753,7 +753,9 @@ def validate_english_document(korean: str, english_title: str, english: str) -> 
         fail("English translation changed the table layout or moved protected values between cells.")
 
 
-def translate_with_gemini(korean: str, api_key: str, model: str) -> tuple[str, str]:
+def translate_with_gemini(
+    korean: str, api_key: str, model: str, *, timeout: int = 60, attempts: int = 3
+) -> tuple[str, str]:
     if not re.fullmatch(r"[A-Za-z0-9._-]{1,100}", model):
         fail("GEMINI_MODEL contains unsupported characters.")
     protected_korean, replacements = mask_protected_tokens(korean)
@@ -803,9 +805,9 @@ Korean notice:
     )
 
     last_error: Exception | None = None
-    for attempt in range(3):
+    for attempt in range(attempts):
         try:
-            with urllib.request.urlopen(request, timeout=60) as response:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
                 result = json.loads(response.read().decode("utf-8"))
             candidates = result.get("candidates", [])
             parts = candidates[0].get("content", {}).get("parts", []) if candidates else []
@@ -826,9 +828,9 @@ Korean notice:
             last_error = RuntimeError(f"Gemini returned HTTP {error.code}.")
             if error.code not in {429, 500, 502, 503, 504}:
                 break
-        except (urllib.error.URLError, json.JSONDecodeError, IndexError, RuntimeError) as error:
+        except (OSError, json.JSONDecodeError, IndexError, RuntimeError) as error:
             last_error = error
-        if attempt < 2:
+        if attempt + 1 < attempts:
             time.sleep(2**attempt)
     fail(f"Gemini translation failed: {last_error}")
 
@@ -920,41 +922,10 @@ def acceptable_english_fragment(source: str, target: str) -> bool:
     )
 
 
-def english_document(
-    title: str,
-    body: str,
-    gemini_api_key: str = "",
-    gemini_model: str = DEFAULT_GEMINI_MODEL,
-    cloudflare_account_id: str = "",
-    cloudflare_api_token: str = "",
-    contact_email: str = "",
+def translate_document_linewise(
+    title: str, body: str, providers: list[tuple[str, Callable[[str], str]]]
 ) -> tuple[str, str, str]:
     korean = korean_document(title, body)
-    errors: list[str] = []
-    if gemini_api_key:
-        try:
-            english_title, document = translate_with_gemini(korean, gemini_api_key, gemini_model)
-            english_title, document = finalize_english_document(
-                title, body, english_title, document
-            )
-            return english_title, document, "gemini"
-        except Exception as error:
-            errors.append(f"Gemini: {error}")
-            print(f"WARNING: {error} Trying the next translation provider.", file=sys.stderr)
-
-    providers: list[tuple[str, Callable[[str], str]]] = []
-    if cloudflare_account_id and cloudflare_api_token:
-        providers.append((
-            "cloudflare-m2m100",
-            lambda text: translate_segment_cloudflare(text, cloudflare_account_id, cloudflare_api_token),
-        ))
-    providers.extend([
-        ("google-translate-web", translate_segment_google),
-        ("mymemory", lambda text: translate_segment(text, contact_email)),
-        ("offline-opus-mt", lambda text: offline_translation.translate(
-            text, lambda candidate: acceptable_english_fragment(text, normalize_inline(candidate))
-        )),
-    ])
     unavailable: dict[str, str] = {}
     used: dict[str, None] = {}
 
@@ -975,7 +946,7 @@ def english_document(
             used[name] = None
             return result
 
-        reasons = errors + [f"{name}: {error}" for name, error in unavailable.items()]
+        reasons = [f"{name}: {error}" for name, error in unavailable.items()]
         if rejected:
             reasons.append("Invalid fragment from " + ", ".join(rejected))
         fail("No valid English translation for a required fragment. " + " | ".join(reasons))
@@ -988,6 +959,50 @@ def english_document(
     )
     validate_english_document(korean, english_title, document)
     return english_title, document, "+".join(used) or "source"
+
+
+def english_document(
+    title: str,
+    body: str,
+    gemini_api_key: str = "",
+    gemini_model: str = DEFAULT_GEMINI_MODEL,
+    cloudflare_account_id: str = "",
+    cloudflare_api_token: str = "",
+    contact_email: str = "",
+) -> tuple[str, str, str]:
+    primary: list[tuple[str, Callable[[str], str]]] = []
+    if cloudflare_account_id and cloudflare_api_token:
+        primary.append((
+            "cloudflare-m2m100",
+            lambda text: translate_segment_cloudflare(text, cloudflare_account_id, cloudflare_api_token),
+        ))
+    primary.append(("google-translate-web", translate_segment_google))
+    fallback = [
+        ("mymemory", lambda text: translate_segment(text, contact_email)),
+        ("offline-opus-mt", lambda text: offline_translation.translate(
+            text, lambda candidate: acceptable_english_fragment(text, normalize_inline(candidate))
+        )),
+    ]
+    if not gemini_api_key:
+        return translate_document_linewise(title, body, primary + fallback)
+
+    try:
+        return translate_document_linewise(title, body, primary)
+    except RuntimeError as error:
+        print(f"WARNING: Primary translation failed: {error}", file=sys.stderr)
+
+    try:
+        english_title, document = translate_with_gemini(
+            korean_document(title, body), gemini_api_key, gemini_model,
+            timeout=20, attempts=1,
+        )
+        english_title, document = finalize_english_document(title, body, english_title, document)
+        return english_title, document, "gemini"
+    except (OSError, RuntimeError, ValueError) as error:
+        reason = str(error) or type(error).__name__
+        print(f"WARNING: {reason} Trying the next translation provider.", file=sys.stderr)
+
+    return translate_document_linewise(title, body, fallback)
 
 
 def render_notice_lines(notice_text: str) -> str:
@@ -1429,13 +1444,6 @@ def main() -> None:
     gemini_model = os.environ.get("GEMINI_MODEL", "").strip() or DEFAULT_GEMINI_MODEL
     cloudflare_account_id = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip()
     cloudflare_api_token = os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
-    preferred_provider = (
-        "gemini"
-        if gemini_api_key
-        else "cloudflare-m2m100"
-        if cloudflare_account_id and cloudflare_api_token
-        else ""
-    )
     try:
         cached_metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
@@ -1446,10 +1454,6 @@ def main() -> None:
         and looks_like_english_translation(korean, cached_english)
         and cached_metadata.get("format_version") == FORMAT_VERSION
         and cached_metadata.get("translation_status", "complete") == "complete"
-        and (
-            not preferred_provider
-            or cached_metadata.get("translation_provider") == preferred_provider
-        )
     ):
         english = cached_english
         english_lines = english.splitlines()

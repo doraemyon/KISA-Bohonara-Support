@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+from datetime import date
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -11,6 +13,7 @@ from unittest import mock
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 import process_notice  # noqa: E402
+import notice_catalog  # noqa: E402
 import recover_missing_notices  # noqa: E402
 import recovery_queue  # noqa: E402
 
@@ -67,13 +70,15 @@ class RecoverMissingNoticesTests(unittest.TestCase):
             (notice_root / "en").mkdir(parents=True)
             (notice_root / "ko" / "notice.txt").write_text("국문", encoding="utf-8")
             (notice_root / "en" / "notice.txt").write_text("English", encoding="utf-8")
+            for language in ("ko", "en"):
+                (notice_root / language / "index.html").write_text("<html></html>", encoding="utf-8")
             (notice_root / "metadata.json").write_text(
-                json.dumps({"translation_status": "complete"}), encoding="utf-8"
+                json.dumps({"notice_id": "72294", "translation_status": "complete"}), encoding="utf-8"
             )
 
             with mock.patch.object(process_notice, "SITE_ROOT", site_root):
                 self.assertTrue(recover_missing_notices.is_complete("72294"))
-                (notice_root / "en" / "notice.txt").unlink()
+                (notice_root / "en" / "index.html").unlink()
                 self.assertFalse(recover_missing_notices.is_complete("72294"))
 
     def test_recovery_logs_failure_and_returns_for_future_retry(self) -> None:
@@ -87,13 +92,44 @@ class RecoverMissingNoticesTests(unittest.TestCase):
             with (
                 mock.patch.object(recovery_queue, "QUEUE_PATH", queue_path),
                 mock.patch.object(
-                    recover_missing_notices, "recent_notices", return_value=[notice]
+                    notice_catalog, "official_notices",
+                    return_value=[notice_catalog.Notice(*notice, date(2026, 11, 12), 1)],
                 ),
                 mock.patch.object(recover_missing_notices, "is_complete", return_value=False),
-                mock.patch.object(process_notice, "main", side_effect=RuntimeError("temporary")),
+                mock.patch.object(process_notice, "write_notice_index"),
+                mock.patch.object(subprocess, "run", side_effect=subprocess.TimeoutExpired("formatter", 120)),
             ):
                 recover_missing_notices.main()
                 self.assertEqual(recovery_queue.load_queue()[0][0], "72294")
+
+    def test_official_scan_keeps_pins_once_and_fails_on_pagination_gaps(self) -> None:
+        recent = date(2026, 11, 12)
+        older = date(2026, 8, 10)
+        pin = notice_catalog.Notice("72230", "Pinned", "https://example.test/1", recent, None)
+        first = notice_catalog.Notice("72304", "Current", "https://example.test/2", recent, 30)
+        last = notice_catalog.Notice("72156", "Old", "https://example.test/3", older, 29)
+        since = date(2026, 8, 12)
+        with mock.patch.object(notice_catalog, "fetch_page", side_effect=[[pin, first], [pin, last]]):
+            self.assertEqual(notice_catalog.official_notices(since, recent), [first, pin])
+        with mock.patch.object(notice_catalog, "fetch_page", side_effect=[[pin, first], [pin, first]]):
+            with self.assertRaisesRegex(RuntimeError, "pagination"):
+                notice_catalog.official_notices(since, recent)
+
+    def test_failed_request_moves_behind_untried_requests(self) -> None:
+        def request(notice_id):
+            return (notice_id, f"Notice {notice_id}",
+                    f"https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&nttId={notice_id}")
+
+        with (
+            tempfile.TemporaryDirectory() as temporary_directory,
+            mock.patch.object(recovery_queue, "QUEUE_PATH", Path(temporary_directory) / "queue.json"),
+            mock.patch.object(notice_catalog, "official_notices", return_value=[]),
+            mock.patch.object(recover_missing_notices, "is_complete", return_value=False),
+            mock.patch.object(subprocess, "run", side_effect=subprocess.TimeoutExpired("formatter", 120)),
+        ):
+            recovery_queue.write_queue([request("72294"), request("72293")])
+            recover_missing_notices.main(limit=1)
+            self.assertEqual([item[0] for item in recovery_queue.load_queue()], ["72293", "72294"])
 
 
 if __name__ == "__main__":

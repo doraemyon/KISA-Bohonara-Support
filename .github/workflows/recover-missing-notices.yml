@@ -3,7 +3,13 @@ name: Recover missing KISA notices
 on:
   schedule:
     - cron: "11,41 * * * *"
+    - cron: "17 17 * * *"
   workflow_dispatch:
+    inputs:
+      limit:
+        description: Maximum notices to attempt in this run (1–120)
+        type: number
+        default: 12
 
 permissions:
   contents: write
@@ -32,16 +38,26 @@ jobs:
         uses: ./.github/actions/prepare-offline-translation
         continue-on-error: true
 
-      - name: Recover recent missing notices
+      - name: Reconcile missing notices
+        id: reconcile
+        timeout-minutes: 22
         env:
+          FULL_SCAN: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '17 17 * * *' }}
+          RECOVERY_LIMIT: ${{ inputs.limit || 12 }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           MYMEMORY_CONTACT_EMAIL: ${{ secrets.MYMEMORY_CONTACT_EMAIL }}
-        run: python3 scripts/recover_missing_notices.py
+        run: |
+          args=(--limit "$RECOVERY_LIMIT")
+          if [[ "$FULL_SCAN" == "true" ]]; then
+            args+=(--full-scan)
+          fi
+          python3 scripts/recover_missing_notices.py "${args[@]}"
 
       - name: Save recovered pages
+        if: ${{ !cancelled() && (steps.reconcile.outcome == 'success' || steps.reconcile.outcome == 'failure') }}
         id: save
         shell: bash
         run: |
@@ -63,7 +79,7 @@ jobs:
 
   deploy:
     needs: recover
-    if: ${{ needs.recover.outputs.pages_changed == 'true' }}
+    if: ${{ !cancelled() && needs.recover.outputs.pages_changed == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     environment:

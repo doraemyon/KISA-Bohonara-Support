@@ -37,11 +37,10 @@ def load_queue() -> list[tuple[str, str, str]]:
 
 def write_queue(notices: list[tuple[str, str, str]]) -> None:
     unique = {notice_id: (notice_id, title, url) for notice_id, title, url in notices}
-    ordered = sorted(unique.values(), key=lambda item: int(item[0]))
     payload = {
         "notices": [
             {"notice_id": notice_id, "title": title, "url": url}
-            for notice_id, title, url in ordered
+            for notice_id, title, url in unique.values()
         ]
     }
     QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)

@@ -1,20 +1,36 @@
 #!/usr/bin/env python3
-"""Recover recent RSS notices that do not yet have both published documents."""
+"""Reconcile the official notice list with the bilingual archive."""
 
 from __future__ import annotations
 
+import argparse
+import calendar
+from datetime import date, datetime, timedelta, timezone
 import json
 import os
+from pathlib import Path
+import subprocess
 import sys
+import time
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 
+import notice_catalog
 import process_notice
 import recovery_queue
 
 
 RSS_URL = "https://www.boho.or.kr/kr/rss.do?bbsId=B0000133"
+KOREA = timezone(timedelta(hours=9))
+NOTICE_TIMEOUT = 120
+RUN_BUDGET = 18 * 60
+
+
+def three_months_before(day: date) -> date:
+    year, month = divmod(day.year * 12 + day.month - 1 - 3, 12)
+    month += 1
+    return date(year, month, min(day.day, calendar.monthrange(year, month)[1]))
 
 
 def recent_notices() -> list[tuple[str, str, str]]:
@@ -45,50 +61,83 @@ def recent_notices() -> list[tuple[str, str, str]]:
 
 def is_complete(notice_id: str) -> bool:
     root = process_notice.SITE_ROOT / "notices" / notice_id
-    if not (root / "ko" / "notice.txt").exists() or not (root / "en" / "notice.txt").exists():
-        return False
     try:
+        for language in ("ko", "en"):
+            for filename in ("index.html", "notice.txt"):
+                if (root / language / filename).stat().st_size == 0:
+                    return False
         metadata = json.loads((root / "metadata.json").read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return False
-    return metadata.get("translation_status", "complete") == "complete"
+    return (
+        metadata.get("notice_id") == notice_id
+        and metadata.get("translation_status", "complete") == "complete"
+    )
 
 
-def main() -> None:
+def main(*, full_scan: bool = False, limit: int = 12) -> None:
+    today = datetime.now(KOREA).date()
+    since = three_months_before(today) if full_scan else today - timedelta(days=14)
+    try:
+        catalog = notice_catalog.official_notices(since, today)
+        discovered = [entry.request() for entry in catalog]
+    except (OSError, RuntimeError, ValueError) as error:
+        print(f"::warning::Official KISA list scan failed: {error}. Trying RSS and the saved queue.")
+        discovered = recent_notices()
+
     queued = recovery_queue.load_queue()
-    candidates = {notice[0]: notice for notice in queued}
-    for notice in recent_notices():
-        candidates.setdefault(notice[0], notice)
-
-    missing: list[tuple[str, str, str]] = []
-    for notice in candidates.values():
-        if is_complete(notice[0]):
-            recovery_queue.remove_notice(notice[0])
-        else:
-            missing.append(notice)
+    previously_queued = {notice[0] for notice in queued}
+    new_requests = [notice for notice in discovered if notice[0] not in previously_queued]
+    candidates = {notice[0]: notice for notice in new_requests + queued}
+    missing = [notice for notice in candidates.values() if not is_complete(notice[0])]
+    recovery_queue.write_queue(missing)
+    # Repair an index that is stale even when all document files are present.
+    if discovered:
+        process_notice.write_notice_index()
     if not missing:
-        print("No recent KISA notices need recovery.")
+        print("No KISA notices need recovery.")
         return
 
-    os.environ.pop("GITHUB_OUTPUT", None)
+    deadline = time.monotonic() + RUN_BUDGET
+    env = {key: value for key, value in os.environ.items() if key != "GITHUB_OUTPUT"}
     recovered = 0
-    for notice_id, title, link in reversed(missing):
+    attempted = 0
+    for notice_id, title, link in missing[:limit]:
+        remaining = deadline - time.monotonic()
+        if remaining < 10:
+            break
+        attempted += 1
         print(f"Recovering KISA notice {notice_id}: {title}")
-        os.environ["NOTICE_URL"] = link
-        os.environ["NOTICE_TITLE"] = title
         try:
-            process_notice.main()
+            subprocess.run(
+                [sys.executable, str(Path(process_notice.__file__).resolve())],
+                env={**env, "NOTICE_URL": link, "NOTICE_TITLE": title},
+                timeout=min(NOTICE_TIMEOUT, remaining),
+                check=True,
+            )
+            if not is_complete(notice_id):
+                raise RuntimeError("The complete bilingual files were not written.")
             recovery_queue.remove_notice(notice_id)
             recovered += 1
-        except Exception as error:
+        except (OSError, RuntimeError, subprocess.SubprocessError) as error:
+            # Re-adding an item moves it behind untried requests.
             recovery_queue.add_notice(link, title)
             print(
-                f"WARNING: Notice {notice_id} is still unavailable and will be retried: {error}",
+                f"::warning::Notice {notice_id} is still queued for recovery: {error}",
                 file=sys.stderr,
             )
 
-    print(f"Recovered {recovered} of {len(missing)} missing notice(s).")
+    pending = len(recovery_queue.load_queue())
+    report = f"Recovered {recovered}/{attempted} attempted notice(s); {pending} remain queued."
+    print(report)
+    if summary := os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(summary, "a", encoding="utf-8") as output:
+            output.write(report + "\n")
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--full-scan", action="store_true")
+    parser.add_argument("--limit", type=int, choices=range(1, 121), default=12, metavar="1..120")
+    args = parser.parse_args()
+    main(full_scan=args.full_scan, limit=args.limit)

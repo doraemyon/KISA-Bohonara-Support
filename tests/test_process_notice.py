@@ -554,7 +554,7 @@ class ProcessNoticeTests(unittest.TestCase):
     def test_google_translation_is_used_when_configured_providers_fail(self) -> None:
         translations = {"제품 업데이트 권고": "Product Update", "업데이트를 적용하십시오.": "Apply the update."}
         with (
-            mock.patch.object(process_notice, "translate_with_gemini", side_effect=RuntimeError("down")),
+            mock.patch.object(process_notice, "translate_with_gemini") as gemini,
             mock.patch.object(process_notice, "translate_segment_cloudflare", side_effect=RuntimeError("down")),
             mock.patch.object(
                 process_notice,
@@ -580,7 +580,22 @@ class ProcessNoticeTests(unittest.TestCase):
         )
         self.assertIn("Body:\n□ Overview\no Apply the update.", document)
         self.assertEqual(provider, "google-translate-web")
+        gemini.assert_not_called()
         mymemory.assert_not_called()
+
+    def test_gemini_timeout_switches_to_mymemory_after_one_attempt(self) -> None:
+        translations = {"제품 업데이트 권고": "Product Update", "업데이트를 적용하십시오.": "Apply the update."}
+        with (
+            mock.patch.object(process_notice, "translate_segment_google", side_effect=RuntimeError("HTTP 429")),
+            mock.patch.object(process_notice, "translate_with_gemini", side_effect=TimeoutError) as gemini,
+            mock.patch.object(process_notice, "translate_segment", side_effect=lambda text, _email: translations[text]),
+        ):
+            _, _, provider = process_notice.english_document(
+                "제품 업데이트 권고", "□ 개요\no 업데이트를 적용하십시오.", gemini_api_key="test-key"
+            )
+        self.assertEqual(provider, "mymemory")
+        self.assertEqual(gemini.call_count, 1)
+        self.assertEqual(gemini.call_args.kwargs, {"timeout": 20, "attempts": 1})
 
     def test_gemini_translates_the_complete_document_with_structured_output(self) -> None:
         korean = (
