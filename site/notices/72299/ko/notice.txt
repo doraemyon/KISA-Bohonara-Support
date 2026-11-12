@@ -1,0 +1,1296 @@
+제목:
+MS 11월 보안 위협에 따른 정기 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "MS 11월 보안 위협에 따른 정기 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 11월 보안업데이트 개요 (총 13 종)
+o 등급 : 긴급 (Critical) 8 종 , 중요 (Important) 5 종
+o 발표일 : 2026.11.10.(화)
+o 업데이트 내용
+
+제품군 / 중요도 / 영향
+Windows 11 / 긴급 / 권한 상승
+Windows Server 2025 / 긴급 / 권한 상승
+Windows Server 2022 / 긴급 / 권한 상승
+Windows Server 2019 / 긴급 / 권한 상승
+Windows Server 2016 / 긴급 / 권한 상승
+Microsoft Office / 긴급 / 원격 코드 실행
+Microsoft SharePoint / 중요 / 스푸핑
+Microsoft Exchange Server / 긴급 / 권한 상승
+Microsoft SQL Server / 중요 / 권한 상승
+Microsoft .NET / 중요 / 서비스 거부
+Microsoft Visual Studio / 중요 / 원격 코드 실행
+Microsoft Dynamics 365 / 중요 / 권한 상승
+Microsoft Azure / 긴급 / 권한 상승
+
+[참고 사이트]
+[1] (한글) https://msrc.microsoft.com/update-guide/ko-kr/
+[2] (영문) https://msrc.microsoft.com/update-guide/en-us/
+[3] https://msrc.microsoft.com/update-guide/releaseNote/2026-Nov
+
+o 취약점 요약 정보 (총 1259개)
+
+제품 카테고리 / CVE 번호 / CVE 제목
+Active Directory Domain Services / CVE-2026-105568 / Windows Active Directory Domain Services 서비스 거부 취약성
+Active Directory Domain Services / CVE-2026-118146 / Windows Active Directory Domain Services 원격 코드 실행 취약성
+Active Directory Domain Services / CVE-2026-118148 / Active Directory Domain Services 권한 상승 취약성
+Active Directory Domain Services / CVE-2026-118735 / Active Directory Domain Services 권한 상승 취약성
+ActiveSyncProvider / CVE-2026-119889 / ActiveSyncProvider 정보 유출 취약성
+AMD Zen / CVE-2026-84004 / AMD Zen 정보 유출 취약성
+AMD Zen / CVE-2026-84005 / AMD Zen 정보 유출 취약성
+Connected Devices Platform Service (Cdpsvc) / CVE-2026-96007 / Connected Devices Platform Service (Cdpsvc) 권한 상승 취약성
+Data Deduplication / CVE-2026-119883 / Data Deduplication 보안 기능 우회 취약성
+Data Sharing Service Client / CVE-2026-95963 / Data Sharing Service Client 권한 상승 취약성
+Desktop Window Manager / CVE-2026-96103 / Desktop Window Manager 권한 상승 취약성
+Desktop Window Manager / CVE-2026-96172 / Desktop Window Manager 권한 상승 취약성
+Desktop Window Manager / CVE-2026-96174 / Desktop Window Manager 권한 상승 취약성
+Desktop Window Manager / CVE-2026-96175 / Desktop Window Manager 권한 상승 취약성
+Desktop Window Manager / CVE-2026-105528 / Desktop Window Manager 권한 상승 취약성
+Desktop Window Manager / CVE-2026-105581 / Desktop Window Manager 권한 상승 취약성
+Desktop Window Manager / CVE-2026-112988 / Windows Desktop Window Manager 권한 상승 취약성
+Desktop Window Manager / CVE-2026-113758 / Windows Desktop Window Manager 권한 상승 취약성
+Desktop Window Manager / CVE-2026-113819 / Desktop Window Manager 권한 상승 취약성
+Graphic Fonts / CVE-2026-88211 / Graphic Fonts 정보 유출 취약성
+Graphic Fonts / CVE-2026-96084 / Graphic Fonts 권한 상승 취약성
+Graphic Fonts / CVE-2026-119969 / Graphic Fonts 원격 코드 실행 취약성
+HEIF Image Extensions / CVE-2026-100204 / HEIF Image Extensions 원격 코드 실행 취약성
+HID class driver / CVE-2026-96059 / HID class driver 정보 유출 취약성
+HID Parser Library / CVE-2026-96010 / HID Parser Library 권한 상승 취약성
+HID Parser Library / CVE-2026-96974 / HID Parser Library 권한 상승 취약성
+HID Parser Library / CVE-2026-96979 / HID Parser Library 권한 상승 취약성
+HID Parser Library / CVE-2026-96982 / HID Parser Library 권한 상승 취약성
+HID Parser Library / CVE-2026-122173 / HID Parser Library 권한 상승 취약성
+HID Parser Library / CVE-2026-125135 / HID Parser Library 권한 상승 취약성
+Kernel Transaction Manager / CVE-2026-94517 / Windows Kernel Transaction Manager 정보 유출 취약성
+Kernel Transaction Manager / CVE-2026-94522 / Windows Kernel Transaction Manager 권한 상승 취약성
+Kernel Transaction Manager / CVE-2026-119397 / Windows Kernel Transaction Manager 권한 상승 취약성
+Kernel Transaction Manager / CVE-2026-122297 / Windows Kernel Transaction Manager 정보 유출 취약성
+Mailslot File System / CVE-2026-105537 / Mailslot File System 정보 유출 취약성
+Microsoft Account / CVE-2026-112974 / Microsoft Account 변조 취약성
+Microsoft Account / CVE-2026-112982 / Microsoft Account 변조 취약성
+Microsoft ActiveX Installer Service / CVE-2026-96158 / Microsoft ActiveX Installer Service 권한 상승 취약성
+Microsoft Bluetooth Driver / CVE-2026-70120 / Microsoft Bluetooth Driver 권한 상승 취약성
+Microsoft Color Management / CVE-2026-96054 / Microsoft Color Management 원격 코드 실행 취약성
+Microsoft Color Management / CVE-2026-96067 / Microsoft Color Management 원격 코드 실행 취약성
+Microsoft Color Management / CVE-2026-96078 / Microsoft Color Management 원격 코드 실행 취약성
+Microsoft Graphics Component / CVE-2026-112754 / Microsoft Graphics Component 정보 유출 취약성
+Microsoft Input Method Editor (IME) / CVE-2026-105505 / Microsoft Input Method Editor (IME) 권한 상승 취약성
+Microsoft JScript / CVE-2026-105578 / Microsoft JScript 원격 코드 실행 취약성
+Microsoft JScript / CVE-2026-112985 / Windows JScript 원격 코드 실행 취약성
+Microsoft Local Security Authority Server (lsasrv) / CVE-2026-112807 / Windows Local Security Authority Subsystem Service (LSASS) 서비스 거부 취약성
+Microsoft QUIC / CVE-2026-88236 / Microsoft QUIC 서비스 거부 취약성
+Microsoft QUIC / CVE-2026-105512 / Microsoft QUIC 서비스 거부 취약성
+Microsoft Remote Registry Service / CVE-2026-105492 / Microsoft Remote Registry Service 서비스 거부 취약성
+Microsoft Streaming Service / CVE-2026-119937 / Kernel Streaming Service Driver 권한 상승 취약성
+Microsoft Trace Data Helper / CVE-2026-121681 / Microsoft Trace Data Helper 권한 상승 취약성
+Microsoft Trace Data Helper / CVE-2026-122172 / Microsoft Trace Data Helper 권한 상승 취약성
+Microsoft WDAC OLE DB provider for SQL / CVE-2026-85838 / Microsoft WDAC OLE DB provider for SQL 원격 코드 실행 취약성
+Microsoft WDAC OLE DB provider for SQL / CVE-2026-85839 / Microsoft WDAC OLE DB provider for SQL 원격 코드 실행 취약성
+Microsoft WDAC OLE DB provider for SQL / CVE-2026-88222 / Microsoft WDAC OLE DB provider for SQL 원격 코드 실행 취약성
+Microsoft WDAC OLE DB provider for SQL / CVE-2026-116698 / Microsoft WDAC OLE DB provider for SQL 원격 코드 실행 취약성
+Microsoft WDAC OLE DB provider for SQL / CVE-2026-116699 / Microsoft WDAC OLE DB provider for SQL 원격 코드 실행 취약성
+Microsoft Windows App Store / CVE-2026-119987 / Microsoft Windows App Store 권한 상승 취약성
+Microsoft Windows Codecs Library / CVE-2026-96150 / Microsoft Windows Codecs Library 정보 유출 취약성
+Microsoft Windows Codecs Library / CVE-2026-113749 / Microsoft Windows Codecs Library 원격 코드 실행 취약성
+Microsoft Windows Codecs Library / CVE-2026-114164 / HEVC Video Extensions 원격 코드 실행 취약성
+Microsoft Windows Codecs Library / CVE-2026-114165 / HEVC Video Extensions 원격 코드 실행 취약성
+Microsoft Windows Codecs Library / CVE-2026-114167 / HEVC Video Extensions 원격 코드 실행 취약성
+Microsoft Windows Media Foundation / CVE-2026-96157 / Microsoft Windows Media Foundation 원격 코드 실행 취약성
+Microsoft Windows Media Foundation / CVE-2026-122168 / Microsoft Windows Media Foundation 권한 상승 취약성
+Microsoft Windows SCSI Class System File / CVE-2026-105586 / Microsoft Windows SCSI Class System File 권한 상승 취약성
+Microsoft Windows SCSI Class System File / CVE-2026-113821 / Microsoft Windows SCSI Class System File 정보 유출 취약성
+Microsoft Windows Search Component / CVE-2026-116928 / Windows Search 원격 코드 실행 취약성
+Microsoft Windows Search Component / CVE-2026-119943 / Microsoft Windows Search Component 권한 상승 취약성
+Microsoft Windows Search Component / CVE-2026-119954 / Microsoft Windows Search Component 권한 상승 취약성
+Microsoft Windows Speech / CVE-2026-119904 / Microsoft Windows Speech 권한 상승 취약성
+Microsoft XPS Document Converter / CVE-2026-119880 / Microsoft XPS Document Converter 원격 코드 실행 취약성
+Microsoft XPS Document Converter / CVE-2026-119881 / Microsoft XPS Document Converter 권한 상승 취약성
+Microsoft XPS Document Converter / CVE-2026-122171 / Microsoft XPS Document Converter 원격 코드 실행 취약성
+Quality Windows Audio/Video Experience (QWAVE) service / CVE-2026-119387 / Quality Windows Audio/Video Experience (QWAVE) service 권한 상승 취약성
+Quality Windows Audio/Video Experience (QWAVE) service / CVE-2026-119388 / Quality Windows Audio/Video Experience (QWAVE) service 권한 상승 취약성
+Quality Windows Audio/Video Experience (QWAVE) service / CVE-2026-123389 / Quality Windows Audio/Video Experience (QWAVE) service 권한 상승 취약성
+Reliable Multicast Transport Driver (RMCAST) / CVE-2026-116697 / Reliable Multicast Transport Driver (RMCAST) 서비스 거부 취약성
+Remote Desktop Client / CVE-2026-95908 / Windows Remote Desktop Client 정보 유출 취약성
+Remote Desktop Client / CVE-2026-95964 / Remote Desktop Client 원격 코드 실행 취약성
+Remote Desktop Client / CVE-2026-108417 / Windows Remote Desktop Client 정보 유출 취약성
+Remote Desktop Client / CVE-2026-108418 / Windows Remote Desktop Client 정보 유출 취약성
+Remote Desktop Client / CVE-2026-108419 / Windows Remote Desktop Client 정보 유출 취약성
+Remote Desktop Client / CVE-2026-119390 / Remote Desktop Client 원격 코드 실행 취약성
+Remote Desktop Client / CVE-2026-119824 / Remote Desktop Client 변조 취약성
+Remote Desktop Client / CVE-2026-119839 / Windows Remote Desktop Client 권한 상승 취약성
+Remote Desktop Client / CVE-2026-119858 / Remote Desktop Client 원격 코드 실행 취약성
+Remote Desktop Client / CVE-2026-119934 / Remote Desktop Client 원격 코드 실행 취약성
+Remote Desktop Client / CVE-2026-121677 / Windows Remote Desktop Client 정보 유출 취약성
+Remote Desktop Client / CVE-2026-121678 / Windows Remote Desktop Client 정보 유출 취약성
+Remote Desktop Gateway Service / CVE-2026-69327 / Windows Remote Desktop Services 원격 코드 실행 취약성
+Remote Desktop Gateway Service / CVE-2026-69565 / Windows Remote Desktop Services 원격 코드 실행 취약성
+Remote Desktop Gateway Service / CVE-2026-80094 / Remote Desktop Gateway Service 권한 상승 취약성
+Role: DNS Server / CVE-2026-81384 / Windows DNS Server 원격 코드 실행 취약성
+Role: DNS Server / CVE-2026-96002 / Windows Domain Name Service 원격 코드 실행 취약성
+Role: DNS Server / CVE-2026-96017 / Role: DNS Server 서비스 거부 취약성
+Role: DNS Server / CVE-2026-96020 / Windows Domain Name Service 원격 코드 실행 취약성
+Role: DNS Server / CVE-2026-96064 / Windows Domain Name Service 원격 코드 실행 취약성
+Role: DNS Server / CVE-2026-96092 / Windows Domain Name Service 원격 코드 실행 취약성
+Role: DNS Server / CVE-2026-96112 / Windows DNS Server 정보 유출 취약성
+Role: DNS Server / CVE-2026-96177 / Windows Domain Name Service 원격 코드 실행 취약성
+Role: DNS Server / CVE-2026-96179 / Windows DNS 권한 상승 취약성
+Role: DNS Server / CVE-2026-96975 / Role: DNS Server 서비스 거부 취약성
+Role: DNS Server / CVE-2026-112727 / Windows Domain Name Service 원격 코드 실행 취약성
+RPC Runtime / CVE-2026-83894 / RPC Runtime 권한 상승 취약성
+Secondary Logon / CVE-2026-96989 / Secondary Logon 정보 유출 취약성
+Servicing Stack Updates / CVE-2026-88235 / Servicing Stack Updates 권한 상승 취약성
+Servicing Stack Updates / CVE-2026-112989 / Windows Servicing Stack Updates 권한 상승 취약성
+Software Protection Platform (SPP) / CVE-2026-113748 / Software Protection Platform (SPP) 권한 상승 취약성
+Storport.sys Driver / CVE-2026-119395 / Storport.sys Driver 정보 유출 취약성
+vhdmp.sys / CVE-2026-95989 / vhdmp.sys 권한 상승 취약성
+Virtual Hard Disk (VHD) Miniport Driver / CVE-2026-119849 / Virtual Hard Disk (VHD) Miniport Driver 원격 코드 실행 취약성
+Windows Active Directory / CVE-2026-105559 / Windows Active Directory 서비스 거부 취약성
+Windows Active Directory / CVE-2026-119948 / Windows Active Directory 원격 코드 실행 취약성
+Windows Active Directory / CVE-2026-123387 / Active Directory Domain Services 권한 상승 취약성
+Windows Active Directory Certificate Services / CVE-2026-95884 / Windows Active Directory Certificate Services 정보 유출 취약성
+Windows Active Directory Certificate Services / CVE-2026-105590 / Windows Active Directory Certificate Services 보안 기능 우회
+Windows Admin Center / CVE-2026-122988 / Windows Admin Center 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-94515 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-95960 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105020 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105021 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105022 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105023 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105025 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105026 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105490 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105491 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105493 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105495 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105496 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105497 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105498 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-105499 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118214 / Windows Advanced Rasterization Platform 정보 유출 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118215 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118216 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118217 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118218 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118219 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118221 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118222 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118223 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118224 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118225 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118226 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118227 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118228 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118229 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118232 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118277 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118278 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118279 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118280 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Advanced Rasterization Platform / CVE-2026-118283 / Windows Advanced Rasterization Platform 권한 상승 취약성
+Windows Ancillary Function Driver for WinSock / CVE-2026-88242 / Windows Ancillary Function Driver for WinSock 권한 상승 취약성
+Windows App Readiness Service / CVE-2026-95944 / Windows App Readiness Service 변조 취약성
+Windows AppContainer / CVE-2026-96018 / Windows AppContainer 정보 유출 취약성
+Windows AppX Deployment Service / CVE-2026-88224 / Windows AppX Deployment Service 권한 상승 취약성
+Windows AppX Deployment Service / CVE-2026-116714 / Windows AppX Deployment Service 권한 상승 취약성
+Windows AppX Package Manager / CVE-2026-96074 / Windows AppX Package Manager 권한 상승 취약성
+Windows Audio Service / CVE-2026-96038 / Windows Audio Service 권한 상승 취약성
+Windows Audio Service / CVE-2026-96155 / Windows Audio Service 권한 상승 취약성
+Windows Audio Service / CVE-2026-105541 / Windows Audio Service 권한 상승 취약성
+Windows Audio Service / CVE-2026-119888 / Windows Audio Service 권한 상승 취약성
+Windows Audio Service / CVE-2026-119893 / Windows Audio Service 권한 상승 취약성
+Windows Audio Service / CVE-2026-119894 / Windows Audio Service 권한 상승 취약성
+Windows Audio Service / CVE-2026-119895 / Windows Audio Service 권한 상승 취약성
+Windows Audio Service / CVE-2026-121671 / Windows Audio Service 권한 상승 취약성
+Windows Autopilot / CVE-2026-122175 / Windows Autopilot 권한 상승 취약성
+Windows Background Intelligent Transfer Service (BITS) / CVE-2026-105554 / Windows Background Intelligent Transfer Service (BITS) 권한 상승 취약성
+Windows Backup Engine / CVE-2026-119405 / Windows Backup Engine 권한 상승 취약성
+Windows Bind Filter Driver / CVE-2026-70182 / Windows Bind Filter Driver 권한 상승 취약성
+Windows Biometric Service / CVE-2026-88239 / Windows Biometric Service 권한 상승 취약성
+Windows Biometric Service / CVE-2026-95877 / Windows Biometric Service 권한 상승 취약성
+Windows Biometric Service / CVE-2026-96127 / Windows Biometric Service 권한 상승 취약성
+Windows BitLocker / CVE-2026-97015 / Windows BitLocker 보안 기능 우회 취약성
+Windows BitLocker / CVE-2026-119832 / Windows BitLocker 보안 기능 우회 취약성
+Windows Bluetooth A2DP driver / CVE-2026-88187 / Windows Bluetooth A2DP driver 권한 상승 취약성
+Windows Bluetooth Port Driver / CVE-2026-95996 / Windows Bluetooth Port Driver 권한 상승 취약성
+Windows Bluetooth Service / CVE-2026-88213 / Windows Bluetooth Service 권한 상승 취약성
+Windows Bluetooth Service / CVE-2026-96001 / Windows Bluetooth Service 정보 유출 취약성
+Windows Broadcast DVR User Service / CVE-2026-88221 / Windows Broadcast DVR User Service 권한 상승 취약성
+Windows Broadcast DVR User Service / CVE-2026-94529 / Windows Broadcast DVR User Service 권한 상승 취약성
+Windows Broadcast DVR User Service / CVE-2026-95871 / Windows Broadcast DVR User Service 권한 상승 취약성
+Windows Broadcast DVR User Service / CVE-2026-112761 / Windows Broadcast DVR User Service 권한 상승 취약성
+Windows Broadcast DVR User Service / CVE-2026-113762 / Windows Broadcast DVR User Service 권한 상승 취약성
+Windows Broadcast DVR User Service / CVE-2026-119401 / Windows Broadcast DVR User Service 권한 상승 취약성
+Windows Broadcast DVR User Service / CVE-2026-119402 / Windows Broadcast DVR User Service 권한 상승 취약성
+Windows Broadcast DVR User Service / CVE-2026-119403 / Windows Broadcast DVR User Service 권한 상승 취약성
+Windows Broker Infrastructure Service / CVE-2026-96156 / Windows Broker Infrastructure Service 정보 유출 취약성
+Windows Brokering File System / CVE-2026-85929 / Microsoft Brokering File System 권한 상승 취약성
+Windows Brokering File System / CVE-2026-88245 / Windows Brokering File System 권한 상승 취약성
+Windows Brokering File System / CVE-2026-95979 / Windows Brokering File System 권한 상승 취약성
+Windows Brokering File System / CVE-2026-96097 / Windows Brokering File System 권한 상승 취약성
+Windows Camera Frame Server Monitor / CVE-2026-85942 / Windows Camera Frame Server Monitor 권한 상승 취약성
+Windows Camera Frame Server Monitor / CVE-2026-88232 / Windows Camera Frame Server Monitor 권한 상승 취약성
+Windows Camera Frame Server Monitor / CVE-2026-88238 / Windows Camera Frame Server Monitor 권한 상승 취약성
+Windows CD-ROM Driver / CVE-2026-108404 / Windows CD-ROM Driver 원격 코드 실행 취약성
+Windows CD-ROM Driver / CVE-2026-108405 / Windows CD-ROM Driver 권한 상승 취약성
+Windows Client for NFS / CVE-2026-88249 / Windows Client for NFS 원격 코드 실행 취약성
+Windows Client for NFS / CVE-2026-95885 / Windows Client for NFS 권한 상승 취약성
+Windows Client for NFS / CVE-2026-118138 / Windows Client for NFS 권한 상승 취약성
+Windows Client for NFS / CVE-2026-118141 / Windows Client for NFS 원격 코드 실행 취약성
+Windows Client for NFS / CVE-2026-119404 / Windows Client for NFS 보안 기능 우회 취약성
+Windows Client for NFS / CVE-2026-122165 / Windows Client for NFS 권한 상승 취약성
+Windows Clipboard Virtual Channel Extension / CVE-2026-96162 / Windows Clipboard Virtual Channel Extension 권한 상승 취약성
+Windows Cloud Files Mini Filter Driver / CVE-2026-105569 / Windows Cloud Files Mini Filter Driver 권한 상승 취약성
+Windows Cloud Files Mini Filter Driver / CVE-2026-112763 / Windows Cloud Files Mini Filter Driver 권한 상승 취약성
+Windows Cloud Files Mini Filter Driver / CVE-2026-112803 / Windows Cloud Files Mini Filter Driver 정보 유출 취약성
+Windows Cloud Files Mini Filter Driver / CVE-2026-112810 / Windows Cloud Files Mini Filter Driver 권한 상승 취약성
+Windows Cloud Files Mini Filter Driver / CVE-2026-119974 / Windows Cloud Files Mini Filter Driver 권한 상승 취약성
+Windows CNG Key Isolation Service / CVE-2026-103571 / Windows CNG Key Isolation Service 권한 상승 취약성
+Windows COM / CVE-2026-94531 / Windows COM 권한 상승 취약성
+Windows COM / CVE-2026-105533 / Windows COM 권한 상승 취약성
+Windows COM / CVE-2026-112968 / Windows COM 권한 상승 취약성
+Windows COM+ Event System Service / CVE-2026-113767 / Windows COM+ Event System Service 권한 상승 취약성
+Windows COM+ Event System Service / CVE-2026-113769 / Windows COM+ Event System Service 권한 상승 취약성
+Windows COM+ Event System Service / CVE-2026-119855 / Windows COM+ Event System Service 정보 유출 취약성
+Windows Composite Image File System / CVE-2026-112809 / Windows Composite Image File System 정보 유출 취약성
+Windows Connected User Experiences and Telemetry / CVE-2026-96072 / Windows Connected User Experiences and Telemetry 권한 상승 취약성
+Windows Connected User Experiences and Telemetry / CVE-2026-96088 / Windows Connected User Experiences and Telemetry 권한 상승 취약성
+Windows Connected User Experiences and Telemetry / CVE-2026-96101 / Windows Connected User Experiences and Telemetry 정보 유출 취약성
+Windows Connection Manager Service / CVE-2026-96042 / Windows Connection Manager Service 권한 상승 취약성
+Windows Connection Manager Service / CVE-2026-96043 / Windows Connection Manager Service 권한 상승 취약성
+Windows Container Isolation FS Filter Driver (unionfs.sys) / CVE-2026-112753 / Windows Container Isolation FS Filter Driver (unionfs.sys) 권한 상승 취약성
+Windows Container Isolation FS Filter Driver (unionfs.sys) / CVE-2026-113761 / Windows Container Isolation FS Filter Driver (unionfs.sys) 권한 상승 취약성
+Windows Container Isolation FS Filter Driver (unionfs.sys) / CVE-2026-113771 / Windows Container Isolation FS Filter Driver (unionfs.sys) 권한 상승 취약성
+Windows Container Manager Service / CVE-2026-105562 / Windows Container Manager Service 정보 유출 취약성
+Windows Cred SSProvider Protocol / CVE-2026-119962 / Windows CredSSP 원격 코드 실행 취약성
+Windows Credential Manager / CVE-2026-119393 / Windows Credential Manager 권한 상승 취약성
+Windows Credential User Interface / CVE-2026-96978 / Windows Credential User Interface 권한 상승 취약성
+Windows Defender Firewall Service / CVE-2026-112758 / Windows Defender Firewall Service 권한 상승 취약성
+Windows Deployment Services / CVE-2026-105558 / Windows Deployment Services 원격 코드 실행 취약성
+Windows Deployment Services / CVE-2026-112977 / Windows Deployment Services 정보 유출 취약성
+Windows Deployment Services / CVE-2026-113818 / Windows Deployment Services 정보 유출 취약성
+Windows Deployment Services / CVE-2026-118213 / Windows Deployment Services 정보 유출 취약성
+Windows Deployment Services / CVE-2026-119951 / Windows Deployment Services 원격 코드 실행 취약성
+Windows Device Association Service / CVE-2026-112743 / Windows Device Association Service 권한 상승 취약성
+Windows Device Association Service / CVE-2026-119844 / Windows Device Association Service 권한 상승 취약성
+Windows Device Association Service / CVE-2026-119866 / Windows Device Association Service 권한 상승 취약성
+Windows Device Association Service / CVE-2026-119874 / Windows Device Association Service 권한 상승 취약성
+Windows Device Inventory / CVE-2026-113750 / Windows Device Inventory 권한 상승 취약성
+Windows Devices Human Interface / CVE-2026-113817 / Windows Devices Human Interface 권한 상승 취약성
+Windows DHCP Client / CVE-2026-88240 / Windows DHCP Client 권한 상승 취약성
+Windows DHCP Client / CVE-2026-96115 / Windows DHCP Client 권한 상승 취약성
+Windows DHCP Client / CVE-2026-113863 / Windows DHCP Client 권한 상승 취약성
+Windows DHCP Client / CVE-2026-118739 / Windows DHCP Client 서비스 거부 취약성
+Windows DHCP Server / CVE-2026-72998 / Windows DHCP Server 원격 코드 실행 취약성
+Windows DHCP Server / CVE-2026-88216 / Windows DHCP Server 원격 코드 실행 취약성
+Windows DHCP Server / CVE-2026-88243 / Windows DHCP Server 원격 코드 실행 취약성
+Windows DHCP Server / CVE-2026-96134 / Windows DHCP Server 서비스 거부 취약성
+Windows DHCP Server / CVE-2026-105557 / Windows DHCP Server 정보 유출 취약성
+Windows DHCP Server / CVE-2026-105560 / Windows DHCP Server 원격 코드 실행 취약성
+Windows DHCP Server / CVE-2026-105588 / Windows DHCP Server 권한 상승 취약성
+Windows DHCP Server / CVE-2026-113773 / Windows DHCP Server 스푸핑 취약성
+Windows DHCP Server / CVE-2026-119890 / Windows DHCP Server 서비스 거부 취약성
+Windows Diagnostic Policy Service / CVE-2026-95934 / Windows Diagnostic Policy Service 권한 상승 취약성
+Windows Diagnostic Policy Service / CVE-2026-95976 / Windows Diagnostic Policy Service 권한 상승 취약성
+Windows Diagnostic Policy Service / CVE-2026-112800 / Windows Diagnostic Policy Service 권한 상승 취약성
+Windows DIAL Client / CVE-2026-96076 / Windows DIAL Client 권한 상승 취약성
+Windows DirectX / CVE-2026-94507 / DirectX 권한 상승 취약성
+Windows Distributed File System (DFS) / CVE-2026-118142 / Windows Distributed File System (DFS) 권한 상승 취약성
+Windows Distributed Transaction Coordinator / CVE-2026-119917 / Windows Distributed Transaction Coordinator 권한 상승 취약성
+Windows Distributed Transaction Coordinator / CVE-2026-119919 / Windows Distributed Transaction Coordinator 권한 상승 취약성
+Windows DNS / CVE-2026-88218 / Windows DNS 원격 코드 실행 취약성
+Windows DNS / CVE-2026-96176 / Windows DNS 서비스 거부 취약성
+Windows DNS / CVE-2026-96970 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-96972 / Windows DNS Server 정보 유출 취약성
+Windows DNS / CVE-2026-96976 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-96980 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-96983 / Windows DNS 서비스 거부 취약성
+Windows DNS / CVE-2026-96984 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-96985 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-96986 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-96987 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-96988 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-97006 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-105520 / Windows DNS 권한 상승 취약성
+Windows DNS / CVE-2026-105579 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-108425 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-109463 / Windows DNS 원격 코드 실행 취약성
+Windows DNS / CVE-2026-113855 / Windows DNS 원격 코드 실행 취약성
+Windows DNS / CVE-2026-119905 / Windows DNS 스푸핑 취약성
+Windows DNS / CVE-2026-119953 / Windows DNS 권한 상승 취약성
+Windows DNS / CVE-2026-119970 / Windows DNS 정보 유출 취약성
+Windows DNS / CVE-2026-119971 / Windows DNS Server 정보 유출 취약성
+Windows DPAPI (Data Protection Application Programming Interface) / CVE-2026-113763 / Windows DPAPI (Data Protection Application Programming Interface) 권한 상승 취약성
+Windows DWM Core Library / CVE-2026-105575 / Windows DWM Core Library 권한 상승 취약성
+Windows DWM Core Library / CVE-2026-105582 / Windows DWM Core Library 권한 상승 취약성
+Windows DWM Core Library / CVE-2026-105583 / Windows DWM Core Library 권한 상승 취약성
+Windows DWM Core Library / CVE-2026-112986 / Windows DWM Core Library 권한 상승 취약성
+Windows Encrypting File System (EFS) / CVE-2026-96973 / Windows Encrypting File System (EFS) 권한 상승 취약성
+Windows Encrypting File System (EFS) / CVE-2026-105527 / Windows Encrypting File System (EFS) 서비스 거부 취약성
+Windows Enhanced Storage / CVE-2026-119394 / Windows Enhanced Storage 원격 코드 실행 취약성
+Windows Error Reporting / CVE-2026-85862 / Windows Error Reporting 권한 상승 취약성
+Windows Error Reporting / CVE-2026-94525 / Windows Error Reporting 권한 상승 취약성
+Windows Error Reporting / CVE-2026-95947 / Windows Error Reporting 권한 상승 취약성
+Windows Error Reporting / CVE-2026-96153 / Windows Error Reporting 권한 상승 취약성
+Windows Error Reporting / CVE-2026-105540 / Windows Error Reporting 권한 상승 취약성
+Windows eSCL Scanner / CVE-2026-95956 / Windows eSCL Scanner 원격 코드 실행 취약성
+Windows eSCL Scanner / CVE-2026-112801 / Windows eSCL Scanner 권한 상승 취약성
+Windows Event Collector Service / CVE-2026-112793 / Windows Event Collector Service 권한 상승 취약성
+Windows Event Collector Service / CVE-2026-112796 / Windows Event Collector Service 권한 상승 취약성
+Windows Event Logging Service / CVE-2026-95997 / Windows Event Logging Service 권한 상승 취약성
+Windows Event Viewer / CVE-2026-95977 / Windows Event Viewer 정보 유출 취약성
+Windows exFAT File System / CVE-2026-112766 / Windows exFAT File System 권한 상승 취약성
+Windows exFAT File System / CVE-2026-112804 / Windows exFAT File System 권한 상승 취약성
+Windows Failover Cluster / CVE-2026-119869 / Windows Failover Cluster 권한 상승 취약성
+Windows Fast FAT Driver / CVE-2026-113751 / Windows Fast FAT Driver 권한 상승 취약성
+Windows Feedback Hub / CVE-2026-96075 / Windows Feedback Hub 권한 상승 취약성
+Windows File Server Resource Management Service / CVE-2026-108415 / Windows File Server Resource Management Service 권한 상승 취약성
+Windows File Server Resource Management Service / CVE-2026-108416 / Windows File Server Resource Management Service 권한 상승 취약성
+Windows File Server Resource Management Service / CVE-2026-108421 / Windows File Server Resource Management Service 권한 상승 취약성
+Windows File Server Resource Management Service / CVE-2026-113765 / Windows File Server Resource Management Service 권한 상승 취약성
+Windows FileCrypt Driver / CVE-2026-113754 / Windows FileCrypt Driver 정보 유출 취약성
+Windows FileCrypt Driver / CVE-2026-113756 / Windows FileCrypt Driver 보안 기능 우회 취약성
+Windows FileCrypt Driver / CVE-2026-113757 / Windows FileCrypt Driver 정보 유출 취약성
+Windows Filter Manager / CVE-2026-113755 / Windows Filter Manager 권한 상승 취약성
+Windows Filter Manager / CVE-2026-121673 / Windows Filter Manager 권한 상승 취약성
+Windows Filtering Platform (WFP) / CVE-2026-88215 / Windows Filtering Platform (WFP) 권한 상승 취약성
+Windows Filtering Platform (WFP) / CVE-2026-105553 / Windows Filtering Platform (WFP) 권한 상승 취약성
+Windows Filtering Platform (WFP) / CVE-2026-112756 / Windows Filtering Platform (WFP) 권한 상승 취약성
+Windows FTP Service / CVE-2026-118137 / Windows FTP Service 권한 상승 취약성
+Windows Function Discovery Resource Publication / CVE-2026-119907 / Windows Function Discovery Resource Publication 권한 상승 취약성
+Windows Function Discovery Resource Publication / CVE-2026-125134 / Windows Function Discovery Resource Publication 원격 코드 실행 취약성
+Windows Function Discovery SSDP Provider / CVE-2026-118145 / Windows Function Discovery SSDP Provider 원격 코드 실행 취약성
+Windows GDI / CVE-2026-94527 / Windows GDI 권한 상승 취약성
+Windows GDI / CVE-2026-108407 / Windows GDI 권한 상승 취약성
+Windows GDI / CVE-2026-108424 / Windows GDI 정보 유출 취약성
+Windows Graphics Kernel / CVE-2026-88217 / Windows Graphics Kernel 정보 유출 취약성
+Windows Graphics Kernel / CVE-2026-94519 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95879 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95888 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95895 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95906 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95909 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95922 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95932 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95935 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95938 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95942 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95946 / Windows Graphics Kernel 정보 유출 취약성
+Windows Graphics Kernel / CVE-2026-95948 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95950 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95953 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95966 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95971 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95973 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95974 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95983 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-95991 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-96048 / Windows Graphics Kernel 정보 유출 취약성
+Windows Graphics Kernel / CVE-2026-96122 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-96124 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-96126 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-96133 / Windows Graphics Kernel 정보 유출 취약성
+Windows Graphics Kernel / CVE-2026-96137 / Windows Graphics Kernel 정보 유출 취약성
+Windows Graphics Kernel / CVE-2026-96144 / Windows Graphics Kernel 정보 유출 취약성
+Windows Graphics Kernel / CVE-2026-96160 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-96168 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-96171 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-119841 / Windows Graphics Kernel 정보 유출 취약성
+Windows Graphics Kernel / CVE-2026-119966 / Windows Graphics Kernel 권한 상승 취약성
+Windows Graphics Kernel / CVE-2026-125137 / Windows Graphics Kernel 권한 상승 취약성
+Windows HTTP.sys / CVE-2026-95923 / Windows HTTP.sys 권한 상승 취약성
+Windows HTTP.sys / CVE-2026-119942 / HTTP.sys 정보 유출 취약성
+Windows HTTP.sys / CVE-2026-119946 / HTTP.sys 정보 유출 취약성
+Windows HTTP.sys / CVE-2026-119992 / Windows HTTP.sys 권한 상승 취약성
+Windows Hyper-V / CVE-2026-95910 / Windows Hyper-V 보안 기능 우회 취약성
+Windows Hyper-V / CVE-2026-95913 / Windows Hyper-V 서비스 거부 취약성
+Windows Hyper-V / CVE-2026-96965 / Windows Hyper-V 서비스 거부 취약성
+Windows Hyper-V / CVE-2026-113753 / Windows Hyper-V 권한 상승 취약성
+Windows Hyper-V / CVE-2026-113856 / Windows Hyper-V 권한 상승 취약성
+Windows Hyper-V / CVE-2026-113860 / Windows Hyper-V 권한 상승 취약성
+Windows Hyper-V / CVE-2026-113861 / Windows Hyper-V 권한 상승 취약성
+Windows Hyper-V / CVE-2026-113864 / Windows Hyper-V 권한 상승 취약성
+Windows Hyper-V / CVE-2026-113865 / Windows Hyper-V 권한 상승 취약성
+Windows Hyper-V / CVE-2026-119385 / Windows Hyper-V 서비스 거부 취약성
+Windows Hyper-V / CVE-2026-119391 / Windows Hyper-V 권한 상승 취약성
+Windows Hyper-V / CVE-2026-119826 / Windows Hyper-V 권한 상승 취약성
+Windows Hyper-V / CVE-2026-119947 / Windows Hyper-V 권한 상승 취약성
+Windows Hyper-V / CVE-2026-119955 / Windows Hyper-V 서비스 거부 취약성
+Windows Hyper-V / CVE-2026-119959 / Windows Hyper-V 스푸핑 취약성
+Windows Hyper-V / CVE-2026-119960 / Windows Hyper-V 권한 상승 취약성
+Windows IKE Extension / CVE-2026-122169 / Windows IKE Extension 스푸핑 취약성
+Windows Image Acquisition / CVE-2026-122163 / Windows Image Acquisition 원격 코드 실행 취약성
+Windows Imaging Component / CVE-2026-96164 / Windows Imaging Component 원격 코드 실행 취약성
+Windows Input System / CVE-2026-119862 / Windows Input System 권한 상승 취약성
+Windows Input System / CVE-2026-119916 / Windows Input System 권한 상승 취약성
+Windows Installer / CVE-2026-95951 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96004 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96008 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96019 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96026 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96027 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96028 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96029 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96035 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96036 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96046 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96047 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96060 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96061 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96062 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96073 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96085 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-96152 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-105501 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-105507 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-105532 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-105543 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-105545 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-112789 / Windows Installer 정보 유출 취약성
+Windows Installer / CVE-2026-113847 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-119398 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-119399 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-119831 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-119838 / Windows Installer 정보 유출 취약성
+Windows Installer / CVE-2026-119852 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-119865 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-119867 / Windows Installer 보안 기능 우회 취약성
+Windows Installer / CVE-2026-119887 / Windows Installer 정보 유출 취약성
+Windows Installer / CVE-2026-119892 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-119903 / Windows Installer 권한 상승 취약성
+Windows Installer / CVE-2026-119929 / Windows Installer 권한 상승 취약성
+Windows Internet (wininet.dll) / CVE-2026-96093 / Windows Internet (wininet.dll) 정보 유출 취약성
+Windows Internet Connection Sharing (ICS) / CVE-2026-118124 / Windows Internet Connection Sharing (ICS) 권한 상승 취약성
+Windows Internet Connection Sharing (ICS) / CVE-2026-119859 / Windows Internet Connection Sharing (ICS) 권한 상승 취약성
+Windows Internet Connection Sharing (ICS) / CVE-2026-119860 / Windows Internet Connection Sharing (ICS) 권한 상승 취약성
+Windows Internet Connection Sharing (ICS) / CVE-2026-119861 / Windows Internet Connection Sharing (ICS) 권한 상승 취약성
+Windows Internet Connection Sharing (ICS) / CVE-2026-122179 / Windows Internet Connection Sharing (ICS) 권한 상승 취약성
+Windows Internet Information Services / CVE-2026-119909 / Windows Internet Information Services 서비스 거부 취약성
+Windows Internet Information Services / CVE-2026-119936 / Windows Internet Information Services 서비스 거부 취약성
+Windows Internet Information Services / CVE-2026-119961 / Windows Internet Information Services 원격 코드 실행 취약성
+Windows Inventory Backup / CVE-2026-105584 / Windows Inventory Backup 정보 유출 취약성
+Windows IP Translation Configuration Service / CVE-2026-119871 / Windows IP Translation Configuration Service 권한 상승 취약성
+Windows iSCSI / CVE-2026-88231 / Windows iSCSI 정보 유출 취약성
+Windows iSCSI / CVE-2026-88234 / Windows iSCSI 원격 코드 실행 취약성
+Windows iSCSI / CVE-2026-95898 / Windows iSCSI 권한 상승 취약성
+Windows iSCSI / CVE-2026-105518 / Windows iSCSI 원격 코드 실행 취약성
+Windows iSCSI / CVE-2026-122177 / Windows iSCSI 권한 상승 취약성
+Windows iSCSI Target Service / CVE-2026-83684 / Windows iSCSI Target Service 정보 유출 취약성
+Windows Kerberos / CVE-2026-70240 / Windows Kerberos 서비스 거부 취약성
+Windows Kerberos / CVE-2026-85844 / Windows Kerberos 권한 상승 취약성
+Windows Kerberos / CVE-2026-96082 / Windows Kerberos 서비스 거부 취약성
+Windows Kerberos / CVE-2026-119847 / Windows Kerberos 권한 상승 취약성
+Windows Kerberos / CVE-2026-119940 / Windows Kerberos 서비스 거부 취약성
+Windows Kerberos / CVE-2026-122164 / Windows Kerberos 권한 상승 취약성
+Windows Kernel / CVE-2026-94514 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-95905 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-95988 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-96031 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-96052 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-96058 / Windows Kernel 정보 유출 취약성
+Windows Kernel / CVE-2026-96129 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-105504 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-105513 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-105552 / Windows Kernel 정보 유출 취약성
+Windows Kernel / CVE-2026-105566 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-108403 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-109473 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-112790 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-112802 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-112805 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-112969 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-112973 / Windows Kernel 보안 기능 우회 취약성
+Windows Kernel / CVE-2026-114170 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-118143 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-119857 / Windows Kernel 정보 유출 취약성
+Windows Kernel / CVE-2026-119868 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-119884 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-119912 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-119918 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-119935 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-119965 / Windows Kernel 권한 상승 취약성
+Windows Kernel / CVE-2026-122183 / Windows Kernel 권한 상승 취약성
+Windows Kernel-Mode Drivers / CVE-2026-96139 / Windows Kernel-Mode Drivers 권한 상승 취약성
+Windows Language Experience Service / CVE-2026-113766 / Windows Language Experience Service 변조 취약성
+Windows Layer-2 Bridge Network Driver / CVE-2026-108402 / Windows Layer-2 Bridge Network Driver 서비스 거부 취약성
+Windows LDAP - Lightweight Directory Access Protocol / CVE-2026-119958 / Windows LDAP - Lightweight Directory Access Protocol 원격 코드 실행 취약성
+Windows Link Layer Topology Discovery Protocol / CVE-2026-88244 / Windows Link Layer Topology Discovery Protocol 원격 코드 실행 취약성
+Windows Link Layer Topology Discovery Protocol / CVE-2026-116706 / Windows Link Layer Topology Discovery Protocol 원격 코드 실행 취약성
+Windows Link Layer Topology Discovery Protocol / CVE-2026-116707 / Windows Link Layer Topology Discovery Protocol 권한 상승 취약성
+Windows Link-Layer Discovery Protocol (LLDP) / CVE-2026-112975 / Windows Link-Layer Discovery Protocol (LLDP) 서비스 거부 취약성
+Windows Link-Layer Discovery Protocol (LLDP) / CVE-2026-113816 / Windows Link-Layer Discovery Protocol (LLDP) 권한 상승 취약성
+Windows Local Security Authority Subsystem Service (LSASS) / CVE-2026-70231 / Windows Local Security Authority Subsystem Service (LSASS) 권한 상승 취약성
+Windows Local Security Authority Subsystem Service (LSASS) / CVE-2026-85801 / Windows Local Security Authority Subsystem Service (LSASS) 권한 상승 취약성
+Windows Local Security Authority Subsystem Service (LSASS) / CVE-2026-88227 / Windows Local Security Authority Subsystem Service (LSASS) 권한 상승 취약성
+Windows Local Security Authority Subsystem Service (LSASS) / CVE-2026-88228 / Windows Local Security Authority Subsystem Service (LSASS) 권한 상승 취약성
+Windows Local Security Authority Subsystem Service (LSASS) / CVE-2026-96016 / Windows Local Security Authority Subsystem Service (LSASS) 권한 상승 취약성
+Windows Local Security Authority Subsystem Service (LSASS) / CVE-2026-96066 / Windows Local Security Authority Subsystem Service (LSASS) 권한 상승 취약성
+Windows Local Session Manager (LSM) / CVE-2026-95876 / Windows Local Session Manager (LSM) 권한 상승 취약성
+Windows LUAFV / CVE-2026-88230 / Windows LUA File Virtualization Filter Driver 권한 상승 취약성
+Windows LUAFV / CVE-2026-96117 / Windows LUA File Virtualization Filter Driver 권한 상승 취약성
+Windows Management Instrumentation / CVE-2026-95920 / Windows Management Instrumentation 권한 상승 취약성
+Windows Management Instrumentation / CVE-2026-105503 / Windows Management Instrumentation 권한 상승 취약성
+Windows Management Instrumentation / CVE-2026-105524 / Windows Management Instrumentation 권한 상승 취약성
+Windows Management Instrumentation / CVE-2026-105546 / Windows Management Instrumentation 권한 상승 취약성
+Windows Management Instrumentation / CVE-2026-105580 / Windows Management Instrumentation 원격 코드 실행 취약성
+Windows Management Instrumentation / CVE-2026-108410 / Windows Management Instrumentation 정보 유출 취약성
+Windows Management Instrumentation / CVE-2026-112814 / Windows Management Instrumentation 권한 상승 취약성
+Windows Management Instrumentation / CVE-2026-112965 / Windows Management Instrumentation 정보 유출 취약성
+Windows Management Services / CVE-2026-119836 / Windows Management Services 정보 유출 취약성
+Windows Maps / CVE-2026-122182 / Windows Maps 권한 상승 취약성
+Windows Media Player / CVE-2026-88229 / Windows Media Player 원격 코드 실행 취약성
+Windows Message Queuing / CVE-2026-105515 / Windows Message Queuing 서비스 거부 취약성
+Windows Message Queuing / CVE-2026-116710 / Windows Message Queuing 원격 코드 실행 취약성
+Windows Message Queuing / CVE-2026-118125 / Windows Message Queuing 권한 상승 취약성
+Windows Message Queuing / CVE-2026-118126 / Windows Message Queuing 권한 상승 취약성
+Windows Message Queuing / CVE-2026-119833 / Windows Message Queuing 권한 상승 취약성
+Windows Message Queuing / CVE-2026-119848 / Windows Message Queuing 서비스 거부 취약성
+Windows Message Queuing / CVE-2026-119963 / Windows Message Queuing 원격 코드 실행 취약성
+Windows Message Queuing / CVE-2026-119964 / Windows Message Queuing 원격 코드 실행 취약성
+Windows Message Queuing Queue Manager / CVE-2026-109459 / Windows Message Queuing Queue Manager 원격 코드 실행 취약성
+Windows Message Queuing Queue Manager / CVE-2026-119967 / Windows Message Queuing Queue Manager 원격 코드 실행 취약성
+Windows Microsoft Account Sign-in Assistant / CVE-2026-119816 / Windows Microsoft Account Sign-in Assistant 권한 상승 취약성
+Windows Microsoft Account Sign-in Assistant / CVE-2026-119921 / Windows Microsoft Account Sign-in Assistant 권한 상승 취약성
+Windows Microsoft DirectMusic / CVE-2026-95882 / Microsoft DirectMusic 원격 코드 실행 취약성
+Windows Microsoft DirectMusic / CVE-2026-95891 / Microsoft DirectMusic 원격 코드 실행 취약성
+Windows Microsoft DirectMusic / CVE-2026-95896 / Microsoft DirectMusic 원격 코드 실행 취약성
+Windows Microsoft DirectMusic / CVE-2026-95901 / Microsoft DirectMusic 원격 코드 실행 취약성
+Windows MIDI Service Module / CVE-2026-105565 / Windows MIDI Service Module 권한 상승 취약성
+Windows MIDI Service Module / CVE-2026-105574 / Windows MIDI Service Module 권한 상승 취약성
+Windows MIDI Service Module / CVE-2026-119901 / Windows MIDI Service Module 권한 상승 취약성
+Windows Mobile Device Management / CVE-2026-119944 / Windows Mobile Device Management 권한 상승 취약성
+Windows Modern Device Management (MDM) / CVE-2026-96184 / Windows Modern Device Management (MDM) 권한 상승 취약성
+Windows Modern Device Management (MDM) / CVE-2026-102219 / Windows Modern Device Management (MDM) 원격 코드 실행 취약성
+Windows Modern Device Management (MDM) / CVE-2026-112987 / Windows Modern Device Management (MDM) 권한 상승 취약성
+Windows Modern Device Management (MDM) / CVE-2026-113820 / Windows Modern Device Management (MDM) 권한 상승 취약성
+Windows Modern Device Management (MDM) / CVE-2026-119945 / Windows Modern Device Management (MDM) 원격 코드 실행 취약성
+Windows Multiple Provider Router / CVE-2026-118220 / Windows Multiple Provider Router 권한 상승 취약성
+Windows NetBIOS / CVE-2026-96971 / Windows NetBIOS 권한 상승 취약성
+Windows NetBIOS / CVE-2026-105551 / Windows NetBIOS 권한 상승 취약성
+Windows NetBIOS / CVE-2026-112798 / Windows NetBIOS 권한 상승 취약성
+Windows NetBIOS / CVE-2026-119873 / Windows NetBIOS 권한 상승 취약성
+Windows Network Address Translation (NAT) / CVE-2026-88212 / Windows Network Address Translation (NAT) 원격 코드 실행 취약성
+Windows Network Address Translation (NAT) / CVE-2026-113862 / Windows Network Address Translation (NAT) 원격 코드 실행 취약성
+Windows Network Connected Devices Auto-Setup Service / CVE-2026-125136 / Windows Network Connected Devices Auto-Setup Service 원격 코드 실행 취약성
+Windows Network Connection Broker / CVE-2026-105525 / Windows Network Connection Broker 권한 상승 취약성
+Windows Network Connection Broker / CVE-2026-108406 / Windows Network Connection Broker 권한 상승 취약성
+Windows Network Connection Broker / CVE-2026-119821 / Windows Network Connection Broker 권한 상승 취약성
+Windows Network File System / CVE-2026-118736 / Windows Network File System 정보 유출 취약성
+Windows NTFS / CVE-2026-100223 / Windows NTFS 권한 상승 취약성
+Windows NTFS / CVE-2026-102200 / Windows NTFS 변조 취약성
+Windows NTFS / CVE-2026-105542 / Windows NTFS 원격 코드 실행 취약성
+Windows NTFS / CVE-2026-113844 / Windows NTFS 변조 취약성
+Windows NTFS / CVE-2026-113848 / Windows NTFS 원격 코드 실행 취약성
+Windows NTFS / CVE-2026-119900 / Windows NTFS 권한 상승 취약성
+Windows NTFS / CVE-2026-119933 / Windows NTFS 권한 상승 취약성
+Windows NTLM / CVE-2026-121680 / Windows NTLM 스푸핑 취약성
+Windows ODBC Driver / CVE-2026-108411 / Microsoft ODBC Driver 원격 코드 실행 취약성
+Windows OLE / CVE-2026-95933 / Windows OLE 권한 상승 취약성
+Windows OLE / CVE-2026-96110 / Windows OLE 정보 유출 취약성
+Windows OLE DB / CVE-2026-105587 / Windows OLE DB 권한 상승 취약성
+Windows Overlay Filter / CVE-2026-108409 / Windows Overlay Filter 정보 유출 취약성
+Windows Overlay Filter / CVE-2026-112750 / Windows Overlay Filter 정보 유출 취약성
+Windows Overlay Filter / CVE-2026-112760 / Windows Overlay Filter 권한 상승 취약성
+Windows Overlay Filter / CVE-2026-112813 / Windows Overlay Filter 권한 상승 취약성
+Windows Overlay Filter / CVE-2026-119822 / Windows Overlay Filter 권한 상승 취약성
+Windows Overlay Filter / CVE-2026-121670 / Windows Overlay Filter 권한 상승 취약성
+Windows Partition Management Driver / CVE-2026-105018 / Windows Partition Management Driver 권한 상승 취약성
+Windows PCI Bus Driver / CVE-2026-96981 / Windows PCI Bus Driver 권한 상승 취약성
+Windows PCI Bus Driver / CVE-2026-96992 / Windows PCI Bus Driver 권한 상승 취약성
+Windows Performance Counters / CVE-2026-88220 / Windows Performance Counters 정보 유출 취약성
+Windows Performance Counters / CVE-2026-95975 / Windows Performance Counters 원격 코드 실행 취약성
+Windows Performance Counters / CVE-2026-113768 / Windows Performance Counters 원격 코드 실행 취약성
+Windows Performance Monitor / CVE-2026-96993 / Windows Performance Monitor 원격 코드 실행 취약성
+Windows Phone Service / CVE-2026-96107 / Windows Phone Service 권한 상승 취약성
+Windows Point-to-Point Protocol over Ethernet (PPPoE) / CVE-2026-105511 / Windows Point-to-Point Protocol over Ethernet (PPPoE) 권한 상승 취약성
+Windows Point-to-Point Protocol over Ethernet (PPPoE) / CVE-2026-118123 / Windows Point-to-Point Protocol over Ethernet (PPPoE) 권한 상승 취약성
+Windows PowerShell / CVE-2026-113815 / Microsoft PowerShell 보안 기능 우회 취약성
+Windows PowerShell / CVE-2026-124224 / PowerShell 권한 상승 취약성
+Windows PowerShell / CVE-2026-124225 / Windows PowerShell 원격 코드 실행 취약성
+Windows PowerShell / CVE-2026-124226 / Microsoft PowerShell 보안 기능 우회 취약성
+Windows Print Spooler Components / CVE-2026-105531 / Windows Print Spooler Components 정보 유출 취약성
+Windows Print Spooler Components / CVE-2026-105567 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112752 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112762 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112765 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112791 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112792 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112797 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112806 / Windows Print Spooler Components 정보 유출 취약성
+Windows Print Spooler Components / CVE-2026-112808 / Windows Print Spooler Components 정보 유출 취약성
+Windows Print Spooler Components / CVE-2026-112811 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112976 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112978 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112980 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-112981 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-113752 / Windows Print Spooler Components 원격 코드 실행 취약성
+Windows Print Spooler Components / CVE-2026-113770 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-119913 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-119939 / Windows Print Spooler Components 권한 상승 취약성
+Windows Print Spooler Components / CVE-2026-119950 / Windows Print Spooler Components 권한 상승 취약성
+Windows PrintWorkflowUserSvc / CVE-2026-119898 / Windows PrintWorkflowUserSvc 권한 상승 취약성
+Windows PrintWorkflowUserSvc / CVE-2026-119928 / Windows PrintWorkflowUserSvc 권한 상승 취약성
+Windows Program Compatibility Assistant Service / CVE-2026-88247 / Windows Program Compatibility Assistant Service 정보 유출 취약성
+Windows Program Compatibility Assistant Service / CVE-2026-123388 / Windows Program Compatibility Assistant Service 권한 상승 취약성
+Windows Projected File System / CVE-2026-112799 / Windows Projected File System 권한 상승 취약성
+Windows Projected File System / CVE-2026-113764 / Windows Projected File System 정보 유출 취약성
+Windows Projected File System Filter Driver / CVE-2026-108414 / Windows Projected File System Filter Driver 권한 상승 취약성
+Windows Push Notification Core / CVE-2026-96023 / Windows Push Notification Core 권한 상승 취약성
+Windows Push Notifications / CVE-2026-95881 / Windows Push Notifications 권한 상승 취약성
+Windows Raw Image Extension / CVE-2026-114166 / Microsoft Raw Image Extension 정보 유출 취약성
+Windows Raw Image Extension / CVE-2026-114169 / Windows Raw Image Extension 원격 코드 실행 취약성
+Windows Redirected Drive Buffering / CVE-2026-108412 / Windows Redirected Drive Buffering System 권한 상승 취약성
+Windows Redirected Drive Buffering / CVE-2026-113772 / Windows Redirected Drive Buffering 정보 유출 취약성
+Windows Remote Access API / CVE-2026-119396 / Windows Remote Access API 변조 취약성
+Windows Remote Access API / CVE-2026-119853 / Remote Access API 권한 상승 취약성
+Windows Remote Access Connection Manager / CVE-2026-113843 / Windows Remote Access Connection Manager 권한 상승 취약성
+Windows Remote Assistance / CVE-2026-112751 / Windows Remote Assistance 권한 상승 취약성
+Windows Remote Desktop / CVE-2026-119932 / Windows Remote Desktop 서비스 거부 취약성
+Windows Remote Desktop Services / CVE-2026-108401 / Remote Desktop Services 원격 코드 실행 취약성
+Windows Remote Desktop Services / CVE-2026-119882 / Windows Remote Desktop Services 정보 유출 취약성
+Windows Remote Desktop Services / CVE-2026-119957 / Windows Remote Desktop Services 권한 상승 취약성
+Windows Remote Desktop Services / CVE-2026-122166 / Windows Remote Desktop Services 권한 상승 취약성
+Windows Remote Procedure Call / CVE-2026-119972 / Remote Procedure Call 서비스 거부 취약성
+Windows Remote Procedure Call Runtime / CVE-2026-118737 / Remote Procedure Call Runtime 원격 코드 실행 취약성
+Windows Resilient File System (ReFS) / CVE-2026-105509 / Windows Resilient File System (ReFS) 권한 상승 취약성
+Windows Resilient File System (ReFS) / CVE-2026-119386 / Windows Resilient File System (ReFS) 권한 상승 취약성
+Windows Rich Text Edit Control / CVE-2026-96081 / Windows Rich Text Edit Control 원격 코드 실행 취약성
+Windows RNDIS / CVE-2026-112755 / Windows RNDIS 권한 상승 취약성
+Windows Sandbox / CVE-2026-119906 / Windows Sandbox 권한 상승 취약성
+Windows Schannel / CVE-2026-119952 / Windows Schannel 원격 코드 실행 취약성
+Windows Secure Kernel Mode / CVE-2026-112757 / Windows Secure Kernel Mode 정보 유출 취약성
+Windows Secure Socket Tunneling Protocol (SSTP) / CVE-2026-105510 / Windows Secure Socket Tunneling Protocol (SSTP) 권한 상승 취약성
+Windows Secure Socket Tunneling Protocol (SSTP) / CVE-2026-105561 / Windows Secure Socket Tunneling Protocol (SSTP) 서비스 거부 취약성
+Windows Security Account Manager / CVE-2026-112795 / Windows Security Account Manager 서비스 거부 취약성
+Windows Security Account Manager / CVE-2026-112966 / Windows Security Account Manager 서비스 거부 취약성
+Windows Security Account Manager / CVE-2026-122474 / Windows Security Account Manager Remote Protocol 보안 기능 우회 취약성
+Windows Security Center / CVE-2026-113842 / Windows Security Center 권한 상승 취약성
+Windows Sensor Data Service / CVE-2026-88241 / Windows Sensor Data Service 권한 상승 취약성
+Windows Server for NFS / CVE-2026-118140 / Server for NFS 정보 유출 취약성
+Windows Setup and Deployment / CVE-2026-105547 / Windows Setup and Deployment 권한 상승 취약성
+Windows Setup and Deployment / CVE-2026-119914 / Windows Setup and Deployment 권한 상승 취약성
+Windows Shell / CVE-2026-97013 / Windows Shell 권한 상승 취약성
+Windows Shell / CVE-2026-102868 / Windows Shell 정보 유출 취약성
+Windows Shell / CVE-2026-105506 / Windows Shell 정보 유출 취약성
+Windows Shell / CVE-2026-119817 / Windows Shell 권한 상승 취약성
+Windows Shell / CVE-2026-119938 / Windows Shell 원격 코드 실행 취약성
+Windows Smart Card / CVE-2026-95968 / Windows Smart Card 권한 상승 취약성
+Windows Smart Card / CVE-2026-105549 / Windows Smart Card 정보 유출 취약성
+Windows Smart Card / CVE-2026-112794 / Windows Smart Card 권한 상승 취약성
+Windows Smart Card / CVE-2026-118144 / Windows Smart Card 권한 상승 취약성
+Windows Smart Card / CVE-2026-119383 / Windows Smart Card 권한 상승 취약성
+Windows Smart Card / CVE-2026-119835 / Windows Smart Card 권한 상승 취약성
+Windows SMB / CVE-2026-119988 / Windows SMB 원격 코드 실행 취약성
+Windows SMB / CVE-2026-122176 / Windows SMB 원격 코드 실행 취약성
+Windows SMB Client / CVE-2026-112812 / Windows SMB Client 권한 상승 취약성
+Windows SMB Client / CVE-2026-112970 / Windows SMB Client 권한 상승 취약성
+Windows SMB Client / CVE-2026-112971 / Windows SMB Client 권한 상승 취약성
+Windows SMB Client / CVE-2026-119870 / Windows SMB Client 권한 상승 취약성
+Windows SMB Server / CVE-2026-112972 / Windows SMBv3 Server 원격 코드 실행 취약성
+Windows SMB Server Network Transport Driver (srvnet.sys) / CVE-2026-113825 / Windows SMB Server Network Transport Driver (srvnet.sys) 원격 코드 실행 취약성
+Windows SSDP Service / CVE-2026-85907 / Windows Simple Search and Discovery Protocol (SSDP) Service 권한 상승 취약성
+Windows State Repository Service / CVE-2026-112979 / Windows State Repository Service 변조 취약성
+Windows StateRepository API / CVE-2026-95998 / Windows StateRepository API 변조 취약성
+Windows Storage / CVE-2026-95889 / Windows Storage 권한 상승 취약성
+Windows Storage / CVE-2026-105529 / Windows Storage 권한 상승 취약성
+Windows Storage / CVE-2026-105534 / Windows Storage 원격 코드 실행 취약성
+Windows Storage / CVE-2026-119389 / Windows Storage 권한 상승 취약성
+Windows Storage Spaces Controller / CVE-2026-105024 / Windows Storage Spaces Controller 권한 상승 취약성
+Windows Storage Spaces Controller / CVE-2026-113814 / Windows Storage Spaces Controller 원격 코드 실행 취약성
+Windows Storage Spaces Controller / CVE-2026-119392 / Windows Storage Spaces Controller 권한 상승 취약성
+Windows Storage Spaces Controller / CVE-2026-119851 / Windows Storage Spaces Controller 권한 상승 취약성
+Windows Storage Spaces Controller / CVE-2026-119908 / Windows Storage Spaces Controller 원격 코드 실행 취약성
+Windows Storage Spaces Controller / CVE-2026-122475 / Windows Storage Spaces Controller 원격 코드 실행 취약성
+Windows Storport Miniport Driver / CVE-2026-119823 / Windows Storport Miniport Driver 원격 코드 실행 취약성
+Windows Storport Miniport Driver / CVE-2026-119830 / Windows Storport Miniport Driver 권한 상승 취약성
+Windows Storport Miniport Driver / CVE-2026-119875 / Windows Storport Miniport Driver 정보 유출 취약성
+Windows Storport Miniport Driver / CVE-2026-119885 / Windows Storport Miniport Driver 권한 상승 취약성
+Windows Subsystem for Linux / CVE-2026-88237 / Windows Subsystem for Linux 권한 상승 취약성
+Windows Subsystem for Linux / CVE-2026-119834 / Windows Subsystem for Linux 권한 상승 취약성
+Windows Subsystem for Linux / CVE-2026-119846 / Windows Subsystem for Linux 권한 상승 취약성
+Windows System Events Broker / CVE-2026-105530 / Windows System Events Broker 정보 유출 취약성
+Windows Task Scheduler / CVE-2026-88233 / Windows Task Scheduler 권한 상승 취약성
+Windows Task Scheduler / CVE-2026-95894 / Windows Task Scheduler 권한 상승 취약성
+Windows Task Scheduler / CVE-2026-96053 / Windows Task Scheduler 권한 상승 취약성
+Windows Task Scheduler / CVE-2026-96845 / Windows Task Scheduler 권한 상승 취약성
+Windows Task Scheduler / CVE-2026-112759 / Windows Task Scheduler 권한 상승 취약성
+Windows Task Scheduler / CVE-2026-122174 / Windows Task Scheduler 권한 상승 취약성
+Windows TCP/IP / CVE-2026-96077 / Windows TCP/IP 서비스 거부 취약성
+Windows TCP/IP / CVE-2026-96102 / Windows TCP/IP 권한 상승 취약성
+Windows TCP/IP / CVE-2026-96969 / Windows TCP/IP 권한 상승 취약성
+Windows TCP/IP / CVE-2026-113859 / Windows TCP/IP 원격 코드 실행 취약성
+Windows Telephony Service / CVE-2026-108408 / Windows Telephony Service 정보 유출 취약성
+Windows Telephony Service / CVE-2026-108413 / Windows Telephony Service 권한 상승 취약성
+Windows Telephony Service / CVE-2026-116700 / Windows Telephony Service 권한 상승 취약성
+Windows Telephony Service / CVE-2026-119886 / Windows Telephony Service 권한 상승 취약성
+Windows Text Services Framework / CVE-2026-96022 / Windows Text Services Framework 정보 유출 취약성
+Windows Text Services Framework / CVE-2026-119818 / Windows Text Services Framework 권한 상승 취약성
+Windows Text Services Framework / CVE-2026-119925 / Windows Text Services Framework 권한 상승 취약성
+Windows Text Services Framework / CVE-2026-119931 / Windows Text Services Framework 권한 상승 취약성
+Windows TPM / CVE-2026-119382 / Windows TPM 권한 상승 취약성
+Windows Universal Disk Format File System Driver (UDFS) / CVE-2026-119837 / Windows Universal Disk Format File System Driver (UDFS) 권한 상승 취약성
+Windows Universal Disk Format File System Driver (UDFS) / CVE-2026-119840 / Windows Universal Disk Format File System Driver (UDFS) 권한 상승 취약성
+Windows Universal Disk Format File System Driver (UDFS) / CVE-2026-122984 / Windows Universal Disk Format File System Driver (UDFS) 권한 상승 취약성
+Windows Update Stack / CVE-2026-122162 / Windows Update Stack 정보 유출 취약성
+Windows USB Audio Class driver (usbaudio.sys) / CVE-2026-119829 / Windows USB Audio Class driver (usbaudio.sys) 권한 상승 취약성
+Windows USB Driver / CVE-2026-95872 / Windows USB Driver 권한 상승 취약성
+Windows USB Driver / CVE-2026-96005 / Windows USB Driver 권한 상승 취약성
+Windows USB Driver / CVE-2026-96051 / Windows USB Driver 권한 상승 취약성
+Windows USB Driver / CVE-2026-96055 / Windows USB Driver 권한 상승 취약성
+Windows USB Driver / CVE-2026-96056 / Windows USB Driver 권한 상승 취약성
+Windows USB Driver / CVE-2026-96057 / Windows USB Driver 권한 상승 취약성
+Windows USB Driver / CVE-2026-112764 / Windows USB Driver 권한 상승 취약성
+Windows USB Driver / CVE-2026-119872 / Windows USB Driver 권한 상승 취약성
+Windows USB Driver / CVE-2026-122167 / Windows USB Driver 권한 상승 취약성
+Windows USB Hub Driver / CVE-2026-95902 / Windows USB Hub Driver 권한 상승 취약성
+Windows USB Hub Driver / CVE-2026-95999 / Windows USB Hub Driver 권한 상승 취약성
+Windows USB Hub Driver / CVE-2026-96041 / Windows USB Hub Driver 정보 유출 취약성
+Windows USB Scanner Driver / CVE-2026-119876 / Windows USB Scanner Driver 권한 상승 취약성
+Windows USB Video Driver / CVE-2026-95961 / Windows USB Video Driver 권한 상승 취약성
+Windows USB Video Driver / CVE-2026-95965 / Windows USB Video Driver 권한 상승 취약성
+Windows USB Video Driver / CVE-2026-112984 / Windows USB Video Driver 권한 상승 취약성
+Windows USB Video Driver / CVE-2026-112990 / Windows USB Video Driver 권한 상승 취약성
+Windows User Manager Service / CVE-2026-95987 / Windows User Manager Service 권한 상승 취약성
+Windows User Manager Service / CVE-2026-96037 / Windows User Manager Service 권한 상승 취약성
+Windows USM Communication Manager / CVE-2026-97000 / Windows USM Communication Manager 권한 상승 취약성
+Windows Virtual Filtering Platform (VFP) / CVE-2026-95962 / Windows Virtual Filtering Platform (VFP) 원격 코드 실행 취약성
+Windows VMSwitch / CVE-2026-97002 / Microsoft Windows VMSwitch 권한 상승 취약성
+Windows Volume Shadow Copy / CVE-2026-105017 / Volume Shadow Copy 권한 상승 취약성
+Windows Volume Shadow Copy / CVE-2026-119941 / Volume Shadow Copy 권한 상승 취약성
+Windows Win32K / CVE-2026-95893 / Win32k 정보 유출 취약성
+Windows Win32K / CVE-2026-105028 / Windows Win32k 권한 상승 취약성
+Windows Win32K / CVE-2026-119825 / Win32k 정보 유출 취약성
+Windows Win32K / CVE-2026-119827 / Windows Win32k 권한 상승 취약성
+Windows Win32K / CVE-2026-119856 / Win32k 정보 유출 취약성
+Windows Win32K / CVE-2026-119899 / Windows Win32k 권한 상승 취약성
+Windows Win32K / CVE-2026-119910 / Win32k 정보 유출 취약성
+Windows Win32K / CVE-2026-122170 / Windows Win32k 권한 상승 취약성
+Windows WinHTTP / CVE-2026-108423 / Windows WinHTTP 정보 유출 취약성
+Windows Wireless Networking / CVE-2026-105589 / Windows Wireless Networking 권한 상승 취약성
+Windows WLAN Service / CVE-2026-96086 / Windows WLAN Service 서비스 거부 취약성
+Windows Xbox Live Networking Service / CVE-2026-112967 / Windows Xbox Live Networking Service 원격 코드 실행 취약성
+Windows XWizard Framework / CVE-2026-113760 / Windows XWizard Framework 권한 상승 취약성
+Winlogon / CVE-2026-83563 / Winlogon 권한 상승 취약성
+Winlogon / CVE-2026-105522 / Winlogon 권한 상승 취약성
+Winsock / CVE-2026-96994 / Winsock 권한 상승 취약성
+Winsock / CVE-2026-105526 / Winsock 권한 상승 취약성
+Xbox / CVE-2026-66801 / Microsoft Xbox 원격 코드 실행 취약성
+Xbox / CVE-2026-95874 / Xbox Gaming Services 권한 상승 취약성
+Microsoft Office / CVE-2026-111286 / Microsoft Office 원격 코드 실행 취약성
+Microsoft Office / CVE-2026-111289 / Microsoft Office 원격 코드 실행 취약성
+Microsoft Office / CVE-2026-111291 / Microsoft Office 정보 유출 취약성
+Microsoft Office / CVE-2026-111293 / Microsoft Office 정보 유출 취약성
+Microsoft Office / CVE-2026-112731 / Microsoft Office 정보 유출 취약성
+Microsoft Office / CVE-2026-116717 / Microsoft Office 원격 코드 실행 취약성
+Microsoft Office / CVE-2026-119998 / Microsoft Office 보안 기능 우회 취약성
+Microsoft Office / CVE-2026-120003 / Microsoft Office 원격 코드 실행 취약성
+Microsoft Office / CVE-2026-122198 / Microsoft Office 원격 코드 실행 취약성
+Microsoft Office Access / CVE-2026-109493 / Microsoft Office Access 원격 코드 실행 취약성
+Microsoft Office Access / CVE-2026-109498 / Microsoft Office Access 원격 코드 실행 취약성
+Microsoft Office Access / CVE-2026-110058 / Microsoft Office Access 원격 코드 실행 취약성
+Microsoft Office Access / CVE-2026-110059 / Microsoft Office Access 원격 코드 실행 취약성
+Microsoft Office Access / CVE-2026-110060 / Microsoft Office Access 원격 코드 실행 취약성
+Microsoft Office Access / CVE-2026-111301 / Microsoft Office Access 원격 코드 실행 취약성
+Microsoft Office Access / CVE-2026-111305 / Microsoft Office Access 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-111292 / Microsoft Office Excel 정보 유출 취약성
+Microsoft Office Excel / CVE-2026-116927 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118292 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118293 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118294 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118295 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118296 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118297 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118298 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118299 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118300 / Microsoft Office Excel 정보 유출 취약성
+Microsoft Office Excel / CVE-2026-118301 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118302 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118700 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118701 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118702 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118703 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118704 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118705 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118706 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118707 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118708 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118709 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118710 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118711 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118712 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118713 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118714 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118715 / Microsoft Office Excel 권한 상승 취약성
+Microsoft Office Excel / CVE-2026-118716 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118717 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118718 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118719 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118720 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118721 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118722 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118723 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118724 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118725 / Microsoft Office Excel 권한 상승 취약성
+Microsoft Office Excel / CVE-2026-118726 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118727 / Microsoft Office Excel 정보 유출 취약성
+Microsoft Office Excel / CVE-2026-118728 / Microsoft Office Excel 정보 유출 취약성
+Microsoft Office Excel / CVE-2026-118729 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118730 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118731 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-118732 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-119986 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-119999 / Microsoft Office Excel 정보 유출 취약성
+Microsoft Office Excel / CVE-2026-120785 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-120786 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-120788 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-120789 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-120790 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-120791 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-123385 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-123395 / Microsoft Office Excel 정보 유출 취약성
+Microsoft Office Excel / CVE-2026-124170 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-124174 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-124176 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-124178 / Microsoft Office Excel 정보 유출 취약성
+Microsoft Office Excel / CVE-2026-124179 / Microsoft Office Excel 정보 유출 취약성
+Microsoft Office Excel / CVE-2026-124183 / Microsoft Office Excel 정보 유출 취약성
+Microsoft Office Excel / CVE-2026-124187 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Excel / CVE-2026-124229 / Microsoft Office Excel 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-110043 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-110068 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-111309 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-119993 / Microsoft Office Outlook 정보 유출 취약성
+Microsoft Office Outlook / CVE-2026-119995 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-119996 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-119997 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-123375 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-123376 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-123377 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-123378 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-123379 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-123380 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-123381 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-123382 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-123383 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-123384 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-124194 / Microsoft Outlook 스푸핑 취약성
+Microsoft Office Outlook / CVE-2026-124227 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office Outlook / CVE-2026-124228 / Microsoft Office Outlook 원격 코드 실행 취약성
+Microsoft Office PowerPoint / CVE-2026-109487 / Microsoft PowerPoint 원격 코드 실행 취약성
+Microsoft Office PowerPoint / CVE-2026-112734 / Microsoft Office PowerPoint 원격 코드 실행 취약성
+Microsoft Office PowerPoint / CVE-2026-112737 / Microsoft Office PowerPoint 원격 코드 실행 취약성
+Microsoft Office PowerPoint / CVE-2026-112738 / Microsoft Office PowerPoint 정보 유출 취약성
+Microsoft Office PowerPoint / CVE-2026-116922 / Microsoft Office PowerPoint 정보 유출 취약성
+Microsoft Office PowerPoint / CVE-2026-120001 / Microsoft Office PowerPoint 원격 코드 실행 취약성
+Microsoft Office PowerPoint / CVE-2026-120005 / Microsoft PowerPoint 원격 코드 실행 취약성
+Microsoft Office Visio / CVE-2026-109494 / Microsoft Office Visio 원격 코드 실행 취약성
+Microsoft Office Visio / CVE-2026-109496 / Microsoft Office Visio 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-109491 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-109500 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-109501 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-109503 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-109505 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110046 / Microsoft Office Word 정보 유출 취약성
+Microsoft Office Word / CVE-2026-110047 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110048 / Microsoft Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110049 / Microsoft Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110050 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110051 / Microsoft Office Word 정보 유출 취약성
+Microsoft Office Word / CVE-2026-110052 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110053 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110054 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110055 / Microsoft Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110056 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110061 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110062 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110064 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-110066 / Microsoft Office Word 정보 유출 취약성
+Microsoft Office Word / CVE-2026-110067 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111285 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111287 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111288 / Microsoft Office Word 정보 유출 취약성
+Microsoft Office Word / CVE-2026-111290 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111294 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111295 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111298 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111299 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111302 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111304 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111306 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111307 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111308 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-111310 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112714 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112715 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112716 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112717 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112718 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112719 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112720 / Microsoft Office Word 정보 유출 취약성
+Microsoft Office Word / CVE-2026-112721 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112722 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112723 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112724 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112726 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112728 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112729 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112730 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112733 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112735 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112739 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-112741 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-113759 / Microsoft Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-116718 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-116719 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-116720 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-116721 / Microsoft Office Word 정보 유출 취약성
+Microsoft Office Word / CVE-2026-116722 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-116923 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-116925 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-123394 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-124185 / Microsoft Office Word 원격 코드 실행 취약성
+Microsoft Office Word / CVE-2026-124233 / Microsoft Office Word 정보 유출 취약성
+Microsoft Teams / CVE-2026-116926 / Microsoft Teams 스푸핑 취약성
+Microsoft Teams for Android / CVE-2026-69901 / Microsoft Teams for Android 스푸핑 취약성
+Microsoft Teams for Android / CVE-2026-122979 / Microsoft Teams for Android 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-80095 / Microsoft Office SharePoint 권한 상승 취약성
+Microsoft Office SharePoint / CVE-2026-88176 / Microsoft Office SharePoint 권한 상승 취약성
+Microsoft Office SharePoint / CVE-2026-109454 / Microsoft Office SharePoint 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-109455 / Microsoft Office SharePoint 정보 유출 취약성
+Microsoft Office SharePoint / CVE-2026-109456 / Microsoft Office SharePoint 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-109464 / Microsoft Office SharePoint 원격 코드 실행 취약성
+Microsoft Office SharePoint / CVE-2026-109466 / Microsoft Office SharePoint 권한 상승 취약성
+Microsoft Office SharePoint / CVE-2026-109472 / Microsoft Office SharePoint 원격 코드 실행 취약성
+Microsoft Office SharePoint / CVE-2026-109495 / Microsoft Office SharePoint 권한 상승 취약성
+Microsoft Office SharePoint / CVE-2026-109497 / Microsoft Office SharePoint 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-109499 / Microsoft Office SharePoint 원격 코드 실행 취약성
+Microsoft Office SharePoint / CVE-2026-109502 / Microsoft Office SharePoint 권한 상승 취약성
+Microsoft Office SharePoint / CVE-2026-109504 / Microsoft Office SharePoint 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-110044 / Microsoft Office SharePoint 원격 코드 실행 취약성
+Microsoft Office SharePoint / CVE-2026-110045 / Microsoft Office SharePoint 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-110057 / Microsoft Office SharePoint 정보 유출 취약성
+Microsoft Office SharePoint / CVE-2026-110065 / Microsoft Office SharePoint 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-111296 / Microsoft Office SharePoint 권한 상승 취약성
+Microsoft Office SharePoint / CVE-2026-111297 / Microsoft Office SharePoint 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-111300 / Microsoft Office SharePoint 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-111303 / Microsoft Office SharePoint 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-112736 / Microsoft Office SharePoint 스푸핑 취약성
+Microsoft Office SharePoint / CVE-2026-120000 / Microsoft Office SharePoint 원격 코드 실행 취약성
+Microsoft Office SharePoint / CVE-2026-120002 / Microsoft SharePoint Server 권한 상승 취약성
+Microsoft Office SharePoint / CVE-2026-123390 / Microsoft Office SharePoint 원격 코드 실행 취약성
+Microsoft Office SharePoint / CVE-2026-123391 / Microsoft Office SharePoint 권한 상승 취약성
+Microsoft Office SharePoint / CVE-2026-124210 / Microsoft Office SharePoint 정보 유출 취약성
+Microsoft Exchange Server / CVE-2026-118149 / Microsoft Exchange Server 원격 코드 실행 취약성
+Microsoft Exchange Server / CVE-2026-118150 / Microsoft Exchange Server 권한 상승 취약성
+Microsoft Exchange Server / CVE-2026-118151 / Microsoft Exchange Server 권한 상승 취약성
+Microsoft Exchange Server / CVE-2026-118152 / Microsoft Exchange Server 스푸핑 취약성
+Microsoft Exchange Server / CVE-2026-118153 / Microsoft Exchange Server 서비스 거부 취약성
+Microsoft Exchange Server / CVE-2026-118154 / Microsoft Exchange Server 권한 상승 취약성
+Microsoft Exchange Server / CVE-2026-118157 / Microsoft Exchange Server 권한 상승 취약성
+Microsoft Exchange Server / CVE-2026-118207 / Microsoft Exchange Server 원격 코드 실행 취약성
+Microsoft Exchange Server / CVE-2026-118208 / Microsoft Exchange Server 스푸핑 취약성
+JDBC Driver for SQL Server / CVE-2026-70003 / JDBC Driver for SQL Server 보안 기능 우회 취약성
+SQL Server / CVE-2026-62903 / Microsoft.Data.SqlClient 정보 유출 취약성
+SQL Server / CVE-2026-66813 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-67372 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-67374 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-67375 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-67382 / Microsoft SQL Server 정보 유출 취약성
+SQL Server / CVE-2026-67387 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-67391 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-67632 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-67637 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-67646 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-68783 / Microsoft SQL Server 정보 유출 취약성
+SQL Server / CVE-2026-84010 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-88111 / SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-94511 / SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-94513 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-116929 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-116930 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-116931 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-116932 / Microsoft SQL Server 정보 유출 취약성
+SQL Server / CVE-2026-116933 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-116934 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-116935 / Microsoft SQL Server 정보 유출 취약성
+SQL Server / CVE-2026-116936 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-116937 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-116938 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-116939 / Microsoft SQL Server 정보 유출 취약성
+SQL Server / CVE-2026-116940 / Microsoft SQL Server 정보 유출 취약성
+SQL Server / CVE-2026-116941 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-116942 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-116943 / Microsoft SQL Server 정보 유출 취약성
+SQL Server / CVE-2026-116944 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-116945 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-116946 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-116947 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-118102 / Microsoft SQL Server 정보 유출 취약성
+SQL Server / CVE-2026-118103 / Microsoft SQL Server 정보 유출 취약성
+SQL Server / CVE-2026-118104 / Microsoft SQL Server 정보 유출 취약성
+SQL Server / CVE-2026-118105 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118106 / Microsoft SQL Server 원격 코드 실행 취약성
+SQL Server / CVE-2026-118108 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118109 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118110 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118111 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118112 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118113 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118114 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118115 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118116 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118117 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118118 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118119 / Microsoft SQL Server 권한 상승 취약성
+SQL Server / CVE-2026-118120 / Microsoft SQL Server 권한 상승 취약성
+.NET / CVE-2026-105544 / .NET 권한 상승 취약성
+.NET / CVE-2026-109475 / .NET 서비스 거부 취약성
+.NET / CVE-2026-114155 / .NET 권한 상승 취약성
+.NET / CVE-2026-118746 / .NET 보안 기능 우회 취약성
+.NET / CVE-2026-118747 / .NET 서비스 거부 취약성
+.NET / CVE-2026-120796 / .NET 서비스 거부 취약성
+ASP.NET Core / CVE-2026-109476 / ASP.NET Core 정보 유출 취약성
+ASP.NET Core / CVE-2026-109478 / ASP.NET Core 서비스 거부 취약성
+ASP.NET Core / CVE-2026-109481 / ASP.NET Core 권한 상승 취약성
+ASP.NET Core / CVE-2026-114146 / ASP.NET Core 권한 상승 취약성
+ASP.NET Core / CVE-2026-114147 / ASP.NET Core 서비스 거부 취약성
+ASP.NET Core / CVE-2026-114149 / ASP.NET Core 서비스 거부 취약성
+ASP.NET Core / CVE-2026-114150 / ASP.NET Core 정보 유출 취약성
+ASP.NET Core / CVE-2026-114154 / ASP.NET Core 서비스 거부 취약성
+ASP.NET Core / CVE-2026-114156 / ASP.NET Core 보안 기능 우회 취약성
+ASP.NET Core / CVE-2026-114157 / ASP.NET Core 보안 기능 우회 취약성
+ASP.NET Core / CVE-2026-118741 / ASP.NET Core 권한 상승 취약성
+ASP.NET Core / CVE-2026-118748 / ASP.NET Core 서비스 거부 취약성
+ASP.NET Core / CVE-2026-118749 / ASP.NET Core 서비스 거부 취약성
+ASP.NET Core / CVE-2026-118750 / ASP.NET Core 서비스 거부 취약성
+Visual Studio / CVE-2026-114151 / Visual Studio 원격 코드 실행 취약성
+Visual Studio / CVE-2026-114152 / Visual Studio 원격 코드 실행 취약성
+Visual Studio / CVE-2026-114158 / Visual Studio 원격 코드 실행 취약성
+Visual Studio / CVE-2026-114159 / Visual Studio 원격 코드 실행 취약성
+Visual Studio / CVE-2026-118745 / Visual Studio 원격 코드 실행 취약성
+Visual Studio Code / CVE-2026-70094 / Visual Studio Code 원격 코드 실행 취약성
+Visual Studio Code / CVE-2026-102230 / Visual Studio Code 정보 유출 취약성
+Visual Studio Code / CVE-2026-102236 / Visual Studio Code 보안 기능 우회 취약성
+Visual Studio Code / CVE-2026-114171 / Visual Studio Code 보안 기능 우회 취약성
+Visual Studio Code / CVE-2026-119975 / Visual Studio Code 원격 코드 실행 취약성
+Visual Studio Code / CVE-2026-119981 / Visual Studio Code 권한 상승 취약성
+Visual Studio Code / CVE-2026-119982 / Visual Studio Code 보안 기능 우회 취약성
+Visual Studio Code / CVE-2026-119983 / Visual Studio Code 보안 기능 우회 취약성
+Visual Studio Code / CVE-2026-119985 / Visual Studio Code 원격 코드 실행 취약성
+Visual Studio Code / CVE-2026-120779 / Visual Studio Code 원격 코드 실행 취약성
+Visual Studio Code / CVE-2026-120780 / Visual Studio Code 원격 코드 실행 취약성
+Visual Studio Code / CVE-2026-120782 / Visual Studio Code 보안 기능 우회 취약성
+Visual Studio Code / CVE-2026-121660 / Visual Studio Code 보안 기능 우회 취약성
+Visual Studio Code / CVE-2026-121661 / Visual Studio Code 보안 기능 우회 취약성
+Visual Studio Code / CVE-2026-121662 / Visual Studio Code 원격 코드 실행 취약성
+Visual Studio Code / CVE-2026-121663 / Visual Studio Code 보안 기능 우회 취약성
+Visual Studio Code / CVE-2026-121664 / Visual Studio Code 원격 코드 실행 취약성
+Visual Studio Code / CVE-2026-121665 / Visual Studio Code 보안 기능 우회 취약성
+Visual Studio Code - GitHub Pull Requests and Issues Extension / CVE-2026-119976 / Visual Studio Code GitHub Pull Requests and Issues Extension 정보 유출 취약성
+Microsoft Dynamics 365 (on-premises) / CVE-2026-122196 / Microsoft Dynamics 365 (on-premises) 정보 유출 취약성
+Azure CLI / CVE-2026-109457 / Azure CLI 원격 코드 실행 취약성
+Azure Confidential Clean Rooms / CVE-2026-121668 / Azure Confidential Clean Rooms 변조 취약성
+Azure CycleCloud / CVE-2026-102224 / Azure CycleCloud 권한 상승 취약성
+Azure CycleCloud / CVE-2026-113822 / Azure CycleCloud 권한 상승 취약성
+Azure CycleCloud / CVE-2026-113823 / Azure CycleCloud 정보 유출 취약성
+Azure CycleCloud / CVE-2026-114161 / Azure CycleCloud 권한 상승 취약성
+Azure DevOps / CVE-2026-109467 / Azure DevOps Server 원격 코드 실행 취약성
+Azure DevOps Server / CVE-2026-85923 / Azure DevOps Server 권한 상승 취약성
+Azure DevOps Server / CVE-2026-112745 / Azure DevOps Server 정보 유출 취약성
+Azure DevOps Server / CVE-2026-120783 / Azure DevOps Server 권한 상승 취약성
+Azure File Sync / CVE-2026-118288 / Microsoft Azure File Sync 권한 상승 취약성
+Azure Firmware / CVE-2026-109462 / Azure Firmware 보안 기능 우회 취약성
+Azure Front Door (AFD) / CVE-2026-118742 / Azure Front Door 권한 상승 취약성
+Azure Local / CVE-2026-105734 / Azure Local 권한 상승 취약성
+Azure Managed Grafana / CVE-2026-114160 / Azure Managed Grafana 권한 상승 취약성
+Azure NFS mount helper (aznfs) / CVE-2026-105494 / Azure NFS mount helper (aznfs) 권한 상승 취약성
+Azure OpenAI / CVE-2026-119990 / Azure OpenAI 권한 상승 취약성
+Azure Pipelines / CVE-2026-119989 / Azure Pipelines 원격 코드 실행 취약성
+Entra Device Registration / CVE-2026-109469 / Entra Device Registration 권한 상승 취약성
+Microsoft Authentication Library (MSAL) for Node.js / CVE-2026-108470 / Microsoft Authentication Library (MSAL) for Node.js 정보 유출 취약성
+Microsoft Authentication Library for JavaScript / CVE-2026-108469 / Microsoft Authentication Library for JavaScript 스푸핑 취약성
+Microsoft Entra Private Network Connector / CVE-2026-109460 / Microsoft Entra Private Network Connector 정보 유출 취약성
+Microsoft Graph / CVE-2026-114162 / Microsoft Graph 권한 상승 취약성
+Microsoft High Performance Computing (HPC) Pack / CVE-2026-122987 / Microsoft High Performance Computing (HPC) Pack 권한 상승 취약성
+Aspire / CVE-2026-118740 / Aspire 보안 기능 우회 취약성
+Aspire / CVE-2026-120006 / Aspire 권한 상승 취약성
+Aspire / CVE-2026-120778 / Aspire 권한 상승 취약성
+Aspire / CVE-2026-120792 / Aspire 정보 유출 취약성
+Github Copilot / CVE-2026-83953 / GitHub Copilot for Jetbrains 정보 유출 취약성
+Microsoft 365 Agents SDK / CVE-2026-109485 / Microsoft 365 Agents SDK 정보 유출 취약성
+Microsoft Azure Kubernetes Service / CVE-2026-122986 / Microsoft Azure Kubernetes Service 권한 상승 취약성
+Microsoft Configuration Manager / CVE-2026-119991 / Microsoft Configuration Manager 정보 유출 취약성
+Microsoft Defender / CVE-2026-122194 / Microsoft Defender 원격 코드 실행 취약성
+Microsoft MCP Gateway / CVE-2026-109492 / Microsoft MCP Gateway 권한 상승 취약성
+Microsoft PowerShell / CVE-2026-122985 / Microsoft PowerShell 정보 유출 취약성
+Microsoft PowerShell Core / CVE-2026-121669 / PowerShell 정보 유출 취약성
+Microsoft PowerShell Core / CVE-2026-121674 / PowerShell 정보 유출 취약성
+Microsoft PowerShell Core / CVE-2026-121675 / PowerShell 정보 유출 취약성
+Microsoft Edge (Chromium-based) / CVE-2026-76024 / Memory corruption
+Microsoft Edge (Chromium-based) / CVE-2026-76025 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-76026 / Memory corruption
+Microsoft Edge (Chromium-based) / CVE-2026-76027 / Memory corruption
+Microsoft Edge (Chromium-based) / CVE-2026-76028 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-76029 / Memory corruption
+Microsoft Edge (Chromium-based) / CVE-2026-76030 / Memory corruption
+Microsoft Edge (Chromium-based) / CVE-2026-76031 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-118309 / Incorrect reference resolution
+Microsoft Edge (Chromium-based) / CVE-2026-118314 / Incorrect reference resolution
+Microsoft Edge (Chromium-based) / CVE-2026-118321 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-119260 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-119261 / Improper input validation
+Microsoft Edge (Chromium-based) / CVE-2026-119262 / Improper input validation
+Microsoft Edge (Chromium-based) / CVE-2026-119263 / Memory corruption
+Microsoft Edge (Chromium-based) / CVE-2026-119264 / Memory corruption
+Microsoft Edge (Chromium-based) / CVE-2026-119265 / Memory corruption
+Microsoft Edge (Chromium-based) / CVE-2026-119266 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-119267 / Memory corruption
+Microsoft Edge (Chromium-based) / CVE-2026-119268 / Integer overflow
+Microsoft Edge (Chromium-based) / CVE-2026-119269 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-119270 / Improper input validation
+Microsoft Edge (Chromium-based) / CVE-2026-119271 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-119272 / Out of bounds read
+Microsoft Edge (Chromium-based) / CVE-2026-120930 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121029 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121030 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121031 / Missing authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121032 / Out of bounds read
+Microsoft Edge (Chromium-based) / CVE-2026-121034 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121035 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121036 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121037 / Out of bounds write
+Microsoft Edge (Chromium-based) / CVE-2026-121038 / Information leak
+Microsoft Edge (Chromium-based) / CVE-2026-121039 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121050 / Race condition
+Microsoft Edge (Chromium-based) / CVE-2026-121078 / Type confusion
+Microsoft Edge (Chromium-based) / CVE-2026-121079 / Race condition
+Microsoft Edge (Chromium-based) / CVE-2026-121080 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121081 / UI misrepresentation
+Microsoft Edge (Chromium-based) / CVE-2026-121082 / Type confusion
+Microsoft Edge (Chromium-based) / CVE-2026-121083 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121084 / Out of bounds read
+Microsoft Edge (Chromium-based) / CVE-2026-121085 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121086 / Buffer overflow
+Microsoft Edge (Chromium-based) / CVE-2026-121087 / Improper input validation
+Microsoft Edge (Chromium-based) / CVE-2026-121088 / Missing authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121089 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121091 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121092 / Uncontrolled recursion
+Microsoft Edge (Chromium-based) / CVE-2026-121093 / Out of bounds read
+Microsoft Edge (Chromium-based) / CVE-2026-121094 / Type confusion
+Microsoft Edge (Chromium-based) / CVE-2026-121095 / Uninitialized resource
+Microsoft Edge (Chromium-based) / CVE-2026-121096 / Incomplete cleanup
+Microsoft Edge (Chromium-based) / CVE-2026-121097 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121098 / Improper state validation
+Microsoft Edge (Chromium-based) / CVE-2026-121099 / Information leak
+Microsoft Edge (Chromium-based) / CVE-2026-121100 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121101 / Missing authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121102 / Missing authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121103 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121104 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121105 / Information leak
+Microsoft Edge (Chromium-based) / CVE-2026-121107 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121108 / Confused deputy
+Microsoft Edge (Chromium-based) / CVE-2026-121109 / Inadequate encryption strength
+Microsoft Edge (Chromium-based) / CVE-2026-121111 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121113 / Buffer overflow
+Microsoft Edge (Chromium-based) / CVE-2026-121114 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121115 / Improper input validation
+Microsoft Edge (Chromium-based) / CVE-2026-121117 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121118 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121119 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121120 / Improper input validation
+Microsoft Edge (Chromium-based) / CVE-2026-121121 / UI misrepresentation
+Microsoft Edge (Chromium-based) / CVE-2026-121122 / UI misrepresentation
+Microsoft Edge (Chromium-based) / CVE-2026-121123 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121124 / Improper adherence to coding standards
+Microsoft Edge (Chromium-based) / CVE-2026-121125 / Information leak
+Microsoft Edge (Chromium-based) / CVE-2026-121126 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121127 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121128 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121129 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121130 / Observable discrepancy
+Microsoft Edge (Chromium-based) / CVE-2026-121131 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121132 / Information leak
+Microsoft Edge (Chromium-based) / CVE-2026-121133 / Incorrect reference resolution
+Microsoft Edge (Chromium-based) / CVE-2026-121134 / Information loss
+Microsoft Edge (Chromium-based) / CVE-2026-121135 / Security issue
+Microsoft Edge (Chromium-based) / CVE-2026-121136 / Missing authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121137 / Type confusion
+Microsoft Edge (Chromium-based) / CVE-2026-121138 / Observable discrepancy
+Microsoft Edge (Chromium-based) / CVE-2026-121174 / Missing authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121175 / Improper resource exposure
+Microsoft Edge (Chromium-based) / CVE-2026-121176 / Uninitialized resource
+Microsoft Edge (Chromium-based) / CVE-2026-121178 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121179 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121180 / Buffer overflow
+Microsoft Edge (Chromium-based) / CVE-2026-121181 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121182 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121183 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121184 / Out of bounds read
+Microsoft Edge (Chromium-based) / CVE-2026-121185 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121187 / Observable discrepancy
+Microsoft Edge (Chromium-based) / CVE-2026-121188 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121189 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121190 / UI misrepresentation
+Microsoft Edge (Chromium-based) / CVE-2026-121193 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121194 / Missing authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121195 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121197 / Out of bounds read
+Microsoft Edge (Chromium-based) / CVE-2026-121198 / Confused deputy
+Microsoft Edge (Chromium-based) / CVE-2026-121199 / Missing authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121200 / Incorrect reference resolution
+Microsoft Edge (Chromium-based) / CVE-2026-121201 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121202 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121203 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121204 / Incomplete cleanup
+Microsoft Edge (Chromium-based) / CVE-2026-121205 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121206 / UI misrepresentation
+Microsoft Edge (Chromium-based) / CVE-2026-121207 / Uninitialized resource
+Microsoft Edge (Chromium-based) / CVE-2026-121208 / Out of bounds read
+Microsoft Edge (Chromium-based) / CVE-2026-121209 / UI misrepresentation
+Microsoft Edge (Chromium-based) / CVE-2026-121210 / Type confusion
+Microsoft Edge (Chromium-based) / CVE-2026-121211 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121212 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121213 / Uninitialized resource
+Microsoft Edge (Chromium-based) / CVE-2026-121214 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121215 / UI misrepresentation
+Microsoft Edge (Chromium-based) / CVE-2026-121216 / UI misrepresentation
+Microsoft Edge (Chromium-based) / CVE-2026-121217 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121218 / Type confusion
+Microsoft Edge (Chromium-based) / CVE-2026-121219 / Integer overflow
+Microsoft Edge (Chromium-based) / CVE-2026-121220 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121221 / Type confusion
+Microsoft Edge (Chromium-based) / CVE-2026-121222 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121223 / Observable discrepancy
+Microsoft Edge (Chromium-based) / CVE-2026-121224 / Security issue
+Microsoft Edge (Chromium-based) / CVE-2026-121226 / Type confusion
+Microsoft Edge (Chromium-based) / CVE-2026-121227 / Uninitialized resource
+Microsoft Edge (Chromium-based) / CVE-2026-121228 / Type confusion
+Microsoft Edge (Chromium-based) / CVE-2026-121230 / Race condition
+Microsoft Edge (Chromium-based) / CVE-2026-121231 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121232 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121233 / Type confusion
+Microsoft Edge (Chromium-based) / CVE-2026-121235 / Information leak
+Microsoft Edge (Chromium-based) / CVE-2026-121236 / Improper input validation
+Microsoft Edge (Chromium-based) / CVE-2026-121237 / Improper state validation
+Microsoft Edge (Chromium-based) / CVE-2026-121238 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121239 / Information leak
+Microsoft Edge (Chromium-based) / CVE-2026-121240 / Improper input validation
+Microsoft Edge (Chromium-based) / CVE-2026-121242 / Improper input validation
+Microsoft Edge (Chromium-based) / CVE-2026-121243 / Information leak
+Microsoft Edge (Chromium-based) / CVE-2026-121244 / UI misrepresentation
+Microsoft Edge (Chromium-based) / CVE-2026-121245 / Race condition
+Microsoft Edge (Chromium-based) / CVE-2026-121248 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121249 / Buffer overflow
+Microsoft Edge (Chromium-based) / CVE-2026-121250 / Use after free
+Microsoft Edge (Chromium-based) / CVE-2026-121251 / Missing authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121252 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121253 / Missing authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121254 / Information leak
+Microsoft Edge (Chromium-based) / CVE-2026-121255 / Incorrect authorization
+Microsoft Edge (Chromium-based) / CVE-2026-121256 / Use of released resource
+Microsoft Edge (Chromium-based) / CVE-2026-121257 / Use after free
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
