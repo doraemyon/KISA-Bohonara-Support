@@ -6,23 +6,33 @@ SAP 제품 보안 업데이트 권고
 
 본문:
 □ 개요
-o SAP社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2]
+o SAP社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[5]
 o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
 
 □ 설명
-o SAP NetWeaver AS ABAP and ABAP Platform (SAML2 Service Provider)에서 발생하는 Improper Verification of Cryptographic Signature 취약점(CVE-2026-120017) [1]~[3]
+o SAP NetWeaver AS ABAP and ABAP Platform (SAML2 Service Provider)에서 발생하는 Improper Verification of Cryptographic Signature 취약점(CVE-2026-120017) [1][2][6]
+o SAP NetWeaver AS ABAP (Internet Communication Manager)에서 발생하는 Improper Validation of Specified Type of Input 취약점(CVE-2026-76964) [1][3][7]
+o SAP Web Dispatcher에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-89126) [1][4][8]
+o SAP Gateway에서 발생하는 Incorrect Authorization 취약점(CVE-2026-89103) [1][5][9]
 
 □ 영향을 받는 제품 및 해결 방안
-
 취약점 / 제품명 / 영향받는 버전 / 해결 버전
 CVE-2026-120017 / SAP NetWeaver AS ABAP and ABAP Platform (SAML2 Service Provider) / SAP_BASIS 702, 731, 740, 750, 751, 752, 753, 754, 755, 756, 757, 758, 816, 920, 921, 922 / 별도 보안 패치 제공[2]
-
-※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][2]
+CVE-2026-76964 / SAP NetWeaver AS ABAP (Internet Communication Manager) / KRNL64UC 7.53, KERNEL 7.53, 7.54, 7.77, 7.93, 9.16, 9.18, 9.20 / 별도 보안 패치 제공[3]
+CVE-2026-89126 / SAP Web Dispatcher / HDB 2.00, KRNL64UC 7.53, WEBDISP 7.53, 7.54, 7.77, 7.93, 9.16, XS_ADVANCED_RUNTIME 1.00, SAP_EXTENDED_APP_SERVICES 1, KERNEL 7.53, 9.18, 9.20 / 별도 보안 패치 제공[4]
+CVE-2026-89103 / SAP Gateway / KRNL64NUC 7.22, 7.22EXT, KRNL64UC 7.22, 7.53, 8.04, KERNEL 7.22, 7.54, 7.77, 7.93, 9.16, 9.20, 9.21 / 별도 보안 패치 제공[5]
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]~[5]
 
 □ 참고사이트
 [1] https://support.sap.com/en/my-support/knowledge-base/security-notes-news/november-2026.html
 [2] https://me.sap.com/notes/3849308
-[3] https://nvd.nist.gov/vuln/detail/CVE-2026-120017
+[3] https://me.sap.com/notes/3778530
+[4] https://me.sap.com/notes/3778556
+[5] https://me.sap.com/notes/3798345
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-120017
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-76964
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-89126
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-89103
 
 □ 문의사항
 o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
