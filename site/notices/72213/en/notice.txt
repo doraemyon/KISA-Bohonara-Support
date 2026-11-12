@@ -1,0 +1,36 @@
+Title:
+SonicWall Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "SonicWall Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o SonicWall has released security updates to address vulnerabilities in its products [1]
+o Users utilizing affected versions are recommended to update to the latest version according to the mitigation measures
+
+□ Description
+o Server-Side Request Forgery (SSRF) vulnerability occurring in SonicWall SMA1000(CVE-2026-102255) [1][2]
+o OS Command Injection vulnerability occurring in SonicWall SMA1000(CVE-2026-102256) [1][3]
+o Path Traversal vulnerability occurring in SonicWall SMA1000(CVE-2026-102257) [1][4]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Resolution Version
+CVE-2026-102255 / SMA1000 Series (6210, 7210, 8200v) / 12.4.3-03526 (platform-hotfix) or below / 12.4.3-03670 (platform-hotfix) or above
+CVE-2026-102255 / SMA1000 Series (6210, 7210, 8200v) / 12.5.0-02952 (platform-hotfix) or below / 12.5.0-03082 (platform-hotfix) or above
+CVE-2026-102256 / SMA1000 Series (6210, 7210, 8200v) / 12.4.3-03526 (platform-hotfix) or below / 12.4.3-03670 (platform-hotfix) or above
+CVE-2026-102256 / SMA1000 Series (6210, 7210, 8200v) / 12.5.0-02952 (platform-hotfix) or below / 12.5.0-03082 (platform-hotfix) or above
+CVE-2026-102257 / SMA1000 Series (6210, 7210, 8200v) / 12.4.3-03526 (platform-hotfix) or below / 12.4.3-03670 (platform-hotfix) or above
+CVE-2026-102257 / SMA1000 Series (6210, 7210, 8200v) / 12.5.0-02952 (platform-hotfix) or below / 12.5.0-03082 (platform-hotfix) or above
+※ Perform updates by checking the reference sites at the bottom [1]
+
+□ Reference sites
+[1] https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0017
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-102255
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-102256
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-102257
+
+□ Questions and inquiries
+o Korea Internet & Security Agency (KISA) Cyber Civil Center: Dial 118 without area code
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Division

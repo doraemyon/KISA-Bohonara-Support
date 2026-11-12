@@ -1,0 +1,94 @@
+Title:
+Smishing Advisory Regarding Distribution of Malicious URLs for Coin Theft
+
+Summary:
+We are disseminating today's KISA announcement "Smishing Advisory Regarding Distribution of Malicious URLs for Coin Theft". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+
+o As cases of smishing impersonating virtual asset (coin) exchanges and wallet services are increasing recently, users are advised to take precautions to prevent damages.
+
+□ Key Details
+
+o Smishing text messages utilizing keywords such as "reward payout," "immediate claim," "abnormal activity detected," and "asset protection" have been distributed, and coin wallet theft cases have been confirmed
+
+- (Smishing Distribution) Impersonating virtual asset (coin) exchanges and reward payouts to induce clicking on malicious internet URLs in text messages, leading to phishing sites and malicious app installations
+
+- (Wallet Theft) Inducing the input of wallet seed phrases under the pretext of user asset recovery, followed by wallet theft
+
+□ Mitigation Measures
+
+o Do not click URLs in received smishing messages and delete them immediately
+
+o Smishing and Phishing Site Reporting and Verification Methods
+- Report and determine maliciousness using the 'Smishing/Phishing Verification Service' within BohoNara (KakaoTalk Channel)
+
+o Smishing Message Reporting and Verification Methods
+
+- Check 'Report as Spam' available on the smartphone message reception screen
+
+- Report smishing messages at the Telecommunication Financial Fraud Integrated Reporting and Response Center (https://counterscam112.go.kr)
+
+- Report and determine maliciousness using the 'Smishing/Phishing Verification Service' within BohoNara (KakaoTalk Channel)
+
+o Smishing Message Prevention Methods
+
+- Refrain from clicking site addresses of unknown origin upon receiving messages and delete them immediately
+
+- For suspicious site addresses, verify consistency with legitimate sites to prevent damage
+
+- Input personal information such as mobile phone numbers, IDs, and passwords only on trusted sites, and do not transmit identity verification codes to others
+
+- Government agencies and financial institutions do not request the installation of remote control apps via phone calls or text messages
+* Including cases where apps are registered in legitimate app stores
+
+o Blocking Number-Spoofed Text Message Transmission
+
+- If information leakage via malicious app infection or phishing sites is suspected, apply for the "Number-Spoofed Text Blocking Service*" to block unauthorized use, as the victim's number may be spoofed for re-transmitting smishing messages
+* Available for free application under supplementary service items of each mobile carrier
+
+o Checking and Canceling Mobile Payments
+
+- Since mobile payment damages may occur if infected with smishing malicious apps or entering personal information on phishing sites, check mobile payment history
+
+① Check mobile payment history through the mobile carrier customer center
+
+② If mobile payment damage is confirmed, capture the suspicious smishing text message
+
+③ Report smishing damage and obtain a minor payment confirmation certificate through the mobile carrier customer center
+
+④ Visit the cyber investigation unit or civil service office of the jurisdictional police station with the minor payment confirmation certificate to report
+
+⑤ Have the incident details verified and obtain a fact confirmation certificate of the accident/incident
+
+⑥ Visit the mobile carrier customer center or send a fax or email with necessary documents such as the fact confirmation certificate of the accident/incident
+
+⑦ Request damage compensation after verifying facts and damage details with the mobile carrier or payment agency
+
+o Deleting Malicious Applications
+
+- Simply clicking an internet address included in a text message does not infect the smartphone with a malicious app, but if an application was installed via the internet address, inspect the smartphone using the following methods
+
+• Scan for malicious app installation using a mobile antivirus, and if detected, switch to airplane mode and report to 112
+※ Since a malicious app can remotely control the phone, report using someone else's phone
+
+• Manually delete the malicious app
+
+• Visit a nearby mobile phone service center
+
+o Revoking and Reissuing Official Certificates
+
+- If financial services were used with a smartphone infected by a malicious app, information required for financial transactions such as official certificates and security cards may have been leaked, so revoke and reissue the relevant information
+
+o Preventing Secondary Damage
+
+- Secondary damage may occur, such as malicious apps installed on the smartphone accessing the address book and sending similar smishing content to other people, so notify acquaintances of the smishing damage
+
+□ Smishing Reporting and Consultation Inquiries
+
+o Telecommunication Financial Fraud Integrated Reporting and Response Center: 1394 (no area code)
+
+o Korea Internet & Security Agency Internet Security Center: 118 (no area code)
+
+□ Author: National Damage Response Unit Smishing Response Team

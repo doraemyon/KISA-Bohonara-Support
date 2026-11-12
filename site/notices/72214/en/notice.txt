@@ -1,0 +1,29 @@
+Title:
+Ivanti Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Ivanti Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Ivanti has released security updates addressing vulnerabilities occurring in its products [1]
+o Users utilizing affected versions are advised to update to the latest version according to the mitigation measures
+
+□ Description
+o Authentication Bypass by Spoofing vulnerability occurring in Ivanti Connect Secure (CVE-2026-104935) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-104935 / Connect Secure / Below 25.1.1.2 / 25.1.1.2 and above
+CVE-2026-104935 / Connect Secure / 25.1.2.2 and below / 25.1.3.0 and above
+CVE-2026-104935 / Connect Secure / Below 22.8R2.5 / 22.8R2.5 and above
+※ Perform updates by checking the reference sites below [1]
+
+□ Reference sites
+[1] https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-104935
+
+□ Questions and inquiries
+o Korea Internet & Security Agency (KISA) Cyber Civil Center: Dial 118 without area code
+
+□ Author: Vulnerability Management Center, Digital Threat Response Division

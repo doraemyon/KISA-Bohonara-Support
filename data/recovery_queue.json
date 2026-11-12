@@ -1,66 +1,6 @@
 {
   "notices": [
     {
-      "notice_id": "72222",
-      "title": "Adobe 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=7&categoryCode=&nttId=72222"
-    },
-    {
-      "notice_id": "72221",
-      "title": "Vercel 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=7&categoryCode=&nttId=72221"
-    },
-    {
-      "notice_id": "72220",
-      "title": "사이버이메지네이션 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=7&categoryCode=&nttId=72220"
-    },
-    {
-      "notice_id": "72219",
-      "title": "코인 탈취를 위한 악성URL 유포에 따른 스미싱 주의",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=7&categoryCode=&nttId=72219"
-    },
-    {
-      "notice_id": "72218",
-      "title": "Palo Alto Networks 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=7&categoryCode=&nttId=72218"
-    },
-    {
-      "notice_id": "72217",
-      "title": "Cisco 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=7&categoryCode=&nttId=72217"
-    },
-    {
-      "notice_id": "72216",
-      "title": "MS 10월 보안 위협에 따른 정기 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=7&categoryCode=&nttId=72216"
-    },
-    {
-      "notice_id": "72215",
-      "title": "GitLab 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=7&categoryCode=&nttId=72215"
-    },
-    {
-      "notice_id": "72214",
-      "title": "Ivanti 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=8&categoryCode=&nttId=72214"
-    },
-    {
-      "notice_id": "72213",
-      "title": "SonicWall 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=8&categoryCode=&nttId=72213"
-    },
-    {
-      "notice_id": "72212",
-      "title": "Citrix 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=8&categoryCode=&nttId=72212"
-    },
-    {
-      "notice_id": "72211",
-      "title": "금융권 등 개인정보 유출 사고 피해보상금 지급 등 사칭 피싱 주의 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=8&categoryCode=&nttId=72211"
-    },
-    {
       "notice_id": "72210",
       "title": "보안인증 소프트웨어 취약점 관련 클리닝 서비스 가동 안내",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=8&categoryCode=&nttId=72210"

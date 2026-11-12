@@ -1,0 +1,32 @@
+Title:
+Citrix Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Citrix Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Citrix releases security updates to address vulnerabilities in its products [1]
+o Users running an affected version are advised to update to the latest version according to the workaround.
+
+□ Description
+o Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in NetScaler ADC and NetScaler Gateway (CVE-2026-107406) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-107406 / NetScaler ADC / Below 13.1-64.29 / 13.1-64.29 or later
+CVE-2026-107406 / NetScaler ADC / Below 14.1-73.46 / 14.1-73.46 or later
+CVE-2026-107406 / NetScaler Gateway / Below 13.1-64.29 / 13.1-64.29 or later
+CVE-2026-107406 / NetScaler Gateway / Below 14.1-73.46 / 14.1-73.46 or later
+CVE-2026-107406 / NetScaler ADC FIPS/NDcPP / Below 13.1-37.283 / 13.1-37.283 or later
+CVE-2026-107406 / NetScaler ADC FIPS / 14.1-73.46 Below FIPS / 14.1-73.46 FIPS or higher
+※ Perform updates by referring to the sites listed below. [1]
+
+□ Reference sites
+[1] https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697191
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-107406
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code needed)
+
+□ Prepared by: Vulnerability Management Center, Digital Threat Response Headquarters

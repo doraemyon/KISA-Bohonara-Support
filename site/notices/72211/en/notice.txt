@@ -1,0 +1,77 @@
+Title:
+Warning against phishing scams, such as those involving compensation for personal data breaches in the financial sector
+
+Summary:
+We are disseminating today's KISA announcement "Warning against phishing scams, such as those involving compensation for personal data breaches in the financial sector". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+
+o As a number of security breaches have recently occurred targeting financial institutions and private companies, there are concerns about attempts to steal money, such as "personal information leaks" and "payment of compensation." Therefore, caution is needed to prevent any damage.
+
+□ Main Content
+
+o Anticipated smishing text messages using keywords such as "personal information leak," "payment of compensation," and "verification of personal information leak," as well as voice phishing attempts disguised as notifications for subsidy applications.
+
+- (Smishing) By impersonating "personal information leaks," "payment of compensation," "verification of leaked information," etc., users may be induced to click on malicious URLs in text messages providing instructions on how to apply for and use subsidies, leading them to phishing sites and the installation of malicious apps.
+
+- (Phishing sites) Phishing sites may be displayed at the top of search results or as ads when users search for keywords related to "payment of compensation for personal information damage," "how to apply and use," etc., luring users to visit the sites and potentially stealing their personal information.
+
+- (Voice phishing) May trick victims into installing a remote control app or accessing a phishing site through voice calls, etc., under the pretext of "notifying individuals whose personal information has been leaked" or "providing instructions for payment procedures."
+
+□ Response Measures
+
+o Do not click on the URL in the smishing text message you received; delete it immediately.
+
+o How to Report and Identify Smishing and Phishing Sites
+
+- Report and determine whether it is malicious using the "Smishing/Phishing Verification Service" in Bogo Nara (KakaoTalk Channel).
+
+o How to Report and Verify Smishing Texts
+- "Report as spam" option available on the text message inbox screen of your smartphone
+
+- Integrated Reporting and Response Center for Telecommunications Financial Fraud (https://counterscam112.go.kr) My "Smishing Text Report"
+- Report and determine whether it is malicious using the "Smishing/Phishing Verification Service" in Bogo Nara (KakaoTalk Channel).
+
+o How to prevent smishing text messages
+- When receiving a text message, refrain from clicking on website addresses from unclear sources and delete them immediately.
+- In the case of a suspicious site address, prevent damage by checking whether it matches a legitimate site.
+- Enter personal information such as your phone number, ID, and password only on trusted sites, and do not share your identity verification code with others.
+- Government agencies and financial institutions do not request the installation of remote control apps via phone calls, text messages, etc.
+* Includes apps registered in the official app store
+
+o Block spoofed text messages
+- If you suspect infection by a malicious app or information leakage through a phishing site, the victim's number may be used to resend smishing messages. Therefore, apply for the "Number Spoofing Text Message Blocking Service*" to prevent number spoofing.
+* You can apply for free under the additional services section of each mobile carrier.
+
+o Mobile Payment Confirmation and Cancellation
+- Check your mobile payment history, as mobile payment fraud can occur if your device is infected with a smishing malware app or if you enter your personal information on a phishing site.
+1. Check mobile payment history through the carrier's customer service center
+2. If mobile payment fraud is confirmed, take a screenshot of the smishing text message suspected of causing the fraud.
+3. Report smishing incidents and request issuance of a small-amount payment confirmation through the telecom company's customer service center.
+4. Bring the small-amount payment confirmation and visit the Cyber Investigation Unit or the Public Complaints Office of the local police station to file a report.
+5. Confirm the accident details and issue a Statement of Accident Facts
+6. Visit the carrier's customer service center or send a fax or email with the necessary documents, such as a statement of facts regarding the incident or accident.
+7. Request compensation after confirming the facts and details of the damage with the carrier or payment service provider
+
+o Delete malicious applications
+
+- Clicking on an internet address included in a text message does not cause infection by a malicious app. However, if you installed an app through an internet address, check your smartphone using the following methods.
+• Use a mobile antivirus program to check for malicious apps, and if any are found, switch to airplane mode and call 112.
+※ Since malicious apps can remotely control your phone, report it through the phones of people around you.
+• Manually deleting malicious apps
+• Visit a nearby mobile phone service center
+o Revoke and reissue a public certificate
+- If you used financial services on a smartphone that was infected with a malicious app, information necessary for financial transactions, such as digital certificates and security cards, may have been leaked, so discard the information and reissue it.
+
+o Preventing secondary damage
+
+- You should inform your acquaintances about the smishing incident because secondary damage may occur, such as a malicious app installed on your smartphone accessing your contacts and sending similar smishing messages to other people.
+
+□ Smishing Reports and Consultation Inquiries
+
+o Integrated Reporting and Response Center for Telecommunications Financial Fraud: 1394 (no area code)
+
+o Korea Internet & Security Agency Internet Shield & Security Center: 118 (no area code)
+
+□ Written by: Smishing Response Team, National Fraud Response Unit
