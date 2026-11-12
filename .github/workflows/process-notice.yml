@@ -1,79 +1,36 @@
-name: Process KISA notice
+name: Benchmark notice translations
 
 on:
   workflow_dispatch:
     inputs:
       notice_url:
-        description: KISA notice URL
-        required: true
+        description: Reference notice URL
         type: string
       notice_title:
-        description: KISA notice title
-        required: true
+        description: Reference notice title
         type: string
 
 permissions:
-  contents: write
-
-concurrency:
-  group: kisa-notice-formatter
-  queue: max
+  contents: read
 
 jobs:
-  process:
+  benchmark:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-
+    timeout-minutes: 12
     steps:
-      - name: Check out formatter
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          ref: main
           fetch-depth: 0
-
-      - name: Prepare offline translation
-        uses: ./.github/actions/prepare-offline-translation
-        continue-on-error: true
-
-      - name: Generate Korean and English pages
-        id: generate
+          persist-credentials: false
+      - name: Compare archived translations with Gemini
         env:
-          NOTICE_URL: ${{ inputs.notice_url }}
-          NOTICE_TITLE: ${{ inputs.notice_title }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          MYMEMORY_CONTACT_EMAIL: ${{ secrets.MYMEMORY_CONTACT_EMAIL }}
-        shell: bash
-        run: |
-          for attempt in 1 2 3; do
-            if python3 scripts/process_notice.py; then
-              exit 0
-            fi
-            if [ "$attempt" -lt 3 ]; then
-              echo "Generation failed temporarily; retrying in 15 seconds."
-              sleep 15
-            fi
-          done
-          echo "All immediate attempts failed; saving the request for automatic recovery."
-          python3 scripts/recovery_queue.py add
-
-      - name: Save generated pages
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ "${{ steps.generate.outputs.generation_status }}" = "complete" ]; then
-            python3 scripts/recovery_queue.py remove "${{ steps.generate.outputs.notice_id }}"
-          fi
-          git add site/index.html site/notices data/recovery_queue.json
-          if git diff --cached --quiet; then
-            echo "Notice pages are already current."
-          else
-            if [ "${{ steps.generate.outputs.generation_status }}" = "queued" ]; then
-              git commit -m "queue: retry KISA notice ${{ steps.generate.outputs.notice_id }}"
-            else
-              git commit -m "content: add KISA notice ${{ steps.generate.outputs.notice_id }}"
-            fi
-            git push origin HEAD:main
-          fi
+          GEMINI_MODEL: gemini-3.5-flash-lite
+        run: python3 scripts/benchmark_notice_translation.py
+      - name: Save results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: notice-translation-benchmark
+          path: benchmark-results/
+          retention-days: 7
