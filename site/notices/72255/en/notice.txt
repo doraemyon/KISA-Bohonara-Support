@@ -1,0 +1,40 @@
+Title:
+Cisco Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Cisco Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Cisco releases security updates to address vulnerabilities in its products [1]
+o Users running affected versions are advised to update to the latest version according to the workaround.
+
+□ Description
+o Unchecked Return Value to NULL Pointer Dereference Vulnerability in Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD)(CVE-2026-76418) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-76418 / Secure Firewall ASA / 9.16 or earlier / 9.16.4.104 or later
+CVE-2026-76418 / Secure Firewall ASA / 9.18 / 9.18.4.96 or later
+CVE-2026-76418 / Secure Firewall ASA / 9.20 / 9.20.4.50 or later
+CVE-2026-76418 / Secure Firewall ASA / 9.22 / 9.22.3.200 or later
+CVE-2026-76418 / Secure Firewall ASA / 9.23 / 9.23.1.48 or later
+CVE-2026-76418 / Secure Firewall ASA / 9.24 / 9.24.1.27 or later
+CVE-2026-76418 / Secure Firewall ASA / 9.24 / 9.24.10.1 or later
+CVE-2026-76418 / Secure Firewall FTD / 7.0 or earlier / 7.0.11 or later
+CVE-2026-76418 / Secure Firewall FTD / 7.2 / 7.2.13 or later
+CVE-2026-76418 / Secure Firewall FTD / 7.4 / 7.4.9 or later
+CVE-2026-76418 / Secure Firewall FTD / 7.6 / 7.6.7 or later
+CVE-2026-76418 / Secure Firewall FTD / 7.7 / 7.7.14 or later
+CVE-2026-76418 / Secure Firewall FTD / 10.0 / 10.0.3 or later
+CVE-2026-76418 / Secure Firewall FTD / 10.1 / 10.1.1 or later
+※ Perform updates by referring to the sites listed below. [1]
+
+□ Reference sites
+[1] https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-76418
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code needed)
+
+□ Prepared by: Vulnerability Management Center, Digital Threat Response Headquarters

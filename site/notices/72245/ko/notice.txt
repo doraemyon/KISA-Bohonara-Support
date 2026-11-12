@@ -1,0 +1,54 @@
+제목:
+Splunk 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Splunk 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Splunk社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Cisco Talos Intelligence for Enterprise Security Cloud에서 발생하는 SSRF 취약점(CVE-2026-76389) [1][2]
+o Splunk AI Toolkit에서 발생하는 Incorrect Authorization 취약점(CVE-2026-76391) [1][3]
+o Splunk AI Toolkit에서 발생하는 Missing Authorization 취약점(CVE-2026-76394) [1][4]
+o Splunk AI Toolkit에서 발생하는 Deserialization of Untrusted Data 취약점(CVE-2026-76395) [1][5]
+o Splunk AI Toolkit에서 발생하는 Improper Privilege Management 취약점(CVE-2026-76396) [1][6]
+o Splunk AI Toolkit에서 발생하는 Authorization Bypass Through User-Controlled Key 취약점(CVE-2026-76397) [1][7]
+o Splunk AI Toolkit에서 발생하는 Incorrect Permission Assignment for Critical Resource 취약점(CVE-2026-76399) [1][8]
+o Splunk Connect for Kafka에서 발생하는 SSRF 취약점(CVE-2026-76402) [1][9]
+o Splunk Connect for Kafka에서 발생하는 Improper Certificate Validation 취약점(CVE-2026-76403) [1][10]
+o Splunk MCP Server app에서 발생하는 Deserialization of Untrusted Data 취약점(CVE-2026-76404) [1][11]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-76389 / Cisco Talos Intelligence for Enterprise Security Cloud / 1.0 이상 1.0.3 미만 / 1.0.3 이상
+CVE-2026-76391 / Splunk AI Toolkit / 5.7 이상 6.0.0 미만 / 6.0.0 이상
+CVE-2026-76394 / Splunk AI Toolkit / 5.7 이상 6.0.0 미만 / 6.0.0 이상
+CVE-2026-76395 / Splunk AI Toolkit / 5.7 이상 6.0.0 미만 / 6.0.0 이상
+CVE-2026-76396 / Splunk AI Toolkit / 5.7 이상 6.0.0 미만 / 6.0.0 이상
+CVE-2026-76397 / Splunk AI Toolkit / 5.7 이상 6.0.0 미만 / 6.0.0 이상
+CVE-2026-76399 / Splunk AI Toolkit / 6.0 이상 6.0.1 미만 / 6.0.1 이상
+CVE-2026-76402 / Splunk Connect for Kafka / 2.2 이상 2.2.7 미만 / 2.2.7 이상
+CVE-2026-76403 / Splunk Connect for Kafka / 2.2 이상 2.2.7 미만 / 2.2.7 이상
+CVE-2026-76404 / Splunk MCP Server app / 1.2 이상 1.2.1 미만 / 1.2.1 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+
+□ 참고사이트
+[1] https://advisory.splunk.com/advisories/SVD-2026-0808
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-76389
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-76391
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-76394
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-76395
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-76396
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-76397
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-76399
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-76402
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-76403
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-76404
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터

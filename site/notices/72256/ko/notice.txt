@@ -1,0 +1,46 @@
+제목:
+Linux 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Linux 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Linux 재단은 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명
+o Linux Kernel에서 발생하는 Expired Pointer Dereference 취약점(CVE-2026-98432) [1][2]
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-98432 / Linux Kernel / 4.4 이상 5.10.272 미만 / 5.10.272 이상
+CVE-2026-98432 / Linux Kernel / 5.11 이상 5.15.223 미만 / 5.15.223 이상
+CVE-2026-98432 / Linux Kernel / 5.16 이상 6.1.190 미만 / 6.1.190 이상
+CVE-2026-98432 / Linux Kernel / 6.2 이상 6.6.159 미만 / 6.6.159 이상
+CVE-2026-98432 / Linux Kernel / 6.7 이상 6.12.113 미만 / 6.12.113 이상
+CVE-2026-98432 / Linux Kernel / 6.13 이상 6.18.56 미만 / 6.18.56 이상
+CVE-2026-98432 / Linux Kernel / 6.19 이상 7.2.10 미만 / 7.2.10 이상
+CVE-2026-98432 / Linux Kernel / 7.3 미만 / 7.3 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+※ 보안 업데이트가 공개된 운영체제를 운영하고 있을 경우, 참고 사이트의 내용을 참조하여 보안 조치 또는 업데이트 수행(각 OS별 보안 업데이트 상세 버전은 아래 링크 참고)
+
+1. Debian [3]
+
+2. Ubuntu [4]
+
+3. Red Hat/CentOS [5]
+
+4. SUSE/openSUSE [6]
+
+5. Amazon [7]
+
+□ 참고사이트
+[1] https://git.kernel.org/pub/scm/linux/security/vulns.git/tree/cve/published/2026/CVE-2026-98432.dyad
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-98432
+[3] https://security-tracker.debian.org/tracker/CVE-2026-98432
+[4] https://ubuntu.com/security/CVE-2026-98432
+[5] https://access.redhat.com/security/cve/cve-2026-98432
+[6] https://www.suse.com/ko-kr/security/cve/CVE-2026-98432.html
+[7] https://explore.alas.aws.amazon.com/CVE-2026-98432.html
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+□ 작성 : 디지털위협대응본부 취약점관리센터

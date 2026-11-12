@@ -1,0 +1,48 @@
+제목:
+Synology 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Synology 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Synology社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Synology DiskStation Manager(DSM)에서 발생하는 Insufficient Entropy 취약점(CVE-2026-13639) [1][2]
+o Synology DiskStation Manager(DSM)에서 발생하는 Improper Encoding or Escaping of Output 취약점(CVE-2026-13684) [1][3]
+o Synology DiskStation Manager(DSM)에서 발생하는 Incorrect Permission Assignment for Critical Resource 취약점(CVE-2026-13673) [1][4]
+o Synology DiskStation Manager(DSM)에서 발생하는 External Control of File Name or Path 취약점(CVE-2026-6205) [1][5]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-13639 / DSM 7.2.1 / 7.2.1-69057-12 미만 / 7.2.1-69057-12 이상
+CVE-2026-13639 / DSM 7.2.2 / 7.2.2-72806-9 미만 / 7.2.2-72806-9 이상
+CVE-2026-13639 / DSM 7.3 / 7.3.2-86009-4 미만 / 7.3.2-86009-4 이상
+CVE-2026-13639 / DSM 7.4 / 7.4-90075 미만 / 7.4-90075 이상
+CVE-2026-13684 / DSM 7.2.1 / 7.2.1-69057-12 미만 / 7.2.1-69057-12 이상
+CVE-2026-13684 / DSM 7.2.2 / 7.2.2-72806-9 미만 / 7.2.2-72806-9 이상
+CVE-2026-13684 / DSM 7.3 / 7.3.2-86009-4 미만 / 7.3.2-86009-4 이상
+CVE-2026-13684 / DSM 7.4 / 7.4-90075 미만 / 7.4-90075 이상
+CVE-2026-13673 / DSM 7.2.1 / 7.2.1-69057-12 미만 / 7.2.1-69057-12 이상
+CVE-2026-13673 / DSM 7.2.2 / 7.2.2-72806-9 미만 / 7.2.2-72806-9 이상
+CVE-2026-13673 / DSM 7.3 / 7.3.2-86009-4 미만 / 7.3.2-86009-4 이상
+CVE-2026-13673 / DSM 7.4 / 7.4-90075 미만 / 7.4-90075 이상
+CVE-2026-6205 / DSM 7.2.1 / 7.2.1-69057-12 미만 / 7.2.1-69057-12 이상
+CVE-2026-6205 / DSM 7.2.2 / 7.2.2-72806-9 미만 / 7.2.2-72806-9 이상
+CVE-2026-6205 / DSM 7.3 / 7.3.2-86009-4 미만 / 7.3.2-86009-4 이상
+CVE-2026-6205 / DSM 7.4 / 7.4-90075 미만 / 7.4-90075 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+
+□ 참고사이트
+[1] https://www.synology.com/en-global/security/advisory/Synology_SA_26_13
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-13639
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-13684
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-13673
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-6205
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터

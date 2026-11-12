@@ -1,0 +1,53 @@
+Title:
+Synology Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Synology Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Synology releases security updates to address vulnerabilities in its products [1]
+o Users running an affected version are advised to update to the latest version according to the workaround.
+
+□ Description
+o Use-After-Free Vulnerability in Synology Calendar, Mail Station, and PHP (CVE-2026-109618) [1][2]
+o Use-After-Free Vulnerability in Synology Calendar, Mail Station, and PHP (CVE-2026-109619) [1][3]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-109618 / Synology Calendar / Below 3.0.4-21435 / 3.0.4-21435 or later
+CVE-2026-109618 / Mail Station / Below 30000002.3.19-20333 / 30000002.3.19-20333 or later
+CVE-2026-109618 / PHP 7.3 / All versions / Migrate to the resolved version
+CVE-2026-109618 / PHP 7.4 (DSM 6.2) / Below 7.4.33-0010 / 7.4.33-0010 or later
+CVE-2026-109618 / PHP 7.4 (DSM 7.0 ~ 7.1) / Below 7.4.33-0122 / 7.4.33-0122 or later
+CVE-2026-109618 / PHP 7.4 (DSM 7.2 or higher / Below 7.4.33-0131 / 7.4.33-0131 or later
+CVE-2026-109618 / PHP 8.0 (DSM 7.0 ~ 7.1) / Below 8.0.30-0104 / 8.0.30-0104 or later
+CVE-2026-109618 / PHP 8.0 (DSM 7.2 or higher / Below 8.0.30-0122 / 8.0.30-0122 or later
+CVE-2026-109618 / PHP 8.1 / Below 8.1.34-0120 / 8.1.34-0120 or later
+CVE-2026-109618 / PHP 8.2 / Below 8.2.35-0171 / 8.2.35-0171 or later
+CVE-2026-109618 / PHP 8.3 / Below 8.3.36-0051 / 8.3.36-0051 or later
+CVE-2026-109618 / PHP 8.4 / Below 8.4.27-0051 / 8.4.27-0051 or later
+CVE-2026-109619 / Synology Calendar / Below 3.0.4-21435 / 3.0.4-21435 or later
+CVE-2026-109619 / Mail Station / Below 30000002.3.19-20333 / 30000002.3.19-20333 or later
+CVE-2026-109619 / PHP 7.3 / All versions / Migrate to the resolved version
+CVE-2026-109619 / PHP 7.4 (DSM 6.2) / Below 7.4.33-0010 / 7.4.33-0010 or later
+CVE-2026-109619 / PHP 7.4 (DSM 7.0 ~ 7.1) / Below 7.4.33-0122 / 7.4.33-0122 or later
+CVE-2026-109619 / PHP 7.4 (DSM 7.2 or higher / Below 7.4.33-0131 / 7.4.33-0131 or later
+CVE-2026-109619 / PHP 8.0 (DSM 7.0 ~ 7.1) / Below 8.0.30-0104 / 8.0.30-0104 or later
+CVE-2026-109619 / PHP 8.0 (DSM 7.2 or higher / Below 8.0.30-0122 / 8.0.30-0122 or later
+CVE-2026-109619 / PHP 8.1 / Below 8.1.34-0120 / 8.1.34-0120 or later
+CVE-2026-109619 / PHP 8.2 / Below 8.2.35-0171 / 8.2.35-0171 or later
+CVE-2026-109619 / PHP 8.3 / Below 8.3.36-0051 / 8.3.36-0051 or later
+CVE-2026-109619 / PHP 8.4 / Below 8.4.27-0051 / 8.4.27-0051 or later
+※ Perform updates by referring to the sites listed below. [1]
+※ The version of each product from the respective manufacturer is based on the distribution environment, such as the operating system and package, and it is necessary to distinguish it from the PHP version officially distributed by The PHP Group.
+
+□ Reference sites
+[1] https://www.synology.com/ko-kr/security/advisory/Synology_SA_26_14
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-109618
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-109619
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code needed)
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Headquarters

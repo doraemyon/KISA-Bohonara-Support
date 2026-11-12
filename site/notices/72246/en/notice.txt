@@ -1,0 +1,32 @@
+Title:
+JFrog Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "JFrog Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o JFrog announces a security update that addresses vulnerabilities in its products. [1]
+o Users running affected versions are advised to update to the latest version according to the workaround.
+
+□ Description
+o Improper Authentication Vulnerability in JFrog Artifactory (CVE-2026-82329) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-82329 / Artifactory / 7.111.4 or later and below 7.111.21 / 7.111.21 or later
+CVE-2026-82329 / Artifactory / 7.117.0 or later and below 7.117.28 / 7.117.28 or later
+CVE-2026-82329 / Artifactory / 7.125.0 or later and below 7.125.20 / 7.125.20 or later
+CVE-2026-82329 / Artifactory / 7.133.0 or later and below 7.133.29 / 7.133.29 or later
+CVE-2026-82329 / Artifactory / 7.146.0 or later and below 7.146.37 / 7.146.38 or later
+CVE-2026-82329 / Artifactory / 7.161.0 or later and below 7.161.20 / 7.161.20 or later
+※ Perform updates by referring to the sites listed below. [1]
+
+□ Reference sites
+[1] https://docs.jfrog.com/releases/docs/jfrog-security-advisories
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-82329
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code)
+
+□ Prepared by: Vulnerability Management Center, Digital Threat Response Headquarters

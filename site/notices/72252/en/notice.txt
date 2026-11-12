@@ -1,0 +1,69 @@
+Title:
+Palo Alto Networks Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Palo Alto Networks Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Palo Alto Networks releases a security update to address vulnerabilities in its products. [1]
+o Users running an affected version are advised to update to the latest version according to the workaround.
+
+□ Description
+o Improper Handling of Exceptional Conditions vulnerability in PHP included in Palo Alto Networks PAN-OS (CVE-2026-109618) [1][2]
+o Use-After-Free Vulnerability in PHP Included in Palo Alto Networks PAN-OS (CVE-2026-109619) [1][3]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-109618 / PAN-OS 12.2 / 12.2.0 or later and below 12.2.4-h1 / 12.2.4-h1 or later
+CVE-2026-109618 / PAN-OS 12.1 / 12.1.2 or later and below 12.1.4-h13 / 12.1.4-h13 or 12.1.10-h3 or higher
+CVE-2026-109618 / PAN-OS 12.1 / 12.1.5 or later and below 12.1.7-h11 / 12.1.7-h11 or 12.1.10-h3 or higher
+CVE-2026-109618 / PAN-OS 12.1 / 12.1.8 or later and below 12.1.10-h3 / 12.1.10-h3 or later
+CVE-2026-109618 / PAN-OS 11.2 / 11.2.0 or later and below 11.2.4-h23 / 11.2.4-h23 or 11.2.16-h1 or higher
+CVE-2026-109618 / PAN-OS 11.2 / 11.2.5 or later and below 11.2.7-h23 / 11.2.7-h23 or 11.2.16-h1 or higher
+CVE-2026-109618 / PAN-OS 11.2 / 11.2.8 or later and below 11.2.10-h16 / 11.2.10-h16 or 11.2.16-h1 or higher
+CVE-2026-109618 / PAN-OS 11.2 / 11.2.11 or later and below 11.2.13-h4 / 11.2.13-h4 or 11.2.16-h1 or higher
+CVE-2026-109618 / PAN-OS 11.2 / 11.2.14 or later and below 11.2.16-h1 / 11.2.16-h1 or later
+CVE-2026-109618 / PAN-OS 11.1 / 11.1.0 or later and below 11.1.4-h38 / 11.1.4-h38 or 11.1.16-h4 or higher
+CVE-2026-109618 / PAN-OS 11.1 / 11.1.5 or later and below 11.1.6-h40 / 11.1.6-h40 or 11.1.16-h4 or higher
+CVE-2026-109618 / PAN-OS 11.1 / 11.1.7 or later and below 11.1.7-h12 / 11.1.7-h12 or 11.1.16-h4 or higher
+CVE-2026-109618 / PAN-OS 11.1 / 11.1.8 or later and below 11.1.10-h36 / 11.1.10-h36 or 11.1.16-h4 or higher
+CVE-2026-109618 / PAN-OS 11.1 / 11.1.11 or later and below 11.1.13-h16 / 11.1.13-h16 or 11.1.16-h4 or higher
+CVE-2026-109618 / PAN-OS 11.1 / 11.1.14 or later and below 11.1.16-h4 / 11.1.16-h4 or later
+CVE-2026-109618 / PAN-OS 10.2 / 10.2.0 or later and below 10.2.7-h39 / 10.2.7-h39 or 10.2.18-h13 or higher
+CVE-2026-109618 / PAN-OS 10.2 / 10.2.8 or later and below 10.2.10-h42 / 10.2.10-h42 or 10.2.18-h13 or higher
+CVE-2026-109618 / PAN-OS 10.2 / 10.2.11 or later and below 10.2.13-h27 / 10.2.13-h27 or 10.2.18-h13 or higher
+CVE-2026-109618 / PAN-OS 10.2 / 10.2.14 or later and below 10.2.16-h12 / 10.2.16-h12 or 10.2.18-h13 or higher
+CVE-2026-109618 / PAN-OS 10.2 / 10.2.17 or later and below 10.2.18-h13 / 10.2.18-h13 or later
+CVE-2026-109619 / PAN-OS 12.2 / 12.2.0 or later and below 12.2.4-h1 / 12.2.4-h1 or later
+CVE-2026-109619 / PAN-OS 12.1 / 12.1.2 or later and below 12.1.4-h13 / 12.1.4-h13 or 12.1.10-h3 or higher
+CVE-2026-109619 / PAN-OS 12.1 / 12.1.5 or later and below 12.1.7-h11 / 12.1.7-h11 or 12.1.10-h3 or higher
+CVE-2026-109619 / PAN-OS 12.1 / 12.1.8 or later and below 12.1.10-h3 / 12.1.10-h3 or later
+CVE-2026-109619 / PAN-OS 11.2 / 11.2.0 or later and below 11.2.4-h23 / 11.2.4-h23 or 11.2.16-h1 or higher
+CVE-2026-109619 / PAN-OS 11.2 / 11.2.5 or later and below 11.2.7-h23 / 11.2.7-h23 or 11.2.16-h1 or higher
+CVE-2026-109619 / PAN-OS 11.2 / 11.2.8 or later and below 11.2.10-h16 / 11.2.10-h16 or 11.2.16-h1 or higher
+CVE-2026-109619 / PAN-OS 11.2 / 11.2.11 or later and below 11.2.13-h4 / 11.2.13-h4 or 11.2.16-h1 or higher
+CVE-2026-109619 / PAN-OS 11.2 / 11.2.14 or later and below 11.2.16-h1 / 11.2.16-h1 or later
+CVE-2026-109619 / PAN-OS 11.1 / 11.1.0 or later and below 11.1.4-h38 / 11.1.4-h38 or 11.1.16-h4 or higher
+CVE-2026-109619 / PAN-OS 11.1 / 11.1.5 or later and below 11.1.6-h40 / 11.1.6-h40 or 11.1.16-h4 or higher
+CVE-2026-109619 / PAN-OS 11.1 / 11.1.7 or later and below 11.1.7-h12 / 11.1.7-h12 or 11.1.16-h4 or higher
+CVE-2026-109619 / PAN-OS 11.1 / 11.1.8 or later and below 11.1.10-h36 / 11.1.10-h36 or 11.1.16-h4 or higher
+CVE-2026-109619 / PAN-OS 11.1 / 11.1.11 or later and below 11.1.13-h16 / 11.1.13-h16 or 11.1.16-h4 or higher
+CVE-2026-109619 / PAN-OS 11.1 / 11.1.14 or later and below 11.1.16-h4 / 11.1.16-h4 or later
+CVE-2026-109619 / PAN-OS 10.2 / 10.2.0 or later and below 10.2.7-h39 / 10.2.7-h39 or 10.2.18-h13 or higher
+CVE-2026-109619 / PAN-OS 10.2 / 10.2.8 or later and below 10.2.10-h42 / 10.2.10-h42 or 10.2.18-h13 or higher
+CVE-2026-109619 / PAN-OS 10.2 / 10.2.11 or later and below 10.2.13-h27 / 10.2.13-h27 or 10.2.18-h13 or higher
+CVE-2026-109619 / PAN-OS 10.2 / 10.2.14 or later and below 10.2.16-h12 / 10.2.16-h12 or 10.2.18-h13 or higher
+CVE-2026-109619 / PAN-OS 10.2 / 10.2.17 or later and below 10.2.18-h13 / 10.2.18-h13 or later
+※ Perform updates by referring to the sites listed below. [1]
+※ The version of each product from the respective manufacturer is based on the distribution environment, such as the operating system and package, and it is necessary to distinguish it from the PHP version officially distributed by The PHP Group.
+
+□ Reference sites
+[1] https://security.paloaltonetworks.com/CVE-2026-109618
+[2] https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w
+[3] https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code)
+
+□ Prepared by: Vulnerability Management Center, Digital Threat Response Headquarters

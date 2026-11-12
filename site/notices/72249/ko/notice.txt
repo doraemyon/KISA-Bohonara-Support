@@ -1,0 +1,89 @@
+제목:
+Juniper Networks 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Juniper Networks 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Juniper Networks社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Juniper Session Smart Router, Session Smart Conductor에서 발생하는 Link Following 취약점(CVE-2026-103401) [1][2]
+o Juniper Session Smart Router, Session Smart Conductor에서 발생하는 Insufficient Verification of Data Authenticity 취약점(CVE-2026-103402) [1][3]
+o Juniper Session Smart Router, Session Smart Conductor에서 발생하는 OS Command Injection 취약점(CVE-2026-103403) [1][4]
+o Juniper Session Smart Conductor에서 발생하는 OS Command Injection 취약점(CVE-2026-103406) [1][5]
+o Juniper Session Smart Router, Session Smart Conductor에서 발생하는 Path Traversal 취약점(CVE-2026-103407) [1][6]
+o Juniper Session Smart Router에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-103408) [1][7]
+o Juniper Session Smart Router에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-103409) [1][8]
+o Juniper Session Smart Router에서 발생하는 Integer Overflow or Wraparound 취약점(CVE-2026-103410) [1][9]
+o Juniper Session Smart Router에서 발생하는 Integer Underflow 취약점(CVE-2026-103411) [1][10]
+o Juniper Session Smart Router, Session Smart Conductor에서 발생하는 OS Command Injection 취약점(CVE-2026-106079) [1][11]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-103401 / Session Smart Router / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103401 / Session Smart Conductor / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103401 / Session Smart Router / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103401 / Session Smart Conductor / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103401 / Session Smart Router / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103401 / Session Smart Conductor / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103402 / Session Smart Router / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103402 / Session Smart Conductor / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103402 / Session Smart Router / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103402 / Session Smart Conductor / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103402 / Session Smart Router / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103402 / Session Smart Conductor / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103403 / Session Smart Router / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103403 / Session Smart Conductor / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103403 / Session Smart Router / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103403 / Session Smart Conductor / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103403 / Session Smart Router / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103403 / Session Smart Conductor / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103406 / Session Smart Conductor / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103406 / Session Smart Conductor / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103406 / Session Smart Conductor / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103407 / Session Smart Router / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103407 / Session Smart Conductor / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103407 / Session Smart Router / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103407 / Session Smart Conductor / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103407 / Session Smart Router / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103407 / Session Smart Conductor / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103408 / Session Smart Router / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103408 / Session Smart Router / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103408 / Session Smart Router / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103409 / Session Smart Router / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103409 / Session Smart Router / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103409 / Session Smart Router / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103410 / Session Smart Router / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103410 / Session Smart Router / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103410 / Session Smart Router / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-103411 / Session Smart Router / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-103411 / Session Smart Router / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-103411 / Session Smart Router / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-106079 / Session Smart Router / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-106079 / Session Smart Conductor / 7.0.5 미만 / 7.0.5 이상
+CVE-2026-106079 / Session Smart Router / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-106079 / Session Smart Conductor / 7.1.7 미만 / 7.1.7 이상
+CVE-2026-106079 / Session Smart Router / 7.2.3 미만 / 7.2.3 이상
+CVE-2026-106079 / Session Smart Conductor / 7.2.3 미만 / 7.2.3 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+
+□ 참고사이트
+[1] https://supportportal.juniper.net/JSA112183
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-103401
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-103402
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-103403
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-103406
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-103407
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-103408
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-103409
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-103410
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-103411
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-106079
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터

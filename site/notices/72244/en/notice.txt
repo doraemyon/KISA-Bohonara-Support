@@ -1,0 +1,170 @@
+Title:
+Cisco Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Cisco Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Cisco releases security updates to address vulnerabilities in its products [1]~[3]
+o Users running an affected version are advised to update to the latest version according to the workaround.
+
+□ Description
+o Use of Hard-coded Credentials Vulnerability in Cisco Expressway (CVE-2026-76466) [1][4]
+o Out-of-bounds Write Vulnerability in Cisco Expressway (CVE-2026-76490) [2][5]
+o Reachable Assertion Vulnerability in Cisco Expressway (CVE-2026-76491) [2][6]
+o NULL Pointer Dereference Vulnerability in Cisco Expressway (CVE-2026-76492) [2][7]
+o Uncaught Exception Vulnerability in Cisco Expressway (CVE-2026-76493) [2][8]
+o Code Injection Vulnerability in Cisco Expressway (CVE-2026-76494) [2][9]
+o Incorrect Permission Assignment for Critical Resource vulnerability in Cisco Expressway (CVE-2026-76495) [2][10]
+o Link Following Vulnerability in Cisco Expressway (CVE-2026-76496) [2][11]
+o Injection vulnerabilities in Cisco Emergency Responder, Prime Collaboration Deployment, Unified CM, Unified CM IM&P, Unified CM SME, and Unity Connection (CVE-2026-76473) [3][12]
+o Improper Authentication Vulnerability in Cisco Emergency Responder, Prime Collaboration Deployment, Unified CM, Unified CM IM&P, Unified CM SME, and Unity Connection (CVE-2026-76474) [3][13]
+o Cross-site Scripting Vulnerability in Cisco Emergency Responder, Prime Collaboration Deployment, Unified CM, Unified CM IM&P, Unified CM SME, and Unity Connection (CVE-2026-76475) [3][14]
+o Improper Input Validation vulnerability in Cisco Emergency Responder, Prime Collaboration Deployment, Unified CM, Unified CM IM&P, Unified CM SME, and Unity Connection (CVE-2026-76476) [3][15]
+o SQL Injection vulnerabilities in Cisco Emergency Responder, Prime Collaboration Deployment, Unified CM, Unified CM IM&P, Unified CM SME, and Unity Connection (CVE-2026-76477) [3][16]
+o Improper Access Control Vulnerability in Cisco Emergency Responder, Prime Collaboration Deployment, Unified CM, Unified CM IM&P, Unified CM SME, and Unity Connection (CVE-2026-76478) [3][17]
+o Path Traversal vulnerability in Cisco Emergency Responder, Prime Collaboration Deployment, Unified CM, Unified CM IM&P, Unified CM SME, and Unity Connection (CVE-2026-76479) [3][18]
+o Improper Check or Handling of Exceptional Conditions vulnerability in Cisco Emergency Responder, Prime Collaboration Deployment, Unified CM, Unified CM IM&P, Unified CM SME, and Unity Connection (CVE-2026-76481) [3][19]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-76466 / Expressway Series / X14 or less / Migrate to the resolved version
+CVE-2026-76466 / Expressway Series / X15.5.3 Less or equal / X15.5.20 or higher
+CVE-2026-76490 / Expressway Series / X14 or less / Migrate to the resolved version
+CVE-2026-76490 / Expressway Series / X15.5.3 Less or equal / X15.5.20 or higher
+CVE-2026-76491 / Expressway Series / X14 or less / Migrate to the resolved version
+CVE-2026-76491 / Expressway Series / X15.5.3 Less or equal / X15.5.20 or higher
+CVE-2026-76492 / Expressway Series / X14 or less / Migrate to the resolved version
+CVE-2026-76492 / Expressway Series / X15.5.3 Less or equal / X15.5.20 or higher
+CVE-2026-76493 / Expressway Series / X14 or less / Migrate to the resolved version
+CVE-2026-76493 / Expressway Series / X15.5.3 Less or equal / X15.5.20 or higher
+CVE-2026-76494 / Expressway Series / X14 or less / Migrate to the resolved version
+CVE-2026-76494 / Expressway Series / X15.5.3 Less or equal / X15.5.20 or higher
+CVE-2026-76495 / Expressway Series / X14 or less / Migrate to the resolved version
+CVE-2026-76495 / Expressway Series / X15.5.3 Less or equal / X15.5.20 or higher
+CVE-2026-76496 / Expressway Series / X14 or less / Migrate to the resolved version
+CVE-2026-76496 / Expressway Series / X15.5.3 Less or equal / X15.5.20 or higher
+CVE-2026-76473 / Emergency Responder / 14 / Migrate to the resolved version
+CVE-2026-76473 / Emergency Responder / 15 / 15SU5 or higher
+CVE-2026-76473 / Prime Collaboration Deployment / 14 / Migrate to the resolved version
+CVE-2026-76473 / Prime Collaboration Deployment / 15 / 15SU5 or higher
+CVE-2026-76473 / Unified CM / 14 / Migrate to the resolved version
+CVE-2026-76473 / Unified CM / 15 / 15SU5 or higher
+CVE-2026-76473 / Unified CM IM&P / 14 / Migrate to the resolved version
+CVE-2026-76473 / Unified CM IM&P / 15 / 15SU5 or higher
+CVE-2026-76473 / Unified CM SME / 14 / Migrate to the resolved version
+CVE-2026-76473 / Unified CM SME / 15 / 15SU5 or higher
+CVE-2026-76473 / Unity Connection / 14 / Migrate to the resolved version
+CVE-2026-76473 / Unity Connection / 15 / 15SU5 or higher
+CVE-2026-76474 / Emergency Responder / 14 / Migrate to the resolved version
+CVE-2026-76474 / Emergency Responder / 15 / 15SU5 or higher
+CVE-2026-76474 / Prime Collaboration Deployment / 14 / Migrate to the resolved version
+CVE-2026-76474 / Prime Collaboration Deployment / 15 / 15SU5 or higher
+CVE-2026-76474 / Unified CM / 14 / Migrate to the resolved version
+CVE-2026-76474 / Unified CM / 15 / 15SU5 or higher
+CVE-2026-76474 / Unified CM IM&P / 14 / Migrate to the resolved version
+CVE-2026-76474 / Unified CM IM&P / 15 / 15SU5 or higher
+CVE-2026-76474 / Unified CM SME / 14 / Migrate to the resolved version
+CVE-2026-76474 / Unified CM SME / 15 / 15SU5 or higher
+CVE-2026-76474 / Unity Connection / 14 / Migrate to the resolved version
+CVE-2026-76474 / Unity Connection / 15 / 15SU5 or higher
+CVE-2026-76475 / Emergency Responder / 14 / Migrate to the resolved version
+CVE-2026-76475 / Emergency Responder / 15 / 15SU5 or higher
+CVE-2026-76475 / Prime Collaboration Deployment / 14 / Migrate to the resolved version
+CVE-2026-76475 / Prime Collaboration Deployment / 15 / 15SU5 or higher
+CVE-2026-76475 / Unified CM / 14 / Migrate to the resolved version
+CVE-2026-76475 / Unified CM / 15 / 15SU5 or higher
+CVE-2026-76475 / Unified CM IM&P / 14 / Migrate to the resolved version
+CVE-2026-76475 / Unified CM IM&P / 15 / 15SU5 or higher
+CVE-2026-76475 / Unified CM SME / 14 / Migrate to the resolved version
+CVE-2026-76475 / Unified CM SME / 15 / 15SU5 or higher
+CVE-2026-76475 / Unity Connection / 14 / Migrate to the resolved version
+CVE-2026-76475 / Unity Connection / 15 / 15SU5 or higher
+CVE-2026-76476 / Emergency Responder / 14 / Migrate to the resolved version
+CVE-2026-76476 / Emergency Responder / 15 / 15SU5 or higher
+CVE-2026-76476 / Prime Collaboration Deployment / 14 / Migrate to the resolved version
+CVE-2026-76476 / Prime Collaboration Deployment / 15 / 15SU5 or higher
+CVE-2026-76476 / Unified CM / 14 / Migrate to the resolved version
+CVE-2026-76476 / Unified CM / 15 / 15SU5 or higher
+CVE-2026-76476 / Unified CM IM&P / 14 / Migrate to the resolved version
+CVE-2026-76476 / Unified CM IM&P / 15 / 15SU5 or higher
+CVE-2026-76476 / Unified CM SME / 14 / Migrate to the resolved version
+CVE-2026-76476 / Unified CM SME / 15 / 15SU5 or higher
+CVE-2026-76476 / Unity Connection / 14 / Migrate to the resolved version
+CVE-2026-76476 / Unity Connection / 15 / 15SU5 or higher
+CVE-2026-76477 / Emergency Responder / 14 / Migrate to the resolved version
+CVE-2026-76477 / Emergency Responder / 15 / 15SU5 or higher
+CVE-2026-76477 / Prime Collaboration Deployment / 14 / Migrate to the resolved version
+CVE-2026-76477 / Prime Collaboration Deployment / 15 / 15SU5 or higher
+CVE-2026-76477 / Unified CM / 14 / Migrate to the resolved version
+CVE-2026-76477 / Unified CM / 15 / 15SU5 or higher
+CVE-2026-76477 / Unified CM IM&P / 14 / Migrate to the resolved version
+CVE-2026-76477 / Unified CM IM&P / 15 / 15SU5 or higher
+CVE-2026-76477 / Unified CM SME / 14 / Migrate to the resolved version
+CVE-2026-76477 / Unified CM SME / 15 / 15SU5 or higher
+CVE-2026-76477 / Unity Connection / 14 / Migrate to the resolved version
+CVE-2026-76477 / Unity Connection / 15 / 15SU5 or higher
+CVE-2026-76478 / Emergency Responder / 14 / Migrate to the resolved version
+CVE-2026-76478 / Emergency Responder / 15 / 15SU5 or higher
+CVE-2026-76478 / Prime Collaboration Deployment / 14 / Migrate to the resolved version
+CVE-2026-76478 / Prime Collaboration Deployment / 15 / 15SU5 or higher
+CVE-2026-76478 / Unified CM / 14 / Migrate to the resolved version
+CVE-2026-76478 / Unified CM / 15 / 15SU5 or higher
+CVE-2026-76478 / Unified CM IM&P / 14 / Migrate to the resolved version
+CVE-2026-76478 / Unified CM IM&P / 15 / 15SU5 or higher
+CVE-2026-76478 / Unified CM SME / 14 / Migrate to the resolved version
+CVE-2026-76478 / Unified CM SME / 15 / 15SU5 or higher
+CVE-2026-76478 / Unity Connection / 14 / Migrate to the resolved version
+CVE-2026-76478 / Unity Connection / 15 / 15SU5 or higher
+CVE-2026-76479 / Emergency Responder / 14 / Migrate to the resolved version
+CVE-2026-76479 / Emergency Responder / 15 / 15SU5 or higher
+CVE-2026-76479 / Prime Collaboration Deployment / 14 / Migrate to the resolved version
+CVE-2026-76479 / Prime Collaboration Deployment / 15 / 15SU5 or higher
+CVE-2026-76479 / Unified CM / 14 / Migrate to the resolved version
+CVE-2026-76479 / Unified CM / 15 / 15SU5 or higher
+CVE-2026-76479 / Unified CM IM&P / 14 / Migrate to the resolved version
+CVE-2026-76479 / Unified CM IM&P / 15 / 15SU5 or higher
+CVE-2026-76479 / Unified CM SME / 14 / Migrate to the resolved version
+CVE-2026-76479 / Unified CM SME / 15 / 15SU5 or higher
+CVE-2026-76479 / Unity Connection / 14 / Migrate to the resolved version
+CVE-2026-76479 / Unity Connection / 15 / 15SU5 or higher
+CVE-2026-76481 / Emergency Responder / 14 / Migrate to the resolved version
+CVE-2026-76481 / Emergency Responder / 15 / 15SU5 or higher
+CVE-2026-76481 / Prime Collaboration Deployment / 14 / Migrate to the resolved version
+CVE-2026-76481 / Prime Collaboration Deployment / 15 / 15SU5 or higher
+CVE-2026-76481 / Unified CM / 14 / Migrate to the resolved version
+CVE-2026-76481 / Unified CM / 15 / 15SU5 or higher
+CVE-2026-76481 / Unified CM IM&P / 14 / Migrate to the resolved version
+CVE-2026-76481 / Unified CM IM&P / 15 / 15SU5 or higher
+CVE-2026-76481 / Unified CM SME / 14 / Migrate to the resolved version
+CVE-2026-76481 / Unified CM SME / 15 / 15SU5 or higher
+CVE-2026-76481 / Unity Connection / 14 / Migrate to the resolved version
+CVE-2026-76481 / Unity Connection / 15 / 15SU5 or higher
+※ Perform updates by referring to the sites listed below. [1]~[3]
+
+□ Reference sites
+[1] https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t
+[2] https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-exwy-hardening-FhcqBVcs
+[3] https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-voice-hardening-twgbH9e3
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-76466
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-76490
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-76491
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-76492
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-76493
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-76494
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-76495
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-76496
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-76473
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-76474
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-76475
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-76476
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-76477
+[17] https://nvd.nist.gov/vuln/detail/CVE-2026-76478
+[18] https://nvd.nist.gov/vuln/detail/CVE-2026-76479
+[19] https://nvd.nist.gov/vuln/detail/CVE-2026-76481
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code)
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Headquarters

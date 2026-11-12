@@ -1,66 +1,6 @@
 {
   "notices": [
     {
-      "notice_id": "72256",
-      "title": "Linux 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=4&categoryCode=&nttId=72256"
-    },
-    {
-      "notice_id": "72255",
-      "title": "Cisco 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=4&categoryCode=&nttId=72255"
-    },
-    {
-      "notice_id": "72254",
-      "title": "Synology 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=4&categoryCode=&nttId=72254"
-    },
-    {
-      "notice_id": "72252",
-      "title": "Palo Alto Networks 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=5&categoryCode=&nttId=72252"
-    },
-    {
-      "notice_id": "72251",
-      "title": "Synology 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=5&categoryCode=&nttId=72251"
-    },
-    {
-      "notice_id": "72250",
-      "title": "Samba 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=5&categoryCode=&nttId=72250"
-    },
-    {
-      "notice_id": "72249",
-      "title": "Juniper Networks 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=5&categoryCode=&nttId=72249"
-    },
-    {
-      "notice_id": "72248",
-      "title": "Linux 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=5&categoryCode=&nttId=72248"
-    },
-    {
-      "notice_id": "72247",
-      "title": "Adobe 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=5&categoryCode=&nttId=72247"
-    },
-    {
-      "notice_id": "72246",
-      "title": "JFrog 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=5&categoryCode=&nttId=72246"
-    },
-    {
-      "notice_id": "72245",
-      "title": "Splunk 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=5&categoryCode=&nttId=72245"
-    },
-    {
-      "notice_id": "72244",
-      "title": "Cisco 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=5&categoryCode=&nttId=72244"
-    },
-    {
       "notice_id": "72243",
       "title": "Redis 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=5&categoryCode=&nttId=72243"
