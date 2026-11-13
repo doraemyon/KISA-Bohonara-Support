@@ -1,0 +1,83 @@
+Title:
+Apache Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Apache Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o The Apache Foundation released security updates to address vulnerabilities in their products [1]~[10]
+o Users running affected versions are advised to update to the latest version according to the mitigation measures
+
+□ Description
+o Improper Authentication vulnerability in Apache Tomcat(CVE-2026-68569) [1][11]
+o Incorrect Authorization vulnerability in Apache Tomcat(CVE-2026-68525) [2][12]
+o Uncontrolled Resource Consumption vulnerability in Apache Tomcat(CVE-2026-66299) [3][13]
+o Improper Access Control vulnerability in Apache Tomcat(CVE-2026-65182) [4][14]
+o Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in Apache Tomcat(CVE-2026-65183) [5][15]
+o Uncontrolled Resource Consumption vulnerability in Apache Tomcat(CVE-2026-68763) [6][16]
+o Incorrect Authorization vulnerability in Apache Tomcat(CVE-2026-66422) [7][17]
+o Improper Input Validation vulnerability in Apache Tomcat(CVE-2026-65637) [8][18]
+o Off-by-one Error vulnerability in Apache Tomcat(CVE-2026-65927) [9][19]
+o Authentication Bypass by Capture-replay vulnerability in Apache Tomcat(CVE-2026-65905) [10][20]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Resolved Version
+CVE-2026-68569 / Apache Tomcat / 9.0.0.M1 or later 9.0.120 or earlier / 9.0.121 or later
+CVE-2026-68569 / Apache Tomcat / 10.1.0-M1 or later 10.1.57 or earlier / 10.1.59 or later
+CVE-2026-68569 / Apache Tomcat / 11.0.0-M1 or later 11.0.24 or earlier / 11.0.25 or later
+CVE-2026-68525 / Apache Tomcat / 9.0.0.M1 or later 9.0.120 or earlier / 9.0.121 or later
+CVE-2026-68525 / Apache Tomcat / 10.1.0-M1 or later 10.1.57 or earlier / 10.1.59 or later
+CVE-2026-68525 / Apache Tomcat / 11.0.0-M1 or later 11.0.24 or earlier / 11.0.25 or later
+CVE-2026-66299 / Apache Tomcat / 9.0.89 or later 9.0.120 or earlier / 9.0.121 or later
+CVE-2026-66299 / Apache Tomcat / 10.1.24 or later 10.1.57 or earlier / 10.1.58 or later
+CVE-2026-66299 / Apache Tomcat / 11.0.0-M20 or later 11.0.24 or earlier / 11.0.25 or later
+CVE-2026-65182 / Apache Tomcat / 9.0.0.M1 or later 9.0.120 or earlier / 9.0.121 or later
+CVE-2026-65182 / Apache Tomcat / 10.1.0-M1 or later 10.1.57 or earlier / 10.1.59 or later
+CVE-2026-65182 / Apache Tomcat / 11.0.0-M1 or later 11.0.24 or earlier / 11.0.25 or later
+CVE-2026-65183 / Apache Tomcat / 9.0.42 or later 9.0.120 or earlier / 9.0.121 or later
+CVE-2026-65183 / Apache Tomcat / 10.1.0-M1 or later 10.1.57 or earlier / 10.1.59 or later
+CVE-2026-65183 / Apache Tomcat / 11.0.0-M1 or later 11.0.24 or earlier / 11.0.25 or later
+CVE-2026-68763 / Apache Tomcat / 9.0.39 or later 9.0.120 or earlier / 9.0.121 or later
+CVE-2026-68763 / Apache Tomcat / 10.1.0-M1 or later 10.1.57 or earlier / 10.1.59 or later
+CVE-2026-68763 / Apache Tomcat / 11.0.0-M1 or later 11.0.24 or earlier / 11.0.25 or later
+CVE-2026-66422 / Apache Tomcat / 9.0.25 or later 9.0.120 or earlier / 9.0.121 or later
+CVE-2026-66422 / Apache Tomcat / 10.1.0-M1 or later 10.1.57 or earlier / 10.1.59 or later
+CVE-2026-66422 / Apache Tomcat / 11.0.0-M1 or later 11.0.24 or earlier / 11.0.25 or later
+CVE-2026-65637 / Apache Tomcat / 9.0.115 or later 9.0.120 or earlier / 9.0.121 or later
+CVE-2026-65637 / Apache Tomcat / 10.1.53 or later 10.1.57 or earlier / 10.1.59 or later
+CVE-2026-65637 / Apache Tomcat / 11.0.20 or later 11.0.24 or earlier / 11.0.25 or later
+CVE-2026-65927 / Apache Tomcat / 9.0.0-M1 or later 9.0.120 or earlier / 9.0.121 or later
+CVE-2026-65927 / Apache Tomcat / 10.1.0-M1 or later 10.1.57 or earlier / 10.1.59 or later
+CVE-2026-65927 / Apache Tomcat / 11.0.0-M1 or later 11.0.24 or earlier / 11.0.25 or later
+CVE-2026-65905 / Apache Tomcat / 9.0.0-M1 or later 9.0.120 or earlier / 9.0.121 or later
+CVE-2026-65905 / Apache Tomcat / 10.1.0-M1 or later 10.1.57 or earlier / 10.1.59 or later
+CVE-2026-65905 / Apache Tomcat / 11.0.0-M1 or later 11.0.24 or earlier / 11.0.25 or later
+※ Check the reference sites below and perform the update [1]~[10]
+
+□ Reference sites
+[1] https://lists.apache.org/thread/8robqo76q0osxgw0b5lcwgz0hcf9h4zc
+[2] https://lists.apache.org/thread/x1y2lfsgzxwzc456f8954vbvgn03zhd7
+[3] https://lists.apache.org/thread/8owczcc1o8qw1rxmg9gvfk4w2jnh4l5k
+[4] https://lists.apache.org/thread/joosxvzc9b49ttj8lj0jw9mqt0ml767m
+[5] https://lists.apache.org/thread/748o4st6d5dk6n3l7tgzo5yl68gg05c0
+[6] https://lists.apache.org/thread/tv51ty39ppv41v04hdtkp9dp7tg02nzl
+[7] https://lists.apache.org/thread/j5plylz1b2vhqvbkqn7k58nygxhcpk73
+[8] https://lists.apache.org/thread/djog953z1ohsyt25bdvhfzbmsy22vgcj
+[9] https://lists.apache.org/thread/st1dx1zyn5y7ny2s0sscmh6lrv3worr4
+[10] https://lists.apache.org/thread/9v114xlpgbzrrbzz5vf9f6r2q4wnxwwj
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-68569
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-68525
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-66299
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-65182
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-65183
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-68763
+[17] https://nvd.nist.gov/vuln/detail/CVE-2026-66422
+[18] https://nvd.nist.gov/vuln/detail/CVE-2026-65637
+[19] https://nvd.nist.gov/vuln/detail/CVE-2026-65927
+[20] https://nvd.nist.gov/vuln/detail/CVE-2026-65905
+
+□ Questions and inquiries
+o Korea Internet & Security Agency (KISA) Cyber Civil Center: Dial 118 without an area code
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Division

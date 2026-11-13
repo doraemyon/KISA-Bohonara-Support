@@ -1,66 +1,6 @@
 {
   "notices": [
     {
-      "notice_id": "72180",
-      "title": "MS 9월 보안 위협에 따른 정기 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72180"
-    },
-    {
-      "notice_id": "72179",
-      "title": "Cisco 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72179"
-    },
-    {
-      "notice_id": "72178",
-      "title": "Metabase 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=11&categoryCode=&nttId=72178"
-    },
-    {
-      "notice_id": "72177",
-      "title": "한컴위드 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=11&categoryCode=&nttId=72177"
-    },
-    {
-      "notice_id": "72176",
-      "title": "Linux 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=11&categoryCode=&nttId=72176"
-    },
-    {
-      "notice_id": "72175",
-      "title": "Apache 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=11&categoryCode=&nttId=72175"
-    },
-    {
-      "notice_id": "72174",
-      "title": "Langflow 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=11&categoryCode=&nttId=72174"
-    },
-    {
-      "notice_id": "72173",
-      "title": "Citrix 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=11&categoryCode=&nttId=72173"
-    },
-    {
-      "notice_id": "72172",
-      "title": "Oracle 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=11&categoryCode=&nttId=72172"
-    },
-    {
-      "notice_id": "72171",
-      "title": "H2 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=11&categoryCode=&nttId=72171"
-    },
-    {
-      "notice_id": "72170",
-      "title": "Gitea 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=11&categoryCode=&nttId=72170"
-    },
-    {
-      "notice_id": "72168",
-      "title": "Cisco 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=11&categoryCode=&nttId=72168"
-    },
-    {
       "notice_id": "72166",
       "title": "MLflow 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=12&categoryCode=&nttId=72166"
@@ -94,6 +34,11 @@
       "notice_id": "72159",
       "title": "Cisco 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=12&categoryCode=&nttId=72159"
+    },
+    {
+      "notice_id": "72180",
+      "title": "MS 9월 보안 위협에 따른 정기 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72180"
     }
   ]
 }
