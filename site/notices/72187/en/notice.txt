@@ -1,0 +1,33 @@
+Title:
+Fortinet Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Fortinet Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Fortinet announces security update that addresses vulnerabilities in its products [1]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o Heap-based Buffer Overflow vulnerability occurring in FortiOS and FortiSwitchManager (CVE-2025-25249) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2025-25249 / FortiOS / 6.4 / Migrate to resolved version
+CVE-2025-25249 / FortiOS / 7.0.0 or later and below 7.0.18 / 7.0.18 or later
+CVE-2025-25249 / FortiOS / 7.2.0 or later and below 7.2.12 / 7.2.12 or later
+CVE-2025-25249 / FortiOS / 7.4.0 or later and below 7.4.9 / 7.4.9 or later
+CVE-2025-25249 / FortiOS / 7.6.0 or later and below 7.6.4 / 7.6.4 or later
+CVE-2025-25249 / FortiSwitchManager / 7.0.0 or later and below 7.0.6 / 7.0.6 or later
+CVE-2025-25249 / FortiSwitchManager / 7.2.0 or later and below 7.2.7 / 7.2.7 or later
+※ Check the reference site below to perform updates [1]
+
+□ Reference sites
+[1] https://fortiguard.fortinet.com/psirt/FG-IR-25-084
+[2] https://nvd.nist.gov/vuln/detail/CVE-2025-25249
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

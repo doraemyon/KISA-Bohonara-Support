@@ -1,0 +1,52 @@
+Title:
+Linux Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Linux Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o The Linux Foundation announces security updates that address vulnerabilities in its products. [1]~[3]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o Improper Check for Unusual or Exceptional Conditions vulnerability in Linux kernel (CVE-2025-39682) [1][4]
+o Race Condition Vulnerability in Linux Kernel (CVE-2025-39964) [2][5]
+o Out-of-bounds Write vulnerability in Linux kernel (CVE-2026-53266) [3][6]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2025-39682 / Linux Kernel / 6.0 or later and below 6.1.149 / 6.1.149 or later
+CVE-2025-39682 / Linux Kernel / 6.0 or later and below 6.6.103 / 6.6.103 or later
+CVE-2025-39682 / Linux Kernel / 6.0 or later and below 6.12.44 / 6.12.44 or later
+CVE-2025-39682 / Linux Kernel / 6.0 or later and below 6.16.4 / 6.16.4 or later
+CVE-2025-39682 / Linux Kernel / 6.0 or later and below 6.17 / 6.17 or later
+CVE-2025-39964 / Linux Kernel / 2.6.38 or later and below 5.10.245 / 5.10.245 or later
+CVE-2025-39964 / Linux Kernel / 2.6.38 or later and below 5.15.194 / 5.15.194 or later
+CVE-2025-39964 / Linux Kernel / 2.6.38 or later and below 6.1.154 / 6.1.154 or later
+CVE-2025-39964 / Linux Kernel / 2.6.38 or later and below 6.6.108 / 6.6.108 or later
+CVE-2025-39964 / Linux Kernel / 2.6.38 or later and below 6.12.49 / 6.12.49 or later
+CVE-2025-39964 / Linux Kernel / 2.6.38 or later and below 6.16.9 / 6.16.9 or later
+CVE-2025-39964 / Linux Kernel / 2.6.38 or later and below 6.17 / 6.17 or later
+CVE-2026-53266 / Linux Kernel / 5.10 or later and below 5.10.259 / 5.10.259 or later
+CVE-2026-53266 / Linux Kernel / 5.10 or later and below 5.15.210 / 5.15.210 or later
+CVE-2026-53266 / Linux Kernel / 5.10 or later and below 6.1.176 / 6.1.176 or later
+CVE-2026-53266 / Linux Kernel / 5.10 or later and below 6.6.143 / 6.6.143 or later
+CVE-2026-53266 / Linux Kernel / 5.10 or later and below 6.12.94 / 6.12.94 or later
+CVE-2026-53266 / Linux Kernel / 5.10 or later and below 6.18.36 / 6.18.36 or later
+CVE-2026-53266 / Linux Kernel / 5.10 or later and below 7.0.13 / 7.0.13 or later
+CVE-2026-53266 / Linux Kernel / 5.10 or later and below 7.1 / 7.1 or later
+※ Check the reference site below to perform updates [1]~[3]
+
+□ Reference sites
+[1] https://git.kernel.org/pub/scm/linux/security/vulns.git/tree/cve/published/2025/CVE-2025-39682.dyad
+[2] https://git.kernel.org/pub/scm/linux/security/vulns.git/tree/cve/published/2025/CVE-2025-39964.dyad
+[3] https://git.kernel.org/pub/scm/linux/security/vulns.git/tree/cve/published/2026/CVE-2026-53266.dyad
+[4] https://nvd.nist.gov/vuln/detail/CVE-2025-39682
+[5] https://nvd.nist.gov/vuln/detail/CVE-2025-39964
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-53266
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

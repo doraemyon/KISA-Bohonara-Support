@@ -1,0 +1,29 @@
+Title:
+WordPress Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "WordPress Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o WordPress Foundation Announces Security Update Addressing Vulnerabilities in Its Products [1]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o SQL Injection Vulnerability in WordPress (CVE-2026-60137) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-60137 / WordPress / 6.8.0 or later and below 6.8.6 / 6.8.6
+CVE-2026-60137 / WordPress / 6.9.0 or later and below 6.9.5 / 6.9.5
+CVE-2026-60137 / WordPress / 7.0.0 or later and below 7.0.2 / 7.0.2
+※ Check the reference site below to perform updates [1]
+
+□ Reference sites
+[1] https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-fpp7-x2x2-2mjf
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-60137
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

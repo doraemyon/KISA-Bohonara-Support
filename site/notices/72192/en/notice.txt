@@ -1,0 +1,88 @@
+Title:
+Check Point Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Check Point Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Check Point announces security update that addresses vulnerabilities in its products [1]~[6]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o Stack-based Buffer Overflow vulnerability occurring in Security Management Server, Multi-Domain Security Management Server, Log Server, and Multi-Domain Log Server (CVE-2026-91843) [1][7]
+o Improper Authentication vulnerability occurring in Security Management Server and Multi-Domain Security Management Server (CVE-2026-16232) [2][8]
+o Improper Authentication vulnerability occurring in Security Management Server and Multi-Domain Security Management Server (CVE-2026-62144) [3][9]
+o Authentication Bypass Using Alternate Path or Channel vulnerability occurring in Security Management Server, Multi-Domain Security Management Server (CVE-2026-18574) [4][10]
+o Heap-based Buffer Overflow vulnerability occurring in Security Gateway, Security Management Server, and Spark Firewall (CVE-2026-85103) [5][11]
+o Improper Certificate Validation vulnerability occurring in Security Gateway and Spark Firewall (CVE-2026-85102) [6][12]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-91843 / Security Management Server / R82.20 / LivePatch Take 29 or higher applies
+CVE-2026-91843 / Multi-Domain Security Management Server / R82.20 / LivePatch Take 29 or higher applies
+CVE-2026-91843 / Log Server / R82.20 / LivePatch Take 29 or higher applies
+CVE-2026-91843 / Multi-Domain Log Server / R82.20 / LivePatch Take 29 or higher applies
+CVE-2026-91843 / Security Management Server / R82.10 Jumbo Hotfix Take 44 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Multi-Domain Security Management Server / R82.10 Jumbo Hotfix Take 44 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Log Server / R82.10 Jumbo Hotfix Take 44 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Multi-Domain Log Server / R82.10 Jumbo Hotfix Take 44 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Security Management Server / R82 Jumbo Hotfix Take 126 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Multi-Domain Security Management Server / R82 Jumbo Hotfix Take 126 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Log Server / R82 Jumbo Hotfix Take 126 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Multi-Domain Log Server / R82 Jumbo Hotfix Take 126 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Security Management Server / R81.20 Jumbo Hotfix Take 166 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Multi-Domain Security Management Server / R81.20 Jumbo Hotfix Take 166 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Log Server / R81.20 Jumbo Hotfix Take 166 and below / LivePatch Take 28 or higher applies
+CVE-2026-91843 / Multi-Domain Log Server / R81.20 Jumbo Hotfix Take 166 and below / LivePatch Take 28 or higher applies
+CVE-2026-16232 / Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 36 and above
+CVE-2026-16232 / Multi-Domain Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 36 and above
+CVE-2026-16232 / Security Management Server / R82 / R82 Jumbo Hotfix Take 118 and above
+CVE-2026-16232 / Multi-Domain Security Management Server / R82 / R82 Jumbo Hotfix Take 118 and above
+CVE-2026-16232 / Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 158 and above
+CVE-2026-16232 / Multi-Domain Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 158 and above
+CVE-2026-62144 / Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 36 and above
+CVE-2026-62144 / Multi-Domain Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 36 and above
+CVE-2026-62144 / Security Management Server / R82 / R82 Jumbo Hotfix Take 118 and above
+CVE-2026-62144 / Multi-Domain Security Management Server / R82 / R82 Jumbo Hotfix Take 118 and above
+CVE-2026-62144 / Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 158 and above
+CVE-2026-62144 / Multi-Domain Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 158 and above
+CVE-2026-18574 / Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 40 and above
+CVE-2026-18574 / Multi-Domain Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 40 and above
+CVE-2026-18574 / Security Management Server / R82 / R82 Jumbo Hotfix Take 122 and above
+CVE-2026-18574 / Multi-Domain Security Management Server / R82 / R82 Jumbo Hotfix Take 122 and above
+CVE-2026-18574 / Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 161 and above
+CVE-2026-18574 / Multi-Domain Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 161 and above
+CVE-2026-85103 / Security Gateway / R82.10 / R82.10 Jumbo Hotfix Take 44 and above
+CVE-2026-85103 / Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 44 and above
+CVE-2026-85103 / Security Gateway / R82 / R82 Jumbo Hotfix Take 126 and above
+CVE-2026-85103 / Security Management Server / R82 / R82 Jumbo Hotfix Take 126 and above
+CVE-2026-85103 / Security Gateway / R81.20 / R81.20 Jumbo Hotfix Take 166 and above
+CVE-2026-85103 / Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 166 and above
+CVE-2026-85103 / Spark Firewall / R82.00.10 Build 2325 / R82.00.10 Build 2325 or higher
+CVE-2026-85103 / Spark Firewall / R81.10.17 Build 4968 / R81.10.17 Build 4968 or higher
+CVE-2026-85102 / Security Gateway / R82.10 Jumbo Hotfix Take 24 and below / R82.10 Jumbo Hotfix Take 44 and above
+CVE-2026-85102 / Security Gateway / R82 Jumbo Hotfix Take 107 and below / R82 Jumbo Hotfix Take 126 and above
+CVE-2026-85102 / Security Gateway / R81.20 Jumbo Hotfix Take 146 and below / R81.20 Jumbo Hotfix Take 166 and above
+CVE-2026-85102 / Spark Firewall / R82.00.10 Build 2325 / R82.00.10 Build 2325 or higher
+CVE-2026-85102 / Spark Firewall / R81.10.17 Build 4968 / R81.10.17 Build 4968 or higher
+※ Check the reference site below to perform updates [1]~[6]
+
+□ Reference sites
+[1] https://support.checkpoint.com/results/sk/sk1000155
+[2] https://support.checkpoint.com/results/sk/sk185169
+[3] https://support.checkpoint.com/results/sk/sk185152
+[4] https://support.checkpoint.com/results/sk/sk185222
+[5] https://support.checkpoint.com/results/sk/sk1000118
+[6] https://support.checkpoint.com/results/sk/sk1000117
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-91843
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-16232
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-62144
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-18574
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-85103
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-85102
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

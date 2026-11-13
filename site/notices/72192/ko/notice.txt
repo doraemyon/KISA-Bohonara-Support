@@ -1,0 +1,88 @@
+제목:
+Check Point 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Check Point 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Check Point社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[6]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Security Management Server, Multi-Domain Security Management Server, Log Server, Multi-Domain Log Server에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-91843) [1][7]
+o Security Management Server, Multi-Domain Security Management Server에서 발생하는 Improper Authentication 취약점(CVE-2026-16232) [2][8]
+o Security Management Server, Multi-Domain Security Management Server에서 발생하는 Improper Authentication 취약점(CVE-2026-62144) [3][9]
+o Security Management Server, Multi-Domain Security Management Server에서 발생하는 Authentication Bypass Using Alternate Path or Channel 취약점(CVE-2026-18574) [4][10]
+o Security Gateway, Security Management Server, Spark Firewall에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-85103) [5][11]
+o Security Gateway, Spark Firewall에서 발생하는 Improper Certificate Validation 취약점(CVE-2026-85102) [6][12]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-91843 / Security Management Server / R82.20 / LivePatch Take 29 이상 적용
+CVE-2026-91843 / Multi-Domain Security Management Server / R82.20 / LivePatch Take 29 이상 적용
+CVE-2026-91843 / Log Server / R82.20 / LivePatch Take 29 이상 적용
+CVE-2026-91843 / Multi-Domain Log Server / R82.20 / LivePatch Take 29 이상 적용
+CVE-2026-91843 / Security Management Server / R82.10 Jumbo Hotfix Take 44 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Multi-Domain Security Management Server / R82.10 Jumbo Hotfix Take 44 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Log Server / R82.10 Jumbo Hotfix Take 44 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Multi-Domain Log Server / R82.10 Jumbo Hotfix Take 44 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Security Management Server / R82 Jumbo Hotfix Take 126 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Multi-Domain Security Management Server / R82 Jumbo Hotfix Take 126 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Log Server / R82 Jumbo Hotfix Take 126 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Multi-Domain Log Server / R82 Jumbo Hotfix Take 126 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Security Management Server / R81.20 Jumbo Hotfix Take 166 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Multi-Domain Security Management Server / R81.20 Jumbo Hotfix Take 166 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Log Server / R81.20 Jumbo Hotfix Take 166 이하 / LivePatch Take 28 이상 적용
+CVE-2026-91843 / Multi-Domain Log Server / R81.20 Jumbo Hotfix Take 166 이하 / LivePatch Take 28 이상 적용
+CVE-2026-16232 / Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 36 이상
+CVE-2026-16232 / Multi-Domain Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 36 이상
+CVE-2026-16232 / Security Management Server / R82 / R82 Jumbo Hotfix Take 118 이상
+CVE-2026-16232 / Multi-Domain Security Management Server / R82 / R82 Jumbo Hotfix Take 118 이상
+CVE-2026-16232 / Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 158 이상
+CVE-2026-16232 / Multi-Domain Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 158 이상
+CVE-2026-62144 / Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 36 이상
+CVE-2026-62144 / Multi-Domain Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 36 이상
+CVE-2026-62144 / Security Management Server / R82 / R82 Jumbo Hotfix Take 118 이상
+CVE-2026-62144 / Multi-Domain Security Management Server / R82 / R82 Jumbo Hotfix Take 118 이상
+CVE-2026-62144 / Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 158 이상
+CVE-2026-62144 / Multi-Domain Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 158 이상
+CVE-2026-18574 / Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 40 이상
+CVE-2026-18574 / Multi-Domain Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 40 이상
+CVE-2026-18574 / Security Management Server / R82 / R82 Jumbo Hotfix Take 122 이상
+CVE-2026-18574 / Multi-Domain Security Management Server / R82 / R82 Jumbo Hotfix Take 122 이상
+CVE-2026-18574 / Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 161 이상
+CVE-2026-18574 / Multi-Domain Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 161 이상
+CVE-2026-85103 / Security Gateway / R82.10 / R82.10 Jumbo Hotfix Take 44 이상
+CVE-2026-85103 / Security Management Server / R82.10 / R82.10 Jumbo Hotfix Take 44 이상
+CVE-2026-85103 / Security Gateway / R82 / R82 Jumbo Hotfix Take 126 이상
+CVE-2026-85103 / Security Management Server / R82 / R82 Jumbo Hotfix Take 126 이상
+CVE-2026-85103 / Security Gateway / R81.20 / R81.20 Jumbo Hotfix Take 166 이상
+CVE-2026-85103 / Security Management Server / R81.20 / R81.20 Jumbo Hotfix Take 166 이상
+CVE-2026-85103 / Spark Firewall / R82.00.10 Build 2325 / R82.00.10 Build 2325 이상
+CVE-2026-85103 / Spark Firewall / R81.10.17 Build 4968 / R81.10.17 Build 4968 이상
+CVE-2026-85102 / Security Gateway / R82.10 Jumbo Hotfix Take 24 이하 / R82.10 Jumbo Hotfix Take 44 이상
+CVE-2026-85102 / Security Gateway / R82 Jumbo Hotfix Take 107 이하 / R82 Jumbo Hotfix Take 126 이상
+CVE-2026-85102 / Security Gateway / R81.20 Jumbo Hotfix Take 146 이하 / R81.20 Jumbo Hotfix Take 166 이상
+CVE-2026-85102 / Spark Firewall / R82.00.10 Build 2325 / R82.00.10 Build 2325 이상
+CVE-2026-85102 / Spark Firewall / R81.10.17 Build 4968 / R81.10.17 Build 4968 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]~[6]
+
+□ 참고사이트
+[1] https://support.checkpoint.com/results/sk/sk1000155
+[2] https://support.checkpoint.com/results/sk/sk185169
+[3] https://support.checkpoint.com/results/sk/sk185152
+[4] https://support.checkpoint.com/results/sk/sk185222
+[5] https://support.checkpoint.com/results/sk/sk1000118
+[6] https://support.checkpoint.com/results/sk/sk1000117
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-91843
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-16232
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-62144
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-18574
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-85103
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-85102
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터

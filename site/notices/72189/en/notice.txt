@@ -1,0 +1,69 @@
+Title:
+Strengthening corporate security inspection and monitoring in preparation for the Chuseok holiday
+
+Summary:
+We are disseminating today's KISA announcement "Strengthening corporate security inspection and monitoring in preparation for the Chuseok holiday". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+○ Requests for companies and institutions to strengthen prior security inspections and major system monitoring to ensure that detection and response to breaches are not delayed due to the absence of security personnel during the Chuseok holiday.
+○ In preparation for security threats such as the recent increase in API* vulnerability exploitation, cloud access key exposure, and ransomware infection, it is necessary to check the security recommendations below, protect administrator terminals and accounts, and implement security updates for externally exposed services.
+* Application Programming Interface: A set of rules and tools that allow software programs to communicate with each other and exchange data.
+
+Figure 1. Security inspection and monitoring matters for five major companies in preparation for the Chuseok holiday
+
+□ Preliminary security inspection and monitoring matters by field
+
+field / Pre-security check before holidays / Key monitoring items during the holidays
+API Security / Authentication/access authority verification, blocking of unused API, limitation of call volume / Repeated authentication failure, continuous information inquiry, rapid increase in call and response volume
+Cloud access key / Check key exposure, apply minimum privileges, block exposed keys, discard unused keys / Abnormal access, account/permission change, mass download, log collection interruption
+Ransomware response / Verification of vaccine/EDR operation, separate backup storage, recovery test / Change/encrypt multiple files, delete backups, stop security programs
+Administrator terminal/account / Separate management account, apply MFA, check access permission targets and paths / Abnormal administrator access, privileged account creation, access control policy change
+external exposure service / Check service/version, block unnecessary external access, security update / Rapid increase in SSH login failures, creation of suspicious files on web servers, mass DB inquiries
+
+□ Major security enhancement measures
+
+① Check API vulnerabilities and monitor abnormal calls
+- Check the public scope and authentication/access rights settings of the API in service, and block unnecessary external access to unused/experimental APIs and management functions.
+- The API that processes personal information and business information verifies the validity of authentication information for each request and access rights for each data and function on the server, preventing unauthorized inquiries and changes and unauthorized use of administrator functions.
+- Prevent excessive resource use and service failure by limiting the number of calls, request size, and number of inquiries for each user/client according to service characteristics.
+- Apply detection and notification policies for abnormalities such as repeated authentication failures, continuous inquiry of multiple user information, and rapid increase in call and response data volume compared to usual, and check whether or not they occur.
+
+② Cloud access key management and usage history check
+- Check whether access keys and authentication tokens are exposed by checking source code, configuration files, collaboration tools, and code repository change history.
+- Do not write the access key directly in the code or share it through messengers, etc., and use a confidential information management service with controlled access rights to store and use it.
+- Review conversion of long-term access keys to role-based temporary credentials, limit authority to resources and functions necessary for work, and discard unused keys.
+- Access keys that are exposed or suspected of being stolen are quickly blocked from being used, replaced and discarded, and unauthorized access, permission changes and information leaks are investigated through related audit logs.
+- Collect cloud audit logs to check for access to IP addresses that are not normally used or accessed, unauthorized account creation/change of permissions, bulk data download, and log collection interruption.
+
+③ Preparation for ransomware infection prevention and recovery
+- Maintain up-to-date anti-virus and endpoint detection and response tools (Endpoint Detection and Response, EDR) on servers and work terminals, and check whether real-time detection and alert delivery are working properly.
+- Important business data and system settings are periodically backed up and stored separately from the operating network, access, modification, and deletion rights to backup copies are restricted, and prior security checks are made to determine whether actual recovery is possible.
+- Provide precautions for executives and employees in preparation for emails purporting to be holiday gifts, deliveries, settlements, etc., and prohibit access to links and attachments from unclear sources or with questionable content.
+- Intensive inspection of signs of infringement, such as changing or encrypting multiple files in a short period of time, deleting backups, stopping security programs, and abnormal remote execution across multiple systems.
+
+Figure 2. 8 security rules for data backup to respond to ransomware (Source: KISA Protection Country)
+
+④ Reinforce administrator terminal/account security and re-examine access control
+- Distinguish between administrative business accounts and general business accounts, change default passwords and passwords reused in multiple accounts, and organize retired, long-term unused accounts and unnecessary administrator rights.
+- Apply multi-factor authentication (MFA) to administrator accounts, remote access, and cloud management console, and recheck unapplied accounts and exception access paths.
+- Administrator pages and management services are set to be accessed only from approved IP addresses/terminals and designated access paths, and maintenance company access is permitted only during approved work hours and subjects.
+- For management-only terminals, restrict web access and email use that are unnecessary for management tasks, and check for installation of unauthorized software and remote control programs.
+- Check details of repeated login failures of the administrator account, access from unusual times and locations, creation of new privileged accounts, and changes to access control policies.
+
+⑤ Externally exposed service SW (SSH, DB, web, etc.) security update
+- Identify the operating status and versions of SSH, databases (DB), web servers, web applications, etc. accessible from the Internet, and block external access to abandoned test/idle systems and unnecessary services.
+- Check whether vulnerabilities and patches are applied to the operating system and service SW as well as web frameworks and libraries, apply security updates before the holidays and check normal operation of services according to manufacturer recommendations.
+- Switch to a supported version for SW for which security support has ended, and if immediate patching is difficult, apply mitigation measures and access restrictions suggested by the manufacturer and manage the follow-up update schedule.
+- Monitoring for signs of infringement by service, such as repeated SSH login failures and abnormal connections, creation and upload of suspicious files in the web server path, and abnormal queries and mass inquiries in the DB.
+
+□ Monitoring and response system inspection during holidays
+○ Check in advance the log collection status of major systems and security equipment and whether alerts are delivered, and establish an emergency contact network for the person in charge, substitute person in charge, and maintenance company during the holidays.
+○ Designate a person in charge to check, report, and take initial action on abnormal signs, prepare response procedures, and share warnings of non-action and status of vulnerable systems during handover.
+○ If a breach is suspected, take measures to prevent the spread, such as isolating the network of the relevant system and blocking the use of credentials suspected of being leaked, and quickly proceed with preserving evidence such as related logs and reporting infringement incidents.
+
+□ Infringement incident reports and inquiries
+○ Infringement incident report: KISA Protectorate → Infringement incident report → Report
+○ Security-related consultation: Korea Internet & Security Agency, call 118 without area code
+
+□ Written by: Threat Analysis Group AI Comprehensive Analysis Team

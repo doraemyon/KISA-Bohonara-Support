@@ -1,0 +1,95 @@
+Title:
+Beware of cyber fraud such as smishing and phishing during the Chuseok holiday.
+
+Summary:
+We are disseminating today's KISA announcement "Beware of cyber fraud such as smishing and phishing during the Chuseok holiday.". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+
+o There are concerns about the spread of smishing messages during the Chuseok holiday, so caution is needed to prevent damage.
+
+□ Main contents
+
+o When smishing text messages are spread using keywords such as ‘Chuseok special prize’, ‘delivery inquiry’, and ‘traffic law violation’ as bait, damage such as personal information leakage and remittance is expected.
+
+- (Encouraging event participation) Encouraging access to prize promotion event pages impersonating large corporations and stealing personal information
+
+- (Delivery inquiry) Inducing non-face-to-face direct transaction fraud and false shopping malls disguised as delivery delays and shortages
+
+- (Impersonating a public institution) Taking advantage of the fact that there is a lot of inter-regional movement by vehicle during the Lunar New Year holiday, impersonating a government or public institution by inquiring about fines and fines for violation of traffic laws and garbage separation.
+
+□ Countermeasures
+
+o How to report and check smishing/phishing sites
+
+- Report and determine whether it is malicious using the ‘Smishing/Phishing Confirmation Service’ within Bohanara (KakaoTalk channel)
+
+o How to report and check smishing text messages
+
+- ‘Report as spam’ that can be checked on the text message reception screen of the smartphone
+
+- Telecommunications Financial Fraud Integrated Report Response Center (https://counterscam112.go.kr) My ‘Smishing Text Report’
+
+- Report and determine whether it is malicious using the ‘Smishing/Phishing Confirmation Service’ within Bohanara (KakaoTalk channel)
+
+o How to prevent smishing text messages
+
+- When receiving a text message, refrain from clicking on site addresses from unknown sources and delete them immediately.
+
+- Prevent damage by checking whether a suspicious site address matches a normal site.
+
+- Enter personal information such as mobile phone number, ID, and password only on trusted sites, and do not pass on the identity verification number to others.
+
+- Government agencies and financial companies do not request installation of a remote control app via phone call or text message.
+* Including apps registered in the normal store
+
+o Block number spoofing text messages
+
+- If information leakage through malicious app infection or phishing site is suspected, the victim number may be stolen to resend smishing text messages, so apply for “Number Theft Text Blocking Service*” to block the theft.
+* You can apply for free from the additional services provided by your mobile carrier.
+
+o Mobile payment confirmation and cancellation
+
+- Check mobile payment details as mobile payment damage may occur when entering smishing malicious app infection or entering personal information on phishing sites.
+
+① Check mobile payment details through your telecommunication company’s customer center.
+
+② When mobile payment damage is confirmed, smishing text messages suspected of damage are captured.
+
+③ Report smishing damage and issue a small payment confirmation through the telecommunication company’s customer center.
+
+④ Bring the small payment confirmation and report it to the cyber investigation unit or civil affairs office of the police station in your jurisdiction.
+
+⑤ Confirm the accident details and issue a certificate of accident facts
+
+⑥ Bring the necessary documents, such as a certificate of accident facts, to the customer service center of your telecommunication company or send via fax or e-mail.
+
+⑦ Request compensation for damage after confirming the facts and damage details with the telecommunication company or payment agency.
+
+o Delete malicious applications
+
+- You will not be infected by a malicious app just by clicking on the Internet address included in the text message, but if you installed the application through the Internet address, check your smartphone using the method below.
+
+• Check whether malicious apps are installed using mobile anti-virus, and if found, switch to airplane mode and visit the nearest police station or call 112.
+※ Malicious apps can remotely control mobile phones, so report them via the phones of people around you.
+
+• Manually deleting malicious apps
+
+• Visit the nearest police station or mobile phone service center
+
+o Discard and reissue public certificates
+
+- If you used a financial service with a smartphone that was infected with a malicious app, information required for financial transactions, such as public certificates and security cards, may be leaked, so the information should be discarded and reissued.
+
+o Prevent secondary damage
+
+- Secondary damage may occur, such as when a malicious app installed on your smartphone searches your address book and sends similar content to other people, so you should notify people around you of the smishing damage.
+
+□ Smishing reporting and consultation inquiries
+
+o Telecommunications Financial Fraud Integrated Response Team: 1394
+
+o Korea Internet & Security Agency Internet Infringement Response Center: 118 without area code
+
+□ Written by: National Damage Response Team Smishing Response Team

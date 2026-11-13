@@ -1,66 +1,6 @@
 {
   "notices": [
     {
-      "notice_id": "72196",
-      "title": "WordPress 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=9&categoryCode=&nttId=72196"
-    },
-    {
-      "notice_id": "72195",
-      "title": "Linux 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=9&categoryCode=&nttId=72195"
-    },
-    {
-      "notice_id": "72193",
-      "title": "Cisco 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=9&categoryCode=&nttId=72193"
-    },
-    {
-      "notice_id": "72192",
-      "title": "Check Point 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=9&categoryCode=&nttId=72192"
-    },
-    {
-      "notice_id": "72191",
-      "title": "추석 명절 연휴기간 스미싱, 피싱 등 사이버사기 주의",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72191"
-    },
-    {
-      "notice_id": "72189",
-      "title": "추석 명절 대비 기업 보안점검·모니터링 강화",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72189"
-    },
-    {
-      "notice_id": "72188",
-      "title": "Gitea 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72188"
-    },
-    {
-      "notice_id": "72187",
-      "title": "Fortinet 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72187"
-    },
-    {
-      "notice_id": "72186",
-      "title": "GitLab 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72186"
-    },
-    {
-      "notice_id": "72185",
-      "title": "Linux 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72185"
-    },
-    {
-      "notice_id": "72184",
-      "title": "PostgreSQL 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72184"
-    },
-    {
-      "notice_id": "72181",
-      "title": "Adobe 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72181"
-    },
-    {
       "notice_id": "72180",
       "title": "MS 9월 보안 위협에 따른 정기 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=10&categoryCode=&nttId=72180"

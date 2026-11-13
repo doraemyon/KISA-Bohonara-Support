@@ -1,0 +1,30 @@
+Title:
+Linux Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Linux Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Linux Foundation releases security update that addresses vulnerabilities in its products [1]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o Use After Free vulnerability in Linux kernel (CVE-2026-31554) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-31554 / Linux Kernel / 6.7 or later and below 6.12.80 / 6.12.80 or later
+CVE-2026-31554 / Linux Kernel / 6.7 or later and below 6.18.21 / 6.18.21 or later
+CVE-2026-31554 / Linux Kernel / 6.7 or later and below 6.19.11 / 6.19.11 or later
+CVE-2026-31554 / Linux Kernel / 6.7 or later and below 7.0 / 7.0 or later
+※ Check the reference site below to perform updates [1]
+
+□ Reference sites
+[1] https://git.kernel.org/pub/scm/linux/security/vulns.git/tree/cve/published/2026/CVE-2026-31554.dyad
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-31554
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

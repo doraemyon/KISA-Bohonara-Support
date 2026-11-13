@@ -1,0 +1,68 @@
+Title:
+PostgreSQL Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "PostgreSQL Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o PostgreSQL Foundation announces security update that addresses vulnerabilities in its products [1]~[6]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o Integer Overflow or Wraparound vulnerability occurring in PostgreSQL (CVE-2026-6473) [1][7]
+o UNIX Symbolic Link (Symlink) Following vulnerability occurring in PostgreSQL (CVE-2026-6475) [2][8]
+o Use of Inherently Dangerous Function vulnerability in PostgreSQL (CVE-2026-6477) [3][9]
+o Uncontrolled Recursion Vulnerability in PostgreSQL (CVE-2026-6479) [4][10]
+o Stack-based Buffer Overflow vulnerability occurring in PostgreSQL (CVE-2026-6637) [5][11]
+o SQL Injection vulnerability occurring in PostgreSQL (CVE-2026-6476) [6][12]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-6473 / PostgreSQL / 18 and above 18.4 under / 18.4 or later
+CVE-2026-6473 / PostgreSQL / 17 and above 17.10 under / 17.10 or later
+CVE-2026-6473 / PostgreSQL / 16 and above 16.14 under / 16.14 or later
+CVE-2026-6473 / PostgreSQL / 15 or more 15.18 under / 15.18 or later
+CVE-2026-6473 / PostgreSQL / 14 and above 14.23 under / 14.23 or later
+CVE-2026-6475 / PostgreSQL / 18 and above 18.4 under / 18.4 or later
+CVE-2026-6475 / PostgreSQL / 17 and above 17.10 under / 17.10 or later
+CVE-2026-6475 / PostgreSQL / 16 and above 16.14 under / 16.14 or later
+CVE-2026-6475 / PostgreSQL / 15 or more 15.18 under / 15.18 or later
+CVE-2026-6475 / PostgreSQL / 14 and above 14.23 under / 14.23 or later
+CVE-2026-6477 / PostgreSQL / 18 and above 18.4 under / 18.4 or later
+CVE-2026-6477 / PostgreSQL / 17 and above 17.10 under / 17.10 or later
+CVE-2026-6477 / PostgreSQL / 16 and above 16.14 under / 16.14 or later
+CVE-2026-6477 / PostgreSQL / 15 or more 15.18 under / 15.18 or later
+CVE-2026-6477 / PostgreSQL / 14 and above 14.23 under / 14.23 or later
+CVE-2026-6479 / PostgreSQL / 18 and above 18.4 under / 18.4 or later
+CVE-2026-6479 / PostgreSQL / 17 and above 17.10 under / 17.10 or later
+CVE-2026-6479 / PostgreSQL / 16 and above 16.14 under / 16.14 or later
+CVE-2026-6479 / PostgreSQL / 15 or more 15.18 under / 15.18 or later
+CVE-2026-6479 / PostgreSQL / 14 and above 14.23 under / 14.23 or later
+CVE-2026-6637 / PostgreSQL / 18 and above 18.4 under / 18.4 or later
+CVE-2026-6637 / PostgreSQL / 17 and above 17.10 under / 17.10 or later
+CVE-2026-6637 / PostgreSQL / 16 and above 16.14 under / 16.14 or later
+CVE-2026-6637 / PostgreSQL / 15 or more 15.18 under / 15.18 or later
+CVE-2026-6637 / PostgreSQL / 14 and above 14.23 under / 14.23 or later
+CVE-2026-6476 / PostgreSQL / 18 and above 18.4 under / 18.4 or later
+CVE-2026-6476 / PostgreSQL / 17 and above 17.10 under / 17.10 or later
+※ Check the reference site below to perform updates [1]~[6]
+
+□ Reference sites
+[1] https://www.postgresql.org/support/security/CVE-2026-6473/
+[2] https://www.postgresql.org/support/security/CVE-2026-6475/
+[3] https://www.postgresql.org/support/security/CVE-2026-6477/
+[4] https://www.postgresql.org/support/security/CVE-2026-6479/
+[5] https://www.postgresql.org/support/security/CVE-2026-6637/
+[6] https://www.postgresql.org/support/security/CVE-2026-6476/
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-6473
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-6475
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-6477
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-6479
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-6637
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-6476
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

@@ -1,0 +1,68 @@
+제목:
+PostgreSQL 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "PostgreSQL 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o PostgreSQL 재단은 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[6]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o PostgreSQL에서 발생하는 Integer Overflow or Wraparound 취약점(CVE-2026-6473) [1][7]
+o PostgreSQL에서 발생하는 UNIX Symbolic Link (Symlink) Following 취약점(CVE-2026-6475) [2][8]
+o PostgreSQL에서 발생하는 Use of Inherently Dangerous Function 취약점(CVE-2026-6477) [3][9]
+o PostgreSQL에서 발생하는 Uncontrolled Recursion 취약점(CVE-2026-6479) [4][10]
+o PostgreSQL에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-6637) [5][11]
+o PostgreSQL에서 발생하는 SQL Injection 취약점(CVE-2026-6476) [6][12]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-6473 / PostgreSQL / 18 이상 18.4 미만 / 18.4 이상
+CVE-2026-6473 / PostgreSQL / 17 이상 17.10 미만 / 17.10 이상
+CVE-2026-6473 / PostgreSQL / 16 이상 16.14 미만 / 16.14 이상
+CVE-2026-6473 / PostgreSQL / 15 이상 15.18 미만 / 15.18 이상
+CVE-2026-6473 / PostgreSQL / 14 이상 14.23 미만 / 14.23 이상
+CVE-2026-6475 / PostgreSQL / 18 이상 18.4 미만 / 18.4 이상
+CVE-2026-6475 / PostgreSQL / 17 이상 17.10 미만 / 17.10 이상
+CVE-2026-6475 / PostgreSQL / 16 이상 16.14 미만 / 16.14 이상
+CVE-2026-6475 / PostgreSQL / 15 이상 15.18 미만 / 15.18 이상
+CVE-2026-6475 / PostgreSQL / 14 이상 14.23 미만 / 14.23 이상
+CVE-2026-6477 / PostgreSQL / 18 이상 18.4 미만 / 18.4 이상
+CVE-2026-6477 / PostgreSQL / 17 이상 17.10 미만 / 17.10 이상
+CVE-2026-6477 / PostgreSQL / 16 이상 16.14 미만 / 16.14 이상
+CVE-2026-6477 / PostgreSQL / 15 이상 15.18 미만 / 15.18 이상
+CVE-2026-6477 / PostgreSQL / 14 이상 14.23 미만 / 14.23 이상
+CVE-2026-6479 / PostgreSQL / 18 이상 18.4 미만 / 18.4 이상
+CVE-2026-6479 / PostgreSQL / 17 이상 17.10 미만 / 17.10 이상
+CVE-2026-6479 / PostgreSQL / 16 이상 16.14 미만 / 16.14 이상
+CVE-2026-6479 / PostgreSQL / 15 이상 15.18 미만 / 15.18 이상
+CVE-2026-6479 / PostgreSQL / 14 이상 14.23 미만 / 14.23 이상
+CVE-2026-6637 / PostgreSQL / 18 이상 18.4 미만 / 18.4 이상
+CVE-2026-6637 / PostgreSQL / 17 이상 17.10 미만 / 17.10 이상
+CVE-2026-6637 / PostgreSQL / 16 이상 16.14 미만 / 16.14 이상
+CVE-2026-6637 / PostgreSQL / 15 이상 15.18 미만 / 15.18 이상
+CVE-2026-6637 / PostgreSQL / 14 이상 14.23 미만 / 14.23 이상
+CVE-2026-6476 / PostgreSQL / 18 이상 18.4 미만 / 18.4 이상
+CVE-2026-6476 / PostgreSQL / 17 이상 17.10 미만 / 17.10 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]~[6]
+
+□ 참고사이트
+[1] https://www.postgresql.org/support/security/CVE-2026-6473/
+[2] https://www.postgresql.org/support/security/CVE-2026-6475/
+[3] https://www.postgresql.org/support/security/CVE-2026-6477/
+[4] https://www.postgresql.org/support/security/CVE-2026-6479/
+[5] https://www.postgresql.org/support/security/CVE-2026-6637/
+[6] https://www.postgresql.org/support/security/CVE-2026-6476/
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-6473
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-6475
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-6477
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-6479
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-6637
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-6476
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
