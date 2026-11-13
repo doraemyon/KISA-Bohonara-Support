@@ -91,6 +91,7 @@ class RecoverMissingNoticesTests(unittest.TestCase):
             queue_path = Path(temporary_directory) / "recovery_queue.json"
             with (
                 mock.patch.object(recovery_queue, "QUEUE_PATH", queue_path),
+                mock.patch.object(process_notice, "SITE_ROOT", Path(temporary_directory) / "site"),
                 mock.patch.object(
                     notice_catalog, "official_notices",
                     return_value=[notice_catalog.Notice(*notice, date(2026, 11, 12), 1)],
@@ -139,6 +140,7 @@ class RecoverMissingNoticesTests(unittest.TestCase):
         with (
             tempfile.TemporaryDirectory() as temporary_directory,
             mock.patch.object(recovery_queue, "QUEUE_PATH", Path(temporary_directory) / "queue.json"),
+            mock.patch.object(process_notice, "SITE_ROOT", Path(temporary_directory) / "site"),
             mock.patch.object(notice_catalog, "official_notices", return_value=[entry]),
             mock.patch.object(recover_missing_notices, "is_complete", return_value=False),
             mock.patch.object(process_notice, "write_notice_index"),
