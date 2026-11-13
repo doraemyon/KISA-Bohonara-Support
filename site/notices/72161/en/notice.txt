@@ -1,0 +1,23 @@
+Title:
+Recommendation to be careful when using some SW products
+
+Summary:
+We are disseminating today's KISA announcement "Recommendation to be careful when using some SW products". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Caution is required as vulnerabilities that could pose security threats have been discovered in some SW products.
+
+□ Affected products
+Manufacturer name / Product Name / Affected Version
+Pet Nuri / F10 / -
+Seojin Networks / TCAM-S30 / 24.09.25
+□ Recommended Action
+o Refrain from using until the manufacturer distributes and applies a program that corrects the vulnerability.
+o In case of unavoidable use, use in a closed network where the external network (Internet) is blocked.
+
+□ Questions and inquiries
+o Pet Nuri Company: ☎ 070-8027-8220
+o Seojin Networks: ☎ 1588-2713
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

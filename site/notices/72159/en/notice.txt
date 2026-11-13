@@ -1,0 +1,38 @@
+Title:
+Cisco Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Cisco Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Cisco announces security update that addresses vulnerabilities in its products [1]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o Heap Inspection Vulnerability in Cisco Secure Firewall Adaptive Security Appliance (ASA) Software and Cisco Secure Firewall Threat Defense (FTD) Software (CVE-2026-20349) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-20349 / Secure Firewall Adaptive Security Appliance(ASA) Software / 9.24 / 9.24.1.221 Hot Fix
+CVE-2026-20349 / Secure Firewall Adaptive Security Appliance(ASA) Software / 9.23 / 9.23.1.211 Hot Fix
+CVE-2026-20349 / Secure Firewall Adaptive Security Appliance(ASA) Software / 9.22 / 9.22.3.191 Hot Fix
+CVE-2026-20349 / Secure Firewall Adaptive Security Appliance(ASA) Software / 9.20 / 9.20.4.235 Hot Fix
+CVE-2026-20349 / Secure Firewall Adaptive Security Appliance(ASA) Software / 9.18 / 89.18.4.50 Hot Fix
+CVE-2026-20349 / Secure Firewall Adaptive Security Appliance(ASA) Software / 9.16 / 89.16.4.50 Hot Fix
+CVE-2026-20349 / Secure Firewall Threat Defense(FTD) Software / 10.0 / 10.0.0.1-2 Hot Fix
+CVE-2026-20349 / Secure Firewall Threat Defense(FTD) Software / 7.7 / 7.7.11.1-2 Hot Fix
+CVE-2026-20349 / Secure Firewall Threat Defense(FTD) Software / 7.6 / 7.6.4.1-2 Hot Fix
+CVE-2026-20349 / Secure Firewall Threat Defense(FTD) Software / 7.4 / 7.4.7.1-1 Hot Fix
+CVE-2026-20349 / Secure Firewall Threat Defense(FTD) Software / 7.2 / 7.2.11.1-2 Hot Fix
+CVE-2026-20349 / Secure Firewall Threat Defense(FTD) Software / 7.0 / 7.0.9.1-1 Hot Fix
+※ Check the reference site below to perform updates [1]
+
+□ Reference sites
+[1] https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-vpn-dos-dzv4mQFF
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-20349
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

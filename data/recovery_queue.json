@@ -1,39 +1,9 @@
 {
   "notices": [
     {
-      "notice_id": "72166",
-      "title": "MLflow 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=12&categoryCode=&nttId=72166"
-    },
-    {
-      "notice_id": "72164",
-      "title": "PostgreSQL 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=12&categoryCode=&nttId=72164"
-    },
-    {
-      "notice_id": "72163",
-      "title": "Fortinet 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=12&categoryCode=&nttId=72163"
-    },
-    {
-      "notice_id": "72162",
-      "title": "Citrix 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=12&categoryCode=&nttId=72162"
-    },
-    {
-      "notice_id": "72161",
-      "title": "일부 SW 제품 사용 주의 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=12&categoryCode=&nttId=72161"
-    },
-    {
       "notice_id": "72160",
       "title": "MS 8월 보안 위협에 따른 정기 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=12&categoryCode=&nttId=72160"
-    },
-    {
-      "notice_id": "72159",
-      "title": "Cisco 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=12&categoryCode=&nttId=72159"
     },
     {
       "notice_id": "72180",
