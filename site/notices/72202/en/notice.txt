@@ -1,0 +1,69 @@
+Title:
+Report of an attempted scam via a phishing email impersonating a government agency
+
+Summary:
+We are disseminating today's KISA announcement "Report of an attempted scam via a phishing email impersonating a government agency". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+
+o Recently, hacking emails that impersonate public institutions, financial institutions, etc., to steal personal information or induce the installation of malicious apps in mobile environments have been continuously circulated, so caution is needed to prevent damage.
+
+□ Main Content
+
+o Hacking emails using keywords such as "involvement in a crime," "violation of laws and regulations," and "compensation for personal information leaks" are distributed to trick recipients into accessing phishing sites and installing malicious mobile apps.
+
+- (Impersonation of a public institution) After sending a hacking email with content such as "Suspension of use," "Summons," or "Explanation procedure," the scammer tricks the recipient into clicking on a malicious URL, leading them to a phishing site and prompting them to install a malicious app.
+
+- (Corporate impersonation) Dissemination of phishing sites that exploit keywords such as "compensation for damages" and "payment of compensation" to trick users into entering their personal information to receive compensation for damages.
+
+□ Response Measures
+
+o How to Report and Verify URLs
+
+- Report and determine whether it is malicious using the "Smishing/Phishing Verification Service" in BohoNara (KakaoTalk Channel).
+
+- Integrated Reporting and Response Center for Telecommunications Financial Fraud (https://conterscam112.go.kr) My "Smishing Text Report"
+
+- Report and determine whether it is malicious using the "Smishing/Phishing Verification Service" in BohoNara (KakaoTalk Channel).
+
+o How to Prevent Hacked Emails
+
+- Carefully check the sender's email address, and do not open unfamiliar emails or attachments.
+
+- If you access a link in the body of an email, check whether it matches the legitimate site of the service provider, and if it does not, do not enter personal information such as account information.
+
+o Latest system and software updates
+
+- Keep the operating system and office software up to date
+
+o Antivirus Software Management
+
+- Keep your antivirus software up to date and perform regular scans.
+
+o Delete when installing a malicious application
+
+- Clicking on a web address alone will not infect your device with a malicious app. However, if you have installed an app through a web address, check your smartphone using the following methods.
+
+• Use a mobile antivirus program to check for the installation of malicious apps, and if detected, switch to airplane mode and call 112.
+※ Since malicious apps can remotely control your phone, report it through the phones of people around you.
+
+• Manually deleting malicious apps
+
+• Visit a nearby mobile phone service center
+
+o Revoke and reissue a digital certificate
+
+- If you used financial services on a smartphone that was infected with a malicious app, information necessary for financial transactions, such as public certificates and security cards, may have been leaked, so discard the information and reissue it.
+
+o Preventing secondary damage
+
+- You should inform your acquaintances about the smishing incident because secondary damage may occur, such as a malicious app installed on your smartphone accessing your contact list and sending smishing messages with similar content to other people.
+
+□ Smishing Report and Consultation Inquiry
+
+o Integrated Reporting and Response Center for Telecommunications Financial Fraud: 1394 (no area code needed)
+
+o Korea Internet & Security Agency Internet Protection Center: 118 (no area code needed)
+
+□ Written by: Smishing Response Team, National Fraud Response Unit

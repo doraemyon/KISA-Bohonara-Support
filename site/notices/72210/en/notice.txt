@@ -1,0 +1,26 @@
+Title:
+Notice on the Operation of Cleaning Service Related to Security Authentication Software Vulnerability
+
+Summary:
+We are disseminating today's KISA announcement "Notice on the Operation of Cleaning Service Related to Security Authentication Software Vulnerability". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Security vulnerability discovered in INNORIX Agent
+o Personnel in charge and users of each organization operating the relevant S/W are advised to remove the software according to the mitigation measures
+
+□ Description
+o Local privilege escalation possible through vulnerability in INNORIX Agent
+
+□ Affected products
+Product Name / Affected Version / Major Vulnerability Details
+Agent / 1.1.1.001 or higher 1.3.5.576 or lower / Local privilege escalation
+□ Security Vulnerability Cleaning Service Operation Guide
+o The relevant service provides a function to automatically detect vulnerable old-version S/W on user PCs through antivirus programs (nProtect Online Security, VirusChaser, Exosphere, TurboVaccine) and remediate the vulnerability upon user consent
+
+□ Questions and inquiries
+o INNORIX Contact: ☎ 02-557-2757
+o In case of a security incident, report the incident through the procedure below
+※ Bohonnara (https://boho.or.kr) -> Report Security Incident -> Report
+
+□ Author: Vulnerability Management Center, Digital Threat Response Headquarters

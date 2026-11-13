@@ -1,0 +1,51 @@
+Title:
+Recommendation for Strengthening Corporate Security against Recent Cyber Attacks
+
+Summary:
+We are disseminating today's KISA announcement "Recommendation for Strengthening Corporate Security against Recent Cyber Attacks". Please reply if you have any specific issues.
+
+Body:
+□ Overview
+- With multiple security incidents recently occurring targeting domestic financial institutions and private companies, there is a need to strengthen security for enterprises and organizations to prepare for additional attacks.
+- In particular, enterprises are advised to prioritize inspecting web/API vulnerabilities and exposed authentication information, which are frequently exploited for initial intrusion, and to implement phased protection measures to block internal system access and critical information leakage after an intrusion.
+□ Key Security Inspection and Monitoring Items
+Classification / Priority Inspection Items / Key Monitoring Targets
+① Externally Exposed Systems / Blocking unused services, patching vulnerabilities, restricted management function access / Repeated access to multiple paths/services, attempts to view configuration/backup files
+② Web/API / Data/function-specific permission verification, input processing inspection, limited query range / Sequential queries with modified identifiers, queries via alternative paths after access denial
+③ Accounts/Authentication Information / Application of multi-factor authentication for administrators, revocation/replacement of exposed keys, setting minimum privileges / Use of authentication information in new access environments, account creation/privilege escalation
+④ Servers/Internal Network / Reduction of service account privileges, limitation of inter-system communication, verification of security program operation / Abnormal command execution by web servers, internal system reconnaissance, new external communication
+⑤ Information/Response Systems / Restriction of download privileges, integrated log management, inspection of initial response procedures / Sequential queries of multiple data items, abnormal data exfiltration, deletion of logs/interruption of collection
+□ Key Security Strengthening Measures
+① Verification of Externally Exposed Assets and Vulnerability Remediation
+- Check the operational status of domains, subdomains, IP addresses, web services, and remote access services accessible from the internet, and clean up unassigned assets and test/unused services
+- Restrict administrative pages, databases, and management access functions so that they can only be accessed by authorized targets and designated access paths
+- Apply security updates to operating systems, web frameworks, and libraries, and manage temporary protective measures and follow-up schedules if immediate action is difficult
+- Check whether configuration files, source code repository information, backup files, and detailed error information are exposed in public web paths
+② Strengthening Verification of Web/API Vulnerabilities and Access Privileges
+- Verify user permissions for each data/function request on the server independently of login status, and block general users from accessing administrative functions
+- Use a separate test account to check whether other users' information can be viewed or modified when changing request values such as document numbers or user numbers, and ensure unauthorized requests are denied
+- Use secure methods such as parameterized queries for database queries, and inspect implementation to ensure user input is not interpreted as query statements or system commands
+- Restrict communication for functions fetching external URL contents to permitted destinations/protocols, and control access to internal management services and cloud authentication information provision paths
+- Apply limits tailored to business characteristics regarding the number of calls, query period, returned record count, and download size per account/authentication token
+③ Protection of Accounts and Authentication Information
+- Apply Multi-Factor Authentication (MFA) to administrator and remote access accounts, separate general business accounts from administrative accounts, and revoke unused accounts and unnecessary privileges
+- Check source code, code repository change history, configuration files, and collaboration tools for the exposure of passwords, access keys, and authentication tokens
+- For exposed authentication information, go beyond simply deleting posts/files to block use, revoke/replace them, and investigate whether additional access occurred by checking the usage history of the information
+- Grant inter-system integration accounts and access keys privileges only to necessary resources and functions, and use temporary authentication information with short validity periods where possible. KISA Authentication Information Protection Guidelines
+- Create external maintenance accounts with minimum necessary privileges when needed, apply MFA, and ensure they are removed after use (apply the same to network access connections)
+④ Prevention of Server Compromise and Spread to Internal Systems
+- Remove administrator privileges from web/application execution accounts, and limit database/file storage access privileges to the scope necessary for business operations
+- Allow only necessary targets and ports for communication connecting from web servers to internal systems, and restrict unnecessary internet outbound traffic
+- Configure file upload paths to prevent server-side script execution, and inspect for unauthorized file creation/modification in web paths
+- Verify the operational status of antivirus and Endpoint Detection and Response (EDR) tools, and set alerts for abnormal command execution by web server processes and internal system access attempts
+⑤ Strengthening Information Leakage Detection and Linked Monitoring
+- Limit important information query/download/export functions to the user's operational scope, and minimize personal and internal information included in responses to necessary items
+- Synchronize time logs across web/API, authentication, servers, databases, and cloud, and correlatively verify cross-system activities utilizing accounts and request identification information
+- Record necessary information for analysis in logs, such as occurrence time, request path, processing result, access target, and transmission volume, while ensuring secret information such as plain text passwords and authentication tokens is not stored
+- Perform both short-term detection and long-term cumulative analysis to identify not only massive requests but also cumulative information access through repeated small-scale queries
+□ Response Measures in Case of Suspected Intrusion
+- Report to the Korea Internet & Security Agency (KISA) upon occurrence or suspicion of a security incident
+※ KISA Internet Protection Portal (https://boho.or.kr) → Report hacking incidents or consult (call 118 without area code)
+- Promptly isolate suspected compromised systems from the network to prevent the spread of additional damage
+※ Preserve system logs and related evidence necessary for incident analysis so they are not damaged or tampered with
+□ Author: Threat Analysis Unit, AI Comprehensive Analysis Team

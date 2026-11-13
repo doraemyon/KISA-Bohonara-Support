@@ -1,0 +1,72 @@
+Title:
+Apache Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Apache Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o The Apache Foundation has released a security update to address vulnerabilities in its products. [1]
+o Users running an affected version are advised to update to the latest version according to the workaround.
+
+□ Description
+o NULL Pointer Dereference Vulnerability in Apache HTTP Server (CVE-2026-46729) [1][2]
+o Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache HTTP Server (CVE-2026-47360) [1][3]
+o Missing Authentication for Critical Function vulnerability in the Apache HTTP Server (CVE-2026-48005) [1][4]
+o Out-of-bounds Write Vulnerability in Apache HTTP Server (CVE-2026-56153) [1][5]
+o Use-After-Free Vulnerability in Apache HTTP Server (CVE-2026-56154) [1][6]
+o Out-of-bounds Write Vulnerability in Apache HTTP Server (CVE-2026-56449) [1][7]
+o Use-After-Free Vulnerability in Apache HTTP Server (CVE-2026-57941) [1][8]
+o Out-of-bounds Write Vulnerability in Apache HTTP Server (CVE-2026-59685) [1][9]
+o Improper Privilege Management Vulnerability in Apache HTTP Server (CVE-2026-59797) [1][10]
+o Improper Access Control Vulnerability in Apache HTTP Server (CVE-2026-63045) [1][11]
+o Stack-based Buffer Overflow Vulnerability in Apache HTTP Server (CVE-2026-63292) [1][12]
+o NULL Pointer Dereference Vulnerability in Apache HTTP Server (CVE-2026-63686) [1][13]
+o HTTP Request/Response Smuggling Vulnerability in Apache HTTP Server (CVE-2026-63718) [1][14]
+o Authentication Bypass by Capture-Replay Vulnerability in Apache HTTP Server (CVE-2026-73636) [1][15]
+o Use-After-Free Vulnerability in Apache HTTP Server (CVE-2026-73637) [1][16]
+o Integer Overflow or Wraparound Vulnerability in Apache HTTP Server (CVE-2026-93546) [1][17]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-46729 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-47360 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-48005 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-56153 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-56154 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-56449 / Apache HTTP Server / 2.4.68 / 2.4.69 or later
+CVE-2026-57941 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-59685 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-59797 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-63045 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-63292 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-63686 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-63718 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-73636 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-73637 / Apache HTTP Server / 2.4.0 or later and below 2.4.69 / 2.4.69 or later
+CVE-2026-93546 / Apache HTTP Server / Below 2.4.69 / 2.4.69 or later
+※ Perform updates by referring to the sites listed below. [1]
+
+□ Reference sites
+[1] https://httpd.apache.org/security/vulnerabilities_24.html
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-46729
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-47360
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-48005
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-56153
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-56154
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-56449
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-57941
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-59685
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-59797
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-63045
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-63292
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-63686
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-63718
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-73636
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-73637
+[17] https://nvd.nist.gov/vuln/detail/CVE-2026-93546
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code needed)
+
+□ Prepared by: Vulnerability Management Center, Digital Threat Response Headquarters

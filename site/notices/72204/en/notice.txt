@@ -1,0 +1,25 @@
+Title:
+Piolink Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Piolink Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Cases utilizing vulnerabilities in older versions that could pose a security threat have been discovered in Piolink products, requiring caution [1]
+o Users utilizing affected versions are advised to update to the latest version according to the mitigation measures
+
+□ Affected products
+Manufacturer / Product Name / Affected Version / Resolution Version
+Piolink / PAS-K / 1.8.12.0.0 or higher and less than 1.8.19.0.11 / 1.8.19.0.11
+Piolink / PAS-K / 1.8.20.0.0 or higher and less than 1.8.24.0.6 / 1.8.24.0.6
+Piolink / PAS-K / 1.8.24.1.3 or higher and less than 1.8.26.0.6 / 1.8.26.0.6
+※ Check the reference site below and perform the update [1]
+
+□ Reference sites
+[1] https://www.piolink.com/kr/company/News.php?bbsCode=media_press&vType=view&idx=922&page=1
+
+□ Questions and inquiries
+o Piolink: ☎ 02-2025-6999
+
+□ Author: Vulnerability Management Center, Digital Threat Response Headquarters

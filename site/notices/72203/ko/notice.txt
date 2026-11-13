@@ -1,0 +1,83 @@
+제목:
+Apache 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Apache 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Apache 재단은 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[10]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Apache Tomcat에서 발생하는 Improper Authentication 취약점(CVE-2026-75973) [1][11]
+o Apache Tomcat에서 발생하는 Authentication Bypass by Alternate Name 취약점(CVE-2026-76183) [2][12]
+o Apache Tomcat에서 발생하는 Race Condition 취약점(CVE-2026-77762) [3][13]
+o Apache Tomcat에서 발생하는 Incomplete Cleanup 취약점(CVE-2026-78437) [4][14]
+o Apache Tomcat에서 발생하는 HTTP Request/Response Smuggling 취약점(CVE-2026-86350) [5][15]
+o Apache Tomcat에서 발생하는 Uncontrolled Resource Consumption 취약점(CVE-2026-77791) [6][16]
+o Apache Tomcat에서 발생하는 Improper Handling of Length Parameter Inconsistency 취약점(CVE-2026-87022) [7][17]
+o Apache Tomcat에서 발생하는 Allocation of Resources Without Limits or Throttling 취약점(CVE-2026-78383) [8][18]
+o Apache Tomcat에서 발생하는 Missing Release of Resource after Effective Lifetime 취약점(CVE-2026-79677) [9][19]
+o Apache Tomcat에서 발생하는 Improper Authentication 취약점(CVE-2026-86248) [10][20]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-75973 / Apache Tomcat / 9.0.0.M4 이상 9.0.122 미만 / 9.0.122 이상
+CVE-2026-75973 / Apache Tomcat / 10.1.0-M1 이상 10.1.60 미만 / 10.1.60 이상
+CVE-2026-75973 / Apache Tomcat / 11.0.0-M1 이상 11.0.26 미만 / 11.0.26 이상
+CVE-2026-76183 / Apache Tomcat / 9.0.0.M1 이상 9.0.122 미만 / 9.0.122 이상
+CVE-2026-76183 / Apache Tomcat / 10.1.0-M1 이상 10.1.60 미만 / 10.1.60 이상
+CVE-2026-76183 / Apache Tomcat / 11.0.0-M1 이상 11.0.26 미만 / 11.0.26 이상
+CVE-2026-77762 / Apache Tomcat / 9.0.39 이상 9.0.122 미만 / 9.0.122 이상
+CVE-2026-77762 / Apache Tomcat / 10.1.0-M1 이상 10.1.60 미만 / 10.1.60 이상
+CVE-2026-77762 / Apache Tomcat / 11.0.0-M1 이상 11.0.26 미만 / 11.0.26 이상
+CVE-2026-78437 / Apache Tomcat / 9.0.116 이상 9.0.122 미만 / 9.0.122 이상
+CVE-2026-78437 / Apache Tomcat / 10.1.53 이상 10.1.60 미만 / 10.1.60 이상
+CVE-2026-78437 / Apache Tomcat / 11.0.19 이상 11.0.26 미만 / 11.0.26 이상
+CVE-2026-86350 / Apache Tomcat / 9.0.118 이상 9.0.122 미만 / 9.0.122 이상
+CVE-2026-86350 / Apache Tomcat / 10.1.55 이상 10.1.60 미만 / 10.1.60 이상
+CVE-2026-86350 / Apache Tomcat / 11.0.22 이상 11.0.26 미만 / 11.0.26 이상
+CVE-2026-77791 / Apache Tomcat / 9.0.74 이상 9.0.122 미만 / 9.0.122 이상
+CVE-2026-77791 / Apache Tomcat / 10.1.8 이상 10.1.60 미만 / 10.1.60 이상
+CVE-2026-77791 / Apache Tomcat / 11.0.0-M5 이상 11.0.26 미만 / 11.0.26 이상
+CVE-2026-87022 / Apache Tomcat / 9.0.0.M1 이상 9.0.122 미만 / 9.0.122 이상
+CVE-2026-87022 / Apache Tomcat / 10.1.0-M1 이상 10.1.60 미만 / 10.1.60 이상
+CVE-2026-87022 / Apache Tomcat / 11.0.0-M1 이상 11.0.26 미만 / 11.0.26 이상
+CVE-2026-78383 / Apache Tomcat / 9.0.0.M1 이상 9.0.122 미만 / 9.0.122 이상
+CVE-2026-78383 / Apache Tomcat / 10.1.0-M1 이상 10.1.60 미만 / 10.1.60 이상
+CVE-2026-78383 / Apache Tomcat / 11.0.0-M1 이상 11.0.26 미만 / 11.0.26 이상
+CVE-2026-79677 / Apache Tomcat / 9.0.0.M1 이상 9.0.122 미만 / 9.0.122 이상
+CVE-2026-79677 / Apache Tomcat / 10.1.0-M1 이상 10.1.60 미만 / 10.1.60 이상
+CVE-2026-79677 / Apache Tomcat / 11.0.0-M1 이상 11.0.26 미만 / 11.0.26 이상
+CVE-2026-86248 / Apache Tomcat / 9.0.92 이상 9.0.122 미만 / 9.0.122 이상
+CVE-2026-86248 / Apache Tomcat / 10.1.22 이상 10.1.60 미만 / 10.1.60 이상
+CVE-2026-86248 / Apache Tomcat / 11.0.0-M14 이상 11.0.26 미만 / 11.0.26 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]~[10]
+
+□ 참고사이트
+[1] https://lists.apache.org/thread/njjcdkkzqyzx4n3ffc4ffjmyh5mpl1gr
+[2] https://lists.apache.org/thread/45mxk8nj2q8pkhct6lfxkvtm2jpywrsp
+[3] https://lists.apache.org/thread/y5r9fvjo7ol24mkoyoc0st8bqrfyqcyn
+[4] https://lists.apache.org/thread/qkmsos3s8chn5053qr466rzwv6sk5gjg
+[5] https://lists.apache.org/thread/mss45z99lcdd5dtpgcn45dy82f3toswc
+[6] https://lists.apache.org/thread/mb1pjjooqytrl6hbvbt3rw1lqwlon4cz
+[7] https://lists.apache.org/thread/ypvlkjqsq0480fnk9jm6h9qllddwlw4w
+[8] https://lists.apache.org/thread/tyqcqk99g7ghgk22641vf67vghcyswnw
+[9] https://lists.apache.org/thread/bzwps6ck4szf2hmksbbon3syyl9qnkv8
+[10] https://lists.apache.org/thread/nmkmjp9l53y8h3oc4n8fc0bkw9dv15sk
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-75973
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-76183
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-77762
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-78437
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-86350
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-77791
+[17] https://nvd.nist.gov/vuln/detail/CVE-2026-87022
+[18] https://nvd.nist.gov/vuln/detail/CVE-2026-78383
+[19] https://nvd.nist.gov/vuln/detail/CVE-2026-79677
+[20] https://nvd.nist.gov/vuln/detail/CVE-2026-86248
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터

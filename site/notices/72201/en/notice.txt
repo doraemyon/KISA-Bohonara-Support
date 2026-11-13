@@ -1,0 +1,88 @@
+Title:
+Citrix Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Citrix Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Citrix releases security updates to address vulnerabilities in its products [1]
+o Users running affected versions are advised to update to the latest version according to the workaround.
+
+□ Description
+o Improper Input Validation Vulnerability in NetScaler ADC and NetScaler Gateway (CVE-2026-88771) [1][2]
+o Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in NetScaler ADC and NetScaler Gateway (CVE-2026-88772) [1][3]
+o HTTP Request/Response Smuggling Vulnerability in NetScaler ADC and NetScaler Gateway (CVE-2026-88773) [1][4]
+o Vulnerabilities due to insufficient security settings in NetScaler ADC and NetScaler Gateway (CVE-2026-88774) [1][5]
+o Classic Buffer Overflow Vulnerability in NetScaler ADC and NetScaler Gateway (CVE-2026-88775) [1][6]
+o Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in NetScaler ADC and NetScaler Gateway (CVE-2026-88776) [1][7]
+o Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in NetScaler ADC and NetScaler Gateway (CVE-2026-88777) [1][8]
+o Predictable Exact Value from Previous Values vulnerability in NetScaler ADC and NetScaler Gateway (CVE-2026-88778) [1][9]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-88771 / NetScaler ADC / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88771 / NetScaler ADC / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88771 / NetScaler Gateway / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88771 / NetScaler Gateway / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88771 / NetScaler ADC FIPS/NDcPP / Below 13.1-37.279 / 13.1-37.279 or later
+CVE-2026-88771 / NetScaler ADC FIPS / 14.1-73.37 Below FIPS / 14.1-73.37 FIPS or higher
+CVE-2026-88772 / NetScaler ADC / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88772 / NetScaler ADC / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88772 / NetScaler Gateway / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88772 / NetScaler Gateway / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88772 / NetScaler ADC FIPS/NDcPP / Below 13.1-37.279 / 13.1-37.279 or later
+CVE-2026-88772 / NetScaler ADC FIPS / 14.1-73.37 Below FIPS / 14.1-73.37 FIPS or higher
+CVE-2026-88773 / NetScaler ADC / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88773 / NetScaler ADC / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88773 / NetScaler Gateway / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88773 / NetScaler Gateway / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88773 / NetScaler ADC FIPS/NDcPP / Below 13.1-37.279 / 13.1-37.279 or later
+CVE-2026-88773 / NetScaler ADC FIPS / 14.1-73.37 Below FIPS / 14.1-73.37 FIPS or higher
+CVE-2026-88774 / NetScaler ADC / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88774 / NetScaler ADC / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88774 / NetScaler Gateway / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88774 / NetScaler Gateway / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88774 / NetScaler ADC FIPS/NDcPP / Below 13.1-37.279 / 13.1-37.279 or later
+CVE-2026-88774 / NetScaler ADC FIPS / 14.1-73.37 Below FIPS / 14.1-73.37 FIPS or higher
+CVE-2026-88775 / NetScaler ADC / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88775 / NetScaler ADC / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88775 / NetScaler Gateway / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88775 / NetScaler Gateway / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88775 / NetScaler ADC FIPS/NDcPP / Below 13.1-37.279 / 13.1-37.279 or later
+CVE-2026-88775 / NetScaler ADC FIPS / 14.1-73.37 Below FIPS / 14.1-73.37 FIPS or higher
+CVE-2026-88776 / NetScaler ADC / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88776 / NetScaler ADC / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88776 / NetScaler Gateway / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88776 / NetScaler Gateway / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88776 / NetScaler ADC FIPS/NDcPP / Below 13.1-37.279 / 13.1-37.279 or later
+CVE-2026-88776 / NetScaler ADC FIPS / 14.1-73.37 Below FIPS / 14.1-73.37 FIPS or higher
+CVE-2026-88777 / NetScaler ADC / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88777 / NetScaler ADC / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88777 / NetScaler Gateway / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88777 / NetScaler Gateway / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88777 / NetScaler ADC FIPS/NDcPP / Below 13.1-37.279 / 13.1-37.279 or later
+CVE-2026-88777 / NetScaler ADC FIPS / 14.1-73.37 Below FIPS / 14.1-73.37 FIPS or higher
+CVE-2026-88778 / NetScaler ADC / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88778 / NetScaler ADC / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88778 / NetScaler Gateway / Below 13.1-64.23 / 13.1-64.23 or later
+CVE-2026-88778 / NetScaler Gateway / Below 14.1-73.37 / 14.1-73.37 or later
+CVE-2026-88778 / NetScaler ADC FIPS/NDcPP / Below 13.1-37.279 / 13.1-37.279 or later
+CVE-2026-88778 / NetScaler ADC FIPS / 14.1-73.37 Below FIPS / 14.1-73.37 FIPS or higher
+※ Perform updates by referring to the sites listed below. [1]
+
+□ Reference sites
+[1] https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-88771
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-88772
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-88773
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-88774
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-88775
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-88776
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-88777
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-88778
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code)
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Headquarters
