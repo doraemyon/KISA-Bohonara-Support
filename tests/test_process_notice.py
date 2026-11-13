@@ -39,7 +39,8 @@ class ProcessNoticeTests(unittest.TestCase):
         )
 
     def test_extracts_title_paragraphs_and_table_as_utf8_text(self) -> None:
-        title, body, published_date = process_notice.parse_notice_document(SAMPLE_HTML)
+        notice = process_notice.parse_notice_document(SAMPLE_HTML)
+        title, body, published_date = notice.title, notice.body, notice.published_date
 
         self.assertEqual(title, "Ivanti 제품 보안 업데이트 권고")
         self.assertEqual(published_date, "2026-11-10")
@@ -50,6 +51,31 @@ class ProcessNoticeTests(unittest.TestCase):
             body,
         )
         self.assertIn("[1] https://example.com", body)
+
+    def test_only_notice_attachments_are_rendered_below_both_languages(self) -> None:
+        attachment_block = """
+            <div class="attach">
+              <a onclick="fileDown('file_1','1','B0000133')">가이드 &amp; 설명.pdf</a>
+              <a href="/common/cmm/fms/FileDown.do?atchFileId=file_1&amp;fileSn=1">duplicate</a>
+              <a href="https://example.com/common/cmm/fms/FileDown.do?atchFileId=evil&amp;fileSn=1">external</a>
+            </div>
+        """
+        source = SAMPLE_HTML.replace('<div class="content">', attachment_block + '<div class="content">')
+        notice = process_notice.parse_notice_document(source)
+        original = "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&nttId=72263"
+        self.assertEqual(notice.attachments, ["가이드 & 설명.pdf"])
+        self.assertEqual(process_notice.parse_notice_document(SAMPLE_HTML).attachments, [])
+        self.assertNotIn("가이드", notice.body)
+        for language, heading in (("ko", "첨부파일"), ("en", "Attachments")):
+            page = process_notice.render_page(language, notice.title, notice.body, original, attachments=notice.attachments)
+            self.assertIn(f"</svg>{heading}</h2>", page)
+            self.assertIn("가이드 &amp; 설명.pdf", page)
+            self.assertIn("nttId=72263#:~:text=", page)
+            self.assertGreater(page.index('class="notice-attachments"'), page.index('id="notice-text"'))
+        archive = process_notice.render_notice_index(
+            [{"notice_id": "72263", "title": notice.title, "has_korean": True, "has_english": True, "has_attachments": True}]
+        )
+        self.assertIn('aria-label="첨부파일 있음"', archive)
 
     def test_keeps_explicit_breaks_without_padding_each_paragraph(self) -> None:
         paragraphs = """
@@ -62,9 +88,9 @@ class ProcessNoticeTests(unittest.TestCase):
             - 하위 항목을 확인합니다.</p></div>
         """
         source = SAMPLE_HTML.partition('<div class="content_html">')[0]
-        _title, body, _date = process_notice.parse_notice_document(
+        body = process_notice.parse_notice_document(
             source + '<div class="content_html">' + paragraphs + "</div></div></section>"
-        )
+        ).body
         self.assertEqual(
             body,
             "□ 개요\n○ 첫 항목\n○ 둘째 항목\n추가 안내\n\n별도 문단\n\n"
@@ -72,7 +98,8 @@ class ProcessNoticeTests(unittest.TestCase):
         )
 
     def test_update_advisory_uses_update_summary(self) -> None:
-        title, body, _published_date = process_notice.parse_notice_document(SAMPLE_HTML)
+        notice = process_notice.parse_notice_document(SAMPLE_HTML)
+        title, body = notice.title, notice.body
         document = process_notice.korean_document(title, body)
 
         self.assertTrue(process_notice.is_update_advisory(title, body))
@@ -529,7 +556,7 @@ class ProcessNoticeTests(unittest.TestCase):
                 mock.patch.object(
                     process_notice,
                     "fetch_notice",
-                    return_value=(title, body, "2026-11-10"),
+                    return_value=process_notice.NoticeDocument(title, body, "2026-11-10", []),
                 ),
                 mock.patch.object(
                     process_notice,

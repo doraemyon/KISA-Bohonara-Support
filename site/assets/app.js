@@ -91,3 +91,33 @@ async function copyNotice() {
 if (copyButton && noticeText && copyStatus) {
   copyButton.addEventListener("click", copyNotice);
 }
+
+const noticeSearch = document.getElementById("notice-search");
+const noticeCount = document.getElementById("notice-count");
+const searchEmpty = document.getElementById("notice-search-empty");
+
+if (noticeSearch && noticeCount && searchEmpty) {
+  const normalize = (value) => value.normalize("NFKC").toLowerCase().trim();
+  const rows = Array.from(document.querySelectorAll(".notice-list__row"), (row) => ({
+    element: row,
+    text: normalize([
+      row.querySelector(".notice-list__title").textContent,
+      row.querySelector(".notice-list__number").textContent,
+      row.dataset.noticeId,
+    ].join(" ")),
+  }));
+
+  noticeSearch.parentElement.hidden = rows.length === 0;
+  noticeSearch.addEventListener("input", () => {
+    const query = normalize(noticeSearch.value);
+    const terms = query.split(/\s+/);
+    let matches = 0;
+    for (const { element, text } of rows) {
+      const visible = terms.every((term) => text.includes(term));
+      element.hidden = !visible;
+      if (visible) matches++;
+    }
+    searchEmpty.hidden = matches !== 0;
+    noticeCount.textContent = query ? "검색 결과 " + matches + "건" : "총 " + rows.length + "건";
+  });
+}

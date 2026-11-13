@@ -20,7 +20,7 @@ def main() -> None:
         if not source_url:
             print(f"WARNING: {metadata_path} has no source URL.", file=sys.stderr)
             continue
-        _title, _body, published_date = process_notice.fetch_notice(source_url)
+        published_date = process_notice.fetch_notice(source_url).published_date
         metadata["published_date"] = published_date
         metadata["format_version"] = process_notice.FORMAT_VERSION
         metadata_path.write_text(

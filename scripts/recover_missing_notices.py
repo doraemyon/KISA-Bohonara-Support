@@ -80,6 +80,7 @@ def reconcile(full_scan: bool) -> list[tuple[str, str, str]]:
     since = three_months_before(today) if full_scan else today - timedelta(days=14)
     try:
         catalog = notice_catalog.official_notices(since, today)
+        notice_catalog.update_board_numbers(catalog)
         discovered = [entry.request() for entry in catalog]
     except (OSError, RuntimeError, ValueError) as error:
         print(f"::warning::Official KISA list scan failed: {error}. Trying RSS and the saved queue.")

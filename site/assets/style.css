@@ -387,6 +387,50 @@ a {
   tab-size: 2;
 }
 
+.attachment-icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+.notice-attachments {
+  padding: 16px clamp(16px, 4vw, 32px) 20px;
+  border-top: 1px solid var(--border-muted);
+}
+
+.notice-attachments h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.notice-attachments ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0 0 0 24px;
+  list-style: none;
+}
+
+.notice-attachments a {
+  display: inline-block;
+  padding: 4px 0;
+  color: var(--accent-fg);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+  text-underline-offset: 3px;
+}
+
+.notice-list__attachment {
+  display: inline-flex;
+  margin-inline-start: 4px;
+  color: var(--fg-muted);
+  vertical-align: -3px;
+}
+
 .code-line {
   display: grid;
   min-height: 24.5px;
@@ -432,6 +476,51 @@ a {
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.025em;
+}
+
+.list-heading__tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.list-search {
+  position: relative;
+}
+
+.list-search svg {
+  position: absolute;
+  inset: 50% auto auto 10px;
+  width: 16px;
+  height: 16px;
+  color: var(--fg-muted);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.list-search input {
+  width: min(28vw, 250px);
+  min-height: 36px;
+  padding: 6px 10px 6px 33px;
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  background: var(--canvas-default);
+  color: var(--fg-default);
+  font: inherit;
+  font-size: 14px;
+}
+
+.list-search input::placeholder {
+  color: var(--fg-muted);
+}
+
+.list-search input:focus-visible {
+  outline: 2px solid var(--accent-fg);
+  outline-offset: 1px;
+}
+
+.notice-list__row[hidden] {
+  display: none;
 }
 
 .list-count {
@@ -690,6 +779,20 @@ a {
 
   .list-heading h1 {
     font-size: 21px;
+  }
+
+  .list-heading__tools {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .list-search {
+    flex: 1;
+  }
+
+  .list-search input {
+    width: 100%;
+    font-size: 16px;
   }
 
   .notice-list__header {

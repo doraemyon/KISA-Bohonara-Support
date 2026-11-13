@@ -24,6 +24,18 @@ import offline_translation
 
 
 MAX_PAGE_BYTES = 2_000_000
+ATTACHMENT_DOWNLOAD_PATH = "/common/cmm/fms/FileDown.do"
+ATTACHMENT_CALL = re.compile(
+    r"""fileDown\(\s*['"]([\w-]{1,128})['"]\s*,\s*['"]([0-9]{1,8})['"]\s*,\s*['"]B0000133['"]\s*\)\s*;?""",
+    re.ASCII,
+)
+PAPERCLIP_ICON = (
+    '<svg class="attachment-icon" viewBox="0 0 24 24" fill="none" '
+    'stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
+    'stroke-linejoin="round" aria-hidden="true">'
+    '<path d="m21 11.5-8.6 8.6a5 5 0 0 1-7.1-7.1l9.2-9.2a3.4 3.4 0 0 1 4.8 4.8l-9.2 9.2'
+    'a1.8 1.8 0 0 1-2.5-2.5l8.5-8.5"/></svg>'
+)
 SITE_ROOT = Path("site")
 KISA_HOSTS = {"boho.or.kr", "www.boho.or.kr"}
 MYMEMORY_URL = "https://api.mymemory.translated.net/get"
@@ -128,6 +140,14 @@ def write_output(name: str, value: str) -> None:
     if output_path:
         with open(output_path, "a", encoding="utf-8") as output:
             output.write(f"{name}={value}\n")
+
+
+@dataclass(frozen=True)
+class NoticeDocument:
+    title: str
+    body: str
+    published_date: str
+    attachments: list[str]
 
 
 @dataclass
@@ -270,7 +290,63 @@ def normalize_published_date(value: str) -> str:
         fail("KISA notice published date was missing or invalid.")
 
 
-def parse_notice_document(document: str) -> tuple[str, str, str]:
+def attachment_url(file_id: str, serial: str) -> str:
+    query = urllib.parse.urlencode(
+        {"atchFileId": file_id, "fileSn": serial, "bbsId": "B0000133"}
+    )
+    return f"https://www.boho.or.kr{ATTACHMENT_DOWNLOAD_PATH}?{query}"
+
+
+def official_attachment_url(value: str) -> str | None:
+    try:
+        url = urllib.parse.urlsplit(urllib.parse.urljoin("https://www.boho.or.kr/", value))
+        query = urllib.parse.parse_qs(url.query, keep_blank_values=True)
+    except ValueError:
+        return None
+    if (
+        url.scheme != "https"
+        or url.netloc not in KISA_HOSTS
+        or url.path != ATTACHMENT_DOWNLOAD_PATH
+        or url.fragment
+        or set(query) - {"atchFileId", "fileSn", "bbsId"}
+        or query.get("bbsId", ["B0000133"]) != ["B0000133"]
+    ):
+        return None
+    file_ids, serials = query.get("atchFileId", []), query.get("fileSn", [])
+    if (
+        len(file_ids) != 1
+        or len(serials) != 1
+        or not re.fullmatch(r"[A-Za-z0-9_-]{1,128}", file_ids[0])
+        or not re.fullmatch(r"[0-9]{1,8}", serials[0])
+    ):
+        return None
+    return attachment_url(file_ids[0], serials[0])
+
+
+def parse_notice_attachments(view: Node) -> list[str]:
+    container = first_descendant(view, class_name="attach")
+    if container is None:
+        return []
+    attachments: dict[str, str] = {}
+    for link in walk(container):
+        if link.tag != "a":
+            continue
+        call = ATTACHMENT_CALL.fullmatch(link.attrs.get("onclick", "").strip())
+        url = attachment_url(*call.groups()) if call else official_attachment_url(link.attrs.get("href", ""))
+        name = normalize_inline(plain_inline(link))
+        if name and url:
+            attachments.setdefault(url, name)
+    return list(attachments.values())
+
+
+def stored_attachments(metadata: dict) -> list[str]:
+    items = metadata.get("attachments")
+    if not isinstance(items, list):
+        return []
+    return [item for item in items if isinstance(item, str) and item.strip()]
+
+
+def parse_notice_document(document: str) -> NoticeDocument:
     parser = DocumentParser()
     parser.feed(document)
     view = next(
@@ -291,10 +367,10 @@ def parse_notice_document(document: str) -> tuple[str, str, str]:
     body = normalize_document(render_body(content_node))
     if not title or len(body) < 20:
         fail("KISA notice title or body was unexpectedly empty.")
-    return title, body, published_date
+    return NoticeDocument(title, body, published_date, parse_notice_attachments(view))
 
 
-def fetch_notice(url: str) -> tuple[str, str, str]:
+def fetch_notice(url: str) -> NoticeDocument:
     request = urllib.request.Request(
         url,
         headers={"User-Agent": "kisa-notice-formatter/1.0 (+GitHub Actions)"},
@@ -1035,12 +1111,38 @@ def safe_text_filename(title: str) -> str:
     return f"{filename}.txt"
 
 
+def render_attachments(language: str, attachments: list[str], source_url: str) -> str:
+    if not attachments:
+        return ""
+    heading = "첨부파일" if language == "ko" else "Attachments"
+    link_title = "KISA 원본에서 첨부파일 보기" if language == "ko" else "View attachment on KISA"
+    source, _fragment = urllib.parse.urldefrag(source_url)
+    links = []
+    for name in attachments:
+        # The original page handles downloads. Highlight the file where supported.
+        fragment = urllib.parse.quote(name, safe="").replace("-", "%2D")
+        url = html.escape(f"{source}#:~:text={fragment}", quote=True)
+        links.append(
+            f'          <li><a href="{url}" title="{link_title}" '
+            f'target="_blank" rel="noreferrer">{html.escape(name)}</a></li>'
+        )
+    link_list = "\n".join(links)
+    return f"""
+      <section class="notice-attachments" aria-labelledby="notice-attachments-title">
+        <h2 id="notice-attachments-title">{PAPERCLIP_ICON}{heading}</h2>
+        <ul>
+{link_list}
+        </ul>
+      </section>"""
+
+
 def render_page(
     language: str,
     title: str,
     notice_text: str,
     source_url: str,
     published_date: str = "",
+    attachments: list[str] | None = None,
 ) -> str:
     labels = {
         "ko": {
@@ -1158,7 +1260,7 @@ def render_page(
       </div>
       <div class="code-view" id="notice-text" aria-label="{escaped_download_filename}">
 {notice_lines}
-      </div>
+      </div>{render_attachments(language, attachments or [], source_url)}
     </article>
   </main>
   <script src="../../../assets/app.js" defer></script>
@@ -1188,11 +1290,17 @@ def stored_notice_entries() -> list[dict[str, str | bool]]:
             lines = korean_text.read_text(encoding="utf-8").splitlines()
             if len(lines) >= 2 and lines[0].strip() == "제목:":
                 title = lines[1].strip()
+        number = metadata.get("board_number")
+        board_number = str(number) if type(number) is int and number > 0 else "—"
+        if "board_number" in metadata and number is None:
+            board_number = "공지"
         entries.append(
             {
                 "notice_id": notice_id,
+                "board_number": board_number,
                 "title": title or f"보안공지 {notice_id}",
                 "published_date": str(metadata.get("published_date", "")).strip(),
+                "has_attachments": bool(stored_attachments(metadata)),
                 "has_korean": (metadata_path.parent / "ko" / "index.html").exists(),
                 "has_english": (metadata_path.parent / "en" / "index.html").exists(),
             }
@@ -1207,6 +1315,13 @@ def render_notice_index(entries: list[dict[str, str | bool]]) -> str:
     for entry in entries:
         notice_id = str(entry["notice_id"])
         title = html.escape(str(entry["title"]))
+        board_number = html.escape(str(entry.get("board_number", "—")))
+        clip = (
+            f' <span class="notice-list__attachment" role="img" aria-label="첨부파일 있음" '
+            f'title="첨부파일 있음">{PAPERCLIP_ICON}</span>'
+            if entry.get("has_attachments")
+            else ""
+        )
         published_date = str(entry.get("published_date", "")).strip()
         published_html = (
             f'<time datetime="{html.escape(published_date, quote=True)}">'
@@ -1225,9 +1340,9 @@ def render_notice_index(entries: list[dict[str, str | bool]]) -> str:
             )
         document_links = "".join(documents) or '<span class="list-muted">준비 중</span>'
         rows.append(
-            f"""      <div class="notice-list__row">
-        <span class="notice-list__number">{notice_id}</span>
-        <a class="notice-list__title" href="notices/{notice_id}/ko/">{title}</a>
+            f"""      <div class="notice-list__row" data-notice-id="{notice_id}">
+        <span class="notice-list__number">{board_number}</span>
+        <a class="notice-list__title" href="notices/{notice_id}/ko/">{title}{clip}</a>
         <span class="notice-list__date">{published_html}</span>
         <div class="notice-list__documents">{document_links}</div>
       </div>"""
@@ -1266,7 +1381,15 @@ def render_notice_index(entries: list[dict[str, str | bool]]) -> str:
         <p class="list-heading__eyebrow">Security notices</p>
         <h1>저장된 보안공지 목록</h1>
       </div>
-      <span class="list-count">총 {len(entries)}건</span>
+      <div class="list-heading__tools">
+        <label class="list-search" hidden>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="6.75" cy="6.75" r="4.5"/><path d="m10 10 4 4" stroke-linecap="round"/>
+          </svg>
+          <input id="notice-search" type="search" placeholder="제목 또는 번호 검색" aria-label="공지 제목 또는 번호 검색">
+        </label>
+        <span id="notice-count" class="list-count" role="status">총 {len(entries)}건</span>
+      </div>
     </section>
     <section class="notice-list" aria-label="저장된 보안공지">
       <div class="notice-list__header" aria-hidden="true">
@@ -1276,8 +1399,10 @@ def render_notice_index(entries: list[dict[str, str | bool]]) -> str:
         <span>문서</span>
       </div>
 {list_content}
+      <div id="notice-search-empty" class="notice-list__empty" hidden>검색 결과가 없습니다.</div>
     </section>
   </main>
+  <script src="assets/app.js" defer></script>
 </body>
 </html>
 """
@@ -1310,6 +1435,29 @@ def korean_document_parts(notice_text: str) -> tuple[str, str]:
     return match.group("title").strip(), match.group("body").strip()
 
 
+def render_stored_notice_pages(notice_directory: Path, metadata: dict) -> None:
+    source_url = str(metadata.get("source_url", "")).strip()
+    if not source_url:
+        return
+    published_date = str(metadata.get("published_date", "")).strip()
+    attachments = stored_attachments(metadata)
+    fallbacks = {"ko": str(metadata.get("title", "")), "en": str(metadata.get("english_title", ""))}
+    for language in ("ko", "en"):
+        target = notice_directory / language
+        notice_path = target / "notice.txt"
+        if not notice_path.exists():
+            continue
+        notice_text = notice_path.read_text(encoding="utf-8")
+        page_title = document_title(notice_text, language, fallbacks[language])
+        if not page_title:
+            page_title = f"KISA security notice {notice_directory.name}"
+        (target / "index.html").write_text(
+            render_page(language, page_title, notice_text, source_url, published_date, attachments),
+            encoding="utf-8",
+            newline="\n",
+        )
+
+
 def refresh_stored_notice_pages() -> None:
     """Re-render stored HTML pages without making translation API calls."""
     notices_root = SITE_ROOT / "notices"
@@ -1322,9 +1470,7 @@ def refresh_stored_notice_pages() -> None:
         except (OSError, json.JSONDecodeError):
             continue
 
-        source_url = str(metadata.get("source_url", "")).strip()
-        published_date = str(metadata.get("published_date", "")).strip()
-        if not source_url:
+        if not str(metadata.get("source_url", "")).strip():
             continue
 
         korean_path = metadata_path.parent / "ko" / "notice.txt"
@@ -1363,26 +1509,7 @@ def refresh_stored_notice_pages() -> None:
                 newline="\n",
             )
 
-        fallbacks = {
-            "ko": str(metadata.get("title", "")),
-            "en": str(metadata.get("english_title", "")),
-        }
-        for language in ("ko", "en"):
-            target = metadata_path.parent / language
-            notice_path = target / "notice.txt"
-            if not notice_path.exists():
-                continue
-            notice_text = notice_path.read_text(encoding="utf-8")
-            page_title = document_title(notice_text, language, fallbacks[language])
-            if not page_title:
-                page_title = f"KISA security notice {metadata_path.parent.name}"
-            (target / "index.html").write_text(
-                render_page(
-                    language, page_title, notice_text, source_url, published_date
-                ),
-                encoding="utf-8",
-                newline="\n",
-            )
+        render_stored_notice_pages(metadata_path.parent, metadata)
 
 
 def write_notice(
@@ -1395,19 +1522,15 @@ def write_notice(
     english: str,
     translation_provider: str,
     translation_status: str = "complete",
+    *,
+    attachments: list[str],
+    board_number: int | None = None,
+    board_number_known: bool = False,
 ) -> None:
-    for language, page_title, text in (
-        ("ko", korean_title, korean),
-        ("en", english_title, english),
-    ):
+    for language, text in (("ko", korean), ("en", english)):
         target = SITE_ROOT / "notices" / notice_id / language
         target.mkdir(parents=True, exist_ok=True)
         (target / "notice.txt").write_text(text, encoding="utf-8", newline="\n")
-        (target / "index.html").write_text(
-            render_page(language, page_title, text, source_url, published_date),
-            encoding="utf-8",
-            newline="\n",
-        )
     metadata = {
         "format_version": FORMAT_VERSION,
         "notice_id": notice_id,
@@ -1417,9 +1540,13 @@ def write_notice(
         "source_url": source_url,
         "translation_provider": translation_provider,
         "translation_status": translation_status,
+        "attachments": attachments,
     }
-    metadata_path = SITE_ROOT / "notices" / notice_id / "metadata.json"
-    metadata_path.write_text(
+    if board_number_known:
+        metadata["board_number"] = board_number
+    notice_directory = SITE_ROOT / "notices" / notice_id
+    render_stored_notice_pages(notice_directory, metadata)
+    (notice_directory / "metadata.json").write_text(
         json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
         newline="\n",
@@ -1431,7 +1558,8 @@ def write_notice(
 def main() -> None:
     requested_url, notice_id = validate_notice_url(required_env("NOTICE_URL"))
     expected_title = required_env("NOTICE_TITLE")
-    title, body, published_date = fetch_notice(requested_url)
+    notice = fetch_notice(requested_url)
+    title, body, published_date = notice.title, notice.body, notice.published_date
     if normalize_inline(expected_title) != title:
         print("WARNING: RSS title differed from the page title; using the page title.", file=sys.stderr)
 
@@ -1473,6 +1601,20 @@ def main() -> None:
 
     translation_status = "complete"
 
+    board_entry = None
+    if "board_number" not in cached_metadata:
+        # The newest RSS notices normally appear on page one. Recovery also
+        # refreshes the numbers for older notices from its broader board scan.
+        import notice_catalog
+
+        try:
+            board_entry = next(
+                (entry for entry in notice_catalog.fetch_page(1, timeout=4) if entry.notice_id == notice_id),
+                None,
+            )
+        except (OSError, RuntimeError, ValueError) as error:
+            print(f"WARNING: Could not read the KISA board number: {error}", file=sys.stderr)
+
     write_notice(
         notice_id,
         requested_url,
@@ -1483,6 +1625,9 @@ def main() -> None:
         english,
         translation_provider,
         translation_status,
+        attachments=notice.attachments,
+        board_number=board_entry.ordinal if board_entry else cached_metadata.get("board_number"),
+        board_number_known=board_entry is not None or "board_number" in cached_metadata,
     )
     write_output("notice_id", notice_id)
     write_output("translation_provider", translation_provider)

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import date
+import json
 import urllib.parse
 import urllib.request
 
@@ -54,16 +55,33 @@ def parse_page(html: str) -> list[Notice]:
     return entries
 
 
-def fetch_page(page: int) -> list[Notice]:
+def fetch_page(page: int, *, timeout: int = 12) -> list[Notice]:
     request = urllib.request.Request(
         f"{BOARD_URL}&pageIndex={page}",
         headers={"User-Agent": "kisa-notice-formatter/3.0 (+GitHub Actions)"},
     )
-    with urllib.request.urlopen(request, timeout=12) as response:
+    with urllib.request.urlopen(request, timeout=timeout) as response:
         body = response.read(process_notice.MAX_PAGE_BYTES + 1)
     if len(body) > process_notice.MAX_PAGE_BYTES:
         raise RuntimeError("The KISA notice list exceeded its size limit.")
     return parse_page(body.decode("utf-8-sig"))
+
+
+def update_board_numbers(entries: list[Notice]) -> None:
+    """Update displayed numbers from the board without changing stable notice IDs."""
+    for entry in entries:
+        path = process_notice.SITE_ROOT / "notices" / entry.notice_id / "metadata.json"
+        if not path.is_file():
+            continue
+        metadata = json.loads(path.read_text(encoding="utf-8"))
+        if "board_number" in metadata and metadata["board_number"] == entry.ordinal:
+            continue
+        metadata["board_number"] = entry.ordinal
+        path.write_text(
+            json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+            newline="\n",
+        )
 
 
 def official_notices(since: date, until: date) -> list[Notice]:
