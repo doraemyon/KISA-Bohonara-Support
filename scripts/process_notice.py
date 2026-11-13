@@ -47,7 +47,8 @@ CLOUDFLARE_URL = (
 )
 DEFAULT_GEMINI_MODEL = "gemini-3.5-flash-lite"
 FAVICON_URL = "https://avatars.githubusercontent.com/u/51371743?v=4"
-KISA_LOGO_URL = "https://www.kisa.or.kr/resource/kor/images/sub/sub_CI_logo_signature_9.png"
+ARCHIVE_LABEL = "비공식 보호나라 보안공지"
+ARCHIVE_LABEL_EN = "Unofficial Notice Viewer"
 MAX_TRANSLATION_BYTES = 450
 FORMAT_VERSION = 6
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
@@ -1136,6 +1137,15 @@ def render_attachments(language: str, attachments: list[str], source_url: str) -
       </section>"""
 
 
+def render_site_header(root: str, label: str, *, archive: bool = False) -> str:
+    inner = "topbar__inner site-header__inner" if archive else "topbar__inner"
+    return f"""  <header class="site-header topbar">
+    <div class="{inner}">
+      <a class="brand" href="{root}"><img src="{root}assets/notice-icon.png" width="20" height="20" alt=""><span>{label}</span></a>
+    </div>
+  </header>"""
+
+
 def render_page(
     language: str,
     title: str,
@@ -1201,20 +1211,13 @@ def render_page(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src https://avatars.githubusercontent.com https://www.kisa.or.kr; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://avatars.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>{html.escape(title)}</title>
   <link rel="icon" href="{FAVICON_URL}">
   <link rel="stylesheet" href="../../../assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-brand" href="../../../">
-        <span class="site-logo"><img src="{KISA_LOGO_URL}" alt=""></span>
-        <span class="site-name">KISA Notice</span>
-      </a>
-    </div>
-  </header>
+{render_site_header("../../../", ARCHIVE_LABEL_EN if language == "en" else ARCHIVE_LABEL)}
   <main class="page-shell">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a class="breadcrumbs__link" href="../../../">{label['breadcrumb']}</a>
@@ -1361,20 +1364,13 @@ def render_notice_index(entries: list[dict[str, str | bool]]) -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src https://avatars.githubusercontent.com https://www.kisa.or.kr; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>저장된 보안공지 목록 · KISA Notice</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self' https://avatars.githubusercontent.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>저장된 보안공지 목록 · {ARCHIVE_LABEL}</title>
   <link rel="icon" href="{FAVICON_URL}">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-brand" href="./">
-        <span class="site-logo"><img src="{KISA_LOGO_URL}" alt=""></span>
-        <span class="site-name">KISA Notice</span>
-      </a>
-    </div>
-  </header>
+{render_site_header("./", ARCHIVE_LABEL, archive=True)}
   <main class="page-shell">
     <section class="list-heading">
       <div>

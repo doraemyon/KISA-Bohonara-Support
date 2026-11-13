@@ -176,11 +176,12 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('src="../../../assets/app.js"', page)
         self.assertIn('id="copy-status"', page)
         self.assertIn('class="notice-card"', page)
-        self.assertIn('class="site-header"', page)
+        self.assertIn('class="site-header topbar"', page)
         self.assertIn('<time datetime="2026-11-10">발행일 2026-11-10</time>', page)
         self.assertIn('class="button button--primary"', page)
-        self.assertIn('class="site-brand" href="../../../"', page)
-        self.assertIn(process_notice.KISA_LOGO_URL, page)
+        self.assertIn('class="brand" href="../../../"', page)
+        self.assertIn('src="../../../assets/notice-icon.png" width="20" height="20"', page)
+        self.assertIn(process_notice.ARCHIVE_LABEL, page)
         self.assertIn('class="language-menu__summary"', page)
         self.assertIn('href="../ko/" aria-current="page"', page)
         self.assertIn('href="../en/"', page)
@@ -204,6 +205,7 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('href="../en/" aria-current="page"', english_page)
         self.assertIn('download="Test advisory.txt"', english_page)
         self.assertIn("Test advisory.txt · 5 lines", english_page)
+        self.assertIn(process_notice.ARCHIVE_LABEL_EN, english_page)
 
     def test_download_filename_is_safe_on_common_desktop_platforms(self) -> None:
         self.assertEqual(
@@ -234,7 +236,8 @@ class ProcessNoticeTests(unittest.TestCase):
         self.assertIn('href="notices/72263/en/">영문</a>', page)
         self.assertIn('<time datetime="2026-11-10">2026-11-10</time>', page)
         self.assertIn(process_notice.FAVICON_URL, page)
-        self.assertIn(process_notice.KISA_LOGO_URL, page)
+        self.assertIn('<title>저장된 보안공지 목록 · 비공식 보호나라 보안공지</title>', page)
+        self.assertIn('class="topbar__inner site-header__inner"', page)
 
     def test_refresh_stored_pages_uses_each_document_title(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

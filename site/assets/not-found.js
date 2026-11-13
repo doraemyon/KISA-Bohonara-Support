@@ -13,9 +13,10 @@ if (route) {
   const [, noticeId, language] = route;
   const english = language === "en";
   document.documentElement.lang = english ? "en" : "ko";
-  document.title = english
-    ? "Preparing notice · KISA Notice"
-    : "공지 문서 준비 중 · KISA Notice";
+  const brand = document.querySelector(".topbar .brand span");
+  const label = english ? "Unofficial Notice Viewer" : "비공식 보호나라 보안공지";
+  brand.textContent = label;
+  document.title = (english ? "Preparing notice · " : "공지 문서 준비 중 · ") + label;
   title.textContent = english ? "Preparing the notice" : "공지 문서를 준비하고 있습니다";
   description.textContent = english
     ? "This page will open automatically as soon as the Korean and English documents are published."
