@@ -1,0 +1,458 @@
+Title:
+MS recommends regular security updates in August due to security threats
+
+Summary:
+We are disseminating today's KISA announcement "MS recommends regular security updates in August due to security threats". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ August security update overview (13 types in total)
+o Rating: Critical 8 types, Important 5 types
+o Announcement date: 2026.08.11.(fury)
+o Update details
+
+Product Family / Severity / Impact
+Windows 11 / Critical / Elevation of Privilege
+Windows Server 2025 / Critical / Elevation of Privilege
+Windows Server 2022 / Critical / Elevation of Privilege
+Windows Server 2019 / Critical / Elevation of Privilege
+Windows Server 2016 / Critical / Elevation of Privilege
+Microsoft Office / Critical / Remote Code Execution
+Microsoft SharePoint / Critical / Spoofing
+Microsoft Exchange Server / Critical / Elevation of Privilege
+Microsoft .NET / Important / Elevation of Privilege
+Microsoft Visual Studio / Important / Security Feature Bypass
+Microsoft Dynamics 365 / Important / information disclosure
+Microsoft Azure / Important / Elevation of Privilege
+Microsoft Defender / Important / information disclosure
+[Reference site]
+[1] (korean) https://msrc.microsoft.com/update-guide/ko-kr/
+[2] (English) https://msrc.microsoft.com/update-guide/en-us/
+[3] https://msrc.microsoft.com/update-guide/ko-kr/releaseNote/2026-Aug
+
+o Vulnerability Summary Information (Total 423)
+
+Product Category / CVE ID / CVE Title
+Microsoft Copilot / CVE-2026-24301 / Microsoft Copilot Information Disclosure Vulnerability
+Dynamics Business Central / CVE-2026-40375 / Microsoft Dynamics Business Central information disclosure vulnerability
+Windows RPC API / CVE-2026-42976 / Remote Access Management Service/API (RPC Server) elevation of privilege vulnerability
+Visual Studio Code / CVE-2026-47285 / Visual Studio Code Information Disclosure Vulnerability
+Azure Monitor Agent / CVE-2026-47299 / Azure Monitor agent elevation of privilege vulnerability
+Application Insights Profiler / CVE-2026-49163 / Application Insights Profiler Elevation of Privilege Vulnerability
+Windows Active Directory / CVE-2026-49179 / Windows Active Directory Domain Services remote code execution vulnerability
+Windows LUAFV / CVE-2026-50472 / Windows LUA File Virtualization Filter Driver Elevation of Privilege Vulnerability
+Azure Active Directory / CVE-2026-50481 / Azure Active Directory Elevation of Privilege Vulnerability
+Azure Service Bus / CVE-2026-50515 / Azure Service Bus Remote Code Execution Vulnerability
+Microsoft Azure Kubernetes Service / CVE-2026-50516 / Microsoft Azure Kubernetes Service Elevation of Privilege Vulnerability
+Microsoft PowerShell / CVE-2026-50523 / Microsoft PowerShell Remote Code Execution Vulnerability
+Windows Kernel / CVE-2026-54113 / Remote Procedure Call Denial of Service Vulnerability
+Microsoft Defender for Endpoint / CVE-2026-54123 / Information disclosure vulnerability in Microsoft Defender for Endpoint for Mac
+Visual Studio Code - Python extension / CVE-2026-54981 / Visual Studio Code Python extension security feature bypass vulnerability
+Windows Imaging Component / CVE-2026-54984 / Windows Imaging Component Remote Code Execution Vulnerability
+Azure Logic Apps / CVE-2026-56161 / Azure Logic Apps information disclosure vulnerability
+Azure SQL Database / CVE-2026-56162 / Azure SQL Database Elevation of Privilege Vulnerability
+Windows Narrator Braille / CVE-2026-56174 / Windows Narrator Braille Elevation of Privilege Vulnerability
+Windows Network Address Translation (NAT) / CVE-2026-56179 / Windows Network Address Translation(NAT) Spoofing Vulnerability
+Azure Storage Explorer / CVE-2026-57104 / Azure Storage Explorer Elevation of Privilege Vulnerability
+Microsoft Office SharePoint / CVE-2026-57105 / Microsoft Office SharePoint Spoofing Vulnerability
+Microsoft PowerShell Core / CVE-2026-58612 / PowerShell Information Disclosure Vulnerability
+Microsoft Office SharePoint / CVE-2026-58639 / Microsoft SharePoint Server Spoofing Vulnerability
+.NET / CVE-2026-58641 / .NET Elevation of Privilege Vulnerability
+Visual Studio Code / CVE-2026-58650 / Visual Studio Code security feature bypass vulnerability
+Microsoft Office Word / CVE-2026-58651 / Microsoft Word Remote Code Execution Vulnerability
+Visual Studio Code / CVE-2026-59113 / Visual Studio Code Remote Code Execution Vulnerability
+Microsoft Entra Provisioning Service (SyncFabric) / CVE-2026-59115 / Microsoft Entra Provisioning Service Elevation of Privilege Vulnerability
+Copilot Cowork / CVE-2026-59118 / Copilot Cowork Elevation of Privilege Vulnerability
+Microsoft PowerShell / CVE-2026-59119 / PowerShell Elevation of Privilege Vulnerability
+Windows Telephony Service / CVE-2026-59122 / Windows Telephony Service Elevation of Privilege Vulnerability
+Microsoft High Performance Computing (HPC) Pack / CVE-2026-59124 / Microsoft High Performance Computing (HPC) Pack Remote Code Execution Vulnerability
+Virtual Hard Disk (VHD) Miniport Driver / CVE-2026-59125 / Virtual Hard Disk (VHD) Miniport Driver Elevation of Privilege Vulnerability
+Windows Event Logging Service / CVE-2026-59126 / Windows Event Log Service Elevation of Privilege Vulnerability
+Windows Installer / CVE-2026-59127 / Windows Installer Elevation of Privilege Vulnerability
+Windows Encrypting File System (EFS) / CVE-2026-59128 / Windows Encrypting File System (EFS) Information Disclosure Vulnerability
+AMD Zen / CVE-2026-59130 / AMD Zen Information Disclosure Vulnerability
+AMD Zen / CVE-2026-59131 / AMD Zen Information Disclosure Vulnerability
+Windows TCP/IP / CVE-2026-59132 / Windows TCP/IP Denial of Service Vulnerability
+Microsoft High Performance Computing (HPC) Pack / CVE-2026-59133 / Microsoft High Performance Computing (HPC) Pack Elevation of Privilege Vulnerability
+Remote Desktop Client / CVE-2026-59134 / Remote Desktop Client Remote Code Execution Vulnerability
+Microsoft Windows Search Component / CVE-2026-59135 / Microsoft Windows Search component information disclosure vulnerability
+Microsoft COM for Windows / CVE-2026-59136 / Microsoft COM for Windows Information Disclosure Vulnerability
+Windows Event Logging Service / CVE-2026-59137 / Windows Event Log Service Information Disclosure Vulnerability
+Microsoft Remote Registry Service / CVE-2026-59138 / Microsoft Remote Registry Denial of Service Vulnerability
+Microsoft Remote Registry Service / CVE-2026-61345 / Microsoft Remote Registry Denial of Service Vulnerability
+Windows Graphics Kernel / CVE-2026-61346 / Windows Graphics Kernel Elevation of Privilege Vulnerability
+Windows Event Logging Service / CVE-2026-61347 / Windows Event Log Service Information Disclosure Vulnerability
+Windows Ancillary Function Driver for WinSock / CVE-2026-61348 / Windows Accessories Driver for WinSock Elevation of Privilege Vulnerability
+Windows Work Folder Service / CVE-2026-61349 / Windows Work Folders Service Elevation of Privilege Vulnerability
+Windows NTFS / CVE-2026-61350 / Windows NTFS Information Disclosure Vulnerability
+Remote Desktop Client / CVE-2026-61352 / Remote Desktop Client Remote Code Execution Vulnerability
+Windows Telephony Service / CVE-2026-61353 / Windows Telephony Service Elevation of Privilege Vulnerability
+Windows Sensor Data Service / CVE-2026-61355 / Windows Sensor Data Service elevation of privilege vulnerability
+Windows Remote Desktop Services / CVE-2026-61356 / Windows Remote Desktop Services elevation of privilege vulnerability
+Application Information Services / CVE-2026-61357 / Application Information Service Elevation of Privilege Vulnerability
+Windows Accessibility Infrastructure (ATBroker.exe) / CVE-2026-61358 / Windows Accessibility Infrastructure (ATBroker.exe) elevation of privilege vulnerability
+Windows Storage / CVE-2026-61359 / Windows Storage Elevation of Privilege Vulnerability
+Windows GDI / CVE-2026-61360 / Windows GDI Information Disclosure Vulnerability
+Windows DHCP Client / CVE-2026-61361 / Windows DHCP Client Remote Code Execution Vulnerability
+Remote Desktop Client / CVE-2026-61363 / Remote Desktop Client Remote Code Execution Vulnerability
+Windows Remote Desktop Services / CVE-2026-61364 / Windows Remote Desktop Services elevation of privilege vulnerability
+Windows Remote Desktop Services / CVE-2026-61365 / Windows Remote Desktop Services elevation of privilege vulnerability
+Windows Network Connection Broker / CVE-2026-61366 / Windows Network Connection Broker Elevation of Privilege Vulnerability
+Windows Remote Desktop Services / CVE-2026-61367 / Windows Remote Desktop Services elevation of privilege vulnerability
+Windows Hyper-V / CVE-2026-61368 / Windows Hyper-V Information Disclosure Vulnerability
+Remote Desktop Client / CVE-2026-61918 / Windows Remote Desktop Client Information Disclosure Vulnerability
+Windows DNS / CVE-2026-61920 / Windows DNS Server Remote Code Execution Vulnerability
+Remote Desktop Client / CVE-2026-61921 / Windows Remote Desktop Client Information Disclosure Vulnerability
+Windows Display Enhancement Service / CVE-2026-61923 / Windows Display Enhancement Service elevation of privilege vulnerability
+Remote Desktop Client / CVE-2026-61924 / Windows Remote Desktop Client Information Disclosure Vulnerability
+Windows Installer / CVE-2026-61925 / Windows Installer Elevation of Privilege Vulnerability
+Windows USB Driver / CVE-2026-61926 / Windows USB Driver Elevation of Privilege Vulnerability
+Windows Bind Filter Driver / CVE-2026-61927 / Windows Bind Filter driver elevation of privilege vulnerability
+Windows Hello / CVE-2026-61928 / Windows Hello Tampering Vulnerability
+Windows Kernel / CVE-2026-61929 / Windows Kernel Elevation of Privilege Vulnerability
+Windows Kernel / CVE-2026-61930 / Windows Kernel Elevation of Privilege Vulnerability
+Windows DWM Core Library / CVE-2026-61932 / Windows DWM core library elevation of privilege vulnerability
+Windows DWM Core Library / CVE-2026-61933 / Windows DWM Core Library Information Disclosure Vulnerability
+Windows Bind Filter Driver / CVE-2026-61934 / Windows Bind Filter driver elevation of privilege vulnerability
+Windows Defender Firewall Service / CVE-2026-61936 / Windows Defender Firewall Service Security Feature Bypass Vulnerability
+Windows HTTP.sys / CVE-2026-61937 / Windows HTTP.sys Elevation of Privilege Vulnerability
+Windows Installer / CVE-2026-61938 / Windows Installer Elevation of Privilege Vulnerability
+Winlogon / CVE-2026-61939 / Winlogon Elevation of Privilege Vulnerability
+Windows MIDI Service Module / CVE-2026-62688 / Windows MIDI Service Module Elevation of Privilege Vulnerability
+Windows Push Notifications / CVE-2026-62690 / Windows Push Notification Elevation of Privilege Vulnerability
+Windows Remote Desktop Services / CVE-2026-62692 / Windows Remote Desktop Services elevation of privilege vulnerability
+Windows MIDI Service Module / CVE-2026-62693 / Windows MIDI Service Module Elevation of Privilege Vulnerability
+Windows Storage / CVE-2026-62695 / Windows Storage Elevation of Privilege Vulnerability
+Windows Program Compatibility Assistant Service / CVE-2026-62696 / Windows Program Compatibility Manager service elevation of privilege vulnerability
+Microsoft Digest Authentication / CVE-2026-62698 / Microsoft Digest Authentication Elevation of Privilege Vulnerability
+Windows Universal Disk Format File System Driver (UDFS) / CVE-2026-62699 / Windows Universal Disk Format File System Driver (UDFS) remote code execution vulnerability
+Windows NTFS / CVE-2026-62700 / Windows NTFS Elevation of Privilege Vulnerability
+Windows Telephony Service / CVE-2026-62701 / Windows Telephony Service Elevation of Privilege Vulnerability
+Windows Graphics Kernel / CVE-2026-62702 / Windows Graphics Kernel Denial of Service Vulnerability
+Windows DWM Core Library / CVE-2026-62703 / Windows DWM Core Library Information Disclosure Vulnerability
+Windows Bind Filter Driver / CVE-2026-62705 / Windows Bind Filter driver elevation of privilege vulnerability
+Windows Modern Device Management (MDM) / CVE-2026-62707 / Windows Modern Device Management Elevation of Privilege Vulnerability
+Windows Kernel / CVE-2026-62708 / Windows Kernel Elevation of Privilege Vulnerability
+Windows GDI+ / CVE-2026-62709 / Windows GDI+ Information Disclosure Vulnerability
+Windows Device Association Service / CVE-2026-62710 / Windows Device Connectivity Service Elevation of Privilege Vulnerability
+Windows Win32K / CVE-2026-62711 / Windows Win32k Elevation of Privilege Vulnerability
+Windows Win32K / CVE-2026-62712 / Windows Win32k Elevation of Privilege Vulnerability
+Windows Cloud Files Mini Filter Driver / CVE-2026-62713 / Windows Cloud Files Minifilter Driver Elevation of Privilege Vulnerability
+Windows DHCP Server / CVE-2026-62714 / Windows DHCP server information disclosure vulnerability
+Windows DHCP Server / CVE-2026-62715 / Windows DHCP server information disclosure vulnerability
+Windows DHCP Server / CVE-2026-62716 / Windows DHCP server information disclosure vulnerability
+Windows Message Queuing / CVE-2026-62717 / Windows Message Queuing elevation of privilege vulnerability
+Windows DHCP Server / CVE-2026-62718 / Windows DHCP server information disclosure vulnerability
+Windows Message Queuing / CVE-2026-62719 / Windows Message Queuing elevation of privilege vulnerability
+Windows DHCP Server / CVE-2026-62720 / Windows DHCP server information disclosure vulnerability
+User-Mode Power Service (UMPS) / CVE-2026-62721 / Windows User-Mode Power Service(UMPS) Elevation of Privilege Vulnerability
+Windows Brokering File System / CVE-2026-62722 / Microsoft Brokering File System Elevation of Privilege Vulnerability
+Windows Telephony Service / CVE-2026-62723 / Windows Telephony Service Elevation of Privilege Vulnerability
+Windows Telephony Service / CVE-2026-62724 / Windows Telephony Service Elevation of Privilege Vulnerability
+Windows Telephony Service / CVE-2026-62725 / Windows Telephony Service Elevation of Privilege Vulnerability
+Windows Telephony Service / CVE-2026-62726 / Windows Telephony Service Elevation of Privilege Vulnerability
+Windows Common Log File System Driver / CVE-2026-62728 / Windows Common Log File System Driver Elevation of Privilege Vulnerability
+Windows Telephony Service / CVE-2026-62729 / Windows Telephony Service Elevation of Privilege Vulnerability
+Windows Wired AutoConfig Service / CVE-2026-62730 / Windows Wired AutoConfiguration Service Information Disclosure Vulnerability
+Windows Telephony Service / CVE-2026-62732 / Windows Telephony Service Elevation of Privilege Vulnerability
+Windows Win32K / CVE-2026-62733 / Windows Win32k Elevation of Privilege Vulnerability
+Windows Telephony Service / CVE-2026-62734 / Windows Telephony Service Elevation of Privilege Vulnerability
+Windows HTTP.sys / CVE-2026-62735 / Windows HTTP.sys Elevation of Privilege Vulnerability
+Windows DHCP Client / CVE-2026-62736 / Windows DHCP client elevation of privilege vulnerability
+Windows Kernel / CVE-2026-62737 / Windows Kernel Elevation of Privilege Vulnerability
+Windows Management Instrumentation / CVE-2026-62738 / Windows Management Instrumentation (WMI) information disclosure vulnerability
+Windows HTTP.sys / CVE-2026-62739 / Windows HTTP.sys Elevation of Privilege Vulnerability
+Windows Imaging Component / CVE-2026-62740 / Windows Imaging Component Information Disclosure Vulnerability
+Windows HTTP.sys / CVE-2026-62741 / Windows HTTP.sys Elevation of Privilege Vulnerability
+Windows DHCP Server / CVE-2026-62742 / Windows DHCP server information disclosure vulnerability
+Windows Win32K / CVE-2026-62743 / Win32k Information Disclosure Vulnerability
+Windows DHCP Server / CVE-2026-62745 / Windows DHCP server information disclosure vulnerability
+Windows Win32K / CVE-2026-62746 / Win32k Information Disclosure Vulnerability
+Windows Device Association Service / CVE-2026-62747 / Windows Device Connectivity Service Elevation of Privilege Vulnerability
+Windows Telephony Service / CVE-2026-62748 / Windows Telephony Service Elevation of Privilege Vulnerability
+Windows Kernel / CVE-2026-62749 / Windows Kernel Elevation of Privilege Vulnerability
+Windows HTTP Protocol Stack / CVE-2026-62750 / Windows HTTP Protocol Stack Tampering Vulnerability
+Windows Projected File System / CVE-2026-62751 / Windows Expected File System Elevation of Privilege Vulnerability
+Windows Kerberos / CVE-2026-62752 / Windows Kerberos Elevation of Privilege Vulnerability
+Windows HTTP.sys / CVE-2026-62753 / Windows HTTP.sys Elevation of Privilege Vulnerability
+Windows Kerberos / CVE-2026-62754 / Windows Kerberos Elevation of Privilege Vulnerability
+Windows DHCP Client / CVE-2026-62755 / Windows DHCP client elevation of privilege vulnerability
+Windows Schannel / CVE-2026-62757 / Windows Schannel security feature bypass vulnerability
+Windows Remote Access Connection Manager / CVE-2026-62758 / Windows Remote Access Connection Manager Elevation of Privilege Vulnerability
+Windows DHCP Server / CVE-2026-62761 / Windows DHCP server elevation of privilege vulnerability
+Windows Kerberos / CVE-2026-62766 / Windows Kerberos Elevation of Privilege Vulnerability
+Windows Installer / CVE-2026-62768 / Windows Installer Elevation of Privilege Vulnerability
+Windows DNS / CVE-2026-62769 / Windows DNS Elevation of Privilege Vulnerability
+Windows Shell / CVE-2026-62770 / Windows Shell Elevation of Privilege Vulnerability
+Windows Cloud Files Mini Filter Driver / CVE-2026-62771 / Windows Cloud Files Minifilter Driver Elevation of Privilege Vulnerability
+Windows Container Isolation FS Filter Driver (unionfs.sys) / CVE-2026-62772 / Windows Container Isolation FS Filter Driver (unionfs.sys) Elevation of Privilege Vulnerability
+Windows Kerberos / CVE-2026-62773 / Windows Kerberos Elevation of Privilege Vulnerability
+Windows Graphics Kernel / CVE-2026-62774 / Windows Graphics Kernel Elevation of Privilege Vulnerability
+Windows Container Isolation FS Filter Driver (unionfs.sys) / CVE-2026-62775 / Windows Container Isolation FS Filter Driver (unionfs.sys) Information Disclosure Vulnerability
+Windows DHCP Server / CVE-2026-62776 / Windows DHCP server elevation of privilege vulnerability
+Windows License Manager / CVE-2026-62777 / Windows License Manager elevation of privilege vulnerability
+Windows DNS / CVE-2026-62778 / Windows DNS Elevation of Privilege Vulnerability
+Windows Schannel / CVE-2026-62779 / Windows Schannel Elevation of Privilege Vulnerability
+Windows Kernel / CVE-2026-62780 / Windows Kernel Elevation of Privilege Vulnerability
+RPC Runtime / CVE-2026-62781 / RPC Runtime Library Remote Code Execution Vulnerability
+Windows SMB Client / CVE-2026-62782 / Windows SMB Client Information Disclosure Vulnerability
+Windows Remote Access Connection Manager / CVE-2026-62783 / Windows Remote Access Connection Manager Elevation of Privilege Vulnerability
+Microsoft Local Security Authority Server (lsasrv) / CVE-2026-62784 / Microsoft Local Security Authority Server (lsasrv) remote code execution vulnerability.
+Windows LDAP - Lightweight Directory Access Protocol / CVE-2026-62785 / Windows Lightweight Directory Access Protocol(LDAP) Remote Code Execution Vulnerability
+Windows Win32K / CVE-2026-62786 / Win32k Information Disclosure Vulnerability
+Windows DNS / CVE-2026-62787 / Windows DNS Server Remote Code Execution Vulnerability
+Windows Kernel / CVE-2026-62788 / Windows Kernel Elevation of Privilege Vulnerability
+Windows SMB Server / CVE-2026-62790 / Windows SMBv3 Server Remote Code Execution Vulnerability
+Windows TCP/IP / CVE-2026-62792 / Windows TCP/IP Remote Code Execution Vulnerability
+Windows NTFS / CVE-2026-62793 / Windows NTFS Information Disclosure Vulnerability
+Windows LDAP - Lightweight Directory Access Protocol / CVE-2026-62795 / Windows Lightweight Directory Access Protocol(LDAP) Remote Code Execution Vulnerability
+Windows NTFS / CVE-2026-62796 / Windows NTFS Information Disclosure Vulnerability
+Windows NTFS / CVE-2026-62797 / Windows NTFS Elevation of Privilege Vulnerability
+Windows Win32K / CVE-2026-62798 / Win32k Information Disclosure Vulnerability
+Windows SMB Client / CVE-2026-62799 / Windows SMB Client Elevation of Privilege Vulnerability
+Windows SMB Server / CVE-2026-62800 / Windows SMBv3 Server Remote Code Execution Vulnerability
+Windows DHCP Server / CVE-2026-62803 / Windows DHCP server elevation of privilege vulnerability
+Windows DHCP Server / CVE-2026-62807 / Windows DHCP server elevation of privilege vulnerability
+Windows HTTP.sys / CVE-2026-62811 / Windows HTTP.sys Elevation of Privilege Vulnerability
+Windows DHCP Server / CVE-2026-62812 / Windows DHCP server elevation of privilege vulnerability
+Windows DHCP Server / CVE-2026-62814 / Windows DHCP server information disclosure vulnerability
+Microsoft QUIC / CVE-2026-62815 / Microsoft QUIC Remote Code Execution Vulnerability
+Reliable Multicast Transport Driver (RMCAST) / CVE-2026-62816 / Windows RMCAST(Reliable Multicast Transport Driver) Remote Code Execution Vulnerability
+Windows DNS / CVE-2026-62817 / Windows DNS Server Remote Code Execution Vulnerability
+Active Directory Certificate Services (AD CS) / CVE-2026-62818 / Windows Active Directory Certificate Services (AD CS) remote code execution vulnerability
+Windows Routing and Remote Access Service (RRAS) / CVE-2026-62819 / Windows RRAS Remote Code Execution Vulnerability
+Windows DNS / CVE-2026-62820 / Windows DNS Server Remote Code Execution Vulnerability
+Windows GDI+ / CVE-2026-62822 / Windows GDI+ Remote Code Execution Vulnerability
+Windows DHCP Server / CVE-2026-62823 / Windows DHCP Server remote code execution vulnerability
+Remote Desktop Client / CVE-2026-62824 / Remote Desktop Client Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-62827 / Microsoft SharePoint Server Elevation of Privilege Vulnerability
+Microsoft Office SharePoint / CVE-2026-62829 / Microsoft SharePoint Server Spoofing Vulnerability
+Azure SRE Agent / CVE-2026-62830 / Azure SRE Agent Elevation of Privilege Vulnerability
+Windows User Profile Service / CVE-2026-62832 / Windows User Profile Service elevation of privilege vulnerability
+Azure SQL Managed Instance / CVE-2026-62836 / Azure SQL Managed Instance Elevation of Privilege Vulnerability
+Microsoft Office SharePoint / CVE-2026-62837 / Microsoft SharePoint Server Information Disclosure Vulnerability
+Microsoft Office SharePoint / CVE-2026-62839 / Microsoft SharePoint Server Spoofing Vulnerability
+Microsoft Office / CVE-2026-62842 / Microsoft Office Graphics Component Information Disclosure Vulnerability
+Azure Entra ID / CVE-2026-62869 / Azure Entra ID Spoofing Vulnerability
+.NET / CVE-2026-62871 / .NET Elevation of Privilege Vulnerability
+.NET Framework / CVE-2026-62872 / .NET Framework Elevation of Privilege Vulnerability
+Microsoft 365 Admin Center / CVE-2026-62873 / Microsoft 365 admin center elevation of privilege vulnerability
+Windows Win32K / CVE-2026-62876 / Windows Win32k Elevation of Privilege Vulnerability
+Windows Win32K / CVE-2026-62877 / Windows Win32k Elevation of Privilege Vulnerability
+Windows DNS / CVE-2026-62878 / Windows DNS Server remote code execution vulnerability
+Windows NTFS / CVE-2026-62880 / Windows NTFS Elevation of Privilege Vulnerability
+Windows DNS / CVE-2026-62881 / Windows DNS Elevation of Privilege Vulnerability
+Microsoft Office Outlook / CVE-2026-62882 / Microsoft Outlook Spoofing Vulnerability
+Windows DNS / CVE-2026-62883 / Windows DNS Elevation of Privilege Vulnerability
+Windows Win32K / CVE-2026-62885 / Windows Win32k Elevation of Privilege Vulnerability
+.NET / CVE-2026-62886 / .NET Elevation of Privilege Vulnerability
+Windows NTFS / CVE-2026-62887 / Windows NTFS Information Disclosure Vulnerability
+Windows DWM Core Library / CVE-2026-62888 / Windows DWM core library elevation of privilege vulnerability
+Windows Secure Socket Tunneling Protocol (SSTP) / CVE-2026-62889 / Windows SSTP(Secure Socket Tunneling Protocol) Remote Code Execution Vulnerability
+Windows GDI+ / CVE-2026-62890 / Windows GDI+ Elevation of Privilege Vulnerability
+Capability Access Management Service (camsvc) / CVE-2026-62892 / Capability Access Management Service(camsvc) Elevation of Privilege Vulnerability
+Windows Deployment Services / CVE-2026-62893 / Windows Deployment Services TFTP Server remote code execution vulnerability
+Windows DWM Core Library / CVE-2026-62894 / Windows DWM core library elevation of privilege vulnerability
+Microsoft Teams / CVE-2026-62896 / Microsoft Teams Elevation of Privilege Vulnerability
+.NET Framework / CVE-2026-62897 / .NET Framework Remote Code Execution Vulnerability
+Microsoft QUIC / CVE-2026-62898 / Microsoft QUIC Information Disclosure Vulnerability
+.NET / CVE-2026-62899 / .NET Security Feature Bypass Vulnerability
+.NET / CVE-2026-62900 / .NET Information Disclosure Vulnerability
+.NET / CVE-2026-62901 / .NET Denial of Service Vulnerability
+.NET / CVE-2026-62902 / .NET Information Disclosure Vulnerability
+Windows Backup Engine / CVE-2026-62908 / Windows Backup Engine Elevation of Privilege Vulnerability
+.NET / CVE-2026-62909 / .NET Elevation of Privilege Vulnerability
+Microsoft Exchange Server / CVE-2026-62910 / Microsoft Exchange Server Elevation of Privilege Vulnerability
+Microsoft Exchange Server / CVE-2026-62911 / Microsoft Exchange Server Elevation of Privilege Vulnerability
+Microsoft Exchange Server / CVE-2026-62912 / Microsoft Exchange Server Denial of Service Vulnerability
+Microsoft Exchange Server / CVE-2026-62913 / Microsoft Exchange Server Remote Code Execution Vulnerability
+Microsoft Exchange Server / CVE-2026-62914 / Microsoft Exchange Server Spoofing Vulnerability
+Microsoft Exchange Server / CVE-2026-62915 / Microsoft Exchange Server Security Feature Bypass Vulnerability
+Microsoft Office SharePoint / CVE-2026-62917 / Microsoft SharePoint Server Spoofing Vulnerability
+Microsoft Teams / CVE-2026-62918 / Microsoft Teams Spoofing Vulnerability
+Microsoft Planetary Computer Pro / CVE-2026-63508 / Microsoft Planatary Computer Pro Elevation of Privilege Vulnerability
+Microsoft Office SharePoint / CVE-2026-63512 / Microsoft SharePoint Server Tampering Vulnerability
+Microsoft Office / CVE-2026-63513 / Microsoft Office Graphics Component Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-63514 / Microsoft SharePoint Server Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-63515 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-63516 / Microsoft SharePoint Server Spoofing Vulnerability
+Microsoft Office / CVE-2026-63517 / Microsoft Office Graphics Component Information Disclosure Vulnerability
+Microsoft Office Word / CVE-2026-63518 / Microsoft Office Word Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-63519 / Microsoft Office Graphics Component Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-63520 / Microsoft SharePoint Server Remote Code Execution Vulnerability
+Microsoft Office Word / CVE-2026-63521 / Microsoft Office Word Information Disclosure Vulnerability
+Azure SQL Database / CVE-2026-63522 / Azure SQL Database Elevation of Privilege Vulnerability
+Microsoft Office / CVE-2026-63524 / Microsoft Office Information Disclosure Vulnerability
+Microsoft Office Word / CVE-2026-63525 / Microsoft Office Word Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-63526 / Microsoft Office Graphics Component Remote Code Execution Vulnerability
+Microsoft Office Word / CVE-2026-63527 / Microsoft Office Word Remote Code Execution Vulnerability
+Microsoft Office Word / CVE-2026-63528 / Microsoft Office Word Information Disclosure Vulnerability
+Microsoft Office / CVE-2026-63529 / Microsoft Office Information Disclosure Vulnerability
+Microsoft Office Word / CVE-2026-63530 / Microsoft Office Word Information Disclosure Vulnerability
+Microsoft Office Word / CVE-2026-63531 / Microsoft Office Word Information Disclosure Vulnerability
+Microsoft Office / CVE-2026-63532 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-63533 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-64897 / Microsoft SharePoint Server Spoofing Vulnerability
+Microsoft Office / CVE-2026-64898 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-64899 / Microsoft Office Information Disclosure Vulnerability
+Microsoft Office SharePoint / CVE-2026-64900 / Microsoft SharePoint Server Spoofing Vulnerability
+Microsoft Office SharePoint / CVE-2026-64901 / Microsoft SharePoint Server Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-64902 / Microsoft SharePoint Server Spoofing Vulnerability
+Microsoft Office / CVE-2026-64903 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-64904 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office Word / CVE-2026-64905 / Microsoft Office Word Remote Code Execution Vulnerability
+Microsoft Office Access / CVE-2026-64906 / Microsoft Access Remote Code Execution Vulnerability
+Microsoft Office Word / CVE-2026-64907 / Microsoft Office Word Remote Code Execution Vulnerability
+Microsoft Office Access / CVE-2026-64908 / Microsoft Access Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-64909 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-64910 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-64911 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office Access / CVE-2026-64912 / Microsoft Access Remote Code Execution Vulnerability
+Microsoft Office Access / CVE-2026-64914 / Microsoft Access Remote Code Execution Vulnerability
+Microsoft Office Word / CVE-2026-64915 / Microsoft Office Word Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-64916 / Microsoft SharePoint Server Spoofing Vulnerability
+Microsoft Office Word / CVE-2026-64917 / Microsoft Office Word Information Disclosure Vulnerability
+Microsoft Office Access / CVE-2026-64919 / Microsoft Access Remote Code Execution Vulnerability
+Microsoft Office Access / CVE-2026-64920 / Microsoft Access Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-64921 / Microsoft SharePoint Server Elevation of Privilege Vulnerability
+Microsoft Office SharePoint / CVE-2026-64922 / Microsoft SharePoint Server Spoofing Vulnerability
+Microsoft Office / CVE-2026-65656 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-65657 / Microsoft Office Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-65658 / Microsoft SharePoint Server Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-65660 / Microsoft SharePoint Server Spoofing Vulnerability
+Microsoft Office / CVE-2026-65661 / Microsoft Office Remote Code Execution Vulnerability
+Windows GDI / CVE-2026-65662 / Windows GDI Information Disclosure Vulnerability
+Microsoft Office SharePoint / CVE-2026-65663 / Microsoft SharePoint Server Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-65664 / Microsoft Office Graphics Component Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-65665 / Microsoft SharePoint Server Remote Code Execution Vulnerability
+Microsoft Teams / CVE-2026-65667 / Microsoft Teams Elevation of Privilege Vulnerability
+Microsoft Purview eDiscovery / CVE-2026-65668 / Microsoft Purview eDiscovery Elevation of Privilege Vulnerability
+Windows Remote Access API / CVE-2026-65671 / Remote Access API Elevation of Privilege Vulnerability
+Windows Remote Access API / CVE-2026-65672 / Remote Access API Elevation of Privilege Vulnerability
+Microsoft Entra Connect Sync / CVE-2026-65673 / Microsoft Entra Connect Elevation of Privilege Vulnerability
+Visual Studio Code CoPilot Chat Extension / CVE-2026-65675 / CoPilot Chat security feature bypass vulnerability
+Windows Win32K / CVE-2026-65678 / Windows Win32k Elevation of Privilege Vulnerability
+Windows iSCSI Target Service / CVE-2026-65679 / Windows iSCSI Target Service Remote Code Execution Vulnerability
+Microsoft OneDrive / CVE-2026-65680 / Microsoft OneDrive elevation of privilege vulnerability for macOS
+Windows iSCSI Target Service / CVE-2026-65681 / Windows iSCSI Targeted Denial of Service Vulnerability
+Microsoft Teams for Android / CVE-2026-65767 / Microsoft Teams Spoofing Vulnerability for Android and iOS
+Microsoft Teams for Android / CVE-2026-65768 / Microsoft Teams Remote Code Execution Vulnerability
+Microsoft Teams Mobile / CVE-2026-65769 / Microsoft Teams iOS Information Disclosure Vulnerability
+Windows Kernel / CVE-2026-65773 / Windows Kernel Elevation of Privilege Vulnerability
+Windows Installer / CVE-2026-65774 / Windows Installer Elevation of Privilege Vulnerability
+Windows Win32K / CVE-2026-65775 / Windows Win32k Elevation of Privilege Vulnerability
+Windows Win32K / CVE-2026-65776 / Windows Win32k Elevation of Privilege Vulnerability
+Windows Active Directory / CVE-2026-65777 / Active Directory Security Feature Bypass Vulnerability
+Windows Autopilot / CVE-2026-65778 / Windows Autopilot Elevation of Privilege Vulnerability
+Windows Autopilot / CVE-2026-65779 / Windows Autopilot Elevation of Privilege Vulnerability
+Windows Autopilot / CVE-2026-65780 / Windows Autopilot Elevation of Privilege Vulnerability
+Windows Autopilot / CVE-2026-65781 / Windows Autopilot Elevation of Privilege Vulnerability
+Windows Autopilot / CVE-2026-65782 / Windows Autopilot Elevation of Privilege Vulnerability
+Windows Autopilot / CVE-2026-65783 / Windows Autopilot Elevation of Privilege Vulnerability
+Windows NTFS / CVE-2026-65784 / Windows NTFS Information Disclosure Vulnerability
+Windows DHCP Client / CVE-2026-65785 / Windows DHCP Client Denial of Service Vulnerability
+Desktop Window Manager / CVE-2026-65786 / Desktop Window Administrator Elevation of Privilege Vulnerability
+Desktop Window Manager / CVE-2026-65787 / Desktop Window Administrator Elevation of Privilege Vulnerability
+Desktop Window Manager / CVE-2026-65788 / Desktop Window Administrator Elevation of Privilege Vulnerability
+Windows DNS / CVE-2026-65789 / Windows DNS Server remote code execution vulnerability
+Windows Message Queuing / CVE-2026-65790 / Windows Message Queuing elevation of privilege vulnerability
+Windows iSCSI Target Service / CVE-2026-65791 / Windows iSCSI Target Service Remote Code Execution Vulnerability
+Windows SMB Client / CVE-2026-65794 / Windows SMB Client Information Disclosure Vulnerability
+Windows DNS / CVE-2026-65795 / Windows DNS Elevation of Privilege Vulnerability
+Windows iSCSI Target Service / CVE-2026-65796 / Windows iSCSI Target Service Remote Code Execution Vulnerability
+Windows DNS / CVE-2026-65797 / Windows DNS Elevation of Privilege Vulnerability
+Windows DNS / CVE-2026-65798 / Windows DNS Elevation of Privilege Vulnerability
+Windows DNS / CVE-2026-65799 / Windows DNS Elevation of Privilege Vulnerability
+Azure CycleCloud / CVE-2026-65806 / Azure CycleCloud information disclosure vulnerability
+Microsoft Office Excel / CVE-2026-65807 / Microsoft Excel Remote Code Execution Vulnerability
+.NET Framework / CVE-2026-65810 / .NET Framework Elevation of Privilege Vulnerability
+Power BI / CVE-2026-65811 / Power BI Remote Code Execution Vulnerability
+Microsoft Exchange Server / CVE-2026-65813 / Microsoft Exchange Server Elevation of Privilege Vulnerability
+Windows Storage Port Driver / CVE-2026-65814 / Microsoft Windows Storage Port Driver Elevation of Privilege Vulnerability
+Microsoft Dynamics 365 (on-premises) / CVE-2026-65815 / Microsoft Dynamics 365 on-premises remote code execution vulnerability
+Microsoft Dynamics 365 (on-premises) / CVE-2026-66301 / Microsoft Dynamics 365 (on-premises) information disclosure vulnerability
+Windows Key Guard / CVE-2026-66799 / Windows Key Guard Elevation of Privilege Vulnerability
+Microsoft Azure Attestation service and Device Health Attestation Service / CVE-2026-66802 / Windows Device Health Attestation (DHA) remote code execution vulnerability
+Windows Cross Device Service / CVE-2026-66804 / Microsoft Windows Cross Device Service Elevation of Privilege Vulnerability
+Microsoft Office SharePoint / CVE-2026-66805 / Microsoft SharePoint Server Remote Code Execution Vulnerability
+Microsoft Office Word / CVE-2026-66806 / Microsoft Office Word Information Disclosure Vulnerability
+Microsoft Office / CVE-2026-66807 / Microsoft Office Graphics Component Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-66808 / Microsoft SharePoint Server Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-66809 / Microsoft Office Graphics Component Information Disclosure Vulnerability
+Microsoft Office Word / CVE-2026-66810 / Microsoft Office Word Information Disclosure Vulnerability
+Microsoft Office / CVE-2026-68792 / Microsoft Office Elevation of Privilege Vulnerability
+Microsoft Office Excel / CVE-2026-68793 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68794 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68795 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68796 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68797 / Microsoft Excel Information Disclosure Vulnerability
+Microsoft Office Excel / CVE-2026-68798 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68799 / Microsoft Excel Information Disclosure Vulnerability
+Microsoft Office Excel / CVE-2026-68800 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68801 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68802 / Microsoft Excel Information Disclosure Vulnerability
+Microsoft Office Excel / CVE-2026-68803 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68804 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68805 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68806 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68807 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68808 / Microsoft Excel Information Disclosure Vulnerability
+Microsoft Office PowerPoint / CVE-2026-68809 / Powerpoint Information Disclosure Vulnerability
+Microsoft Office Excel / CVE-2026-68810 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68811 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68812 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68813 / Microsoft Excel Information Disclosure Vulnerability
+Microsoft Office Excel / CVE-2026-68814 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68815 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68816 / Microsoft Excel Remote Code Execution Vulnerability
+Microsoft Office Excel / CVE-2026-68817 / Microsoft Excel Remote Code Execution Vulnerability
+Windows Network File System / CVE-2026-68819 / Windows Network File System Denial of Service Vulnerability
+Windows Ancillary Function Driver for WinSock / CVE-2026-68820 / Windows Accessories Driver for WinSock Elevation of Privilege Vulnerability
+Windows Package Manager / CVE-2026-68821 / Windows Package Manager Elevation of Privilege Vulnerability
+Azure Confidential Ledger / CVE-2026-68823 / Azure Confidential Ledger Remote Code Execution Vulnerability
+Visual Studio Code / CVE-2026-69278 / Visual Studio Code security feature bypass vulnerability
+Visual Studio Code / CVE-2026-69306 / Visual Studio Code security feature bypass vulnerability
+Visual Studio Code / CVE-2026-69320 / Visual Studio Code Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-70130 / Microsoft Office Remote Code Execution Vulnerability
+Windows DNS / CVE-2026-70304 / Windows DNS Elevation of Privilege Vulnerability
+Microsoft Office SharePoint / CVE-2026-70306 / Microsoft Office SharePoint Spoofing Vulnerability
+Windows Ancillary Function Driver for WinSock / CVE-2026-70307 / Windows Accessories Driver for WinSock Elevation of Privilege Vulnerability
+Microsoft Office Word / CVE-2026-70310 / Microsoft Word Information Disclosure Vulnerability
+Microsoft Office Word / CVE-2026-70311 / Microsoft Office Word Remote Code Execution Vulnerability
+Microsoft Office PowerPoint / CVE-2026-70312 / Powerpoint Information Disclosure Vulnerability
+Microsoft Office PowerPoint / CVE-2026-70313 / Microsoft PowerPoint Remote Code Execution Vulnerability
+Microsoft Office / CVE-2026-70314 / Microsoft Office Information Disclosure Vulnerability
+Microsoft Office / CVE-2026-70315 / Microsoft Office Information Disclosure Vulnerability
+Microsoft Office PowerPoint / CVE-2026-70316 / Powerpoint Information Disclosure Vulnerability
+Microsoft Office / CVE-2026-70317 / Microsoft Office Information Disclosure Vulnerability
+Microsoft Office Excel / CVE-2026-70318 / Microsoft Excel Information Disclosure Vulnerability
+Microsoft Office Word / CVE-2026-70319 / Microsoft Office Word Information Disclosure Vulnerability
+Microsoft Office PowerPoint / CVE-2026-70320 / Powerpoint Information Disclosure Vulnerability
+Microsoft Office SharePoint / CVE-2026-70321 / Microsoft SharePoint Remote Code Execution Vulnerability
+Microsoft Office PowerPoint / CVE-2026-70322 / Powerpoint Information Disclosure Vulnerability
+Microsoft Office / CVE-2026-70323 / Microsoft Office Information Disclosure Vulnerability
+Microsoft Office SharePoint / CVE-2026-70324 / Microsoft SharePoint Elevation of Privilege Vulnerability
+Microsoft Office PowerPoint / CVE-2026-70325 / Powerpoint Information Disclosure Vulnerability
+Microsoft Office SharePoint / CVE-2026-70326 / Microsoft SharePoint Server Elevation of Privilege Vulnerability
+Microsoft Office Excel / CVE-2026-70327 / Microsoft Excel Information Disclosure Vulnerability
+Microsoft Office Excel / CVE-2026-70328 / Microsoft Excel Information Disclosure Vulnerability
+Microsoft Office Outlook / CVE-2026-70329 / Microsoft Outlook Remote Code Execution Vulnerability
+Windows DNS / CVE-2026-70330 / Windows DNS Elevation of Privilege Vulnerability
+Microsoft Office SharePoint / CVE-2026-70332 / Microsoft Office SharePoint Spoofing Vulnerability
+GitHub Copilot and Visual Studio Code / CVE-2026-70335 / GitHub Copilot and Visual Studio Code elevation of privilege vulnerabilities
+Visual Studio Code / CVE-2026-70336 / Visual Studio Code Remote Code Execution Vulnerability
+Microsoft PowerShell Core / CVE-2026-70337 / Microsoft PowerShell Remote Code Execution Vulnerability
+Microsoft PowerShell / CVE-2026-70338 / Microsoft PowerShell Security Feature Bypass Vulnerability
+Microsoft Edge (Chromium-based) / CVE-2026-70339 / Microsoft Edge (Chromium-based) remote code execution vulnerability
+Azure CycleCloud / CVE-2026-70340 / Azure CycleCloud Elevation of Privilege Vulnerability
+Windows Installer / CVE-2026-70344 / Windows Installer Elevation of Privilege Vulnerability
+Windows Installer / CVE-2026-70345 / Windows Installer Elevation of Privilege Vulnerability
+Windows Installer / CVE-2026-70346 / Windows Installer Elevation of Privilege Vulnerability
+Windows Installer / CVE-2026-70347 / Windows Installer Elevation of Privilege Vulnerability
+Windows Management Services / CVE-2026-70348 / Windows Management Services Denial of Service Vulnerability
+.NET / CVE-2026-70354 / .NET Core Remote Code Execution Vulnerability
+Microsoft Office SharePoint / CVE-2026-70355 / Microsoft SharePoint Server Elevation of Privilege Vulnerability
+Microsoft Azure Attestation service and Device Health Attestation Service / CVE-2026-71331 / Windows Device Health Attestation (DHA) remote code execution vulnerability
+Windows Container Isolation FS Filter Driver (unionfs.sys) / CVE-2026-72971 / Windows Container Isolation FS Filter Driver (unionfs.sys) Tampering Vulnerability
+Windows TPM / CVE-2026-6726 / MITRE: CVE-2026-6726 TPM 2.0 Inappropriate object slot reuse
+Windows TPM / CVE-2026-6727 / MITRE: CVE-2026-6727 TPM 2.0 RSA OAEP Timing Side Channel Vulnerability
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

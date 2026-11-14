@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://avatars.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>MS 9월 보안 위협에 따른 정기 보안 업데이트 권고</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/51371743?v=4">
+  <link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+  <header class="site-header topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="../../../"><img src="../../../assets/notice-icon.png" width="20" height="20" alt=""><span>비공식 보호나라 보안공지</span></a>
+    </div>
+  </header>
+  <main class="page-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a class="breadcrumbs__link" href="../../../">보안공지</a>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg>
+      <details class="language-menu">
+        <summary class="language-menu__summary">
+          <span>한국어</span>
+          <svg class="language-menu__chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"/></svg>
+        </summary>
+        <div class="language-menu__popover">
+          <a class="language-menu__option is-active" href="../ko/" aria-current="page"><span>한국어</span><svg class="language-menu__check" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0L2.22 7.28a.75.75 0 0 1 1.06-1.06L7 9.94l5.72-5.72a.75.75 0 0 1 1.06 0Z"/></svg></a>
+          <a class="language-menu__option" href="../en/"><span>English</span></a>
+        </div>
+      </details>
+    </nav>
+    <article class="notice-card">
+      <header class="notice-card__header">
+        <div class="notice-heading">
+          <h1>MS 9월 보안 위협에 따른 정기 보안 업데이트 권고</h1>
+          <div class="notice-meta">
+            <span class="language-badge">한국어</span>
+            <span><time datetime="2026-09-09">발행일 2026-09-09</time></span>
+            <span>UTF-8</span>
+          </div>
+        </div>
+        <div class="toolbar" aria-label="문서 작업">
+          <button class="button button--primary" id="copy-all" type="button" data-success="클립보드에 복사했습니다." data-failure="복사하지 못했습니다. 선택된 텍스트를 직접 복사해 주세요.">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg>
+            <span>전체 내용 복사</span>
+          </button>
+          <a class="button" href="./notice.txt" download="MS 9월 보안 위협에 따른 정기 보안 업데이트 권고.txt">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.69V.75a.75.75 0 0 1 1.5 0v6.94l1.72-1.72a.749.749 0 1 1 1.06 1.06l-3 3a.749.749 0 0 1-1.06 0l-3-3a.749.749 0 1 1 1.06-1.06Z"/></svg>
+            <span>텍스트 저장</span>
+          </a>
+          <a class="button" href="https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&amp;bbsId=B0000133&amp;searchWrd=&amp;menuNo=205020&amp;pageIndex=10&amp;categoryCode=&amp;nttId=72180" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8.25 1A.75.75 0 0 1 9 .25h4.75c.966 0 1.75.784 1.75 1.75v4.75a.75.75 0 0 1-1.5 0V2.56L8.78 7.78a.749.749 0 1 1-1.06-1.06L12.94 1.5H9A.75.75 0 0 1 8.25 1Z"/><path d="M2.75 3.5a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V9a.75.75 0 0 1 1.5 0v4.25A1.75 1.75 0 0 1 12.25 15h-9.5A1.75 1.75 0 0 1 1 13.25v-9.5C1 2.784 1.784 2 2.75 2H7a.75.75 0 0 1 0 1.5Z"/></svg>
+            <span class="button__label--wide">KISA 원문</span>
+          </a>
+        </div>
+      </header>
+      <div class="notice-card__status">
+        <span>MS 9월 보안 위협에 따른 정기 보안 업데이트 권고.txt · 1031 lines</span>
+        <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
+      </div>
+      <div class="code-view" id="notice-text" aria-label="MS 9월 보안 위협에 따른 정기 보안 업데이트 권고.txt">
+        <div class="code-line" data-line="1"><span class="line-content">제목:</span></div>
+        <div class="code-line" data-line="2"><span class="line-content">MS 9월 보안 위협에 따른 정기 보안 업데이트 권고</span></div>
+        <div class="code-line" data-line="3"><span class="line-content"></span></div>
+        <div class="code-line" data-line="4"><span class="line-content">요약:</span></div>
+        <div class="code-line" data-line="5"><span class="line-content">금일 KISA 공지 &quot;MS 9월 보안 위협에 따른 정기 보안 업데이트 권고&quot; 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.</span></div>
+        <div class="code-line" data-line="6"><span class="line-content"></span></div>
+        <div class="code-line" data-line="7"><span class="line-content">본문:</span></div>
+        <div class="code-line" data-line="8"><span class="line-content">□ 9월 보안업데이트 개요 (총 13 종)</span></div>
+        <div class="code-line" data-line="9"><span class="line-content">o 등급 : 긴급 (Critical) 10 종 , 중요 (Important) 3 종</span></div>
+        <div class="code-line" data-line="10"><span class="line-content">o 발표일 : 2026.09.08.(화)</span></div>
+        <div class="code-line" data-line="11"><span class="line-content">o 업데이트 내용</span></div>
+        <div class="code-line" data-line="12"><span class="line-content"></span></div>
+        <div class="code-line" data-line="13"><span class="line-content">제품군 / 중요도 / 영향</span></div>
+        <div class="code-line" data-line="14"><span class="line-content">Windows 11 / 긴급 / 권한 상승</span></div>
+        <div class="code-line" data-line="15"><span class="line-content">Windows Server 2025 / 긴급 / 권한 상승</span></div>
+        <div class="code-line" data-line="16"><span class="line-content">Windows Server 2022 / 긴급 / 권한 상승</span></div>
+        <div class="code-line" data-line="17"><span class="line-content">Windows Server 2019 / 긴급 / 권한 상승</span></div>
+        <div class="code-line" data-line="18"><span class="line-content">Windows Server 2016 / 긴급 / 권한 상승</span></div>
+        <div class="code-line" data-line="19"><span class="line-content">Microsoft Office / 긴급 / 원격 코드 실행</span></div>
+        <div class="code-line" data-line="20"><span class="line-content">Microsoft SharePoint / 중요 / 원격 코드 실행</span></div>
+        <div class="code-line" data-line="21"><span class="line-content">Microsoft Exchange Server / 중요 / 원격 코드 실행</span></div>
+        <div class="code-line" data-line="22"><span class="line-content">Microsoft SQL Server / 긴급 / 원격 코드 실행</span></div>
+        <div class="code-line" data-line="23"><span class="line-content">Microsoft .NET / 중요 / 권한 상승</span></div>
+        <div class="code-line" data-line="24"><span class="line-content">Microsoft Visual Studio / 긴급 / 보안 기능 우회</span></div>
+        <div class="code-line" data-line="25"><span class="line-content">Microsoft Dynamics 365 / 긴급 / 원격 코드 실행</span></div>
+        <div class="code-line" data-line="26"><span class="line-content">Microsoft Azure / 긴급 / 권한 상승</span></div>
+        <div class="code-line" data-line="27"><span class="line-content">[참고 사이트]</span></div>
+        <div class="code-line" data-line="28"><span class="line-content">[1] (한글) https://msrc.microsoft.com/update-guide/ko-kr/</span></div>
+        <div class="code-line" data-line="29"><span class="line-content">[2] (영문) https://msrc.microsoft.com/update-guide/en-us/</span></div>
+        <div class="code-line" data-line="30"><span class="line-content">[3] https://msrc.microsoft.com/update-guide/releaseNote/2026-Sep</span></div>
+        <div class="code-line" data-line="31"><span class="line-content"></span></div>
+        <div class="code-line" data-line="32"><span class="line-content">o 취약점 요약 정보 (총 996개)</span></div>
+        <div class="code-line" data-line="33"><span class="line-content"></span></div>
+        <div class="code-line" data-line="34"><span class="line-content">제품 카테고리 / CVE 번호 / CVE 제목</span></div>
+        <div class="code-line" data-line="35"><span class="line-content">SQL Server / CVE-2026-47297 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="36"><span class="line-content">Windows Ancillary Function Driver for WinSock / CVE-2026-50349 / WinSock용 Windows 보조 기능 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="37"><span class="line-content">Microsoft Exchange Server / CVE-2026-55007 / Microsoft Exchange Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="38"><span class="line-content">Windows VHD miniport driver / CVE-2026-56172 / Windows VHD 미니포트 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="39"><span class="line-content">Windows Server / CVE-2026-56177 / Windows Server 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="40"><span class="line-content">Microsoft Trace Data Helper / CVE-2026-56198 / Microsoft Trace Data Helper Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="41"><span class="line-content">Windows RDP Client / CVE-2026-57098 / Microsoft Remote Desktop 앱(Windows용) 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="42"><span class="line-content">ASP.NET Core / CVE-2026-57099 / ASP.NET Core 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="43"><span class="line-content">Microsoft Windows Codecs Library / CVE-2026-58599 / HEVC 비디오 확장 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="44"><span class="line-content">Microsoft Windows Codecs Library / CVE-2026-58600 / HEVC Video Extensions 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="45"><span class="line-content">XBox Gaming Services / CVE-2026-58611 / XBox 게임 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="46"><span class="line-content">.NET / CVE-2026-58649 / .NET 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="47"><span class="line-content">Windows Installer / CVE-2026-62694 / Windows Installer 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="48"><span class="line-content">Windows Push Notifications / CVE-2026-62697 / Windows 푸시 알림 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="49"><span class="line-content">Microsoft Windows Media Foundation / CVE-2026-62706 / Windows 미디어 파운데이션 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="50"><span class="line-content">Microsoft Windows Media Foundation / CVE-2026-62744 / Windows 미디어 파운데이션 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="51"><span class="line-content">Windows Netlogon / CVE-2026-62759 / Windows Netlogon 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="52"><span class="line-content">Active Directory Domain Services / CVE-2026-62762 / Windows Active Directory Domain Services 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="53"><span class="line-content">Windows PowerShell / CVE-2026-62801 / Microsoft PowerShell 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="54"><span class="line-content">Microsoft Office Word / CVE-2026-62804 / Microsoft Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="55"><span class="line-content">Active Directory Certificate Services (AD CS) / CVE-2026-62810 / Active Directory Certificate Services (AD CS) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="56"><span class="line-content">Active Directory Domain Services / CVE-2026-62813 / Windows Active Directory 도메인 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="57"><span class="line-content">Azure Arc / CVE-2026-62895 / Azure Arc SQL Server Extension 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="58"><span class="line-content">Microsoft Discovery Studio / CVE-2026-62906 / Microsoft Discovery Studio 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="59"><span class="line-content">Microsoft Entra ID / CVE-2026-62916 / Microsoft Entra ID 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="60"><span class="line-content">Skype for Business / CVE-2026-63523 / 비즈니스용 Skype 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="61"><span class="line-content">Microsoft Office / CVE-2026-64918 / Microsoft Office 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="62"><span class="line-content">SQL Server / CVE-2026-65669 / Microsoft SQL Server 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="63"><span class="line-content">Microsoft Dynamics 365 / CVE-2026-65772 / Microsoft Dynamics 365 온-프레미스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="64"><span class="line-content">Microsoft Teams for Android / CVE-2026-65812 / Android용 Microsoft Teams 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="65"><span class="line-content">Power Automate / CVE-2026-65818 / Power Automate 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="66"><span class="line-content">Skype for Business / CVE-2026-66302 / 비즈니스용 Skype 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="67"><span class="line-content">Skype for Business / CVE-2026-66303 / 비즈니스용 Skype 및 Lync 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="68"><span class="line-content">Skype for Business / CVE-2026-66304 / 비즈니스용 Skype 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="69"><span class="line-content">Skype for Business / CVE-2026-66305 / 비즈니스용 Skype 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="70"><span class="line-content">Skype for Business / CVE-2026-66306 / 비즈니스용 Skype 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="71"><span class="line-content">Skype for Business / CVE-2026-66307 / 비즈니스용 Skype 및 Lync 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="72"><span class="line-content">Skype for Business / CVE-2026-66308 / 비즈니스용 Skype 및 Lync 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="73"><span class="line-content">SQL Server / CVE-2026-66814 / Microsoft SQL Server 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="74"><span class="line-content">SQL Server / CVE-2026-66816 / Microsoft SQL Server 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="75"><span class="line-content">SQL Server / CVE-2026-66818 / Microsoft SQL Server 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="76"><span class="line-content">SQL Server / CVE-2026-66819 / Microsoft SQL Server 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="77"><span class="line-content">SQL Server / CVE-2026-66820 / SQL 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="78"><span class="line-content">SQL Server / CVE-2026-67368 / Microsoft SQL Server 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="79"><span class="line-content">SQL Server / CVE-2026-67369 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="80"><span class="line-content">SQL Server / CVE-2026-67370 / Microsoft SQL Server 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="81"><span class="line-content">SQL Server / CVE-2026-67373 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="82"><span class="line-content">SQL Server / CVE-2026-67376 / Microsoft SQL Server 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="83"><span class="line-content">SQL Server / CVE-2026-67378 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="84"><span class="line-content">SQL Server / CVE-2026-67379 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="85"><span class="line-content">SQL Server / CVE-2026-67380 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="86"><span class="line-content">SQL Server / CVE-2026-67381 / Microsoft SQL Server 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="87"><span class="line-content">SQL Server / CVE-2026-67383 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="88"><span class="line-content">SQL Server / CVE-2026-67384 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="89"><span class="line-content">SQL Server / CVE-2026-67385 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="90"><span class="line-content">SQL Server / CVE-2026-67386 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="91"><span class="line-content">SQL Server / CVE-2026-67388 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="92"><span class="line-content">SQL Server / CVE-2026-67389 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="93"><span class="line-content">SQL Server / CVE-2026-67390 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="94"><span class="line-content">SQL Server / CVE-2026-67393 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="95"><span class="line-content">SQL Server / CVE-2026-67624 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="96"><span class="line-content">SQL Server / CVE-2026-67629 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="97"><span class="line-content">SQL Server / CVE-2026-67630 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="98"><span class="line-content">SQL Server / CVE-2026-67631 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="99"><span class="line-content">SQL Server / CVE-2026-67633 / Microsoft SQL Server 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="100"><span class="line-content">SQL Server / CVE-2026-67636 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="101"><span class="line-content">SQL Server / CVE-2026-67638 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="102"><span class="line-content">SQL Server / CVE-2026-67639 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="103"><span class="line-content">SQL Server / CVE-2026-67641 / Microsoft SQL Server 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="104"><span class="line-content">SQL Server / CVE-2026-67642 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="105"><span class="line-content">SQL Server / CVE-2026-67643 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="106"><span class="line-content">SQL Server / CVE-2026-67645 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="107"><span class="line-content">SQL Server / CVE-2026-67648 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="108"><span class="line-content">SQL Server / CVE-2026-68775 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="109"><span class="line-content">SQL Server / CVE-2026-68776 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="110"><span class="line-content">SQL Server / CVE-2026-68777 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="111"><span class="line-content">SQL Server / CVE-2026-68778 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="112"><span class="line-content">SQL Server / CVE-2026-68779 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="113"><span class="line-content">SQL Server / CVE-2026-68780 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="114"><span class="line-content">SQL Server / CVE-2026-68781 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="115"><span class="line-content">SQL Server / CVE-2026-68784 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="116"><span class="line-content">SQL Server / CVE-2026-68785 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="117"><span class="line-content">SQL Server / CVE-2026-68786 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="118"><span class="line-content">SQL Server / CVE-2026-68787 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="119"><span class="line-content">Windows Connected User Experiences and Telemetry / CVE-2026-68824 / 연결된 사용자 환경 및 원격 분석 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="120"><span class="line-content">Windows Bind Filter Driver / CVE-2026-68825 / Windows Bind Filter 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="121"><span class="line-content">Windows GDI+ / CVE-2026-68827 / Windows GDI+ 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="122"><span class="line-content">Remote Desktop Client / CVE-2026-68828 / 원격 데스크톱 클라이언트 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="123"><span class="line-content">Windows Universal Plug and Play (UPnP) Device Host / CVE-2026-68830 / Windows Universal Plug and Play(UPnP) 장치 호스트 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="124"><span class="line-content">Windows Defender Firewall Service / CVE-2026-68831 / Windows Defender 방화벽 서비스 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="125"><span class="line-content">Windows NTFS / CVE-2026-68832 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="126"><span class="line-content">Windows NTFS / CVE-2026-68833 / Windows NTFS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="127"><span class="line-content">Windows NTFS / CVE-2026-68834 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="128"><span class="line-content">Windows Print Spooler Components / CVE-2026-68835 / Windows 인쇄 스풀러 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="129"><span class="line-content">Windows File History Service / CVE-2026-68837 / Windows 파일 기록 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="130"><span class="line-content">Windows NTFS / CVE-2026-68838 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="131"><span class="line-content">Windows USB Mass Storage Class Driver / CVE-2026-68839 / Windows USB 대용량 스토리지 클래스 드라이버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="132"><span class="line-content">Windows USB Driver / CVE-2026-68840 / Windows USB 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="133"><span class="line-content">Windows NTFS / CVE-2026-68841 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="134"><span class="line-content">Windows MIDI Service Module / CVE-2026-68842 / Windows MIDI 서비스 모듈 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="135"><span class="line-content">Microsoft Office Word / CVE-2026-68843 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="136"><span class="line-content">Windows Storage Spaces Controller / CVE-2026-68844 / Windows Storage Spaces Controller Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="137"><span class="line-content">Windows Program Compatibility Assistant Service / CVE-2026-68845 / Windows 프로그램 호환성 관리자 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="138"><span class="line-content">Windows Kernel / CVE-2026-68846 / Windows 커널 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="139"><span class="line-content">Windows Connected User Experiences and Telemetry / CVE-2026-68847 / 연결된 사용자 환경 및 원격 분석 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="140"><span class="line-content">Windows Print Spooler Components / CVE-2026-68848 / Windows 인쇄 스풀러 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="141"><span class="line-content">Windows Bluetooth Port Driver / CVE-2026-68849 / Windows Bluetooth 포트 드라이버 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="142"><span class="line-content">Microsoft Account / CVE-2026-68850 / Microsoft 계정 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="143"><span class="line-content">Windows NTFS / CVE-2026-68851 / Windows NTFS 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="144"><span class="line-content">Microsoft Account / CVE-2026-68852 / Microsoft 계정 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="145"><span class="line-content">Windows Program Compatibility Assistant Service / CVE-2026-68873 / Windows 프로그램 호환성 관리자 서비스 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="146"><span class="line-content">Windows Program Compatibility Assistant Service / CVE-2026-68874 / Windows 프로그램 호환성 관리자 서비스 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="147"><span class="line-content">Windows NTFS / CVE-2026-68875 / Windows NTFS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="148"><span class="line-content">Windows Program Compatibility Assistant Service / CVE-2026-68876 / Windows 프로그램 호환성 관리자 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="149"><span class="line-content">Windows Storage Spaces Controller / CVE-2026-68877 / Windows Storage Spaces Controller Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="150"><span class="line-content">Windows Fast FAT Driver / CVE-2026-68878 / Windows Fast FAT 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="151"><span class="line-content">Windows Win32K / CVE-2026-68880 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="152"><span class="line-content">Microsoft Standard XPS / CVE-2026-68881 / Microsoft 표준 XPS 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="153"><span class="line-content">Windows Kernel / CVE-2026-68884 / Windows 커널 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="154"><span class="line-content">Microsoft Standard XPS / CVE-2026-68885 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="155"><span class="line-content">Windows Network Connection Broker / CVE-2026-68886 / Windows 네트워크 연결 브로커 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="156"><span class="line-content">Windows Message Queuing Queue Manager / CVE-2026-68887 / Windows Message Queuing Queue Manager Denial of Service Vulnerability</span></div>
+        <div class="code-line" data-line="157"><span class="line-content">Microsoft Standard XPS / CVE-2026-68888 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="158"><span class="line-content">Microsoft Standard XPS / CVE-2026-68889 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="159"><span class="line-content">Microsoft Standard XPS / CVE-2026-68890 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="160"><span class="line-content">Microsoft Standard XPS / CVE-2026-68891 / Microsoft 표준 XPS 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="161"><span class="line-content">Microsoft Standard XPS / CVE-2026-68892 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="162"><span class="line-content">Windows Remote Desktop Licensing Service / CVE-2026-68893 / 원격 데스크톱 라이선싱 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="163"><span class="line-content">Windows Error Reporting / CVE-2026-68894 / Windows 오류 보고 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="164"><span class="line-content">Internet Storage Name Service / CVE-2026-68895 / Internet Storage Name Service(ISNS) 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="165"><span class="line-content">Microsoft Windows Search Component / CVE-2026-68896 / Microsoft Windows Search 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="166"><span class="line-content">Microsoft Standard XPS / CVE-2026-68897 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="167"><span class="line-content">Windows iSCSI / CVE-2026-68898 / Windows iSCSI 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="168"><span class="line-content">Windows NTFS / CVE-2026-69265 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="169"><span class="line-content">Windows DHCP Server / CVE-2026-69266 / Windows DHCP 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="170"><span class="line-content">Windows Connected User Experiences and Telemetry / CVE-2026-69267 / Windows 연결된 사용자 환경 및 원격 분석 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="171"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69268 / Microsoft Office SharePoint 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="172"><span class="line-content">Microsoft Standard XPS / CVE-2026-69269 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="173"><span class="line-content">Windows USB Audio Class driver (usbaudio.sys) / CVE-2026-69270 / Windows USB 오디오 클래스 드라이버(usbaudio.sys) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="174"><span class="line-content">Microsoft Standard XPS / CVE-2026-69271 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="175"><span class="line-content">Microsoft Standard XPS / CVE-2026-69272 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="176"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69273 / Microsoft Office SharePoint 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="177"><span class="line-content">Windows Win32K / CVE-2026-69274 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="178"><span class="line-content">Kernel Streaming WOW Thunk Service Driver / CVE-2026-69275 / Kernel Streaming WOW Thunk Service Driver 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="179"><span class="line-content">Microsoft UxTheme Library (uxtheme.dll) / CVE-2026-69276 / Microsoft UxTheme 라이브러리(uxtheme.dll) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="180"><span class="line-content">Microsoft Local Security Authority Server (lsasrv) / CVE-2026-69277 / Microsoft 로컬 보안 기관(LSA) 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="181"><span class="line-content">Windows Cloud Files Mini Filter Driver / CVE-2026-69279 / Windows 클라우드 파일 미니 필터 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="182"><span class="line-content">Windows Push Notifications / CVE-2026-69280 / Windows 푸시 알림 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="183"><span class="line-content">Windows License Manager / CVE-2026-69281 / Windows 라이선스 관리자 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="184"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69282 / Microsoft Office SharePoint 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="185"><span class="line-content">Windows CD-ROM Driver / CVE-2026-69283 / Windows CD-ROM 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="186"><span class="line-content">Windows DCOM Server / CVE-2026-69284 / Windows DCOM 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="187"><span class="line-content">Microsoft Office / CVE-2026-69285 / Microsoft Office 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="188"><span class="line-content">Windows USB Audio Class driver (usbaudio.sys) / CVE-2026-69286 / Windows USB 오디오 클래스 드라이버 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="189"><span class="line-content">Windows Remote Desktop Services / CVE-2026-69287 / Windows 원격 데스크톱 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="190"><span class="line-content">Windows GDI+ / CVE-2026-69288 / Windows GDI+ 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="191"><span class="line-content">Windows Setup Files Cleanup / CVE-2026-69289 / Windows Setup Files Cleanup 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="192"><span class="line-content">Windows Storage Spaces Controller / CVE-2026-69290 / Windows 저장소 공간 컨트롤러 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="193"><span class="line-content">Windows Volume Manager Extension Driver / CVE-2026-69291 / Windows 볼륨 관리자 확장 드라이버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="194"><span class="line-content">Remote Desktop Gateway Service / CVE-2026-69292 / 원격 데스크톱 게이트웨이 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="195"><span class="line-content">Windows Biometric Service / CVE-2026-69293 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="196"><span class="line-content">Microsoft COM for Windows / CVE-2026-69294 / Windows용 Microsoft COM 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="197"><span class="line-content">Windows USB Driver / CVE-2026-69295 / Windows USB 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="198"><span class="line-content">Windows Device Association Service / CVE-2026-69296 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="199"><span class="line-content">Windows DHCP Server / CVE-2026-69297 / Windows DHCP 서버 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="200"><span class="line-content">Windows Biometric Service / CVE-2026-69298 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="201"><span class="line-content">Microsoft COM for Windows / CVE-2026-69299 / Windows용 Microsoft COM 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="202"><span class="line-content">Windows Push Notifications / CVE-2026-69300 / Windows 푸시 알림 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="203"><span class="line-content">Windows Win32K / CVE-2026-69301 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="204"><span class="line-content">Push Message Routing Service / CVE-2026-69303 / 푸시 메시지 라우팅 서비스 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="205"><span class="line-content">ASP.NET Core / CVE-2026-69304 / ASP.NET Core 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="206"><span class="line-content">Microsoft Windows Search Component / CVE-2026-69305 / Microsoft Windows Search 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="207"><span class="line-content">Windows USB Audio Class driver (usbaudio.sys) / CVE-2026-69307 / Windows USB 오디오 클래스 드라이버(usbaudio.sys) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="208"><span class="line-content">Microsoft Standard XPS / CVE-2026-69308 / Microsoft 표준 XPS 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="209"><span class="line-content">Windows Print Spooler Components / CVE-2026-69309 / Windows 인쇄 스풀러 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="210"><span class="line-content">Windows DNS / CVE-2026-69310 / Windows DNS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="211"><span class="line-content">Windows Audio Service / CVE-2026-69311 / Windows 오디오 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="212"><span class="line-content">Windows NTFS / CVE-2026-69312 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="213"><span class="line-content">Microsoft Standard XPS / CVE-2026-69313 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="214"><span class="line-content">Windows Device Association Broker service / CVE-2026-69314 / Windows 장치 연결 브로커 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="215"><span class="line-content">Windows License Manager / CVE-2026-69315 / Windows 라이선스 관리자 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="216"><span class="line-content">Windows Overlay Filter / CVE-2026-69316 / Windows 오버레이 필터 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="217"><span class="line-content">Remote Desktop Client / CVE-2026-69317 / Windows 원격 데스크톱 클라이언트 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="218"><span class="line-content">Windows Imaging Component / CVE-2026-69318 / Windows 이미징 구성 요소 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="219"><span class="line-content">Windows USB Video Driver / CVE-2026-69319 / Windows USB 비디오 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="220"><span class="line-content">Windows Power Dependency Coordinator / CVE-2026-69321 / Windows Power Dependency Coordinator 변조 취약성</span></div>
+        <div class="code-line" data-line="221"><span class="line-content">Microsoft Windows Search Component / CVE-2026-69322 / Microsoft Windows Search 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="222"><span class="line-content">Windows Biometric Service / CVE-2026-69323 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="223"><span class="line-content">Windows Performance Monitor / CVE-2026-69324 / Windows 성능 모니터 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="224"><span class="line-content">Microsoft JScript / CVE-2026-69325 / Microsoft JScript 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="225"><span class="line-content">Windows Storage / CVE-2026-69328 / Windows 저장소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="226"><span class="line-content">BranchCache / CVE-2026-69329 / BranchCache 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="227"><span class="line-content">Windows Remote Access Connection Manager / CVE-2026-69331 / Windows 원격 액세스 연결 관리자 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="228"><span class="line-content">Windows NTFS / CVE-2026-69332 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="229"><span class="line-content">Windows Win32K / CVE-2026-69333 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="230"><span class="line-content">Windows Volume Manager Extension Driver / CVE-2026-69334 / Windows 볼륨 관리자 확장 드라이버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="231"><span class="line-content">Windows Win32K / CVE-2026-69335 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="232"><span class="line-content">Microsoft Standard XPS / CVE-2026-69336 / Microsoft 표준 XPS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="233"><span class="line-content">Windows Registry / CVE-2026-69337 / Windows 레지스트리 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="234"><span class="line-content">Remote Desktop Gateway Service / CVE-2026-69338 / 원격 데스크톱 게이트웨이 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="235"><span class="line-content">Windows MIDI Service Module / CVE-2026-69339 / Windows MIDI 서비스 모듈 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="236"><span class="line-content">Windows NTFS / CVE-2026-69340 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="237"><span class="line-content">Windows Image Acquisition / CVE-2026-69341 / Windows 이미지 획득 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="238"><span class="line-content">Windows DHCP Server / CVE-2026-69342 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="239"><span class="line-content">Windows Overlay Filter / CVE-2026-69343 / Windows 오버레이 필터 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="240"><span class="line-content">Windows Print Spooler Components / CVE-2026-69344 / Windows 인쇄 스풀러 구성 요소 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="241"><span class="line-content">Microsoft Standard XPS / CVE-2026-69345 / Microsoft 표준 XPS 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="242"><span class="line-content">Windows Print Spooler Components / CVE-2026-69346 / Windows 인쇄 스풀러 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="243"><span class="line-content">Windows Fast FAT Driver / CVE-2026-69347 / Windows Fast FAT 드라이버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="244"><span class="line-content">Windows Win32K / CVE-2026-69348 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="245"><span class="line-content">Windows Management Instrumentation / CVE-2026-69349 / Windows Management Instrumentation(WMI) 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="246"><span class="line-content">Windows Overlay Filter / CVE-2026-69350 / Windows 오버레이 필터 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="247"><span class="line-content">Windows Universal Plug and Play (UPnP) Device Host / CVE-2026-69351 / Windows Universal Plug and Play(UPnP) 장치 호스트 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="248"><span class="line-content">Windows Biometric Service / CVE-2026-69352 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="249"><span class="line-content">Windows Text Shaping / CVE-2026-69353 / Windows Text Shaping 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="250"><span class="line-content">Microsoft Exchange Server / CVE-2026-69355 / Microsoft Exchange Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="251"><span class="line-content">Microsoft Exchange Server / CVE-2026-69356 / Microsoft Exchange Server 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="252"><span class="line-content">Windows NDIS / CVE-2026-69357 / Windows NDIS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="253"><span class="line-content">Remote Desktop Client / CVE-2026-69358 / 원격 데스크톱 클라이언트 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="254"><span class="line-content">Active Directory Domain Services / CVE-2026-69359 / Active Directory Domain Services Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="255"><span class="line-content">Microsoft Office Word / CVE-2026-69360 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="256"><span class="line-content">Microsoft Exchange Server / CVE-2026-69361 / Microsoft Exchange Server 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="257"><span class="line-content">Windows Error Reporting / CVE-2026-69362 / Windows 오류 보고 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="258"><span class="line-content">Windows Print Spooler Components / CVE-2026-69364 / Windows 인쇄 스풀러 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="259"><span class="line-content">Microsoft Local Security Authority Server (lsasrv) / CVE-2026-69365 / Microsoft 로컬 보안 기관(LSA) 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="260"><span class="line-content">Windows Kernel / CVE-2026-69366 / Windows 커널 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="261"><span class="line-content">Microsoft Standard XPS / CVE-2026-69367 / Microsoft 표준 XPS 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="262"><span class="line-content">Windows Overlay Filter / CVE-2026-69368 / Windows 오버레이 필터 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="263"><span class="line-content">Windows DNS / CVE-2026-69369 / Windows DNS 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="264"><span class="line-content">Windows Overlay Filter / CVE-2026-69371 / Windows 오버레이 필터 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="265"><span class="line-content">Windows Network File System / CVE-2026-69372 / Windows 네트워크 파일 시스템 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="266"><span class="line-content">Windows Overlay Filter / CVE-2026-69373 / Windows 오버레이 필터 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="267"><span class="line-content">Windows SMB Server / CVE-2026-69374 / Windows SMB 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="268"><span class="line-content">Microsoft Exchange Server / CVE-2026-69375 / Microsoft Exchange Server 변조 취약성</span></div>
+        <div class="code-line" data-line="269"><span class="line-content">Microsoft Standard XPS / CVE-2026-69376 / Microsoft 표준 XPS 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="270"><span class="line-content">Windows Modern Device Management (MDM) / CVE-2026-69377 / Windows 최신 장치 관리 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="271"><span class="line-content">Microsoft Exchange Server / CVE-2026-69378 / Microsoft Exchange Server 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="272"><span class="line-content">Windows NTFS / CVE-2026-69379 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="273"><span class="line-content">Microsoft Exchange Server / CVE-2026-69380 / Microsoft Exchange Server 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="274"><span class="line-content">Windows Storage Port Driver / CVE-2026-69381 / Windows 저장소 포트 드라이버 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="275"><span class="line-content">Microsoft Exchange Server / CVE-2026-69382 / Microsoft Exchange Server Information Disclosure Vulnerability</span></div>
+        <div class="code-line" data-line="276"><span class="line-content">Windows Shell / CVE-2026-69383 / Windows Shell 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="277"><span class="line-content">Virtual Hard Disk (VHD) Miniport Driver / CVE-2026-69384 / 가상 하드 디스크(VHD) 미니포트 드라이버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="278"><span class="line-content">Windows TCP/IP / CVE-2026-69385 / Windows TCP/IP 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="279"><span class="line-content">Microsoft Windows Media Foundation / CVE-2026-69386 / Windows 미디어 파운데이션 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="280"><span class="line-content">Windows Bluetooth Service / CVE-2026-69388 / Windows Bluetooth 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="281"><span class="line-content">Windows Storage Management Provider / CVE-2026-69389 / Windows 저장소 관리 공급자 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="282"><span class="line-content">Windows Spaceport.sys / CVE-2026-69390 / Windows Spaceport.sys 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="283"><span class="line-content">Windows Broker Infrastructure Service / CVE-2026-69391 / Windows 브로커 인프라 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="284"><span class="line-content">Windows Shell / CVE-2026-69392 / Windows Shell 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="285"><span class="line-content">Windows Spaceport.sys / CVE-2026-69393 / Windows Spaceport.sys 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="286"><span class="line-content">Windows Audio Service / CVE-2026-69394 / Windows 오디오 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="287"><span class="line-content">Active Directory Certificate Services (AD CS) / CVE-2026-69395 / Active Directory Certificate Services (AD CS) Information Disclosure Vulnerability</span></div>
+        <div class="code-line" data-line="288"><span class="line-content">Windows NDIS / CVE-2026-69396 / Windows NDIS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="289"><span class="line-content">OpenSSH for Windows / CVE-2026-69397 / Windows용 Microsoft OpenSSH 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="290"><span class="line-content">Windows Bluetooth Service / CVE-2026-69398 / Windows Bluetooth 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="291"><span class="line-content">Audio Video Control Transport Protocol / CVE-2026-69401 / 오디오 비디오 컨트롤 전송 프로토콜 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="292"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69402 / Microsoft Office SharePoint 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="293"><span class="line-content">Windows SMB Server / CVE-2026-69403 / Windows SMB 서버 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="294"><span class="line-content">Windows TCP/IP / CVE-2026-69404 / Windows TCP/IP 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="295"><span class="line-content">Windows DHCP Server / CVE-2026-69405 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="296"><span class="line-content">Windows Kernel / CVE-2026-69406 / Windows 커널 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="297"><span class="line-content">Volume Manager Driver / CVE-2026-69407 / 볼륨 관리자 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="298"><span class="line-content">Microsoft Windows Media Foundation / CVE-2026-69408 / Windows 미디어 파운데이션 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="299"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69409 / Microsoft Office SharePoint 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="300"><span class="line-content">Windows Win32K / CVE-2026-69410 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="301"><span class="line-content">Windows DHCP Server / CVE-2026-69412 / Windows DHCP 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="302"><span class="line-content">Windows USB Audio Class driver (usbaudio.sys) / CVE-2026-69413 / Windows USB 오디오 클래스 드라이버(usbaudio.sys) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="303"><span class="line-content">Windows DHCP Server / CVE-2026-69415 / Windows DHCP 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="304"><span class="line-content">Windows DHCP Server / CVE-2026-69416 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="305"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69417 / Microsoft Office SharePoint 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="306"><span class="line-content">Volume Manager Driver / CVE-2026-69418 / 볼륨 관리자 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="307"><span class="line-content">Windows VOLSNAP.SYS / CVE-2026-69420 / Microsoft VOLSNAP.SYS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="308"><span class="line-content">Windows Kernel Mode Driver / CVE-2026-69421 / Windows 커널 모드 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="309"><span class="line-content">Windows USB Video Driver / CVE-2026-69422 / Windows USB 비디오 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="310"><span class="line-content">Windows USB Video Driver / CVE-2026-69423 / Windows USB 비디오 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="311"><span class="line-content">Windows Distributed File System (DFS) / CVE-2026-69424 / Windows DFS(분산 파일 시스템) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="312"><span class="line-content">Windows NTFS / CVE-2026-69425 / Windows NTFS 변조 취약성</span></div>
+        <div class="code-line" data-line="313"><span class="line-content">Windows VOLSNAP.SYS / CVE-2026-69426 / Windows VOLSNAP.SYS Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="314"><span class="line-content">Windows VOLSNAP.SYS / CVE-2026-69427 / Microsoft VOLSNAP.SYS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="315"><span class="line-content">Windows LDAP - Lightweight Directory Access Protocol / CVE-2026-69428 / Windows Lightweight Directory Access Protocol(LDAP) 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="316"><span class="line-content">Windows IKE Extension / CVE-2026-69429 / Windows IKE(Internet Key Exchange) 프로토콜 확장 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="317"><span class="line-content">Windows Embedded Mode Service / CVE-2026-69430 / Windows 포함 모드 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="318"><span class="line-content">Telnet Client / CVE-2026-69431 / 텔넷 클라이언트 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="319"><span class="line-content">Volume Manager Driver / CVE-2026-69432 / 볼륨 관리자 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="320"><span class="line-content">Windows Error Reporting / CVE-2026-69433 / Windows 오류 보고 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="321"><span class="line-content">Windows URL Moniker / CVE-2026-69434 / Windows URL Moniker 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="322"><span class="line-content">Windows Error Reporting / CVE-2026-69436 / Windows 오류 보고 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="323"><span class="line-content">Microsoft JScript / CVE-2026-69438 / Microsoft JScript 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="324"><span class="line-content">.NET and Visual Studio / CVE-2026-69439 / .NET 및 Visual Studio 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="325"><span class="line-content">Windows MIDI Service Module / CVE-2026-69440 / Windows MIDI 서비스 모듈 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="326"><span class="line-content">Windows Installer / CVE-2026-69441 / Windows Installer 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="327"><span class="line-content">Microsoft Office / CVE-2026-69442 / Microsoft Office 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="328"><span class="line-content">Windows Device Health Attestation (DHA) / CVE-2026-69443 / Windows Device Health Attestation (DHA) 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="329"><span class="line-content">Microsoft Windows Speech / CVE-2026-69444 / Microsoft Windows 음성 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="330"><span class="line-content">Windows Compressed Folder / CVE-2026-69445 / Windows 압축 폴더 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="331"><span class="line-content">Windows Audio Service / CVE-2026-69447 / Windows 오디오 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="332"><span class="line-content">Windows Bluetooth Service / CVE-2026-69448 / Windows Bluetooth 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="333"><span class="line-content">Windows BitLocker / CVE-2026-69449 / Windows BitLocker 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="334"><span class="line-content">Windows Error Reporting / CVE-2026-69450 / Windows 오류 보고 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="335"><span class="line-content">Windows Management Instrumentation / CVE-2026-69451 / Windows Management Instrumentation(WMI) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="336"><span class="line-content">Microsoft Windows Search Component / CVE-2026-69453 / Microsoft Windows Search 구성 요소 변조 취약성</span></div>
+        <div class="code-line" data-line="337"><span class="line-content">Windows Remote Access Connection Manager / CVE-2026-69455 / Windows 원격 액세스 연결 관리자 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="338"><span class="line-content">Microsoft Windows Speech / CVE-2026-69456 / Microsoft Windows 음성 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="339"><span class="line-content">Windows USB Driver / CVE-2026-69457 / Windows USB 드라이버 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="340"><span class="line-content">Windows BitLocker / CVE-2026-69458 / Windows BitLocker 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="341"><span class="line-content">Windows Power Dependency Coordinator / CVE-2026-69459 / Windows Power Dependency Coordinator 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="342"><span class="line-content">Windows Modern Device Management (MDM) / CVE-2026-69460 / Windows 최신 장치 관리 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="343"><span class="line-content">Windows NTFS / CVE-2026-69461 / Windows NTFS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="344"><span class="line-content">Windows Error Reporting / CVE-2026-69462 / Windows 오류 보고 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="345"><span class="line-content">Windows NTFS / CVE-2026-69463 / Windows NTFS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="346"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69464 / Microsoft Office SharePoint 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="347"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69465 / Microsoft Office SharePoint 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="348"><span class="line-content">Windows Kernel / CVE-2026-69466 / Windows 커널 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="349"><span class="line-content">Microsoft Graphics Component / CVE-2026-69467 / Microsoft 그래픽 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="350"><span class="line-content">Windows Volume Manager Extension Driver / CVE-2026-69468 / Windows 볼륨 관리자 확장 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="351"><span class="line-content">Windows USB Audio Class driver (usbaudio.sys) / CVE-2026-69469 / Windows USB 오디오 클래스 드라이버(usbaudio.sys) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="352"><span class="line-content">Windows Connected User Experiences and Telemetry / CVE-2026-69470 / 연결된 사용자 환경 및 원격 분석 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="353"><span class="line-content">Windows Devices Human Interface / CVE-2026-69472 / Windows 장치 휴먼 인터페이스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="354"><span class="line-content">Windows Kernel / CVE-2026-69473 / Windows 커널 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="355"><span class="line-content">Windows Overlay Filter / CVE-2026-69474 / Windows 오버레이 필터 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="356"><span class="line-content">Windows Remote Desktop Services / CVE-2026-69475 / Windows 원격 데스크톱 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="357"><span class="line-content">Windows Biometric Service / CVE-2026-69476 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="358"><span class="line-content">Microsoft Office Access / CVE-2026-69477 / Microsoft Office Access 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="359"><span class="line-content">Windows Device Association Service / CVE-2026-69478 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="360"><span class="line-content">Windows NTFS / CVE-2026-69479 / Windows NTFS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="361"><span class="line-content">Windows Partition Management Driver / CVE-2026-69480 / Windows 파티션 관리 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="362"><span class="line-content">Windows Enterprise App Management / CVE-2026-69481 / Windows 엔터프라이즈 앱 관리 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="363"><span class="line-content">Windows Error Reporting / CVE-2026-69482 / Windows 오류 보고 변조 취약성</span></div>
+        <div class="code-line" data-line="364"><span class="line-content">Windows Image Acquisition / CVE-2026-69483 / Windows 이미지 인식 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="365"><span class="line-content">Remote Desktop Client / CVE-2026-69485 / 원격 데스크톱 클라이언트 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="366"><span class="line-content">Windows Device Association Service / CVE-2026-69488 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="367"><span class="line-content">Windows Biometric Service / CVE-2026-69489 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="368"><span class="line-content">Windows USB Mass Storage Class Driver / CVE-2026-69490 / Windows USB Mass Storage Class Driver Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="369"><span class="line-content">Windows Microsoft DirectMusic / CVE-2026-69491 / Microsoft DirectMusic 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="370"><span class="line-content">Windows Partition Management Driver / CVE-2026-69492 / Windows 파티션 관리 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="371"><span class="line-content">Windows Event Logging Service / CVE-2026-69493 / Windows 이벤트 로깅 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="372"><span class="line-content">Windows Event Logging Service / CVE-2026-69494 / Windows 이벤트 로깅 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="373"><span class="line-content">Windows Event Logging Service / CVE-2026-69495 / Windows 이벤트 로깅 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="374"><span class="line-content">Windows Compressed Folder / CVE-2026-69496 / Windows Compressed Folder 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="375"><span class="line-content">Windows DHCP Server / CVE-2026-69497 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="376"><span class="line-content">Windows Win32K / CVE-2026-69498 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="377"><span class="line-content">Windows Imaging Component / CVE-2026-69499 / Windows Imaging Component Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="378"><span class="line-content">Windows Image Acquisition / CVE-2026-69500 / Windows 이미지 획득 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="379"><span class="line-content">Windows Secure Kernel Mode / CVE-2026-69501 / Windows 보안 커널 모드 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="380"><span class="line-content">Windows USB Driver / CVE-2026-69503 / Windows USB 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="381"><span class="line-content">Windows NTFS / CVE-2026-69504 / Windows NTFS 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="382"><span class="line-content">Windows NTFS / CVE-2026-69505 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="383"><span class="line-content">Microsoft Windows Search Component / CVE-2026-69507 / Microsoft Windows Search 구성 요소 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="384"><span class="line-content">Windows MIDI Service Module / CVE-2026-69508 / Windows MIDI 서비스 모듈 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="385"><span class="line-content">Role: Windows Fax Service / CVE-2026-69509 / 역할: Windows 팩스 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="386"><span class="line-content">Windows DHCP Server / CVE-2026-69510 / Windows DHCP Server Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="387"><span class="line-content">Microsoft Windows Media Foundation / CVE-2026-69511 / Windows 미디어 파운데이션 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="388"><span class="line-content">Windows Spaceport.sys / CVE-2026-69512 / Windows Spaceport.sys 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="389"><span class="line-content">Windows Error Reporting / CVE-2026-69513 / Windows 오류 보고 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="390"><span class="line-content">Windows Remote Desktop Services / CVE-2026-69514 / 원격 데스크톱 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="391"><span class="line-content">Connected Devices Platform Service (Cdpsvc) / CVE-2026-69516 / 연결된 디바이스 플랫폼 서비스(Cdpsvc) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="392"><span class="line-content">Windows Wireless Networking / CVE-2026-69517 / Windows 무선 네트워킹 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="393"><span class="line-content">Windows Remote Desktop / CVE-2026-69518 / Windows Remote Desktop 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="394"><span class="line-content">Visual Studio / CVE-2026-69522 / .NET 및 Visual Studio 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="395"><span class="line-content">Active Directory Domain Services / CVE-2026-69524 / Windows Active Directory 도메인 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="396"><span class="line-content">Windows Remote Desktop Services / CVE-2026-69525 / 원격 데스크톱 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="397"><span class="line-content">Windows USB Mass Storage Class Driver / CVE-2026-69527 / Windows USB 대용량 스토리지 클래스 드라이버 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="398"><span class="line-content">Windows Shell / CVE-2026-69528 / Windows Shell 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="399"><span class="line-content">Microsoft Office Access / CVE-2026-69529 / Microsoft Office Access 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="400"><span class="line-content">Reliable Multicast Transport Driver (RMCAST) / CVE-2026-69530 / Windows RMCAST(Reliable Multicast Transport Driver) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="401"><span class="line-content">Microsoft Windows Speech / CVE-2026-69531 / Microsoft Windows 음성 변조 취약성</span></div>
+        <div class="code-line" data-line="402"><span class="line-content">Windows NTFS / CVE-2026-69532 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="403"><span class="line-content">Windows Program Compatibility Assistant Service / CVE-2026-69534 / Windows 프로그램 호환성 관리자 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="404"><span class="line-content">Windows Spaceport.sys / CVE-2026-69535 / Windows Spaceport.sys 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="405"><span class="line-content">Windows Remote Desktop Services / CVE-2026-69536 / 원격 데스크톱 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="406"><span class="line-content">Windows Spaceport.sys / CVE-2026-69538 / Windows Spaceport.sys 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="407"><span class="line-content">Windows Remote Desktop Services / CVE-2026-69539 / 원격 데스크톱 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="408"><span class="line-content">Windows Audio Service / CVE-2026-69540 / Windows 오디오 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="409"><span class="line-content">Virtual Hard Disk (VHD) Miniport Driver / CVE-2026-69541 / 가상 하드 디스크(VHD) 미니포트 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="410"><span class="line-content">Windows Camera Frame Server Monitor / CVE-2026-69542 / Windows 카메라 프레임 서버 모니터 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="411"><span class="line-content">Windows SMB Client / CVE-2026-69544 / Windows SMB 클라이언트 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="412"><span class="line-content">Active Directory Domain Services / CVE-2026-69546 / Windows Active Directory 도메인 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="413"><span class="line-content">Windows DHCP Server / CVE-2026-69547 / Windows DHCP 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="414"><span class="line-content">Windows RNDIS / CVE-2026-69548 / Windows RNDIS 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="415"><span class="line-content">Virtual Hard Disk (VHD) Miniport Driver / CVE-2026-69549 / 가상 하드 디스크(VHD) 미니포트 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="416"><span class="line-content">Windows DNS / CVE-2026-69551 / Windows DNS Server Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="417"><span class="line-content">Windows Print Spooler Components / CVE-2026-69552 / Windows 인쇄 스풀러 구성 요소 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="418"><span class="line-content">Windows Hyper-V / CVE-2026-69553 / Windows Hyper-V 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="419"><span class="line-content">Microsoft Windows Search Component / CVE-2026-69554 / Microsoft Windows Search 구성 요소 변조 취약성</span></div>
+        <div class="code-line" data-line="420"><span class="line-content">Microsoft Office Word / CVE-2026-69556 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="421"><span class="line-content">Microsoft Teams for Android / CVE-2026-69559 / Android용 Microsoft Teams 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="422"><span class="line-content">Windows Work Folder Service / CVE-2026-69560 / Windows 작업 폴더 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="423"><span class="line-content">Windows CD-ROM Driver / CVE-2026-69561 / Windows CD-ROM 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="424"><span class="line-content">SQL Server / CVE-2026-69562 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="425"><span class="line-content">Windows Program Compatibility Assistant Service / CVE-2026-69563 / Windows 프로그램 호환성 관리자 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="426"><span class="line-content">Windows Online Certificate Status Protocol (OCSP) / CVE-2026-69564 / Windows 온라인 인증서 상태 프로토콜(OCSP) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="427"><span class="line-content">Windows NTFS / CVE-2026-69566 / Windows NTFS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="428"><span class="line-content">Windows NTFS / CVE-2026-69567 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="429"><span class="line-content">Windows Storage Spaces Controller / CVE-2026-69568 / 저장소 공간 컨트롤러 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="430"><span class="line-content">Windows Print Spooler Components / CVE-2026-69569 / Windows 인쇄 스풀러 구성 요소 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="431"><span class="line-content">Windows USB Audio Class driver (usbaudio.sys) / CVE-2026-69571 / Windows USB 오디오 클래스 드라이버(usbaudio.sys) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="432"><span class="line-content">Windows SMB Client / CVE-2026-69572 / Windows SMB 클라이언트 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="433"><span class="line-content">Windows Universal Disk Format File System Driver (UDFS) / CVE-2026-69573 / Windows 범용 디스크 형식 파일 시스템 드라이버(UDFS) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="434"><span class="line-content">Windows Device Association Service / CVE-2026-69574 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="435"><span class="line-content">Windows Storage Spaces Controller / CVE-2026-69575 / Windows 저장소 공간 컨트롤러 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="436"><span class="line-content">Graphic Fonts / CVE-2026-69576 / 그래픽 글꼴 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="437"><span class="line-content">Windows Kernel / CVE-2026-69578 / Windows 커널 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="438"><span class="line-content">Windows Message Queuing / CVE-2026-69579 / Windows Message Queuing 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="439"><span class="line-content">Windows Biometric Service / CVE-2026-69580 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="440"><span class="line-content">Windows Device Association Service / CVE-2026-69581 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="441"><span class="line-content">Windows Volume Manager Extension Driver / CVE-2026-69582 / Windows 볼륨 관리자 확장 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="442"><span class="line-content">Windows Biometric Service / CVE-2026-69583 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="443"><span class="line-content">Windows USB Video Driver / CVE-2026-69584 / Windows USB 비디오 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="444"><span class="line-content">Microsoft Windows Search Component / CVE-2026-69585 / Microsoft Windows Search 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="445"><span class="line-content">Microsoft Windows PDF / CVE-2026-69586 / Microsoft Windows PDF 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="446"><span class="line-content">Windows IKE Extension / CVE-2026-69587 / Windows IKE(Internet Key Exchange) 확장 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="447"><span class="line-content">Windows TCP/IP / CVE-2026-69588 / Windows TCP/IP 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="448"><span class="line-content">Windows Biometric Service / CVE-2026-69589 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="449"><span class="line-content">Windows Routing and Remote Access Service (RRAS) / CVE-2026-69590 / Windows Routing and Remote Access Service (RRAS) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="450"><span class="line-content">Windows NTFS / CVE-2026-69591 / Windows NTFS 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="451"><span class="line-content">Windows Universal Disk Format File System Driver (UDFS) / CVE-2026-69592 / Windows 범용 디스크 형식 파일 시스템 드라이버(UDFS) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="452"><span class="line-content">Windows Biometric Service / CVE-2026-69593 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="453"><span class="line-content">Microsoft Local Security Authority Server (lsasrv) / CVE-2026-69594 / Microsoft 로컬 보안 기관(LSA) 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="454"><span class="line-content">Windows Services for NFS ONCRPC XDR Driver / CVE-2026-69595 / NFS ONCRPC XDR 드라이버용 Windows 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="455"><span class="line-content">Windows HTTP.sys / CVE-2026-69597 / Windows HTTP.sys 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="456"><span class="line-content">Windows iSCSI / CVE-2026-69598 / Windows iSCSI 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="457"><span class="line-content">Windows Remote Desktop Services / CVE-2026-69599 / 원격 데스크톱 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="458"><span class="line-content">Microsoft Windows Search Component / CVE-2026-69600 / Microsoft Windows Search 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="459"><span class="line-content">Microsoft Windows Media Foundation / CVE-2026-69601 / Windows 미디어 파운데이션 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="460"><span class="line-content">Windows PrintWorkflowUserSvc / CVE-2026-69602 / Windows PrintWorkflowUserSvc 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="461"><span class="line-content">Windows Hyper-V / CVE-2026-69603 / Windows Hyper-V 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="462"><span class="line-content">Windows Audio Service / CVE-2026-69604 / Windows 오디오 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="463"><span class="line-content">Microsoft Install Service / CVE-2026-69605 / Microsoft 설치 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="464"><span class="line-content">Windows Shell / CVE-2026-69606 / Windows Shell 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="465"><span class="line-content">Windows Deployment Services / CVE-2026-69607 / Windows Deployment Services 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="466"><span class="line-content">Microsoft Windows Search Component / CVE-2026-69608 / Microsoft Windows Search 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="467"><span class="line-content">Windows Win32K / CVE-2026-69609 / Win32k 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="468"><span class="line-content">Windows Win32K / CVE-2026-69610 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="469"><span class="line-content">Virtual Hard Disk (VHD) Miniport Driver / CVE-2026-69611 / 가상 하드 디스크(VHD) 미니포트 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="470"><span class="line-content">Windows Error Reporting / CVE-2026-69612 / Windows 오류 보고 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="471"><span class="line-content">Windows Image Acquisition / CVE-2026-69613 / Windows 이미지 획득 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="472"><span class="line-content">Microsoft Office Access / CVE-2026-69614 / Microsoft Office Access 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="473"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69615 / Microsoft Office SharePoint 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="474"><span class="line-content">Windows Remote Desktop Services / CVE-2026-69616 / Windows 원격 데스크톱 서비스 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="475"><span class="line-content">Windows Resilient File System (ReFS) / CVE-2026-69617 / Windows ReFS(복원 파일 시스템) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="476"><span class="line-content">Windows SMB Client / CVE-2026-69618 / Windows SMB 클라이언트 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="477"><span class="line-content">Windows exFAT File System / CVE-2026-69619 / Windows exFAT 파일 시스템 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="478"><span class="line-content">Windows DHCP Server / CVE-2026-69620 / Windows DHCP 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="479"><span class="line-content">Role: Windows Fax Service / CVE-2026-69621 / 역할: Windows 팩스 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="480"><span class="line-content">Windows HTTP Print Provider / CVE-2026-69623 / Windows HTTP 인쇄 공급자 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="481"><span class="line-content">Active Directory Certificate Services (AD CS) / CVE-2026-69624 / Active Directory 인증서 서비스(AD CS) 변조 취약성</span></div>
+        <div class="code-line" data-line="482"><span class="line-content">Windows Connected User Experiences and Telemetry / CVE-2026-69625 / 연결된 사용자 환경 및 원격 분석 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="483"><span class="line-content">Microsoft Office / CVE-2026-69626 / Microsoft Office 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="484"><span class="line-content">Windows Remote Desktop Licensing Service / CVE-2026-69627 / Windows 원격 데스크톱 라이선싱 서비스 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="485"><span class="line-content">Windows iSCSI / CVE-2026-69628 / Windows iSCSI 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="486"><span class="line-content">Microsoft Office Outlook / CVE-2026-69629 / Microsoft Office Outlook 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="487"><span class="line-content">Windows Win32K / CVE-2026-69630 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="488"><span class="line-content">Windows DNS / CVE-2026-69631 / Windows DNS 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="489"><span class="line-content">Microsoft Office / CVE-2026-69632 / Microsoft Office 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="490"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69636 / Microsoft Office SharePoint 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="491"><span class="line-content">Windows DHCP Server / CVE-2026-69637 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="492"><span class="line-content">Windows NTFS / CVE-2026-69638 / Windows NTFS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="493"><span class="line-content">Microsoft Exchange Server / CVE-2026-69641 / Microsoft Exchange Server 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="494"><span class="line-content">Skype for Business / CVE-2026-69642 / 비즈니스용 Skype 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="495"><span class="line-content">Windows Spaceport.sys / CVE-2026-69643 / Windows Spaceport.sys 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="496"><span class="line-content">Windows Message Queuing / CVE-2026-69645 / Windows 메시지 큐 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="497"><span class="line-content">Skype for Business / CVE-2026-69646 / 비즈니스용 Skype 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="498"><span class="line-content">Windows Notification / CVE-2026-69648 / Windows 알림 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="499"><span class="line-content">Windows Raw Image Extension / CVE-2026-69649 / Raw Image Extension Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="500"><span class="line-content">Windows Win32K / CVE-2026-69652 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="501"><span class="line-content">Windows Accounts Control / CVE-2026-69654 / Windows 계정 제어판 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="502"><span class="line-content">Windows Kernel / CVE-2026-69669 / Windows 커널 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="503"><span class="line-content">Microsoft Office Word / CVE-2026-69671 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="504"><span class="line-content">Windows DNS / CVE-2026-69672 / Windows DNS 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="505"><span class="line-content">Windows Modern Device Management (MDM) / CVE-2026-69674 / Windows 최신 장치 관리(MDM) 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="506"><span class="line-content">Windows Kerberos / CVE-2026-69676 / Windows Kerberos 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="507"><span class="line-content">Microsoft Office PowerPoint / CVE-2026-69678 / Microsoft Office PowerPoint 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="508"><span class="line-content">Windows DHCP Server / CVE-2026-69679 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="509"><span class="line-content">Windows DNS / CVE-2026-69680 / Windows DNS 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="510"><span class="line-content">Virtual Hard Disk (VHD) Miniport Driver / CVE-2026-69681 / 가상 하드 디스크(VHD) 미니포트 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="511"><span class="line-content">Windows Host Guardian Service / CVE-2026-69682 / Windows 호스트 보호 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="512"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69683 / Microsoft Office SharePoint 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="513"><span class="line-content">Windows Error Reporting / CVE-2026-69684 / Windows 오류 보고 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="514"><span class="line-content">Windows Kerberos / CVE-2026-69685 / Windows Kerberos 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="515"><span class="line-content">Microsoft Office Word / CVE-2026-69686 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="516"><span class="line-content">Windows USB Audio Class driver (usbaudio.sys) / CVE-2026-69687 / Windows USB 오디오 클래스 드라이버(usbaudio.sys) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="517"><span class="line-content">Windows Encrypting File System (EFS) / CVE-2026-69688 / Windows EFS(파일 시스템 암호화) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="518"><span class="line-content">Windows Win32K / CVE-2026-69689 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="519"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69690 / Microsoft Office SharePoint 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="520"><span class="line-content">Windows Spaceport.sys / CVE-2026-69691 / Windows Spaceport.sys 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="521"><span class="line-content">Windows Audio Service / CVE-2026-69692 / Windows 오디오 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="522"><span class="line-content">Windows Device Association Broker service / CVE-2026-69693 / Windows 장치 연결 브로커 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="523"><span class="line-content">Windows IP Address Management (IPAM) Service / CVE-2026-69694 / Windows IP 주소 관리(IPAM) 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="524"><span class="line-content">Windows Win32K / CVE-2026-69706 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="525"><span class="line-content">Windows USB Audio Class driver (usbaudio.sys) / CVE-2026-69707 / Windows USB 오디오 클래스 드라이버(usbaudio.sys) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="526"><span class="line-content">Windows Web Platform Storage / CVE-2026-69708 / Windows 웹 플랫폼 저장소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="527"><span class="line-content">Windows NTFS / CVE-2026-69709 / Windows NTFS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="528"><span class="line-content">Windows Hello / CVE-2026-69710 / Windows Hello 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="529"><span class="line-content">Windows Device Association Service / CVE-2026-69711 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="530"><span class="line-content">Windows Key Distribution Center / CVE-2026-69712 / Windows 키 배포 센터 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="531"><span class="line-content">Windows Secure Boot / CVE-2026-69713 / Windows 보안 부팅 보안 기능 우회 취약성</span></div>
+        <div class="code-line" data-line="532"><span class="line-content">Windows Device Association Service / CVE-2026-69714 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="533"><span class="line-content">Windows Direct Show / CVE-2026-69715 / Windows Direct Show 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="534"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69716 / Microsoft Office SharePoint 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="535"><span class="line-content">Windows Group Policy / CVE-2026-69717 / Windows 그룹 정책 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="536"><span class="line-content">Microsoft Office Word / CVE-2026-69719 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="537"><span class="line-content">Windows MIDI Service Module / CVE-2026-69720 / Windows MIDI 서비스 모듈 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="538"><span class="line-content">Microsoft Office Word / CVE-2026-69722 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="539"><span class="line-content">Windows Kernel / CVE-2026-69723 / Windows 커널 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="540"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69724 / Microsoft Office SharePoint 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="541"><span class="line-content">Windows Hello / CVE-2026-69725 / Windows Hello 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="542"><span class="line-content">Windows Biometric Service / CVE-2026-69727 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="543"><span class="line-content">Windows Credential Providers / CVE-2026-69729 / Windows 자격 증명 공급자 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="544"><span class="line-content">Windows DNS / CVE-2026-69730 / Windows DNS Server Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="545"><span class="line-content">HID class driver / CVE-2026-69731 / HID 클래스 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="546"><span class="line-content">Windows Link Layer Topology Discovery Protocol / CVE-2026-69732 / Windows Link Layer Topology Discovery 프로토콜 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="547"><span class="line-content">Microsoft Office Word / CVE-2026-69734 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="548"><span class="line-content">Windows Broadcast DVR User Service / CVE-2026-69735 / Windows Broadcast DVR User Service Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="549"><span class="line-content">Windows Biometric Service / CVE-2026-69738 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="550"><span class="line-content">Microsoft Office / CVE-2026-69739 / Microsoft Office 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="551"><span class="line-content">Windows Hello / CVE-2026-69740 / Windows Hello 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="552"><span class="line-content">Windows Spaceport.sys / CVE-2026-69741 / Windows Spaceport.sys 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="553"><span class="line-content">Microsoft Office Publisher / CVE-2026-69742 / Microsoft Office Publisher 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="554"><span class="line-content">Windows Kerberos / CVE-2026-69744 / Windows Kerberos 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="555"><span class="line-content">Windows TCP/IP / CVE-2026-69757 / Windows TCP/IP 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="556"><span class="line-content">Windows Universal Disk Format File System Driver (UDFS) / CVE-2026-69758 / Windows 범용 디스크 형식 파일 시스템 드라이버(UDFS) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="557"><span class="line-content">Microsoft Office Word / CVE-2026-69759 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="558"><span class="line-content">Windows Kerberos / CVE-2026-69760 / Windows Kerberos 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="559"><span class="line-content">Windows TCP/IP / CVE-2026-69761 / Windows TCP/IP 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="560"><span class="line-content">Windows Win32K / CVE-2026-69762 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="561"><span class="line-content">Microsoft Office Word / CVE-2026-69764 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="562"><span class="line-content">Microsoft Office PowerPoint / CVE-2026-69767 / Microsoft Office PowerPoint 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="563"><span class="line-content">Windows RNDIS / CVE-2026-69768 / Windows RNDIS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="564"><span class="line-content">Windows HTTP Print Provider / CVE-2026-69769 / Windows HTTP 인쇄 공급자 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="565"><span class="line-content">Windows Spaceport.sys / CVE-2026-69770 / Windows Spaceport.sys 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="566"><span class="line-content">Windows Container Manager Service / CVE-2026-69771 / Windows 컨테이너 관리자 서비스 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="567"><span class="line-content">Windows Network File System / CVE-2026-69772 / Windows Network 파일 시스템 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="568"><span class="line-content">Windows Biometric Service / CVE-2026-69773 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="569"><span class="line-content">Windows DWM Core Library / CVE-2026-69775 / Windows DWM 핵심 라이브러리 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="570"><span class="line-content">Windows DHCP Client / CVE-2026-69777 / Windows DHCP 클라이언트 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="571"><span class="line-content">Microsoft Office Access / CVE-2026-69778 / Microsoft Office Access 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="572"><span class="line-content">Windows Win32K / CVE-2026-69779 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="573"><span class="line-content">Windows DHCP Client / CVE-2026-69781 / Windows DHCP 클라이언트 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="574"><span class="line-content">Role: DNS Server / CVE-2026-69782 / Windows DNS 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="575"><span class="line-content">Windows Hello / CVE-2026-69784 / Windows Hello 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="576"><span class="line-content">Windows Smart Card / CVE-2026-69785 / Windows 스마트 카드 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="577"><span class="line-content">Windows Text Shaping / CVE-2026-69786 / Windows 텍스트 공유 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="578"><span class="line-content">Windows Biometric Service / CVE-2026-69787 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="579"><span class="line-content">Windows Credential Providers / CVE-2026-69790 / Windows 자격 증명 공급자 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="580"><span class="line-content">Windows Device Association Service / CVE-2026-69791 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="581"><span class="line-content">Windows Win32K / CVE-2026-69792 / Windows Win32K 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="582"><span class="line-content">Windows TCP/IP / CVE-2026-69793 / Windows TCP/IP 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="583"><span class="line-content">Windows Encrypting File System (EFS) / CVE-2026-69794 / Windows 파일 시스템 암호화(EFS) 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="584"><span class="line-content">Microsoft Office PowerPoint / CVE-2026-69797 / Microsoft Office PowerPoint 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="585"><span class="line-content">Windows Hello / CVE-2026-69799 / Windows Hello 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="586"><span class="line-content">Windows Audio Service / CVE-2026-69801 / Windows 오디오 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="587"><span class="line-content">Windows DHCP Server / CVE-2026-69803 / Windows DHCP 서버 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="588"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69804 / Microsoft Office SharePoint 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="589"><span class="line-content">.NET / CVE-2026-69805 / .NET 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="590"><span class="line-content">.NET / CVE-2026-69806 / .NET 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="591"><span class="line-content">Windows PowerShell / CVE-2026-69807 / PowerShell 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="592"><span class="line-content">Windows Win32K / CVE-2026-69808 / Win32k 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="593"><span class="line-content">Active Directory Domain Services / CVE-2026-69809 / Windows Active Directory Domain Services 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="594"><span class="line-content">Windows DNS / CVE-2026-69813 / Windows DNS Server Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="595"><span class="line-content">Windows Credential Providers / CVE-2026-69814 / Windows 자격 증명 공급자 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="596"><span class="line-content">Windows Accounts Control / CVE-2026-69816 / Windows 계정 제어판 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="597"><span class="line-content">Windows Bluetooth Port Driver / CVE-2026-69817 / Windows Bluetooth 포트 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="598"><span class="line-content">Windows Win32K / CVE-2026-69818 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="599"><span class="line-content">RPC Runtime / CVE-2026-69819 / RPC 런타임 라이브러리 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="600"><span class="line-content">Windows Hello / CVE-2026-69820 / Windows Hello 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="601"><span class="line-content">Active Directory Certificate Services (AD CS) / CVE-2026-69821 / Active Directory Certificate Services (AD CS) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="602"><span class="line-content">Windows Kerberos / CVE-2026-69822 / Windows Kerberos 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="603"><span class="line-content">Microsoft Standard XPS / CVE-2026-69824 / Microsoft 표준 XPS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="604"><span class="line-content">Windows Biometric Service / CVE-2026-69826 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="605"><span class="line-content">Role: DNS Server / CVE-2026-69827 / Windows DNS 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="606"><span class="line-content">Windows Shell / CVE-2026-69829 / Windows Shell 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="607"><span class="line-content">Windows Win32K / CVE-2026-69832 / Win32k 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="608"><span class="line-content">Windows ALPC / CVE-2026-69834 / Windows ALPC 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="609"><span class="line-content">Windows Print Spooler Components / CVE-2026-69838 / Windows 인쇄 스풀러 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="610"><span class="line-content">Windows iSCSI Target Service / CVE-2026-69839 / Windows iSCSI 대상 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="611"><span class="line-content">Windows Encrypting File System (EFS) / CVE-2026-69841 / Windows EFS(파일 시스템 암호화) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="612"><span class="line-content">Windows Win32K / CVE-2026-69844 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="613"><span class="line-content">Windows DHCP Server / CVE-2026-69845 / Windows DHCP 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="614"><span class="line-content">Windows Secure Kernel Mode / CVE-2026-69846 / Windows 보안 커널 모드 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="615"><span class="line-content">Windows DHCP Server / CVE-2026-69847 / Windows DHCP 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="616"><span class="line-content">Windows Routing and Remote Access Service (RRAS) / CVE-2026-69852 / Windows Routing and Remote Access Service (RRAS) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="617"><span class="line-content">Windows Win32K / CVE-2026-69853 / Win32k 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="618"><span class="line-content">Spring Cloud Azure / CVE-2026-69854 / Spring Cloud Azure 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="619"><span class="line-content">Azure Cosmos DB / CVE-2026-69857 / Azure Cosmos DB 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="620"><span class="line-content">Windows DNS / CVE-2026-69858 / Windows DNS Server Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="621"><span class="line-content">Windows USB Audio Class driver (usbaudio.sys) / CVE-2026-69859 / Windows USB 오디오 클래스 드라이버(usbaudio.sys) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="622"><span class="line-content">Windows Imaging Component / CVE-2026-69860 / Windows Imaging Component Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="623"><span class="line-content">Windows Wireless Wide Area Network Service / CVE-2026-69862 / Windows Wireless Wide Area Network 서비스 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="624"><span class="line-content">Windows Hello / CVE-2026-69864 / Windows Hello 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="625"><span class="line-content">Windows Device Association Service / CVE-2026-69866 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="626"><span class="line-content">Windows ALPC / CVE-2026-69874 / Windows ALPC 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="627"><span class="line-content">Windows NTFS / CVE-2026-69875 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="628"><span class="line-content">Windows DHCP Server / CVE-2026-69876 / Windows DHCP 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="629"><span class="line-content">Windows DHCP Server / CVE-2026-69878 / Windows DHCP 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="630"><span class="line-content">Windows IKE Extension / CVE-2026-69881 / Windows IKE(Internet Key Exchange) 확장 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="631"><span class="line-content">Windows Bluetooth Service / CVE-2026-69889 / Windows Bluetooth 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="632"><span class="line-content">Windows Virtual Trusted Platform Module / CVE-2026-69890 / Windows Virtual Trusted Platform Module 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="633"><span class="line-content">Windows Media / CVE-2026-69891 / Windows Media 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="634"><span class="line-content">Windows Spaceport.sys / CVE-2026-69895 / Windows Spaceport.sys 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="635"><span class="line-content">Windows Error Reporting / CVE-2026-69896 / Windows 오류 보고 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="636"><span class="line-content">Kernel Streaming WOW Thunk Service Driver / CVE-2026-69900 / Kernel Streaming WOW Thunk Service Driver 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="637"><span class="line-content">Microsoft Office SharePoint / CVE-2026-69904 / Microsoft Office SharePoint 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="638"><span class="line-content">Windows Secure Kernel Mode / CVE-2026-69906 / Windows 보안 커널 모드 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="639"><span class="line-content">Windows Enterprise App Management / CVE-2026-69907 / Windows 엔터프라이즈 앱 관리 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="640"><span class="line-content">Windows Hyper-V / CVE-2026-69910 / Windows Hyper-V 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="641"><span class="line-content">Microsoft Windows Search Component / CVE-2026-69911 / Microsoft Windows Search 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="642"><span class="line-content">Windows Print Spooler Components / CVE-2026-69921 / Windows 인쇄 스풀러 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="643"><span class="line-content">Windows DHCP Server / CVE-2026-69929 / Windows DHCP 서버 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="644"><span class="line-content">Windows DHCP Server / CVE-2026-69930 / Windows DHCP 서버 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="645"><span class="line-content">Role: DNS Server / CVE-2026-69989 / Windows DNS 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="646"><span class="line-content">Windows Compressed Folder / CVE-2026-70019 / Windows 압축 폴더 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="647"><span class="line-content">Windows DHCP Server / CVE-2026-70065 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="648"><span class="line-content">Windows DNS / CVE-2026-70091 / Windows DNS 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="649"><span class="line-content">Windows DHCP Server / CVE-2026-70124 / Windows DHCP 서버 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="650"><span class="line-content">Microsoft Windows Search Component / CVE-2026-70145 / Microsoft Windows Search 구성 요소 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="651"><span class="line-content">Microsoft Fabric / CVE-2026-70178 / Microsoft Fabric 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="652"><span class="line-content">Windows Media Player / CVE-2026-70203 / Windows Media Player Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="653"><span class="line-content">Windows Win32K / CVE-2026-70283 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="654"><span class="line-content">Windows Win32 Kernel Subsystem / CVE-2026-70289 / Windows Win32k 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="655"><span class="line-content">Windows Win32 Kernel Subsystem / CVE-2026-70290 / Win32k 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="656"><span class="line-content">Windows Imaging Component / CVE-2026-70296 / Windows Imaging Component Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="657"><span class="line-content">Visual Studio Code / CVE-2026-70334 / Visual Studio Code 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="658"><span class="line-content">Windows Ancillary Function Driver for WinSock / CVE-2026-70342 / WinSock용 Windows 보조 기능 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="659"><span class="line-content">Microsoft WebP Image Extension / CVE-2026-70351 / Microsoft WebP Image Extension Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="660"><span class="line-content">Azure AI Language / CVE-2026-70352 / Azure AI Language 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="661"><span class="line-content">Windows Audio Service / CVE-2026-70562 / Windows 오디오 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="662"><span class="line-content">Windows Shell / CVE-2026-70563 / Windows 셸 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="663"><span class="line-content">Windows Print Spooler Components / CVE-2026-70564 / Windows 인쇄 스풀러 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="664"><span class="line-content">Windows AF_UNIX Socket Provider / CVE-2026-70565 / Windows AF_UNIX Socket Provider Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="665"><span class="line-content">Windows Display Enhancement Service / CVE-2026-70567 / Windows 디스플레이 향상 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="666"><span class="line-content">Windows Defender Firewall Service / CVE-2026-70568 / Windows Defender 방화벽 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="667"><span class="line-content">Windows Spaceport.sys / CVE-2026-70569 / Windows Spaceport.sys 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="668"><span class="line-content">Windows Routing and Remote Access Service (RRAS) / CVE-2026-70570 / Windows Routing and Remote Access Service (RRAS) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="669"><span class="line-content">Windows Biometric Service / CVE-2026-70572 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="670"><span class="line-content">Windows Biometric Service / CVE-2026-70573 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="671"><span class="line-content">Virtual Hard Disk (VHD) Miniport Driver / CVE-2026-70574 / 가상 하드 디스크(VHD) 미니포트 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="672"><span class="line-content">Windows Schannel / CVE-2026-70575 / Windows Schannel Denial of Service Vulnerability</span></div>
+        <div class="code-line" data-line="673"><span class="line-content">Windows Modern Device Management (MDM) / CVE-2026-70577 / Windows 최신 장치 관리 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="674"><span class="line-content">Windows Credential Guard / CVE-2026-70578 / Windows Credential Guard Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="675"><span class="line-content">Windows Mobile Broadband / CVE-2026-70579 / Windows Mobile Broadband Information Disclosure Vulnerability</span></div>
+        <div class="code-line" data-line="676"><span class="line-content">Windows Biometric Service / CVE-2026-70581 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="677"><span class="line-content">Windows Management Instrumentation / CVE-2026-70582 / Windows Management Instrumentation(WMI) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="678"><span class="line-content">Windows Core Messaging / CVE-2026-70583 / Windows Core Messaging Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="679"><span class="line-content">Windows Core Messaging / CVE-2026-70584 / Windows Core Messaging Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="680"><span class="line-content">Windows Services for NFS ONCRPC XDR Driver / CVE-2026-70585 / NFS ONCRPC XDR 드라이버용 Windows 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="681"><span class="line-content">Windows Paint / CVE-2026-70586 / Windows Paint Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="682"><span class="line-content">Windows Remote Desktop Protocol / CVE-2026-70587 / Windows Remote Desktop Protocol Information Disclosure Vulnerability</span></div>
+        <div class="code-line" data-line="683"><span class="line-content">Visual Studio / CVE-2026-71328 / .NET 및 Visual Studio 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="684"><span class="line-content">Windows NTFS / CVE-2026-71329 / Windows NTFS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="685"><span class="line-content">Windows Services for NFS ONCRPC XDR Driver / CVE-2026-71330 / NFS ONCRPC XDR 드라이버용 Windows 서비스 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="686"><span class="line-content">Windows Secure Socket Tunneling Protocol (SSTP) / CVE-2026-71332 / Windows Secure Socket Tunneling Protocol (SSTP) Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="687"><span class="line-content">Windows Remote Access Connection Manager / CVE-2026-71333 / Windows 원격 액세스 연결 관리자 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="688"><span class="line-content">Windows NFS Portmapper / CVE-2026-71334 / Windows NFS Portmapper Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="689"><span class="line-content">Windows Work Folder Service / CVE-2026-71336 / Windows Work Folder Service Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="690"><span class="line-content">Windows Storage Management Provider / CVE-2026-71337 / Windows 저장소 관리 공급자 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="691"><span class="line-content">Windows Failover Cluster / CVE-2026-71338 / Windows Failover Cluster Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="692"><span class="line-content">Windows Installer / CVE-2026-71339 / Windows Installer 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="693"><span class="line-content">Windows File History Service / CVE-2026-71340 / Windows 파일 기록 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="694"><span class="line-content">Windows Partition Management Driver / CVE-2026-71341 / Windows Partition Management Driver Information Disclosure Vulnerability</span></div>
+        <div class="code-line" data-line="695"><span class="line-content">Windows Remote Access Connection Manager / CVE-2026-71342 / Windows 원격 액세스 연결 관리자 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="696"><span class="line-content">Windows Remote Access Connection Manager / CVE-2026-71343 / Windows Remote Access Connection Manager Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="697"><span class="line-content">Windows Spaceport.sys / CVE-2026-71345 / Windows Spaceport.sys 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="698"><span class="line-content">Windows Spaceport.sys / CVE-2026-71348 / Windows Spaceport.sys 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="699"><span class="line-content">Windows Spaceport.sys / CVE-2026-71349 / Windows Spaceport.sys 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="700"><span class="line-content">Windows Spaceport.sys / CVE-2026-71350 / Windows Spaceport.sys 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="701"><span class="line-content">Windows Routing and Remote Access Service (RRAS) / CVE-2026-71351 / Windows RRAS(라우팅 및 원격 액세스 서비스) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="702"><span class="line-content">Windows Remote Access Connection Manager / CVE-2026-71352 / Windows Remote Access Connection Manager Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="703"><span class="line-content">Windows Routing and Remote Access Service (RRAS) / CVE-2026-71353 / Windows RRAS(라우팅 및 원격 액세스 서비스) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="704"><span class="line-content">Windows Internet Connection Sharing (ICS) / CVE-2026-72926 / Windows Internet Connection Sharing (ICS) Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="705"><span class="line-content">Winsock / CVE-2026-72927 / Winsock Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="706"><span class="line-content">Windows DNS / CVE-2026-72928 / Windows DNS Server Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="707"><span class="line-content">Windows Installer / CVE-2026-72929 / Windows Installer 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="708"><span class="line-content">Windows Secure Socket Tunneling Protocol (SSTP) / CVE-2026-72930 / Windows SSTP(Secure Socket Tunneling Protocol) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="709"><span class="line-content">Windows Secure Socket Tunneling Protocol (SSTP) / CVE-2026-72931 / Windows SSTP(Secure Socket Tunneling Protocol) 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="710"><span class="line-content">Windows Message Queuing Queue Manager / CVE-2026-72932 / Windows Message Queuing Queue Manager Information Disclosure Vulnerability</span></div>
+        <div class="code-line" data-line="711"><span class="line-content">Microsoft WDAC OLE DB provider for SQL / CVE-2026-72933 / Microsoft WDAC OLE DB provider for SQL Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="712"><span class="line-content">Windows NTFS / CVE-2026-72935 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="713"><span class="line-content">Windows SMB Client / CVE-2026-72936 / Windows SMB 클라이언트 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="714"><span class="line-content">Storage Port Driver / CVE-2026-72937 / Windows 저장소 포트 드라이버 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="715"><span class="line-content">Microsoft Office PowerPoint / CVE-2026-72938 / Microsoft Office PowerPoint 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="716"><span class="line-content">Windows Routing and Remote Access Service (RRAS) / CVE-2026-72939 / Windows Routing and Remote Access Service (RRAS) Denial of Service Vulnerability</span></div>
+        <div class="code-line" data-line="717"><span class="line-content">Windows Schannel / CVE-2026-72940 / Windows Schannel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="718"><span class="line-content">Windows Biometric Service / CVE-2026-72941 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="719"><span class="line-content">Windows Spaceport.sys / CVE-2026-72942 / Windows Spaceport.sys 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="720"><span class="line-content">Windows Deployment Services / CVE-2026-72943 / Windows Deployment Services 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="721"><span class="line-content">Role: Windows Fax Service / CVE-2026-72944 / 역할: Windows 팩스 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="722"><span class="line-content">Windows Task Scheduler / CVE-2026-72945 / Windows Task Scheduler Information Disclosure Vulnerability</span></div>
+        <div class="code-line" data-line="723"><span class="line-content">Storage Port Driver / CVE-2026-72946 / Microsoft 저장소 포트 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="724"><span class="line-content">Windows File History Service / CVE-2026-72947 / Windows 파일 기록 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="725"><span class="line-content">Windows DNS / CVE-2026-72948 / Windows DNS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="726"><span class="line-content">Windows SMB Server Network Transport Driver (srvnet.sys) / CVE-2026-72949 / Windows SMB Server Network Transport Driver (srvnet.sys) Denial of Service Vulnerability</span></div>
+        <div class="code-line" data-line="727"><span class="line-content">Windows Routing and Remote Access Service (RRAS) / CVE-2026-72950 / Windows Routing and Remote Access Service (RRAS) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="728"><span class="line-content">Windows Spaceport.sys / CVE-2026-72952 / Windows Spaceport.sys 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="729"><span class="line-content">Windows USB Driver / CVE-2026-72953 / Windows USB 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="730"><span class="line-content">Windows Deployment Services / CVE-2026-72954 / Windows Deployment Services 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="731"><span class="line-content">Microsoft Office PowerPoint / CVE-2026-72956 / Microsoft Office PowerPoint 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="732"><span class="line-content">Windows Deployment Services / CVE-2026-72957 / Windows Deployment Services 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="733"><span class="line-content">Windows Credential Guard / CVE-2026-72958 / Windows Credential Guard Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="734"><span class="line-content">Windows Routing and Remote Access Service (RRAS) / CVE-2026-72959 / Windows Routing and Remote Access Service (RRAS) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="735"><span class="line-content">Windows Media Player / CVE-2026-72960 / Windows Media Player Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="736"><span class="line-content">Windows Hyper-V / CVE-2026-72961 / Windows Hyper-V 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="737"><span class="line-content">Windows USB Video Driver / CVE-2026-72962 / Windows USB 비디오 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="738"><span class="line-content">Windows Modern Execution Server / CVE-2026-72963 / Windows Modern Execution Server Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="739"><span class="line-content">Windows Internet Connection Sharing (ICS) / CVE-2026-72964 / Windows Internet Connection Sharing (ICS) Tampering Vulnerability</span></div>
+        <div class="code-line" data-line="740"><span class="line-content">Windows WebClient Service / CVE-2026-72965 / Windows WebClient Service Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="741"><span class="line-content">Windows Remote Access Connection Manager / CVE-2026-72966 / Windows Remote Access Connection Manager Tampering Vulnerability</span></div>
+        <div class="code-line" data-line="742"><span class="line-content">Windows Network Connection Broker / CVE-2026-72967 / Windows 네트워크 연결 브로커 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="743"><span class="line-content">Microsoft Office Word / CVE-2026-72972 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="744"><span class="line-content">Microsoft Office Word / CVE-2026-72973 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="745"><span class="line-content">Microsoft Office Excel / CVE-2026-72974 / Microsoft Office Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="746"><span class="line-content">Microsoft Office PowerPoint / CVE-2026-72975 / Microsoft Office PowerPoint 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="747"><span class="line-content">Microsoft Office Word / CVE-2026-72976 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="748"><span class="line-content">Microsoft Office PowerPoint / CVE-2026-72977 / Microsoft Office PowerPoint 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="749"><span class="line-content">Active Directory Federation Services (AD FS) / CVE-2026-72978 / Active Directory Federation Services (AD FS) 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="750"><span class="line-content">Windows DHCP Server / CVE-2026-72979 / Windows DHCP Server Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="751"><span class="line-content">Windows Hello / CVE-2026-72980 / Windows Hello 보안 기능 우회 취약성</span></div>
+        <div class="code-line" data-line="752"><span class="line-content">IP Helper / CVE-2026-72981 / IP Helper 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="753"><span class="line-content">Windows Netlogon / CVE-2026-72982 / Windows Netlogon 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="754"><span class="line-content">Windows Internet Connection Sharing (ICS) / CVE-2026-72983 / ICS(인터넷 연결 공유) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="755"><span class="line-content">Windows Volume Shadow Copy / CVE-2026-72985 / 볼륨 섀도 복사본 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="756"><span class="line-content">Graphic Fonts / CVE-2026-72986 / Graphic Fonts Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="757"><span class="line-content">Windows DNS / CVE-2026-72987 / Windows DNS 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="758"><span class="line-content">Windows Biometric Service / CVE-2026-72988 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="759"><span class="line-content">Windows Failover Cluster / CVE-2026-72989 / Windows 페일오버 클러스터 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="760"><span class="line-content">Windows Biometric Service / CVE-2026-72990 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="761"><span class="line-content">Windows Biometric Service / CVE-2026-72991 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="762"><span class="line-content">Windows Biometric Service / CVE-2026-72992 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="763"><span class="line-content">Windows Biometric Service / CVE-2026-72993 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="764"><span class="line-content">Windows Biometric Service / CVE-2026-72994 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="765"><span class="line-content">Windows Biometric Service / CVE-2026-72995 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="766"><span class="line-content">Windows Biometric Service / CVE-2026-72996 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="767"><span class="line-content">Windows Biometric Service / CVE-2026-72997 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="768"><span class="line-content">Windows USB Hub Driver / CVE-2026-72999 / Windows USB 허브 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="769"><span class="line-content">Windows Biometric Service / CVE-2026-73000 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="770"><span class="line-content">Windows Biometric Service / CVE-2026-73001 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="771"><span class="line-content">Windows Biometric Service / CVE-2026-73002 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="772"><span class="line-content">Windows Modern Device Management (MDM) / CVE-2026-73003 / Windows 최신 장치 관리 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="773"><span class="line-content">Windows Autopilot / CVE-2026-73004 / Windows Autopilot 변조 취약성</span></div>
+        <div class="code-line" data-line="774"><span class="line-content">Windows Authentication Methods / CVE-2026-73005 / Windows 인증 방법 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="775"><span class="line-content">Microsoft Graphics Component / CVE-2026-73006 / DirectWrite 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="776"><span class="line-content">Windows Biometric Service / CVE-2026-73007 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="777"><span class="line-content">Windows Biometric Service / CVE-2026-73008 / Windows Biometric Service 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="778"><span class="line-content">Windows Secure Socket Tunneling Protocol (SSTP) / CVE-2026-73009 / Windows SSTP(Secure Socket Tunneling Protocol) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="779"><span class="line-content">Windows Failover Cluster / CVE-2026-73010 / Microsoft 장애 조치(Failover) 클러스터 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="780"><span class="line-content">Windows Biometric Service / CVE-2026-73011 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="781"><span class="line-content">Windows Management Services / CVE-2026-73012 / Windows 관리 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="782"><span class="line-content">Windows Imaging Component / CVE-2026-73013 / Windows Imaging Component Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="783"><span class="line-content">Data Sharing Service Client / CVE-2026-73014 / 데이터 공유 서비스 클라이언트 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="784"><span class="line-content">Windows Biometric Service / CVE-2026-73015 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="785"><span class="line-content">Microsoft Graphics Component / CVE-2026-73016 / DirectWrite 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="786"><span class="line-content">Windows Graphics Kernel / CVE-2026-73017 / 그래픽 커널 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="787"><span class="line-content">Graphic Fonts / CVE-2026-73018 / Graphic Fonts Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="788"><span class="line-content">Windows URL Moniker / CVE-2026-73019 / UrlMon 보안 기능 우회 취약성</span></div>
+        <div class="code-line" data-line="789"><span class="line-content">Windows Biometric Service / CVE-2026-73020 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="790"><span class="line-content">Windows Biometric Service / CVE-2026-73021 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="791"><span class="line-content">Windows Modern Device Management (MDM) / CVE-2026-73022 / Windows 최신 장치 관리 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="792"><span class="line-content">Windows Imaging Component / CVE-2026-73023 / Windows Imaging Component Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="793"><span class="line-content">Windows Services for NFS ONCRPC XDR Driver / CVE-2026-73024 / Windows Services for NFS ONCRPC XDR 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="794"><span class="line-content">Windows iSCSI / CVE-2026-73025 / Windows iSCSI 보안 기능 우회 취약성</span></div>
+        <div class="code-line" data-line="795"><span class="line-content">Windows Biometric Service / CVE-2026-73026 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="796"><span class="line-content">SQL Server / CVE-2026-73028 / SQL 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="797"><span class="line-content">SQL Server / CVE-2026-73029 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="798"><span class="line-content">SQL Server / CVE-2026-77480 / SQL 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="799"><span class="line-content">SQL Server / CVE-2026-77481 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="800"><span class="line-content">SQL Server / CVE-2026-77482 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="801"><span class="line-content">SQL Server / CVE-2026-77483 / SQL 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="802"><span class="line-content">SQL Server / CVE-2026-77484 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="803"><span class="line-content">SQL Server / CVE-2026-77485 / SQL 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="804"><span class="line-content">SQL Server / CVE-2026-77486 / Microsoft SQL Server 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="805"><span class="line-content">SQL Server / CVE-2026-77487 / SQL 서버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="806"><span class="line-content">SQL Server / CVE-2026-77488 / Microsoft SQL Server 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="807"><span class="line-content">Windows Biometric Service / CVE-2026-77489 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="808"><span class="line-content">Windows GDI / CVE-2026-77491 / Windows GDI 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="809"><span class="line-content">Storage Port Driver / CVE-2026-77492 / Windows 저장소 포트 드라이버 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="810"><span class="line-content">Microsoft Graphics Component / CVE-2026-77493 / Windows 그래픽 구성 요소 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="811"><span class="line-content">Windows DHCP Server / CVE-2026-77494 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="812"><span class="line-content">Windows Imaging Component / CVE-2026-77495 / Windows Imaging Component Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="813"><span class="line-content">Windows DHCP Server / CVE-2026-77498 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="814"><span class="line-content">Windows DHCP Server / CVE-2026-77499 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="815"><span class="line-content">Windows Device Association Service / CVE-2026-77500 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="816"><span class="line-content">Windows DHCP Server / CVE-2026-77501 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="817"><span class="line-content">Windows DHCP Server / CVE-2026-77502 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="818"><span class="line-content">Windows NTFS / CVE-2026-77503 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="819"><span class="line-content">Microsoft Office Word / CVE-2026-77504 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="820"><span class="line-content">Role: DNS Server / CVE-2026-77505 / Windows DNS 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="821"><span class="line-content">Windows DHCP Server / CVE-2026-77886 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="822"><span class="line-content">Windows DHCP Server / CVE-2026-77887 / Windows DHCP Server Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="823"><span class="line-content">Windows DHCP Server / CVE-2026-77888 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="824"><span class="line-content">Windows DHCP Server / CVE-2026-77889 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="825"><span class="line-content">Windows DHCP Server / CVE-2026-77890 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="826"><span class="line-content">Windows DHCP Server / CVE-2026-77891 / Windows DHCP Server Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="827"><span class="line-content">Windows Boot Manager / CVE-2026-77892 / Windows 부팅 관리자 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="828"><span class="line-content">Windows DHCP Server / CVE-2026-77893 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="829"><span class="line-content">Windows Installer / CVE-2026-77894 / Windows Installer 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="830"><span class="line-content">Windows DHCP Server / CVE-2026-77895 / Windows DHCP 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="831"><span class="line-content">Remote Desktop Client / CVE-2026-77896 / Windows Remote Desktop 클라이언트 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="832"><span class="line-content">Power Automate / CVE-2026-77897 / Microsoft Power Automate Desktop 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="833"><span class="line-content">Microsoft Office / CVE-2026-77898 / Microsoft Office 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="834"><span class="line-content">Windows Security Center / CVE-2026-77899 / Windows Security Center Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="835"><span class="line-content">Microsoft Office Word / CVE-2026-77901 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="836"><span class="line-content">Windows Volume Manager Extension Driver / CVE-2026-77904 / Windows 볼륨 관리자 확장 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="837"><span class="line-content">Windows Management Instrumentation / CVE-2026-77905 / Windows Management Instrumentation(WMI) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="838"><span class="line-content">Visual Studio / CVE-2026-77906 / Visual Studio 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="839"><span class="line-content">Visual Studio / CVE-2026-77907 / Visual Studio 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="840"><span class="line-content">Microsoft Dynamics 365 / CVE-2026-77908 / Microsoft Dynamics 365 온-프레미스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="841"><span class="line-content">Azure CycleCloud / CVE-2026-77909 / Azure CycleCloud 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="842"><span class="line-content">Microsoft Office Word / CVE-2026-77911 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="843"><span class="line-content">Microsoft Graphics Component / CVE-2026-78439 / Microsoft Office 그래픽 구성 요소 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="844"><span class="line-content">Windows OLE DB / CVE-2026-78441 / Windows OLE DB 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="845"><span class="line-content">Windows OLE DB / CVE-2026-78442 / Windows OLE DB 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="846"><span class="line-content">Windows Failover Cluster / CVE-2026-78444 / Microsoft 장애 조치(Failover) 클러스터 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="847"><span class="line-content">Windows Services for NFS ONCRPC XDR Driver / CVE-2026-78445 / NFS ONCRPC XDR 드라이버용 Windows 서비스 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="848"><span class="line-content">Windows Distributed File System (DFS) / CVE-2026-78446 / Windows 분산 파일 시스템(DFS) 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="849"><span class="line-content">Windows Biometric Service / CVE-2026-78447 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="850"><span class="line-content">Windows Biometric Service / CVE-2026-78448 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="851"><span class="line-content">Reliable Multicast Transport Driver (RMCAST) / CVE-2026-78449 / Windows RMCAST(Reliable Multicast Transport Driver) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="852"><span class="line-content">Reliable Multicast Transport Driver (RMCAST) / CVE-2026-78450 / Windows RMCAST(Reliable Multicast Transport Driver) 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="853"><span class="line-content">Microsoft Windows SCSI Class System File / CVE-2026-78451 / Microsoft Windows SCSI 클래스 시스템 파일 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="854"><span class="line-content">Microsoft Windows SCSI Class System File / CVE-2026-78452 / Microsoft Windows SCSI 클래스 시스템 파일 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="855"><span class="line-content">Microsoft Windows SCSI Class System File / CVE-2026-78453 / Microsoft Windows SCSI 클래스 시스템 파일 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="856"><span class="line-content">Windows CD-ROM Driver / CVE-2026-78454 / Windows CD-ROM 드라이버 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="857"><span class="line-content">Xbox / CVE-2026-78455 / Xbox 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="858"><span class="line-content">SQL Server / CVE-2026-78456 / SQL 서버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="859"><span class="line-content">Windows Security Health Service / CVE-2026-78457 / Windows Security Health Service 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="860"><span class="line-content">Visual Studio Code / CVE-2026-78461 / Visual Studio Code 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="861"><span class="line-content">Visual Studio Code / CVE-2026-78462 / Visual Studio Code 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="862"><span class="line-content">Remote Desktop Client / CVE-2026-78463 / 원격 데스크톱 클라이언트 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="863"><span class="line-content">Windows MIDI Service Module / CVE-2026-78464 / Windows MIDI 서비스 모듈 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="864"><span class="line-content">Microsoft Office Word / CVE-2026-78502 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="865"><span class="line-content">Microsoft Office Word / CVE-2026-78503 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="866"><span class="line-content">Microsoft Office Word / CVE-2026-78504 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="867"><span class="line-content">Microsoft Office / CVE-2026-78505 / Microsoft Office 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="868"><span class="line-content">Microsoft Office Word / CVE-2026-78506 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="869"><span class="line-content">Microsoft Office Word / CVE-2026-78507 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="870"><span class="line-content">Windows CD-ROM Driver / CVE-2026-78508 / Windows CD-ROM 드라이버 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="871"><span class="line-content">Microsoft Office Outlook / CVE-2026-78509 / Microsoft Office Outlook 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="872"><span class="line-content">Microsoft Office Word / CVE-2026-78510 / Microsoft Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="873"><span class="line-content">Microsoft Office Word / CVE-2026-78511 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="874"><span class="line-content">Microsoft Office Word / CVE-2026-78512 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="875"><span class="line-content">Microsoft Office PowerPoint / CVE-2026-78513 / Microsoft Office PowerPoint 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="876"><span class="line-content">Microsoft Office Word / CVE-2026-78514 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="877"><span class="line-content">Microsoft Office Excel / CVE-2026-78515 / Microsoft Office Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="878"><span class="line-content">Windows Storage / CVE-2026-78516 / Windows 저장소 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="879"><span class="line-content">Microsoft Office Word / CVE-2026-78517 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="880"><span class="line-content">Microsoft Office Excel / CVE-2026-78518 / Microsoft Office Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="881"><span class="line-content">Microsoft Office Outlook / CVE-2026-78519 / Microsoft Office Outlook 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="882"><span class="line-content">Microsoft Office Outlook / CVE-2026-78520 / Microsoft Office Outlook 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="883"><span class="line-content">Microsoft Office Word / CVE-2026-78521 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="884"><span class="line-content">Microsoft Office Word / CVE-2026-78522 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="885"><span class="line-content">Windows DNS / CVE-2026-78523 / Windows DNS 서버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="886"><span class="line-content">Microsoft Office / CVE-2026-78524 / Microsoft Office 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="887"><span class="line-content">Microsoft Office Outlook / CVE-2026-78525 / Microsoft Office Outlook 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="888"><span class="line-content">Microsoft Office Word / CVE-2026-78526 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="889"><span class="line-content">Microsoft Office Outlook / CVE-2026-80073 / Microsoft Office Outlook 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="890"><span class="line-content">Remote Desktop Client / CVE-2026-80074 / 원격 데스크톱 클라이언트 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="891"><span class="line-content">Windows Work Folders / CVE-2026-80075 / Windows Work Folders 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="892"><span class="line-content">Microsoft Office / CVE-2026-80076 / Microsoft Office 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="893"><span class="line-content">Remote Desktop Client / CVE-2026-80077 / 원격 데스크톱 클라이언트 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="894"><span class="line-content">Microsoft Office / CVE-2026-80078 / Microsoft Office 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="895"><span class="line-content">Microsoft Office Word / CVE-2026-80079 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="896"><span class="line-content">Microsoft Office Word / CVE-2026-80080 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="897"><span class="line-content">Microsoft Office PowerPoint / CVE-2026-80081 / Microsoft Office PowerPoint 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="898"><span class="line-content">Microsoft Office / CVE-2026-80082 / Microsoft Office 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="899"><span class="line-content">Windows Hyper-V / CVE-2026-80083 / Windows Hyper-V 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="900"><span class="line-content">Microsoft Office Outlook / CVE-2026-80084 / Microsoft Office Outlook 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="901"><span class="line-content">Microsoft Office Word / CVE-2026-80085 / Microsoft Office Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="902"><span class="line-content">Microsoft Office PowerPoint / CVE-2026-80086 / Microsoft Office PowerPoint 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="903"><span class="line-content">Microsoft Office / CVE-2026-80087 / Microsoft Office 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="904"><span class="line-content">Microsoft Office Word / CVE-2026-80088 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="905"><span class="line-content">Microsoft Office / CVE-2026-80089 / Microsoft Office 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="906"><span class="line-content">Microsoft Office Word / CVE-2026-80090 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="907"><span class="line-content">Microsoft Office / CVE-2026-80091 / Microsoft Office 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="908"><span class="line-content">Windows Cloud Files Mini Filter Driver / CVE-2026-80093 / Windows 클라우드 파일 미니 필터 드라이버 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="909"><span class="line-content">Windows Remote Desktop Services / CVE-2026-80096 / Windows 원격 데스크톱 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="910"><span class="line-content">Microsoft Authenticator / CVE-2026-80097 / Microsoft Authenticator 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="911"><span class="line-content">Copilot Studio / CVE-2026-80098 / Copilot Studio 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="912"><span class="line-content">Azure HDInsights / CVE-2026-81349 / Azure HDInsight Ambari 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="913"><span class="line-content">Microsoft Windows Codecs Library / CVE-2026-81352 / 웹 미디어 확장 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="914"><span class="line-content">Microsoft Windows Codecs Library / CVE-2026-81353 / HEIF 이미지 확장 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="915"><span class="line-content">Windows Hello / CVE-2026-81354 / Windows Hello 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="916"><span class="line-content">Virtual Hard Disk (VHD) Miniport Driver / CVE-2026-81355 / Virtual Hard Disk (VHD) 미니포트 드라이버 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="917"><span class="line-content">Visual Studio Code / CVE-2026-81356 / Visual Studio Code 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="918"><span class="line-content">Visual Studio Code / CVE-2026-81357 / Visual Studio Code 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="919"><span class="line-content">Visual Studio Code / CVE-2026-81376 / Visual Studio Code 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="920"><span class="line-content">Visual Studio Code / CVE-2026-81377 / Visual Studio Code 변조 취약성</span></div>
+        <div class="code-line" data-line="921"><span class="line-content">Visual Studio Code / CVE-2026-81378 / Visual Studio Code 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="922"><span class="line-content">Visual Studio Code / CVE-2026-81379 / Visual Studio Code 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="923"><span class="line-content">GitHub Copilot and Visual Studio Code / CVE-2026-81380 / GitHub Copilot 및 Visual Studio Code 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="924"><span class="line-content">GitHub Copilot and Visual Studio Code / CVE-2026-81381 / GitHub Copilot 및 Visual Studio Code 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="925"><span class="line-content">Visual Studio Code / CVE-2026-81383 / Visual Studio Code 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="926"><span class="line-content">Microsoft Office Publisher / CVE-2026-81385 / Microsoft Office Publisher 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="927"><span class="line-content">Microsoft Office Excel / CVE-2026-81386 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="928"><span class="line-content">Microsoft Office Excel / CVE-2026-81387 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="929"><span class="line-content">Microsoft Office Excel / CVE-2026-81388 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="930"><span class="line-content">Microsoft Office Excel / CVE-2026-81389 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="931"><span class="line-content">Microsoft Office Excel / CVE-2026-81390 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="932"><span class="line-content">Microsoft Office Excel / CVE-2026-81391 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="933"><span class="line-content">Microsoft Office Excel / CVE-2026-81392 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="934"><span class="line-content">Microsoft Office Excel / CVE-2026-81393 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="935"><span class="line-content">Microsoft Office Excel / CVE-2026-81394 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="936"><span class="line-content">Microsoft Office Excel / CVE-2026-81395 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="937"><span class="line-content">Microsoft Office Excel / CVE-2026-81396 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="938"><span class="line-content">Microsoft Office Excel / CVE-2026-81397 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="939"><span class="line-content">Microsoft Office Excel / CVE-2026-81398 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="940"><span class="line-content">Microsoft Office Excel / CVE-2026-81399 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="941"><span class="line-content">Microsoft Office Excel / CVE-2026-81400 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="942"><span class="line-content">Microsoft Office Excel / CVE-2026-81401 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="943"><span class="line-content">Microsoft Office Excel / CVE-2026-81947 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="944"><span class="line-content">Microsoft Office Excel / CVE-2026-81948 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="945"><span class="line-content">Microsoft Office Excel / CVE-2026-81949 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="946"><span class="line-content">Microsoft Office Excel / CVE-2026-81950 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="947"><span class="line-content">Microsoft Office Excel / CVE-2026-81951 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="948"><span class="line-content">Microsoft Office Word / CVE-2026-81952 / Microsoft Word 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="949"><span class="line-content">Microsoft Office Excel / CVE-2026-81953 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="950"><span class="line-content">Microsoft Office Excel / CVE-2026-81954 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="951"><span class="line-content">Microsoft Graphics Component / CVE-2026-81955 / Windows 그래픽 구성 요소 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="952"><span class="line-content">Microsoft Office Excel / CVE-2026-81956 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="953"><span class="line-content">Microsoft Office Excel / CVE-2026-81957 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="954"><span class="line-content">Microsoft Office Excel / CVE-2026-81958 / Microsoft Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="955"><span class="line-content">Microsoft Office Excel / CVE-2026-81959 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="956"><span class="line-content">Microsoft Office Excel / CVE-2026-81960 / Microsoft Excel 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="957"><span class="line-content">Windows Update Stack / CVE-2026-81963 / Windows 업데이트 스택 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="958"><span class="line-content">Windows Virtualization-Based Security (VBS) Enclave / CVE-2026-83498 / Windows VBS(가상화 기반 보안) 엔클레이브 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="959"><span class="line-content">Windows Virtualization-Based Security (VBS) Enclave / CVE-2026-83501 / Windows 가상화 기반 보안(VBS) 보안 기능 바이패스 취약성</span></div>
+        <div class="code-line" data-line="960"><span class="line-content">Microsoft Azure Active Directory B2C / CVE-2026-83711 / Microsoft Azure Active Directory B2C 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="961"><span class="line-content">Windows Secure Kernel Mode / CVE-2026-83939 / Windows 보안 커널 모드 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="962"><span class="line-content">Windows Device Association Service / CVE-2026-83940 / Windows 장치 연결 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="963"><span class="line-content">Entra ID / CVE-2026-83941 / Entra ID 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="964"><span class="line-content">Windows Kernel / CVE-2026-83942 / Windows 커널 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="965"><span class="line-content">Microsoft Azure CLI / CVE-2026-83948 / Microsoft Azure CLI 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="966"><span class="line-content">Microsoft Office Word / CVE-2026-83949 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="967"><span class="line-content">Microsoft Office Word / CVE-2026-83951 / Microsoft Office Word 정보 공개 취약성</span></div>
+        <div class="code-line" data-line="968"><span class="line-content">Windows Resilient File System (ReFS) / CVE-2026-83952 / Windows ReFS(복원 파일 시스템) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="969"><span class="line-content">Windows Biometric Service / CVE-2026-83954 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="970"><span class="line-content">Windows Biometric Service / CVE-2026-83955 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="971"><span class="line-content">Windows Biometric Service / CVE-2026-83967 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="972"><span class="line-content">Windows Biometric Service / CVE-2026-83968 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="973"><span class="line-content">Windows Biometric Service / CVE-2026-83969 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="974"><span class="line-content">Windows Biometric Service / CVE-2026-83970 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="975"><span class="line-content">Windows Biometric Service / CVE-2026-83971 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="976"><span class="line-content">Windows Biometric Service / CVE-2026-83972 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="977"><span class="line-content">Windows Biometric Service / CVE-2026-83973 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="978"><span class="line-content">Windows Biometric Service / CVE-2026-83974 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="979"><span class="line-content">Windows Biometric Service / CVE-2026-83975 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="980"><span class="line-content">Windows Biometric Service / CVE-2026-83976 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="981"><span class="line-content">Windows Biometric Service / CVE-2026-83977 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="982"><span class="line-content">Windows Biometric Service / CVE-2026-83978 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="983"><span class="line-content">Windows Biometric Service / CVE-2026-83979 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="984"><span class="line-content">Windows Biometric Service / CVE-2026-83980 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="985"><span class="line-content">Windows Biometric Service / CVE-2026-83981 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="986"><span class="line-content">Windows Biometric Service / CVE-2026-83982 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="987"><span class="line-content">Windows Biometric Service / CVE-2026-83983 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="988"><span class="line-content">Windows Biometric Service / CVE-2026-83985 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="989"><span class="line-content">Windows Biometric Service / CVE-2026-83986 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="990"><span class="line-content">Windows Biometric Service / CVE-2026-83987 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="991"><span class="line-content">Windows Biometric Service / CVE-2026-83988 / Windows 생체 인식 서비스 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="992"><span class="line-content">Windows Services for NFS ONCRPC XDR Driver / CVE-2026-83989 / Windows Services for NFS ONCRPC XDR 드라이버 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="993"><span class="line-content">Microsoft Graphics Component / CVE-2026-83990 / Microsoft 그래픽 구성 요소 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="994"><span class="line-content">Windows Cloud Files Mini Filter Driver / CVE-2026-83991 / Windows 클라우드 파일 미니 필터 드라이버 변조 취약성</span></div>
+        <div class="code-line" data-line="995"><span class="line-content">Windows Imaging Component / CVE-2026-83992 / Windows Imaging Component Remote Code Execution Vulnerability</span></div>
+        <div class="code-line" data-line="996"><span class="line-content">Windows NTFS / CVE-2026-83995 / Windows NTFS 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="997"><span class="line-content">Windows Error Reporting / CVE-2026-83996 / Windows 오류 보고 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="998"><span class="line-content">Windows Message Queuing / CVE-2026-83997 / Windows Message Queuing 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="999"><span class="line-content">Remote Desktop Client / CVE-2026-83998 / 원격 데스크톱 클라이언트 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="1000"><span class="line-content">Windows Resilient File System (ReFS) Deduplication Service / CVE-2026-83999 / Windows Resilient File System (ReFS) Deduplication Service Elevation of Privilege Vulnerability</span></div>
+        <div class="code-line" data-line="1001"><span class="line-content">Microsoft Graphics Component / CVE-2026-84000 / Microsoft 그래픽 구성 요소 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="1002"><span class="line-content">Windows Key Distribution Center / CVE-2026-84001 / Windows 키 배포 센터 서비스 거부 취약성</span></div>
+        <div class="code-line" data-line="1003"><span class="line-content">Microsoft Authentication Library (MSAL) for Node.js / CVE-2026-84003 / Microsoft 인증 라이브러리 (MSAL) Node.js용 스푸핑 취약성</span></div>
+        <div class="code-line" data-line="1004"><span class="line-content">Windows Kernel / CVE-2026-85360 / Windows 커널 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="1005"><span class="line-content">Microsoft Office Excel / CVE-2026-85875 / Microsoft Office Excel 정보 유출 취약성</span></div>
+        <div class="code-line" data-line="1006"><span class="line-content">Windows Print Spooler Components / CVE-2026-85877 / Windows 인쇄 스풀러 원격 코드 실행 취약성</span></div>
+        <div class="code-line" data-line="1007"><span class="line-content">Windows ALPC / CVE-2026-85880 / Windows ALPC(고급 로컬 프로시저 호출) 권한 상승 취약성</span></div>
+        <div class="code-line" data-line="1008"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84323 / Chromium: CVE-2026-84323 FileSystem에서 권한 부여 누락</span></div>
+        <div class="code-line" data-line="1009"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84324 / Chromium: CVE-2026-84324 프록시에서의 사용 후 해제</span></div>
+        <div class="code-line" data-line="1010"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84325 / Chromium: CVE-2026-84325 Improper input validation in DataTransfer</span></div>
+        <div class="code-line" data-line="1011"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84326 / Chromium: CVE-2026-84326 V8에서 초기화되지 않은 리소스</span></div>
+        <div class="code-line" data-line="1012"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84327 / Chromium: CVE-2026-84327 자동 완성에서의 잘못된 권한 부여</span></div>
+        <div class="code-line" data-line="1013"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84328 / Chromium: CVE-2026-84328 FileSystem의 권한 부여 누락</span></div>
+        <div class="code-line" data-line="1014"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84329 / Chromium: CVE-2026-84329 CredentialProvider의 혼동된 대리자</span></div>
+        <div class="code-line" data-line="1015"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84331 / Chromium: CVE-2026-84331 Actor에서의 권한 부여 오류</span></div>
+        <div class="code-line" data-line="1016"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84332 / Chromium: CVE-2026-84332 SiteSettings의 잘못된 권한 부여</span></div>
+        <div class="code-line" data-line="1017"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84334 / Chromium: CVE-2026-84334 Incorrect authorization in Chromoting</span></div>
+        <div class="code-line" data-line="1018"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84335 / Chromium: CVE-2026-84335 Incorrect authorization in TabStrip</span></div>
+        <div class="code-line" data-line="1019"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84347 / Chromium: CVE-2026-84347 WebRTC에서의 사용 후 해제</span></div>
+        <div class="code-line" data-line="1020"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84348 / Chromium: CVE-2026-84348 MediaCapture의 정보 유출</span></div>
+        <div class="code-line" data-line="1021"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84349 / Chromium: CVE-2026-84349 Use after free in Browser</span></div>
+        <div class="code-line" data-line="1022"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84350 / Chromium: CVE-2026-84350 TabStrip에서의 사용 후 해제</span></div>
+        <div class="code-line" data-line="1023"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84351 / Chromium: CVE-2026-84351 GPU에서의 버퍼 오버플로</span></div>
+        <div class="code-line" data-line="1024"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84353 / Chromium: CVE-2026-84353 공유 탭 그룹에서의 사용 후 해제</span></div>
+        <div class="code-line" data-line="1025"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84354 / Chromium: CVE-2026-84354 FileSystem에서의 잘못된 권한 부여</span></div>
+        <div class="code-line" data-line="1026"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84355 / Chromium: CVE-2026-84355 탐색에서의 잘못된 권한 부여</span></div>
+        <div class="code-line" data-line="1027"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84356 / Chromium: CVE-2026-84356 전체 화면에서의 UI 오도</span></div>
+        <div class="code-line" data-line="1028"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84357 / Chromium: CVE-2026-84357 Omnibox의 부적절한 입력 유효성 검사</span></div>
+        <div class="code-line" data-line="1029"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84358 / Chromium: CVE-2026-84358 다운로드에서의 부적절한 권한 관리</span></div>
+        <div class="code-line" data-line="1030"><span class="line-content">Microsoft Edge (Chromium-based) / CVE-2026-84359 / Chromium: CVE-2026-84359 Skia의 정보 유출</span></div>
+        <div class="code-line" data-line="1031"><span class="line-content">□ 작성 : 디지털위협대응본부 취약점관리센터</span></div>
+      </div>
+    </article>
+  </main>
+  <script src="../../../assets/app.js" defer></script>
+</body>
+</html>
