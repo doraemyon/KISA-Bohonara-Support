@@ -1,0 +1,206 @@
+Title:
+PostgreSQL Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "PostgreSQL Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o The PostgreSQL Foundation has released a security update to address vulnerabilities in its products. [1]~[25]
+o Users running an affected version are advised to update to the latest version according to the workaround.
+
+□ Description
+o Type Confusion Vulnerability in PostgreSQL (CVE-2026-6460) [1][26]
+o Heap-based Buffer Overflow Vulnerability in PostgreSQL (CVE-2026-116317) [2][27]
+o Use-After-Free Vulnerability in PostgreSQL (CVE-2026-116304) [3][28]
+o Type Confusion Vulnerability in PostgreSQL (CVE-2026-116306) [4][29]
+o Use-After-Free Vulnerability in PostgreSQL (CVE-2026-116307) [5][30]
+o Type Confusion Vulnerability in PostgreSQL (CVE-2026-116309) [6][31]
+o Improper Input Validation Vulnerability in PostgreSQL (CVE-2026-116314) [7][32]
+o Heap-based Buffer Overflow Vulnerability in PostgreSQL (CVE-2026-116315) [8][33]
+o SQL Injection Vulnerability in PostgreSQL (CVE-2026-116318) [9][34]
+o Use-After-Free Vulnerability in PostgreSQL (CVE-2026-116319) [10][35]
+o Use-After-Free Vulnerability in PostgreSQL (CVE-2026-116320) [11][36]
+o Use-After-Free Vulnerability in PostgreSQL (CVE-2026-116323) [12][37]
+o Integer Overflow or Wraparound Vulnerability in PostgreSQL (CVE-2026-116328) [13][38]
+o Type Confusion Vulnerability in PostgreSQL (CVE-2026-116329) [14][39]
+o Inclusion of Functionality from Untrusted Control Sphere vulnerability in PostgreSQL (CVE-2026-116330) [15][40]
+o Type Confusion Vulnerability in PostgreSQL (CVE-2026-116331) [16][41]
+o Use-After-Free Vulnerability in PostgreSQL (CVE-2026-116332) [17][42]
+o Type Confusion Vulnerability in PostgreSQL (CVE-2026-116335) [18][43]
+o Operation on a Resource after Expiration or Release vulnerability in PostgreSQL (CVE-2026-116336) [19][44]
+o Integer Overflow or Wraparound Vulnerability in PostgreSQL (CVE-2026-120139) [20][45]
+o Type Confusion Vulnerability in PostgreSQL (CVE-2026-120141) [21][46]
+o Type Confusion Vulnerability in PostgreSQL (CVE-2026-120142) [22][47]
+o Use-After-Free Vulnerability in PostgreSQL (CVE-2026-120143) [23][48]
+o Type Confusion Vulnerability in PostgreSQL (CVE-2026-120144) [24][49]
+o Missing Authorization Vulnerability in PostgreSQL (CVE-2026-120145) [25][50]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-6460 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-6460 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-6460 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-6460 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-6460 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116317 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116317 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116317 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116317 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116317 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116304 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116304 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116304 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116304 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116304 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116306 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116306 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116306 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116306 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116306 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116307 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116307 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116307 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116307 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116307 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116309 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116309 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116309 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116309 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116309 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116314 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116314 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116314 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116314 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116314 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116315 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116315 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116315 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116315 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116315 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116318 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116319 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116319 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116319 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116319 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116319 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116320 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116320 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116320 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116320 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116320 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116323 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116323 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116323 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116323 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116323 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116328 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116328 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116328 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116329 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116330 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116330 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116330 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116330 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116330 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116331 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116331 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116331 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116331 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116331 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116332 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116332 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116332 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116332 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116332 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116335 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116335 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116335 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116335 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116335 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-116336 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-116336 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-116336 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-116336 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-116336 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-120139 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-120139 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-120139 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-120139 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-120139 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-120141 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-120141 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-120141 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-120141 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-120141 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-120142 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-120142 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-120143 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-120143 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-120143 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-120143 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-120143 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+CVE-2026-120144 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-120145 / PostgreSQL / 18 and over 18.7 Less / 18.7 or later
+CVE-2026-120145 / PostgreSQL / 17 or older 17.12 Less / 17.12 or later
+CVE-2026-120145 / PostgreSQL / 16 or older 16.16 Less / 16.16 or later
+CVE-2026-120145 / PostgreSQL / 15 or older 15.20 Less / 15.20 or later
+CVE-2026-120145 / PostgreSQL / 14 or older 14.25 Less / 14.25 or later
+※ Perform updates by referring to the sites listed below. [1]~[25]
+
+□ Reference sites
+[1] https://www.postgresql.org/support/security/CVE-2026-6460/
+[2] https://www.postgresql.org/support/security/CVE-2026-116317/
+[3] https://www.postgresql.org/support/security/CVE-2026-116304/
+[4] https://www.postgresql.org/support/security/CVE-2026-116306/
+[5] https://www.postgresql.org/support/security/CVE-2026-116307/
+[6] https://www.postgresql.org/support/security/CVE-2026-116309/
+[7] https://www.postgresql.org/support/security/CVE-2026-116314/
+[8] https://www.postgresql.org/support/security/CVE-2026-116315/
+[9] https://www.postgresql.org/support/security/CVE-2026-116318/
+[10] https://www.postgresql.org/support/security/CVE-2026-116319/
+[11] https://www.postgresql.org/support/security/CVE-2026-116320/
+[12] https://www.postgresql.org/support/security/CVE-2026-116323/
+[13] https://www.postgresql.org/support/security/CVE-2026-116328/
+[14] https://www.postgresql.org/support/security/CVE-2026-116329/
+[15] https://www.postgresql.org/support/security/CVE-2026-116330/
+[16] https://www.postgresql.org/support/security/CVE-2026-116331/
+[17] https://www.postgresql.org/support/security/CVE-2026-116332/
+[18] https://www.postgresql.org/support/security/CVE-2026-116335/
+[19] https://www.postgresql.org/support/security/CVE-2026-116336/
+[20] https://www.postgresql.org/support/security/CVE-2026-120139/
+[21] https://www.postgresql.org/support/security/CVE-2026-120141/
+[22] https://www.postgresql.org/support/security/CVE-2026-120142/
+[23] https://www.postgresql.org/support/security/CVE-2026-120143/
+[24] https://www.postgresql.org/support/security/CVE-2026-120144/
+[25] https://www.postgresql.org/support/security/CVE-2026-120145/
+[26] https://nvd.nist.gov/vuln/detail/CVE-2026-6460
+[27] https://nvd.nist.gov/vuln/detail/CVE-2026-116317
+[28] https://nvd.nist.gov/vuln/detail/CVE-2026-116304
+[29] https://nvd.nist.gov/vuln/detail/CVE-2026-116306
+[30] https://nvd.nist.gov/vuln/detail/CVE-2026-116307
+[31] https://nvd.nist.gov/vuln/detail/CVE-2026-116309
+[32] https://nvd.nist.gov/vuln/detail/CVE-2026-116314
+[33] https://nvd.nist.gov/vuln/detail/CVE-2026-116315
+[34] https://nvd.nist.gov/vuln/detail/CVE-2026-116318
+[35] https://nvd.nist.gov/vuln/detail/CVE-2026-116319
+[36] https://nvd.nist.gov/vuln/detail/CVE-2026-116320
+[37] https://nvd.nist.gov/vuln/detail/CVE-2026-116323
+[38] https://nvd.nist.gov/vuln/detail/CVE-2026-116328
+[39] https://nvd.nist.gov/vuln/detail/CVE-2026-116329
+[40] https://nvd.nist.gov/vuln/detail/CVE-2026-116330
+[41] https://nvd.nist.gov/vuln/detail/CVE-2026-116331
+[42] https://nvd.nist.gov/vuln/detail/CVE-2026-116332
+[43] https://nvd.nist.gov/vuln/detail/CVE-2026-116335
+[44] https://nvd.nist.gov/vuln/detail/CVE-2026-116336
+[45] https://nvd.nist.gov/vuln/detail/CVE-2026-120139
+[46] https://nvd.nist.gov/vuln/detail/CVE-2026-120141
+[47] https://nvd.nist.gov/vuln/detail/CVE-2026-120142
+[48] https://nvd.nist.gov/vuln/detail/CVE-2026-120143
+[49] https://nvd.nist.gov/vuln/detail/CVE-2026-120144
+[50] https://nvd.nist.gov/vuln/detail/CVE-2026-120145
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code needed)
+
+□ Prepared by: Vulnerability Management Center, Digital Threat Response Headquarters
