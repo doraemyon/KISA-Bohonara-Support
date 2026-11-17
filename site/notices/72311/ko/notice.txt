@@ -1,0 +1,91 @@
+제목:
+Check Point 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Check Point 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Check Point社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Check Point Force Firewall, Management Server, Log Server, Multi-Domain Security Management, Multi-Domain Log Server, Maestro Orchestrator에서 발생하는 Missing Authorization 취약점(CVE-2026-123039) [1][3]
+o Check Point Force Firewall, Spark Firewall, Cloud Firewall에서 발생하는 Improper Handling of Exceptional Conditions 취약점(CVE-2026-109618) [2][4]
+o Check Point Force Firewall, Spark Firewall, Cloud Firewall에서 발생하는 Use After Free 취약점(CVE-2026-109619) [2][5]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-123039 / Force Firewall / R82.20 Jumbo Hotfix Take 10 이하 / R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 / Management Server / R82.20 Jumbo Hotfix Take 10 이하 / R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 / Log Server / R82.20 Jumbo Hotfix Take 10 이하 / R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 / Multi-Domain Security Management / R82.20 Jumbo Hotfix Take 10 이하 / R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 / Multi-Domain Log Server / R82.20 Jumbo Hotfix Take 10 이하 / R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 / Maestro Orchestrator / R82.20 Jumbo Hotfix Take 10 이하 / R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 / Force Firewall / R82.10 Jumbo Hotfix Take 50 이하 / R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 / Management Server / R82.10 Jumbo Hotfix Take 50 이하 / R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 / Log Server / R82.10 Jumbo Hotfix Take 50 이하 / R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 / Multi-Domain Security Management / R82.10 Jumbo Hotfix Take 50 이하 / R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 / Multi-Domain Log Server / R82.10 Jumbo Hotfix Take 50 이하 / R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 / Maestro Orchestrator / R82.10 Jumbo Hotfix Take 50 이하 / R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 / Force Firewall / R82 Jumbo Hotfix Take 130 이하 / R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 / Management Server / R82 Jumbo Hotfix Take 130 이하 / R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 / Log Server / R82 Jumbo Hotfix Take 130 이하 / R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 / Multi-Domain Security Management / R82 Jumbo Hotfix Take 130 이하 / R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 / Multi-Domain Log Server / R82 Jumbo Hotfix Take 130 이하 / R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 / Maestro Orchestrator / R82 Jumbo Hotfix Take 130 이하 / R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 / Force Firewall / R81.20 Jumbo Hotfix Take 173 이하 / R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 / Management Server / R81.20 Jumbo Hotfix Take 173 이하 / R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 / Log Server / R81.20 Jumbo Hotfix Take 173 이하 / R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 / Multi-Domain Security Management / R81.20 Jumbo Hotfix Take 173 이하 / R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 / Multi-Domain Log Server / R81.20 Jumbo Hotfix Take 173 이하 / R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 / Maestro Orchestrator / R81.20 Jumbo Hotfix Take 173 이하 / R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 / Force Firewall / R81.10 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-123039 / Management Server / R81.10 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-123039 / Log Server / R81.10 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-123039 / Multi-Domain Security Management / R81.10 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-123039 / Multi-Domain Log Server / R81.10 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-123039 / Maestro Orchestrator / R81.10 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-109618 / Force Firewall / R82.20 / R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-109618 / Cloud Firewall / R82.20 / R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-109618 / Force Firewall / R82.10 / R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-109618 / Cloud Firewall / R82.10 / R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-109618 / Force Firewall / R82 / R82 Jumbo Hotfix Take 132 이상
+CVE-2026-109618 / Cloud Firewall / R82 / R82 Jumbo Hotfix Take 132 이상
+CVE-2026-109618 / Force Firewall / R81.20 / R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-109618 / Cloud Firewall / R81.20 / R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-109618 / Force Firewall / R81.10 / R81.10 Hotfix 적용
+CVE-2026-109618 / Cloud Firewall / R81.10 / R81.10 Hotfix 적용
+CVE-2026-109618 / Force Firewall / R81 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-109618 / Cloud Firewall / R81 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-109618 / Spark Firewall / R82.00.x / R82.00.11 Build 998002823 이상
+CVE-2026-109618 / Spark Firewall / R81.10.x / R81.10.17 Build 996004992 이상
+CVE-2026-109618 / Spark Firewall / R80.20.x 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-109619 / Force Firewall / R82.20 / R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-109619 / Cloud Firewall / R82.20 / R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-109619 / Force Firewall / R82.10 / R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-109619 / Cloud Firewall / R82.10 / R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-109619 / Force Firewall / R82 / R82 Jumbo Hotfix Take 132 이상
+CVE-2026-109619 / Cloud Firewall / R82 / R82 Jumbo Hotfix Take 132 이상
+CVE-2026-109619 / Force Firewall / R81.20 / R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-109619 / Cloud Firewall / R81.20 / R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-109619 / Force Firewall / R81.10 / R81.10 Hotfix 적용
+CVE-2026-109619 / Cloud Firewall / R81.10 / R81.10 Hotfix 적용
+CVE-2026-109619 / Force Firewall / R81 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-109619 / Cloud Firewall / R81 및 이전 버전 / 해결 버전으로 마이그레이션
+CVE-2026-109619 / Spark Firewall / R82.00.x / R82.00.11 Build 998002823 이상
+CVE-2026-109619 / Spark Firewall / R81.10.x / R81.10.17 Build 996004992 이상
+CVE-2026-109619 / Spark Firewall / R80.20.x 및 이전 버전 / 해결 버전으로 마이그레이션
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][2]
+
+□ 참고사이트
+[1] https://support.checkpoint.com/results/sk/sk1000362
+[2] https://support.checkpoint.com/results/sk/sk1000302
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-123039
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-109618
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-109619
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
