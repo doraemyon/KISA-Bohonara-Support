@@ -1,0 +1,37 @@
+제목:
+Oracle 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Oracle 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Oracle社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o OpenJDK의 Base64 디코더에서 발생하는 Out-of-bounds Write 취약점(CVE-2026-114938) [1][2]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-114938 / Oracle Java SE / 8u511b33-perf / 8u513 (1.8.0_513-b04)
+CVE-2026-114938 / Oracle Java SE / 17.0.21.0.3 / 17.0.21.1
+CVE-2026-114938 / Oracle Java SE / 21.0.13.0.3 / 21.0.13.1
+CVE-2026-114938 / Oracle Java SE / 25.0.5.0.3 / 25.0.5.1
+CVE-2026-114938 / Oracle Java SE / 27.0.1.0.3 / 27.0.1.1
+CVE-2026-114938 / Oracle GraalVM for JDK / 17.0.21.0.3 / 17.0.21.1
+CVE-2026-114938 / Oracle GraalVM for JDK / 21.0.13.0.3 / 21.0.13.1
+CVE-2026-114938 / Oracle GraalVM Enterprise Edition / 21.3.20.0.3 / 21.3.20.1
+※ OpenJDK 기반 배포판(Eclipse Temurin, Amazon Corretto, Azul Zulu, Microsoft OpenJDK, Red Hat OpenJDK 등)은 배포판별 수정 버전 적용
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][3][4]
+
+□ 참고사이트
+[1] https://www.oracle.com/security-alerts/cspunov2026.html
+[2] https://www.cve.org/CVERecord?id=CVE-2026-114938
+[3] https://www.oracle.com/java/technologies/javase/17-0-21-1-relnotes.html
+[4] https://docs.oracle.com/en/graalvm/release-calendar.html
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터

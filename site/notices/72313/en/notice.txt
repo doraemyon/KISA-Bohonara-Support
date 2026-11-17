@@ -1,0 +1,37 @@
+Title:
+Oracle Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Oracle Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Oracle releases security updates to address vulnerabilities in its products [1]
+o Users running an affected version are advised to update to the latest version according to the workaround.
+
+□ Description
+o Out-of-bounds Write Vulnerability in OpenJDK's Base64 Decoder (CVE-2026-114938) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-114938 / Oracle Java SE / 8u511b33-perf / 8u513 (1.8.0_513-b04)
+CVE-2026-114938 / Oracle Java SE / 17.0.21.0.3 / 17.0.21.1
+CVE-2026-114938 / Oracle Java SE / 21.0.13.0.3 / 21.0.13.1
+CVE-2026-114938 / Oracle Java SE / 25.0.5.0.3 / 25.0.5.1
+CVE-2026-114938 / Oracle Java SE / 27.0.1.0.3 / 27.0.1.1
+CVE-2026-114938 / Oracle GraalVM for JDK / 17.0.21.0.3 / 17.0.21.1
+CVE-2026-114938 / Oracle GraalVM for JDK / 21.0.13.0.3 / 21.0.13.1
+CVE-2026-114938 / Oracle GraalVM Enterprise Edition / 21.3.20.0.3 / 21.3.20.1
+※ For OpenJDK-based distributions (Eclipse Temurin, Amazon Corretto, Azul Zulu, Microsoft OpenJDK, Red Hat OpenJDK, etc.), apply the modified version for each distribution.
+※ Perform updates by referring to the sites listed below. [1][3][4]
+
+□ Reference sites
+[1] https://www.oracle.com/security-alerts/cspunov2026.html
+[2] https://www.cve.org/CVERecord?id=CVE-2026-114938
+[3] https://www.oracle.com/java/technologies/javase/17-0-21-1-relnotes.html
+[4] https://docs.oracle.com/en/graalvm/release-calendar.html
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code)
+
+□ Prepared by: Vulnerability Management Center, Digital Threat Response Headquarters
