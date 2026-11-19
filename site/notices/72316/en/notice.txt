@@ -1,0 +1,129 @@
+Title:
+F5 Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "F5 Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o F5 releases a security update to address vulnerabilities in its products. [1]~[12]
+o Users running affected versions are advised to update to the latest version according to the workaround.
+
+□ Description
+o Stack-based Buffer Overflow Vulnerability in BIG-IP Access Policy Manager (APM)(CVE-2026-123637) [1][13]
+o Stack-based Buffer Overflow Vulnerability in BIG-IP Policy Enforcement Manager (PEM), BIG-IP CNF, and BIG-IP Next for Kubernetes (CVE-2026-121805) [2][14]
+o Stack-based Buffer Overflow Vulnerability in BIG-IP, BIG-IP CNF, and BIG-IP Next for Kubernetes (CVE-2026-120292) [3][15]
+o Stack-based Buffer Overflow Vulnerability in BIG-IP, BIG-IP CNF, and BIG-IP Next for Kubernetes (CVE-2026-120285) [4][16]
+o Stack-based Buffer Overflow Vulnerability in BIG-IP, BIG-IP CNF, and BIG-IP Next for Kubernetes (CVE-2026-116953) [5][17]
+o Stack-based Buffer Overflow Vulnerability in BIG-IP DNS, BIG-IP CNF, and BIG-IP Next for Kubernetes (CVE-2026-120722) [6][18]
+o Vulnerabilities in BIG-IP (CVE-2026-120718) [7][19]
+o CRLF Injection Vulnerability in BIG-IP and BIG-IQ Centralized Management (CVE-2026-125274) [8][20]
+o Stack-based Buffer Overflow Vulnerability in BIG-IP Access Policy Manager (APM)(CVE-2026-125272) [9][21]
+o Integer Underflow (Wrap or Wraparound) Vulnerability in BIG-IP Access Policy Manager (APM)(CVE-2026-126822) [10][22]
+o Integer Underflow (Wrap or Wraparound) Vulnerability in BIG-IP Access Policy Manager (APM)(CVE-2026-126336) [11][23]
+o Integer Underflow (Wrap or Wraparound) Vulnerability in BIG-IP Access Policy Manager (APM) and BIG-IP SSL Orchestrator (CVE-2026-121812) [12][24]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-123637 / BIG-IP APM / 17.1.0 or later and 17.1.3 or earlier / Apply Hotfix
+CVE-2026-123637 / BIG-IP APM / 17.5.0 or later and 17.5.1 or earlier / Apply Hotfix
+CVE-2026-123637 / BIG-IP APM / 21.1.0 / Apply Hotfix
+CVE-2026-121805 / BIG-IP PEM / 17.1.0 or later and 17.1.3 or earlier / Apply Hotfix
+CVE-2026-121805 / BIG-IP PEM / 17.5.0 or later and 17.5.1 or earlier / Apply Hotfix
+CVE-2026-121805 / BIG-IP PEM / 21.1.0 / Apply Hotfix
+CVE-2026-121805 / BIG-IP CNF / 2.2.0 or later and 2.2.5 or earlier / Apply Hotfix
+CVE-2026-121805 / BIG-IP CNF / 2.3.0 or later and 2.3.4 or earlier / Apply Hotfix
+CVE-2026-121805 / BIG-IP CNF / 2.4.0 or later and 2.4.2 or earlier / Apply Hotfix
+CVE-2026-121805 / BIG-IP Next for Kubernetes / 2.2.0 or later and 2.2.5 or earlier / Apply Hotfix
+CVE-2026-121805 / BIG-IP Next for Kubernetes / 2.3.0 or later and 2.3.4 or earlier / Apply Hotfix
+CVE-2026-121805 / BIG-IP Next for Kubernetes / 2.4.0 or later and 2.4.2 or earlier / Apply Hotfix
+CVE-2026-120292 / BIG-IP (all modules) / 17.1.0 or later and 17.1.3 or earlier / Apply Hotfix
+CVE-2026-120292 / BIG-IP (all modules) / 17.5.0 or later and 17.5.1 or earlier / Apply Hotfix
+CVE-2026-120292 / BIG-IP (all modules) / 21.1.0 / Apply Hotfix
+CVE-2026-120292 / BIG-IP CNF / 2.2.0 or later and 2.2.5 or earlier / Apply Hotfix
+CVE-2026-120292 / BIG-IP CNF / 2.3.0 or later and 2.3.4 or earlier / Apply Hotfix
+CVE-2026-120292 / BIG-IP CNF / 2.4.0 or later and 2.4.2 or earlier / Apply Hotfix
+CVE-2026-120292 / BIG-IP Next for Kubernetes / 2.2.0 or later and 2.2.5 or earlier / Apply Hotfix
+CVE-2026-120292 / BIG-IP Next for Kubernetes / 2.3.0 or later and 2.3.4 or earlier / Apply Hotfix
+CVE-2026-120292 / BIG-IP Next for Kubernetes / 2.4.0 or later and 2.4.2 or earlier / Apply Hotfix
+CVE-2026-120285 / BIG-IP (all modules) / 17.1.0 or later and 17.1.3 or earlier / Apply Hotfix
+CVE-2026-120285 / BIG-IP (all modules) / 17.5.0 or later and 17.5.1 or earlier / Apply Hotfix
+CVE-2026-120285 / BIG-IP (all modules) / 21.1.0 / Apply Hotfix
+CVE-2026-120285 / BIG-IP CNF / 2.2.0 or later and 2.2.5 or earlier / Apply Hotfix
+CVE-2026-120285 / BIG-IP CNF / 2.3.0 or later and 2.3.4 or earlier / Apply Hotfix
+CVE-2026-120285 / BIG-IP CNF / 2.4.0 or later and 2.4.2 or earlier / Apply Hotfix
+CVE-2026-120285 / BIG-IP Next for Kubernetes / 2.2.0 or later and 2.2.5 or earlier / Apply Hotfix
+CVE-2026-120285 / BIG-IP Next for Kubernetes / 2.3.0 or later and 2.3.4 or earlier / Apply Hotfix
+CVE-2026-120285 / BIG-IP Next for Kubernetes / 2.4.0 or later and 2.4.2 or earlier / Apply Hotfix
+CVE-2026-116953 / BIG-IP (all modules) / 17.1.0 or later and 17.1.3 or earlier / Apply Hotfix
+CVE-2026-116953 / BIG-IP (all modules) / 17.5.0 or later and 17.5.1 or earlier / Apply Hotfix
+CVE-2026-116953 / BIG-IP (all modules) / 21.1.0 / Apply Hotfix
+CVE-2026-116953 / BIG-IP CNF / 2.2.0 or later and 2.2.5 or earlier / Apply Hotfix
+CVE-2026-116953 / BIG-IP CNF / 2.3.0 or later and 2.3.4 or earlier / Apply Hotfix
+CVE-2026-116953 / BIG-IP CNF / 2.4.0 or later and 2.4.2 or earlier / Apply Hotfix
+CVE-2026-116953 / BIG-IP Next for Kubernetes / 2.2.0 or later and 2.2.5 or earlier / Apply Hotfix
+CVE-2026-116953 / BIG-IP Next for Kubernetes / 2.3.0 or later and 2.3.4 or earlier / Apply Hotfix
+CVE-2026-116953 / BIG-IP Next for Kubernetes / 2.4.0 or later and 2.4.2 or earlier / Apply Hotfix
+CVE-2026-120722 / BIG-IP DNS / 17.1.0 or later and 17.1.3 or earlier / Apply Hotfix
+CVE-2026-120722 / BIG-IP DNS / 17.5.0 or later and 17.5.1 or earlier / Apply Hotfix
+CVE-2026-120722 / BIG-IP DNS / 21.1.0 / Apply Hotfix
+CVE-2026-120722 / BIG-IP CNF / 2.2.0 or later and 2.2.5 or earlier / Apply Hotfix
+CVE-2026-120722 / BIG-IP CNF / 2.3.0 or later and 2.3.4 or earlier / Apply Hotfix
+CVE-2026-120722 / BIG-IP CNF / 2.4.0 or later and 2.4.2 or earlier / Apply Hotfix
+CVE-2026-120722 / BIG-IP Next for Kubernetes / 2.2.0 or later and 2.2.5 or earlier / Apply Hotfix
+CVE-2026-120722 / BIG-IP Next for Kubernetes / 2.3.0 or later and 2.3.4 or earlier / Apply Hotfix
+CVE-2026-120722 / BIG-IP Next for Kubernetes / 2.4.0 or later and 2.4.2 or earlier / Apply Hotfix
+CVE-2026-120718 / BIG-IP (all modules) / 17.1.0 or later and 17.1.3 or earlier / 17.1.3.6 or later
+CVE-2026-120718 / BIG-IP (all modules) / 17.5.0 or later and 17.5.1 or earlier / 17.5.1.10 or later
+CVE-2026-120718 / BIG-IP (all modules) / 21.1.0 / 21.1.0.2 or later
+CVE-2026-125274 / BIG-IP (all modules) / 17.1.0 or later and 17.1.3 or earlier / 17.1.3.6 or later
+CVE-2026-125274 / BIG-IP (all modules) / 17.5.0 or later and 17.5.1 or earlier / 17.5.1.10 or later
+CVE-2026-125274 / BIG-IP (all modules) / 21.1.0 / 21.1.0.3 or later
+CVE-2026-125274 / BIG-IQ Centralized Management / 8.4.0 or later and 8.4.2 or earlier / 8.4.2.3 or later
+CVE-2026-125272 / BIG-IP APM / 17.1.0 or later and 17.1.3 or earlier / Apply Hotfix
+CVE-2026-125272 / BIG-IP APM / 17.5.0 or later and 17.5.1 or earlier / Apply Hotfix
+CVE-2026-125272 / BIG-IP APM / 21.1.0 / Apply Hotfix
+CVE-2026-126822 / BIG-IP APM / 17.1.0 or later and 17.1.3 or earlier / Apply Hotfix
+CVE-2026-126822 / BIG-IP APM / 17.5.0 or later and 17.5.1 or earlier / Apply Hotfix
+CVE-2026-126822 / BIG-IP APM / 21.1.0 / Apply Hotfix
+CVE-2026-126336 / BIG-IP APM / 17.1.0 or later and 17.1.3 or earlier / 17.1.3.6 or later
+CVE-2026-126336 / BIG-IP APM / 17.5.0 or later and 17.5.1 or earlier / 17.5.1.10 or later
+CVE-2026-126336 / BIG-IP APM / 21.1.0 / 21.1.0.3 or later
+CVE-2026-121812 / BIG-IP APM / 17.1.0 or later and 17.1.3 or earlier / Apply Hotfix
+CVE-2026-121812 / BIG-IP APM / 17.5.0 or later and 17.5.1 or earlier / Apply Hotfix
+CVE-2026-121812 / BIG-IP APM / 21.1.0 / Apply Hotfix
+CVE-2026-121812 / BIG-IP SSL Orchestrator / 17.1.0 or later and 17.1.3 or earlier / Apply Hotfix
+CVE-2026-121812 / BIG-IP SSL Orchestrator / 17.5.0 / Apply Hotfix
+CVE-2026-121812 / BIG-IP SSL Orchestrator / 21.1.0 / Apply Hotfix
+※ Perform updates by referring to the sites listed below. [1]~[12]
+
+□ Reference sites
+[1] https://my.f5.com/manage/s/article/K000163937
+[2] https://my.f5.com/manage/s/article/K000163946
+[3] https://my.f5.com/manage/s/article/K000163940
+[4] https://my.f5.com/manage/s/article/K000163939
+[5] https://my.f5.com/manage/s/article/K000163941
+[6] https://my.f5.com/manage/s/article/K000163945
+[7] https://my.f5.com/manage/s/article/K000163929
+[8] https://my.f5.com/manage/s/article/K000163936
+[9] https://my.f5.com/manage/s/article/K000163938
+[10] https://my.f5.com/manage/s/article/K000163942
+[11] https://my.f5.com/manage/s/article/K000163943
+[12] https://my.f5.com/manage/s/article/K000163944
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-123637
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-121805
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-120292
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-120285
+[17] https://nvd.nist.gov/vuln/detail/CVE-2026-116953
+[18] https://nvd.nist.gov/vuln/detail/CVE-2026-120722
+[19] https://nvd.nist.gov/vuln/detail/CVE-2026-120718
+[20] https://nvd.nist.gov/vuln/detail/CVE-2026-125274
+[21] https://nvd.nist.gov/vuln/detail/CVE-2026-125272
+[22] https://nvd.nist.gov/vuln/detail/CVE-2026-126822
+[23] https://nvd.nist.gov/vuln/detail/CVE-2026-126336
+[24] https://nvd.nist.gov/vuln/detail/CVE-2026-121812
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code needed)
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Headquarters

@@ -1,0 +1,129 @@
+제목:
+F5 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "F5 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o F5社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[12]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o BIG-IP Access Policy Manager(APM)에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-123637) [1][13]
+o BIG-IP Policy Enforcement Manager(PEM), BIG-IP CNF, BIG-IP Next for Kubernetes에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-121805) [2][14]
+o BIG-IP, BIG-IP CNF, BIG-IP Next for Kubernetes에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-120292) [3][15]
+o BIG-IP, BIG-IP CNF, BIG-IP Next for Kubernetes에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-120285) [4][16]
+o BIG-IP, BIG-IP CNF, BIG-IP Next for Kubernetes에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-116953) [5][17]
+o BIG-IP DNS, BIG-IP CNF, BIG-IP Next for Kubernetes에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-120722) [6][18]
+o BIG-IP에서 발생하는 취약점(CVE-2026-120718) [7][19]
+o BIG-IP, BIG-IQ Centralized Management에서 발생하는 CRLF Injection 취약점(CVE-2026-125274) [8][20]
+o BIG-IP Access Policy Manager(APM)에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-125272) [9][21]
+o BIG-IP Access Policy Manager(APM)에서 발생하는 Integer Underflow (Wrap or Wraparound) 취약점(CVE-2026-126822) [10][22]
+o BIG-IP Access Policy Manager(APM)에서 발생하는 Integer Underflow (Wrap or Wraparound) 취약점(CVE-2026-126336) [11][23]
+o BIG-IP Access Policy Manager(APM), BIG-IP SSL Orchestrator에서 발생하는 Integer Underflow (Wrap or Wraparound) 취약점(CVE-2026-121812) [12][24]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-123637 / BIG-IP APM / 17.1.0 이상 17.1.3 이하 / 핫픽스 적용
+CVE-2026-123637 / BIG-IP APM / 17.5.0 이상 17.5.1 이하 / 핫픽스 적용
+CVE-2026-123637 / BIG-IP APM / 21.1.0 / 핫픽스 적용
+CVE-2026-121805 / BIG-IP PEM / 17.1.0 이상 17.1.3 이하 / 핫픽스 적용
+CVE-2026-121805 / BIG-IP PEM / 17.5.0 이상 17.5.1 이하 / 핫픽스 적용
+CVE-2026-121805 / BIG-IP PEM / 21.1.0 / 핫픽스 적용
+CVE-2026-121805 / BIG-IP CNF / 2.2.0 이상 2.2.5 이하 / 핫픽스 적용
+CVE-2026-121805 / BIG-IP CNF / 2.3.0 이상 2.3.4 이하 / 핫픽스 적용
+CVE-2026-121805 / BIG-IP CNF / 2.4.0 이상 2.4.2 이하 / 핫픽스 적용
+CVE-2026-121805 / BIG-IP Next for Kubernetes / 2.2.0 이상 2.2.5 이하 / 핫픽스 적용
+CVE-2026-121805 / BIG-IP Next for Kubernetes / 2.3.0 이상 2.3.4 이하 / 핫픽스 적용
+CVE-2026-121805 / BIG-IP Next for Kubernetes / 2.4.0 이상 2.4.2 이하 / 핫픽스 적용
+CVE-2026-120292 / BIG-IP (all modules) / 17.1.0 이상 17.1.3 이하 / 핫픽스 적용
+CVE-2026-120292 / BIG-IP (all modules) / 17.5.0 이상 17.5.1 이하 / 핫픽스 적용
+CVE-2026-120292 / BIG-IP (all modules) / 21.1.0 / 핫픽스 적용
+CVE-2026-120292 / BIG-IP CNF / 2.2.0 이상 2.2.5 이하 / 핫픽스 적용
+CVE-2026-120292 / BIG-IP CNF / 2.3.0 이상 2.3.4 이하 / 핫픽스 적용
+CVE-2026-120292 / BIG-IP CNF / 2.4.0 이상 2.4.2 이하 / 핫픽스 적용
+CVE-2026-120292 / BIG-IP Next for Kubernetes / 2.2.0 이상 2.2.5 이하 / 핫픽스 적용
+CVE-2026-120292 / BIG-IP Next for Kubernetes / 2.3.0 이상 2.3.4 이하 / 핫픽스 적용
+CVE-2026-120292 / BIG-IP Next for Kubernetes / 2.4.0 이상 2.4.2 이하 / 핫픽스 적용
+CVE-2026-120285 / BIG-IP (all modules) / 17.1.0 이상 17.1.3 이하 / 핫픽스 적용
+CVE-2026-120285 / BIG-IP (all modules) / 17.5.0 이상 17.5.1 이하 / 핫픽스 적용
+CVE-2026-120285 / BIG-IP (all modules) / 21.1.0 / 핫픽스 적용
+CVE-2026-120285 / BIG-IP CNF / 2.2.0 이상 2.2.5 이하 / 핫픽스 적용
+CVE-2026-120285 / BIG-IP CNF / 2.3.0 이상 2.3.4 이하 / 핫픽스 적용
+CVE-2026-120285 / BIG-IP CNF / 2.4.0 이상 2.4.2 이하 / 핫픽스 적용
+CVE-2026-120285 / BIG-IP Next for Kubernetes / 2.2.0 이상 2.2.5 이하 / 핫픽스 적용
+CVE-2026-120285 / BIG-IP Next for Kubernetes / 2.3.0 이상 2.3.4 이하 / 핫픽스 적용
+CVE-2026-120285 / BIG-IP Next for Kubernetes / 2.4.0 이상 2.4.2 이하 / 핫픽스 적용
+CVE-2026-116953 / BIG-IP (all modules) / 17.1.0 이상 17.1.3 이하 / 핫픽스 적용
+CVE-2026-116953 / BIG-IP (all modules) / 17.5.0 이상 17.5.1 이하 / 핫픽스 적용
+CVE-2026-116953 / BIG-IP (all modules) / 21.1.0 / 핫픽스 적용
+CVE-2026-116953 / BIG-IP CNF / 2.2.0 이상 2.2.5 이하 / 핫픽스 적용
+CVE-2026-116953 / BIG-IP CNF / 2.3.0 이상 2.3.4 이하 / 핫픽스 적용
+CVE-2026-116953 / BIG-IP CNF / 2.4.0 이상 2.4.2 이하 / 핫픽스 적용
+CVE-2026-116953 / BIG-IP Next for Kubernetes / 2.2.0 이상 2.2.5 이하 / 핫픽스 적용
+CVE-2026-116953 / BIG-IP Next for Kubernetes / 2.3.0 이상 2.3.4 이하 / 핫픽스 적용
+CVE-2026-116953 / BIG-IP Next for Kubernetes / 2.4.0 이상 2.4.2 이하 / 핫픽스 적용
+CVE-2026-120722 / BIG-IP DNS / 17.1.0 이상 17.1.3 이하 / 핫픽스 적용
+CVE-2026-120722 / BIG-IP DNS / 17.5.0 이상 17.5.1 이하 / 핫픽스 적용
+CVE-2026-120722 / BIG-IP DNS / 21.1.0 / 핫픽스 적용
+CVE-2026-120722 / BIG-IP CNF / 2.2.0 이상 2.2.5 이하 / 핫픽스 적용
+CVE-2026-120722 / BIG-IP CNF / 2.3.0 이상 2.3.4 이하 / 핫픽스 적용
+CVE-2026-120722 / BIG-IP CNF / 2.4.0 이상 2.4.2 이하 / 핫픽스 적용
+CVE-2026-120722 / BIG-IP Next for Kubernetes / 2.2.0 이상 2.2.5 이하 / 핫픽스 적용
+CVE-2026-120722 / BIG-IP Next for Kubernetes / 2.3.0 이상 2.3.4 이하 / 핫픽스 적용
+CVE-2026-120722 / BIG-IP Next for Kubernetes / 2.4.0 이상 2.4.2 이하 / 핫픽스 적용
+CVE-2026-120718 / BIG-IP (all modules) / 17.1.0 이상 17.1.3 이하 / 17.1.3.6 이상
+CVE-2026-120718 / BIG-IP (all modules) / 17.5.0 이상 17.5.1 이하 / 17.5.1.10 이상
+CVE-2026-120718 / BIG-IP (all modules) / 21.1.0 / 21.1.0.2 이상
+CVE-2026-125274 / BIG-IP (all modules) / 17.1.0 이상 17.1.3 이하 / 17.1.3.6 이상
+CVE-2026-125274 / BIG-IP (all modules) / 17.5.0 이상 17.5.1 이하 / 17.5.1.10 이상
+CVE-2026-125274 / BIG-IP (all modules) / 21.1.0 / 21.1.0.3 이상
+CVE-2026-125274 / BIG-IQ Centralized Management / 8.4.0 이상 8.4.2 이하 / 8.4.2.3 이상
+CVE-2026-125272 / BIG-IP APM / 17.1.0 이상 17.1.3 이하 / 핫픽스 적용
+CVE-2026-125272 / BIG-IP APM / 17.5.0 이상 17.5.1 이하 / 핫픽스 적용
+CVE-2026-125272 / BIG-IP APM / 21.1.0 / 핫픽스 적용
+CVE-2026-126822 / BIG-IP APM / 17.1.0 이상 17.1.3 이하 / 핫픽스 적용
+CVE-2026-126822 / BIG-IP APM / 17.5.0 이상 17.5.1 이하 / 핫픽스 적용
+CVE-2026-126822 / BIG-IP APM / 21.1.0 / 핫픽스 적용
+CVE-2026-126336 / BIG-IP APM / 17.1.0 이상 17.1.3 이하 / 17.1.3.6 이상
+CVE-2026-126336 / BIG-IP APM / 17.5.0 이상 17.5.1 이하 / 17.5.1.10 이상
+CVE-2026-126336 / BIG-IP APM / 21.1.0 / 21.1.0.3 이상
+CVE-2026-121812 / BIG-IP APM / 17.1.0 이상 17.1.3 이하 / 핫픽스 적용
+CVE-2026-121812 / BIG-IP APM / 17.5.0 이상 17.5.1 이하 / 핫픽스 적용
+CVE-2026-121812 / BIG-IP APM / 21.1.0 / 핫픽스 적용
+CVE-2026-121812 / BIG-IP SSL Orchestrator / 17.1.0 이상 17.1.3 이하 / 핫픽스 적용
+CVE-2026-121812 / BIG-IP SSL Orchestrator / 17.5.0 / 핫픽스 적용
+CVE-2026-121812 / BIG-IP SSL Orchestrator / 21.1.0 / 핫픽스 적용
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]~[12]
+
+□ 참고사이트
+[1] https://my.f5.com/manage/s/article/K000163937
+[2] https://my.f5.com/manage/s/article/K000163946
+[3] https://my.f5.com/manage/s/article/K000163940
+[4] https://my.f5.com/manage/s/article/K000163939
+[5] https://my.f5.com/manage/s/article/K000163941
+[6] https://my.f5.com/manage/s/article/K000163945
+[7] https://my.f5.com/manage/s/article/K000163929
+[8] https://my.f5.com/manage/s/article/K000163936
+[9] https://my.f5.com/manage/s/article/K000163938
+[10] https://my.f5.com/manage/s/article/K000163942
+[11] https://my.f5.com/manage/s/article/K000163943
+[12] https://my.f5.com/manage/s/article/K000163944
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-123637
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-121805
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-120292
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-120285
+[17] https://nvd.nist.gov/vuln/detail/CVE-2026-116953
+[18] https://nvd.nist.gov/vuln/detail/CVE-2026-120722
+[19] https://nvd.nist.gov/vuln/detail/CVE-2026-120718
+[20] https://nvd.nist.gov/vuln/detail/CVE-2026-125274
+[21] https://nvd.nist.gov/vuln/detail/CVE-2026-125272
+[22] https://nvd.nist.gov/vuln/detail/CVE-2026-126822
+[23] https://nvd.nist.gov/vuln/detail/CVE-2026-126336
+[24] https://nvd.nist.gov/vuln/detail/CVE-2026-121812
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
