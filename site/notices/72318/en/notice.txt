@@ -1,0 +1,123 @@
+Title:
+PHP Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "PHP Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o The PHP Group releases security updates that address vulnerabilities in its products [1][2][3][4]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o Improper Input Validation, Deserialization of Untrusted Data vulnerabilities occurring in PHP (CVE-2026-115560) [1][5]
+o Time-of-check Time-of-use (TOCTOU) Race Condition, Improper Synchronization vulnerability that occurs in PHP (CVE-2026-126714) [1][6]
+o Use After Free, Incomplete Cleanup vulnerabilities occurring in PHP (CVE-2026-129182) [1][7]
+o HTTP Request Smuggling, Always-Incorrect Control Flow Implementation vulnerabilities occurring in PHP (CVE-2026-129289) [1][8]
+o Use After Free Vulnerability in PHP (CVE-2026-129474) [1][9]
+o Use After Free, Incomplete Cleanup vulnerabilities occurring in PHP (CVE-2026-129481) [1][10]
+o Use After Free, Incomplete Cleanup vulnerabilities occurring in PHP (CVE-2026-129496) [1][11]
+o Uncontrolled Resource Consumption, Inefficient Algorithmic Complexity vulnerabilities occurring in PHP (CVE-2026-127960) [1][12]
+o Cleartext Transmission of Sensitive Information vulnerability in PHP (CVE-2026-128064) [1][13]
+o Improper Verification of Cryptographic Signature, Algorithm Downgrade vulnerability occurring in PHP (CVE-2026-128090) [1][14]
+o Use After Free Vulnerability in PHP (CVE-2026-129291) [1][15]
+o Cross-site scripting vulnerability occurring in PHP (CVE-2026-129292) [1][16]
+o Integer Overflow or Wraparound, Unchecked Return Value vulnerabilities that occur in PHP (CVE-2026-129438) [1][17]
+o Double Free, Use After Free Vulnerabilities in PHP (CVE-2026-129501) [1][18]
+o Use After Free Vulnerability in PHP (CVE-2026-129506) [1][19]
+o Out-of-bounds Read, Out-of-bounds Write, Use of Out-of-range Pointer Offset vulnerabilities occurring in PHP (CVE-2026-129538) [1][20]
+o Out-of-bounds Read, Use of Uninitialized Resource vulnerability in PHP (CVE-2026-15353) [1][21]
+o Integer Overflow or Wraparound vulnerability occurring in PHP (CVE-2026-48841) [1][22]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-115560 / PHP 8.2 / Below 8.2.36 / 8.2.36 or later
+CVE-2026-115560 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-115560 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-115560 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-126714 / PHP 8.2 / Below 8.2.36 / 8.2.36 or later
+CVE-2026-126714 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-126714 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-126714 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129182 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129289 / PHP 8.2 / Below 8.2.36 / 8.2.36 or later
+CVE-2026-129289 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-129289 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-129289 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129474 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129481 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-129481 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-129481 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129496 / PHP 8.2 / Below 8.2.36 / 8.2.36 or later
+CVE-2026-129496 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-129496 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-129496 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-127960 / PHP 8.2 / 8.2.28 or later and below 8.2.36 / 8.2.36 or later
+CVE-2026-127960 / PHP 8.3 / 8.3.18 or later and below 8.3.37 / 8.3.37 or later
+CVE-2026-127960 / PHP 8.4 / 8.4.5 or later and below 8.4.28 / 8.4.28 or later
+CVE-2026-127960 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-128064 / PHP 8.2 / Below 8.2.36 / 8.2.36 or later
+CVE-2026-128064 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-128064 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-128064 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-128090 / PHP 8.2 / Below 8.2.36 / 8.2.36 or later
+CVE-2026-128090 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-128090 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-128090 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129291 / PHP 8.2 / 8.2.7 or later and below 8.2.36 / 8.2.36 or later
+CVE-2026-129291 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-129291 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-129291 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129292 / PHP 8.2 / Below 8.2.36 / 8.2.36 or later
+CVE-2026-129292 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-129292 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-129292 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129438 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129501 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-129501 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129506 / PHP 8.2 / Below 8.2.36 / 8.2.36 or later
+CVE-2026-129506 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-129506 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-129506 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-129538 / PHP 8.2 / Below 8.2.36 / 8.2.36 or later
+CVE-2026-129538 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-129538 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-129538 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-15353 / PHP 8.2 / Below 8.2.36 / 8.2.36 or later
+CVE-2026-15353 / PHP 8.3 / Below 8.3.37 / 8.3.37 or later
+CVE-2026-15353 / PHP 8.4 / Below 8.4.28 / 8.4.28 or later
+CVE-2026-15353 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+CVE-2026-48841 / PHP 8.5 / Below 8.5.13 / 8.5.13 or later
+※ PHP 8.1 Official security support for the following versions has ended, so upgrading to a supported version is recommended. [1]
+※ PHP 7.4, 8.0, 8.1 Since the resolution version and temporary mitigation measures may differ depending on the vendor, check the vendor's security advisory and recommend action.
+※ PHP 8.2 Is 2026.12.31. PHP due to end of security support 8.3 Recommend switching to above [4]
+※ Check the reference site below to perform updates [1][2][3][4]
+
+□ Reference sites
+[1] https://www.php.net/archive/2026.php#2026-11-19-4
+[2] https://www.php.net/archive/2026.php#2026-11-19-3
+[3] https://www.php.net/archive/2026.php#2026-11-19-2
+[4] https://www.php.net/archive/2026.php#2026-11-19-1
+[5] https://github.com/php/php-src/security/advisories/GHSA-658j-r8rw-q6mx
+[6] https://github.com/php/php-src/security/advisories/GHSA-fm2m-fjf5-v3cp
+[7] https://github.com/php/php-src/security/advisories/GHSA-2fjv-p558-g82m
+[8] https://github.com/php/php-src/security/advisories/GHSA-qc49-hpvq-g2w6
+[9] https://github.com/php/php-src/security/advisories/GHSA-8mjj-2r7p-4hg2
+[10] https://github.com/php/php-src/security/advisories/GHSA-g3vh-838c-65v7
+[11] https://github.com/php/php-src/security/advisories/GHSA-gr4f-wgx5-jpfv
+[12] https://github.com/php/php-src/security/advisories/GHSA-mmf9-xm3v-hg2x
+[13] https://github.com/php/php-src/security/advisories/GHSA-f6gg-rchx-xw8j
+[14] https://github.com/php/php-src/security/advisories/GHSA-68fq-fh7h-f8gr
+[15] https://github.com/php/php-src/security/advisories/GHSA-jm4m-qfqx-967m
+[16] https://github.com/php/php-src/security/advisories/GHSA-3mg3-cr28-46gc
+[17] https://github.com/php/php-src/security/advisories/GHSA-mg3p-mxj9-g2mm
+[18] https://github.com/php/php-src/security/advisories/GHSA-x8r7-mg3g-74hg
+[19] https://github.com/php/php-src/security/advisories/GHSA-4646-p932-gw34
+[20] https://github.com/php/php-src/security/advisories/GHSA-5j3f-64r7-f564
+[21] https://github.com/php/php-src/security/advisories/GHSA-q23r-hr55-xmpg
+[22] https://github.com/uriparser/uriparser/blob/uriparser-1.0.3/ChangeLog
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center

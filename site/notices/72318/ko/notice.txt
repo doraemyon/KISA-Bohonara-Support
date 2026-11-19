@@ -1,0 +1,123 @@
+제목:
+PHP 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "PHP 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o The PHP Group은 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2][3][4]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o PHP에서 발생하는 Improper Input Validation, Deserialization of Untrusted Data 취약점(CVE-2026-115560) [1][5]
+o PHP에서 발생하는 Time-of-check Time-of-use (TOCTOU) Race Condition, Improper Synchronization 취약점(CVE-2026-126714) [1][6]
+o PHP에서 발생하는 Use After Free, Incomplete Cleanup 취약점(CVE-2026-129182) [1][7]
+o PHP에서 발생하는 HTTP Request Smuggling, Always-Incorrect Control Flow Implementation 취약점(CVE-2026-129289) [1][8]
+o PHP에서 발생하는 Use After Free 취약점(CVE-2026-129474) [1][9]
+o PHP에서 발생하는 Use After Free, Incomplete Cleanup 취약점(CVE-2026-129481) [1][10]
+o PHP에서 발생하는 Use After Free, Incomplete Cleanup 취약점(CVE-2026-129496) [1][11]
+o PHP에서 발생하는 Uncontrolled Resource Consumption, Inefficient Algorithmic Complexity 취약점(CVE-2026-127960) [1][12]
+o PHP에서 발생하는 Cleartext Transmission of Sensitive Information 취약점(CVE-2026-128064) [1][13]
+o PHP에서 발생하는 Improper Verification of Cryptographic Signature, Algorithm Downgrade 취약점(CVE-2026-128090) [1][14]
+o PHP에서 발생하는 Use After Free 취약점(CVE-2026-129291) [1][15]
+o PHP에서 발생하는 Cross-site Scripting 취약점(CVE-2026-129292) [1][16]
+o PHP에서 발생하는 Integer Overflow or Wraparound, Unchecked Return Value 취약점(CVE-2026-129438) [1][17]
+o PHP에서 발생하는 Double Free, Use After Free 취약점(CVE-2026-129501) [1][18]
+o PHP에서 발생하는 Use After Free 취약점(CVE-2026-129506) [1][19]
+o PHP에서 발생하는 Out-of-bounds Read, Out-of-bounds Write, Use of Out-of-range Pointer Offset 취약점(CVE-2026-129538) [1][20]
+o PHP에서 발생하는 Out-of-bounds Read, Use of Uninitialized Resource 취약점(CVE-2026-15353) [1][21]
+o PHP에서 발생하는 Integer Overflow or Wraparound 취약점(CVE-2026-48841) [1][22]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-115560 / PHP 8.2 / 8.2.36 미만 / 8.2.36 이상
+CVE-2026-115560 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-115560 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-115560 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-126714 / PHP 8.2 / 8.2.36 미만 / 8.2.36 이상
+CVE-2026-126714 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-126714 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-126714 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129182 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129289 / PHP 8.2 / 8.2.36 미만 / 8.2.36 이상
+CVE-2026-129289 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-129289 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-129289 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129474 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129481 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-129481 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-129481 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129496 / PHP 8.2 / 8.2.36 미만 / 8.2.36 이상
+CVE-2026-129496 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-129496 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-129496 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-127960 / PHP 8.2 / 8.2.28 이상 8.2.36 미만 / 8.2.36 이상
+CVE-2026-127960 / PHP 8.3 / 8.3.18 이상 8.3.37 미만 / 8.3.37 이상
+CVE-2026-127960 / PHP 8.4 / 8.4.5 이상 8.4.28 미만 / 8.4.28 이상
+CVE-2026-127960 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-128064 / PHP 8.2 / 8.2.36 미만 / 8.2.36 이상
+CVE-2026-128064 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-128064 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-128064 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-128090 / PHP 8.2 / 8.2.36 미만 / 8.2.36 이상
+CVE-2026-128090 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-128090 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-128090 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129291 / PHP 8.2 / 8.2.7 이상 8.2.36 미만 / 8.2.36 이상
+CVE-2026-129291 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-129291 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-129291 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129292 / PHP 8.2 / 8.2.36 미만 / 8.2.36 이상
+CVE-2026-129292 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-129292 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-129292 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129438 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129501 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-129501 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129506 / PHP 8.2 / 8.2.36 미만 / 8.2.36 이상
+CVE-2026-129506 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-129506 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-129506 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-129538 / PHP 8.2 / 8.2.36 미만 / 8.2.36 이상
+CVE-2026-129538 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-129538 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-129538 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-15353 / PHP 8.2 / 8.2.36 미만 / 8.2.36 이상
+CVE-2026-15353 / PHP 8.3 / 8.3.37 미만 / 8.3.37 이상
+CVE-2026-15353 / PHP 8.4 / 8.4.28 미만 / 8.4.28 이상
+CVE-2026-15353 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+CVE-2026-48841 / PHP 8.5 / 8.5.13 미만 / 8.5.13 이상
+※ PHP 8.1 이하 버전은 공식 보안 지원이 종료되어 지원 중인 버전으로 업그레이드 권고 [1]
+※ PHP 7.4, 8.0, 8.1 버전은 벤더사별 해결 버전 및 임시 완화 조치가 상이할 수 있으므로, 해당 벤더사의 보안 권고를 확인하여 조치 권고
+※ PHP 8.2는 2026.12.31. 보안 지원 종료 예정이므로 PHP 8.3 이상으로 전환 권고 [4]
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][2][3][4]
+
+□ 참고사이트
+[1] https://www.php.net/archive/2026.php#2026-11-19-4
+[2] https://www.php.net/archive/2026.php#2026-11-19-3
+[3] https://www.php.net/archive/2026.php#2026-11-19-2
+[4] https://www.php.net/archive/2026.php#2026-11-19-1
+[5] https://github.com/php/php-src/security/advisories/GHSA-658j-r8rw-q6mx
+[6] https://github.com/php/php-src/security/advisories/GHSA-fm2m-fjf5-v3cp
+[7] https://github.com/php/php-src/security/advisories/GHSA-2fjv-p558-g82m
+[8] https://github.com/php/php-src/security/advisories/GHSA-qc49-hpvq-g2w6
+[9] https://github.com/php/php-src/security/advisories/GHSA-8mjj-2r7p-4hg2
+[10] https://github.com/php/php-src/security/advisories/GHSA-g3vh-838c-65v7
+[11] https://github.com/php/php-src/security/advisories/GHSA-gr4f-wgx5-jpfv
+[12] https://github.com/php/php-src/security/advisories/GHSA-mmf9-xm3v-hg2x
+[13] https://github.com/php/php-src/security/advisories/GHSA-f6gg-rchx-xw8j
+[14] https://github.com/php/php-src/security/advisories/GHSA-68fq-fh7h-f8gr
+[15] https://github.com/php/php-src/security/advisories/GHSA-jm4m-qfqx-967m
+[16] https://github.com/php/php-src/security/advisories/GHSA-3mg3-cr28-46gc
+[17] https://github.com/php/php-src/security/advisories/GHSA-mg3p-mxj9-g2mm
+[18] https://github.com/php/php-src/security/advisories/GHSA-x8r7-mg3g-74hg
+[19] https://github.com/php/php-src/security/advisories/GHSA-4646-p932-gw34
+[20] https://github.com/php/php-src/security/advisories/GHSA-5j3f-64r7-f564
+[21] https://github.com/php/php-src/security/advisories/GHSA-q23r-hr55-xmpg
+[22] https://github.com/uriparser/uriparser/blob/uriparser-1.0.3/ChangeLog
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
