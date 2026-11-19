@@ -1,0 +1,130 @@
+Title:
+Oracle Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Oracle Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Oracle releases a security update to address vulnerabilities in its products [1]
+o Users running affected versions are advised to update to the latest version according to the workaround.
+
+□ Description
+o Missing Authentication for Critical Function vulnerability in Oracle WebLogic Server (CVE-2026-91569) [1][2]
+o Improper Authentication Vulnerability in Oracle WebLogic Server (CVE-2026-91456) [1][3]
+o Missing Authentication for Critical Function vulnerability in Oracle WebLogic Server (CVE-2026-91470) [1][4]
+o Missing Authentication for Critical Function vulnerability in Oracle WebLogic Server (CVE-2026-91570) [1][5]
+o Missing Authentication for Critical Function vulnerability in Oracle WebLogic Server (CVE-2026-91583) [1][6]
+o Missing Authentication for Critical Function vulnerability in Oracle WebLogic Server (CVE-2026-91585) [1][7]
+o Vulnerabilities in Oracle WebLogic Server (CVE-2026-91469) [1][8]
+o Missing Authentication for Critical Function vulnerability in Oracle Application Object Library (CVE-2026-114924) [1][9]
+o Vulnerabilities in Oracle Concurrent Processing (CVE-2026-114918) [1][10]
+o Vulnerabilities in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114934) [1][11]
+o Missing Authentication for Critical Function vulnerability in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114862) [1][12]
+o Missing Authentication for Critical Function vulnerability in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114928) [1][13]
+o Missing Authentication for Critical Function vulnerability in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114937) [1][14]
+o Vulnerabilities in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114932) [1][15]
+o Vulnerabilities in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114933) [1][16]
+o Vulnerabilities in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114931) [1][17]
+o Missing Authentication for Critical Function vulnerability in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114929) [1][18]
+o Missing Authentication for Critical Function vulnerability in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114930) [1][19]
+o Vulnerabilities in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114935) [1][20]
+o Improper Privilege Management vulnerability in Oracle PeopleSoft Enterprise PeopleTools (CVE-2026-114927) [1][21]
+o Improper Access Control Vulnerability in Oracle VM VirtualBox (CVE-2026-127421) [1][22]
+o Vulnerabilities in Oracle VM VirtualBox (CVE-2026-127425) [1][23]
+o Uncontrolled Resource Consumption Vulnerability in Oracle VM VirtualBox (CVE-2026-127413) [1][24]
+o Uncontrolled Resource Consumption Vulnerability in Oracle VM VirtualBox (CVE-2026-127427) [1][25]
+o Vulnerabilities in Oracle VM VirtualBox (CVE-2026-127426) [1][26]
+o Vulnerabilities in Oracle VM VirtualBox (CVE-2026-127414) [1][27]
+o Vulnerabilities in Oracle VM VirtualBox (CVE-2026-127422) [1][28]
+o Vulnerabilities in Oracle VM VirtualBox (CVE-2026-127423) [1][29]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-91569 / WebLogic Server / 12.2.1.4.0 / Apply Oracle Security Patch
+CVE-2026-91569 / WebLogic Server / 14.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91569 / WebLogic Server / 14.1.2.0.0 / Apply Oracle Security Patch
+CVE-2026-91569 / WebLogic Server / 15.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91456 / WebLogic Server / 12.2.1.4.0 / Apply Oracle Security Patch
+CVE-2026-91456 / WebLogic Server / 14.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91456 / WebLogic Server / 14.1.2.0.0 / Apply Oracle Security Patch
+CVE-2026-91456 / WebLogic Server / 15.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91470 / WebLogic Server / 12.2.1.4.0 / Apply Oracle Security Patch
+CVE-2026-91470 / WebLogic Server / 14.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91470 / WebLogic Server / 14.1.2.0.0 / Apply Oracle Security Patch
+CVE-2026-91470 / WebLogic Server / 15.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91570 / WebLogic Server / 12.2.1.4.0 / Apply Oracle Security Patch
+CVE-2026-91570 / WebLogic Server / 14.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91570 / WebLogic Server / 14.1.2.0.0 / Apply Oracle Security Patch
+CVE-2026-91570 / WebLogic Server / 15.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91583 / WebLogic Server / 12.2.1.4.0 / Apply Oracle Security Patch
+CVE-2026-91583 / WebLogic Server / 14.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91583 / WebLogic Server / 14.1.2.0.0 / Apply Oracle Security Patch
+CVE-2026-91583 / WebLogic Server / 15.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91585 / WebLogic Server / 12.2.1.4.0 / Apply Oracle Security Patch
+CVE-2026-91585 / WebLogic Server / 14.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91585 / WebLogic Server / 14.1.2.0.0 / Apply Oracle Security Patch
+CVE-2026-91585 / WebLogic Server / 15.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91469 / WebLogic Server / 12.2.1.4.0 / Apply Oracle Security Patch
+CVE-2026-91469 / WebLogic Server / 14.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-91469 / WebLogic Server / 14.1.2.0.0 / Apply Oracle Security Patch
+CVE-2026-91469 / WebLogic Server / 15.1.1.0.0 / Apply Oracle Security Patch
+CVE-2026-114924 / Application Object Library / 12.2.3 or later and 12.2.15 or earlier / Apply Oracle Security Patch
+CVE-2026-114918 / Concurrent Processing / 12.2.3 or later and 12.2.15 or earlier / Apply Oracle Security Patch
+CVE-2026-114934 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-114862 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-114928 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-114937 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-114932 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-114933 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-114931 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-114929 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-114930 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-114935 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-114927 / PeopleSoft Enterprise PeopleTools / 8.61 or later and 8.63 or earlier / Apply Oracle Security Patch
+CVE-2026-127421 / VM VirtualBox / 7.2.22 / Apply Oracle Security Patch
+CVE-2026-127425 / VM VirtualBox / 7.2.22 / Apply Oracle Security Patch
+CVE-2026-127413 / VM VirtualBox / 7.2.22 / Apply Oracle Security Patch
+CVE-2026-127427 / VM VirtualBox / 7.2.22 / Apply Oracle Security Patch
+CVE-2026-127426 / VM VirtualBox / 7.2.22 / Apply Oracle Security Patch
+CVE-2026-127414 / VM VirtualBox / 7.2.22 / Apply Oracle Security Patch
+CVE-2026-127422 / VM VirtualBox / 7.2.22 / Apply Oracle Security Patch
+CVE-2026-127423 / VM VirtualBox / 7.2.22 / Apply Oracle Security Patch
+※ Earlier versions of the affected version may also be affected by the vulnerability, so it is recommended to update to the patched version.
+※ Perform updates by referring to the sites listed below. [1]
+
+□ Reference sites
+[1] https://www.oracle.com/security-alerts/cspunov2026.html
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-91569
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-91456
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-91470
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-91570
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-91583
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-91585
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-91469
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-114924
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-114918
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-114934
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-114862
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-114928
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-114937
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-114932
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-114933
+[17] https://nvd.nist.gov/vuln/detail/CVE-2026-114931
+[18] https://nvd.nist.gov/vuln/detail/CVE-2026-114929
+[19] https://nvd.nist.gov/vuln/detail/CVE-2026-114930
+[20] https://nvd.nist.gov/vuln/detail/CVE-2026-114935
+[21] https://nvd.nist.gov/vuln/detail/CVE-2026-114927
+[22] https://nvd.nist.gov/vuln/detail/CVE-2026-127421
+[23] https://nvd.nist.gov/vuln/detail/CVE-2026-127425
+[24] https://nvd.nist.gov/vuln/detail/CVE-2026-127413
+[25] https://nvd.nist.gov/vuln/detail/CVE-2026-127427
+[26] https://nvd.nist.gov/vuln/detail/CVE-2026-127426
+[27] https://nvd.nist.gov/vuln/detail/CVE-2026-127414
+[28] https://nvd.nist.gov/vuln/detail/CVE-2026-127422
+[29] https://nvd.nist.gov/vuln/detail/CVE-2026-127423
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Complaint Center: 118 (no area code)
+
+□ Prepared by: Vulnerability Management Center, Digital Threat Response Headquarters

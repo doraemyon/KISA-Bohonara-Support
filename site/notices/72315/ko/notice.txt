@@ -1,0 +1,130 @@
+제목:
+Oracle 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Oracle 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Oracle社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Oracle WebLogic Server에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-91569) [1][2]
+o Oracle WebLogic Server에서 발생하는 Improper Authentication 취약점(CVE-2026-91456) [1][3]
+o Oracle WebLogic Server에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-91470) [1][4]
+o Oracle WebLogic Server에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-91570) [1][5]
+o Oracle WebLogic Server에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-91583) [1][6]
+o Oracle WebLogic Server에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-91585) [1][7]
+o Oracle WebLogic Server에서 발생하는 취약점(CVE-2026-91469) [1][8]
+o Oracle Application Object Library에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114924) [1][9]
+o Oracle Concurrent Processing에서 발생하는 취약점(CVE-2026-114918) [1][10]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 취약점(CVE-2026-114934) [1][11]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114862) [1][12]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114928) [1][13]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114937) [1][14]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 취약점(CVE-2026-114932) [1][15]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 취약점(CVE-2026-114933) [1][16]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 취약점(CVE-2026-114931) [1][17]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114929) [1][18]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114930) [1][19]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 취약점(CVE-2026-114935) [1][20]
+o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Improper Privilege Management 취약점(CVE-2026-114927) [1][21]
+o Oracle VM VirtualBox에서 발생하는 Improper Access Control 취약점(CVE-2026-127421) [1][22]
+o Oracle VM VirtualBox에서 발생하는 취약점(CVE-2026-127425) [1][23]
+o Oracle VM VirtualBox에서 발생하는 Uncontrolled Resource Consumption 취약점(CVE-2026-127413) [1][24]
+o Oracle VM VirtualBox에서 발생하는 Uncontrolled Resource Consumption 취약점(CVE-2026-127427) [1][25]
+o Oracle VM VirtualBox에서 발생하는 취약점(CVE-2026-127426) [1][26]
+o Oracle VM VirtualBox에서 발생하는 취약점(CVE-2026-127414) [1][27]
+o Oracle VM VirtualBox에서 발생하는 취약점(CVE-2026-127422) [1][28]
+o Oracle VM VirtualBox에서 발생하는 취약점(CVE-2026-127423) [1][29]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-91569 / WebLogic Server / 12.2.1.4.0 / Oracle 보안 패치 적용
+CVE-2026-91569 / WebLogic Server / 14.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91569 / WebLogic Server / 14.1.2.0.0 / Oracle 보안 패치 적용
+CVE-2026-91569 / WebLogic Server / 15.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91456 / WebLogic Server / 12.2.1.4.0 / Oracle 보안 패치 적용
+CVE-2026-91456 / WebLogic Server / 14.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91456 / WebLogic Server / 14.1.2.0.0 / Oracle 보안 패치 적용
+CVE-2026-91456 / WebLogic Server / 15.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91470 / WebLogic Server / 12.2.1.4.0 / Oracle 보안 패치 적용
+CVE-2026-91470 / WebLogic Server / 14.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91470 / WebLogic Server / 14.1.2.0.0 / Oracle 보안 패치 적용
+CVE-2026-91470 / WebLogic Server / 15.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91570 / WebLogic Server / 12.2.1.4.0 / Oracle 보안 패치 적용
+CVE-2026-91570 / WebLogic Server / 14.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91570 / WebLogic Server / 14.1.2.0.0 / Oracle 보안 패치 적용
+CVE-2026-91570 / WebLogic Server / 15.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91583 / WebLogic Server / 12.2.1.4.0 / Oracle 보안 패치 적용
+CVE-2026-91583 / WebLogic Server / 14.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91583 / WebLogic Server / 14.1.2.0.0 / Oracle 보안 패치 적용
+CVE-2026-91583 / WebLogic Server / 15.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91585 / WebLogic Server / 12.2.1.4.0 / Oracle 보안 패치 적용
+CVE-2026-91585 / WebLogic Server / 14.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91585 / WebLogic Server / 14.1.2.0.0 / Oracle 보안 패치 적용
+CVE-2026-91585 / WebLogic Server / 15.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91469 / WebLogic Server / 12.2.1.4.0 / Oracle 보안 패치 적용
+CVE-2026-91469 / WebLogic Server / 14.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-91469 / WebLogic Server / 14.1.2.0.0 / Oracle 보안 패치 적용
+CVE-2026-91469 / WebLogic Server / 15.1.1.0.0 / Oracle 보안 패치 적용
+CVE-2026-114924 / Application Object Library / 12.2.3 이상 12.2.15 이하 / Oracle 보안 패치 적용
+CVE-2026-114918 / Concurrent Processing / 12.2.3 이상 12.2.15 이하 / Oracle 보안 패치 적용
+CVE-2026-114934 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-114862 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-114928 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-114937 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-114932 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-114933 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-114931 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-114929 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-114930 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-114935 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-114927 / PeopleSoft Enterprise PeopleTools / 8.61 이상 8.63 이하 / Oracle 보안 패치 적용
+CVE-2026-127421 / VM VirtualBox / 7.2.22 / Oracle 보안 패치 적용
+CVE-2026-127425 / VM VirtualBox / 7.2.22 / Oracle 보안 패치 적용
+CVE-2026-127413 / VM VirtualBox / 7.2.22 / Oracle 보안 패치 적용
+CVE-2026-127427 / VM VirtualBox / 7.2.22 / Oracle 보안 패치 적용
+CVE-2026-127426 / VM VirtualBox / 7.2.22 / Oracle 보안 패치 적용
+CVE-2026-127414 / VM VirtualBox / 7.2.22 / Oracle 보안 패치 적용
+CVE-2026-127422 / VM VirtualBox / 7.2.22 / Oracle 보안 패치 적용
+CVE-2026-127423 / VM VirtualBox / 7.2.22 / Oracle 보안 패치 적용
+※ 영향받는 버전의 이전 버전 또한 취약점 영향이 있을 수 있어, 해결된 버전으로 업데이트 권고
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+
+□ 참고사이트
+[1] https://www.oracle.com/security-alerts/cspunov2026.html
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-91569
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-91456
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-91470
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-91570
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-91583
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-91585
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-91469
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-114924
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-114918
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-114934
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-114862
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-114928
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-114937
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-114932
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-114933
+[17] https://nvd.nist.gov/vuln/detail/CVE-2026-114931
+[18] https://nvd.nist.gov/vuln/detail/CVE-2026-114929
+[19] https://nvd.nist.gov/vuln/detail/CVE-2026-114930
+[20] https://nvd.nist.gov/vuln/detail/CVE-2026-114935
+[21] https://nvd.nist.gov/vuln/detail/CVE-2026-114927
+[22] https://nvd.nist.gov/vuln/detail/CVE-2026-127421
+[23] https://nvd.nist.gov/vuln/detail/CVE-2026-127425
+[24] https://nvd.nist.gov/vuln/detail/CVE-2026-127413
+[25] https://nvd.nist.gov/vuln/detail/CVE-2026-127427
+[26] https://nvd.nist.gov/vuln/detail/CVE-2026-127426
+[27] https://nvd.nist.gov/vuln/detail/CVE-2026-127414
+[28] https://nvd.nist.gov/vuln/detail/CVE-2026-127422
+[29] https://nvd.nist.gov/vuln/detail/CVE-2026-127423
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
