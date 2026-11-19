@@ -1,0 +1,58 @@
+Title:
+NGINX Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "NGINX Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o F5 has released security updates addressing vulnerabilities in its NGINX products [1][2][3][4][5]
+o Users utilizing affected versions are advised to update to the latest version according to the mitigation measures
+
+□ Description
+o Integer Underflow (Wrap or Wraparound) vulnerability occurring in NGINX Plus and NGINX Open Source(CVE-2026-123007) [1][6]
+o Use After Free vulnerability occurring in NGINX Plus and NGINX Open Source(CVE-2026-123634) [2][7]
+o Use After Free vulnerability occurring in NGINX Plus and NGINX Open Source(CVE-2026-123633) [3][8]
+o Use After Free vulnerability occurring in NGINX Plus and NGINX Open Source(CVE-2026-121810) [4][9]
+o Use After Free vulnerability occurring in NGINX Plus and NGINX Open Source(CVE-2026-113425) [5][10]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-123007 / NGINX Open Source / 1.9.5 or higher and 1.30.6 or lower / 1.30.7
+CVE-2026-123007 / NGINX Open Source / 1.31.0 or higher and 1.31.8 or lower / 1.31.9
+CVE-2026-123007 / NGINX Plus / R33 or higher and 37.0.8 or lower / 37.0.8.1
+CVE-2026-123007 / NGINX Plus / 37.1.0 or higher and 37.3.0 or lower / 37.3.0.1
+CVE-2026-123634 / NGINX Open Source / 0.6.18 or higher and 1.30.6 or lower / 1.30.7
+CVE-2026-123634 / NGINX Open Source / 1.31.0 or higher and 1.31.8 or lower / 1.31.9
+CVE-2026-123634 / NGINX Plus / R33 or higher and 37.0.8 or lower / 37.0.8.1
+CVE-2026-123634 / NGINX Plus / 37.1.0 or higher and 37.3.0 or lower / 37.3.0.1
+CVE-2026-123633 / NGINX Open Source / 1.19.7 or higher and 1.30.6 or lower / 1.30.7
+CVE-2026-123633 / NGINX Open Source / 1.31.0 or higher and 1.31.8 or lower / 1.31.9
+CVE-2026-123633 / NGINX Plus / R33 or higher and 37.0.7 or lower / 37.0.7.1
+CVE-2026-123633 / NGINX Plus / 37.1.0.1 or higher and 37.2.0 or lower / 37.2.0.1
+CVE-2026-121810 / NGINX Open Source / 1.25.0 or higher and 1.30.6 or lower / 1.30.7
+CVE-2026-121810 / NGINX Open Source / 1.31.0 or higher and 1.31.8 or lower / 1.31.9
+CVE-2026-121810 / NGINX Plus / R33 or higher and 37.0.8 or lower / 37.0.8.1
+CVE-2026-121810 / NGINX Plus / 37.1.0 or higher and 37.3.0 or lower / 37.3.0.1
+CVE-2026-113425 / NGINX Open Source / 0.5.33 or higher and 1.30.6 or lower / 1.30.7
+CVE-2026-113425 / NGINX Open Source / 1.31.0 or higher and 1.31.8 or lower / 1.31.9
+CVE-2026-113425 / NGINX Plus / R33 or higher and 37.0.8 or lower / 37.0.8.1
+CVE-2026-113425 / NGINX Plus / 37.1.0 or higher and 37.3.0 or lower / 37.3.0.1
+※ Check the reference sites below to perform updates [1][2][3][4][5]
+
+□ Reference sites
+[1] https://my.f5.com/manage/s/article/K000163926
+[2] https://my.f5.com/manage/s/article/K000163925
+[3] https://my.f5.com/manage/s/article/K000163928
+[4] https://my.f5.com/manage/s/article/K000163927
+[5] https://my.f5.com/manage/s/article/K000163931
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-123007
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-123634
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-123633
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-121810
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-113425
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber Civil Center: Dial 118 without an area code
+
+□ Written by: Digital Threat Response Department Vulnerability Management Center

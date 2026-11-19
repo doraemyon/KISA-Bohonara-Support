@@ -1,0 +1,58 @@
+제목:
+NGINX 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "NGINX 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o F5社는 자사 NGINX 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2][3][4][5]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o NGINX Plus 및 NGINX Open Source에서 발생하는 Integer Underflow (Wrap or Wraparound) 취약점(CVE-2026-123007) [1][6]
+o NGINX Plus 및 NGINX Open Source에서 발생하는 Use After Free 취약점(CVE-2026-123634) [2][7]
+o NGINX Plus 및 NGINX Open Source에서 발생하는 Use After Free 취약점(CVE-2026-123633) [3][8]
+o NGINX Plus 및 NGINX Open Source에서 발생하는 Use After Free 취약점(CVE-2026-121810) [4][9]
+o NGINX Plus 및 NGINX Open Source에서 발생하는 Use After Free 취약점(CVE-2026-113425) [5][10]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-123007 / NGINX Open Source / 1.9.5 이상 1.30.6 이하 / 1.30.7
+CVE-2026-123007 / NGINX Open Source / 1.31.0 이상 1.31.8 이하 / 1.31.9
+CVE-2026-123007 / NGINX Plus / R33 이상 37.0.8 이하 / 37.0.8.1
+CVE-2026-123007 / NGINX Plus / 37.1.0 이상 37.3.0 이하 / 37.3.0.1
+CVE-2026-123634 / NGINX Open Source / 0.6.18 이상 1.30.6 이하 / 1.30.7
+CVE-2026-123634 / NGINX Open Source / 1.31.0 이상 1.31.8 이하 / 1.31.9
+CVE-2026-123634 / NGINX Plus / R33 이상 37.0.8 이하 / 37.0.8.1
+CVE-2026-123634 / NGINX Plus / 37.1.0 이상 37.3.0 이하 / 37.3.0.1
+CVE-2026-123633 / NGINX Open Source / 1.19.7 이상 1.30.6 이하 / 1.30.7
+CVE-2026-123633 / NGINX Open Source / 1.31.0 이상 1.31.8 이하 / 1.31.9
+CVE-2026-123633 / NGINX Plus / R33 이상 37.0.7 이하 / 37.0.7.1
+CVE-2026-123633 / NGINX Plus / 37.1.0.1 이상 37.2.0 이하 / 37.2.0.1
+CVE-2026-121810 / NGINX Open Source / 1.25.0 이상 1.30.6 이하 / 1.30.7
+CVE-2026-121810 / NGINX Open Source / 1.31.0 이상 1.31.8 이하 / 1.31.9
+CVE-2026-121810 / NGINX Plus / R33 이상 37.0.8 이하 / 37.0.8.1
+CVE-2026-121810 / NGINX Plus / 37.1.0 이상 37.3.0 이하 / 37.3.0.1
+CVE-2026-113425 / NGINX Open Source / 0.5.33 이상 1.30.6 이하 / 1.30.7
+CVE-2026-113425 / NGINX Open Source / 1.31.0 이상 1.31.8 이하 / 1.31.9
+CVE-2026-113425 / NGINX Plus / R33 이상 37.0.8 이하 / 37.0.8.1
+CVE-2026-113425 / NGINX Plus / 37.1.0 이상 37.3.0 이하 / 37.3.0.1
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1][2][3][4][5]
+
+□ 참고사이트
+[1] https://my.f5.com/manage/s/article/K000163926
+[2] https://my.f5.com/manage/s/article/K000163925
+[3] https://my.f5.com/manage/s/article/K000163928
+[4] https://my.f5.com/manage/s/article/K000163927
+[5] https://my.f5.com/manage/s/article/K000163931
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-123007
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-123634
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-123633
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-121810
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-113425
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
