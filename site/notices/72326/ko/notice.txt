@@ -1,0 +1,116 @@
+제목:
+Splunk 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "Splunk 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o Splunk社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o Splunk Enterprise에서 발생하는 Improper Authentication 취약점(CVE-2026-76536) [1][2]
+o Splunk Enterprise에서 발생하는 Improper Authentication 취약점(CVE-2026-76535) [1][3]
+o Splunk Enterprise에서 발생하는 Improper Neutralization of Special Elements in Data Query Logic 취약점(CVE-2026-76538) [1][4]
+o Splunk Enterprise에서 발생하는 Missing Authorization 취약점(CVE-2026-76540) [1][5]
+o Splunk Enterprise에서 발생하는 Command Injection 취약점(CVE-2026-76544) [1][6]
+o Splunk Enterprise에서 발생하는 Improper Neutralization of Special Elements in Data Query Logic 취약점(CVE-2026-131175) [1][7]
+o Splunk Enterprise에서 발생하는 Injection 취약점(CVE-2026-131178) [1][8]
+o Splunk Enterprise에서 발생하는 Injection 취약점(CVE-2026-131179) [1][9]
+o Splunk Enterprise에서 발생하는 Improper Encoding or Escaping of Output 취약점(CVE-2026-131182) [1][10]
+o Splunk Enterprise에서 발생하는 Use of Hard-coded Credentials 취약점(CVE-2026-131190) [1][11]
+o Splunk Enterprise에서 발생하는 Authentication Bypass by Primary Weakness 취약점(CVE-2026-131192) [1][12]
+o Splunk Enterprise에서 발생하는 NULL Pointer Dereference 취약점(CVE-2026-131196) [1][13]
+o Splunk Enterprise에서 발생하는 Injection 취약점(CVE-2026-131177) [1][14]
+o Splunk Enterprise에서 발생하는 Improper Neutralization of Special Elements in Data Query Logic 취약점(CVE-2026-131181) [1][15]
+o Splunk Enterprise에서 발생하는 CSRF 취약점(CVE-2026-131188) [1][16]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-76536 / Splunk Enterprise / 9.4.0 이상 9.4.17 미만 / 9.4.17 이상
+CVE-2026-76536 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-76536 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-76536 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-76535 / Splunk Enterprise / 9.4.0 이상 9.4.17 미만 / 9.4.17 이상
+CVE-2026-76535 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-76535 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-76535 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-76535 / Splunk Enterprise / 10.6.0.5 / 10.6.1 이상
+CVE-2026-76538 / Splunk Enterprise / 9.4.0 이상 9.4.16 미만 / 9.4.16 이상
+CVE-2026-76538 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-76538 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-76538 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-76540 / Splunk Enterprise / 9.4.0 이상 9.4.17 미만 / 9.4.17 이상
+CVE-2026-76540 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-76540 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-76540 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-76544 / Splunk Enterprise / 9.4.0 이상 9.4.16 미만 / 9.4.16 이상
+CVE-2026-76544 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-76544 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-76544 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-131175 / Splunk Enterprise / 9.4.0 이상 9.4.16 미만 / 9.4.16 이상
+CVE-2026-131175 / Splunk Enterprise / 10.0.0 이상 10.0.11 미만 / 10.0.11 이상
+CVE-2026-131175 / Splunk Enterprise / 10.2.0 이상 10.2.8 미만 / 10.2.8 이상
+CVE-2026-131175 / Splunk Enterprise / 10.4.0 이상 10.4.4 미만 / 10.4.4 이상
+CVE-2026-131178 / Splunk Enterprise / 9.4.0 이상 9.4.17 미만 / 9.4.17 이상
+CVE-2026-131178 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-131178 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-131178 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-131179 / Splunk Enterprise / 9.4.0 이상 9.4.17 미만 / 9.4.17 이상
+CVE-2026-131179 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-131179 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-131179 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-131182 / Splunk Enterprise / 9.4.0 이상 9.4.17 미만 / 9.4.17 이상
+CVE-2026-131182 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-131182 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-131182 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-131190 / Splunk Enterprise / 9.4.0 이상 9.4.17 미만 / 9.4.17 이상
+CVE-2026-131190 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-131190 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-131190 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-131192 / Splunk Enterprise / 9.4.0 이상 9.4.17 미만 / 9.4.17 이상
+CVE-2026-131192 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-131192 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-131192 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-131192 / Splunk Enterprise / 10.6.0.5 / 10.6.1 이상
+CVE-2026-131196 / Splunk Enterprise / 9.4.0 이상 9.4.17 미만 / 9.4.17 이상
+CVE-2026-131196 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-131196 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-131196 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-131177 / Splunk Enterprise / 9.4.0 이상 9.4.16 미만 / 9.4.16 이상
+CVE-2026-131177 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-131177 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-131177 / Splunk Enterprise / 10.4.0 이상 10.4.4 미만 / 10.4.4 이상
+CVE-2026-131181 / Splunk Enterprise / 9.4.0 이상 9.4.16 미만 / 9.4.16 이상
+CVE-2026-131181 / Splunk Enterprise / 10.0.0 이상 10.0.12 미만 / 10.0.12 이상
+CVE-2026-131181 / Splunk Enterprise / 10.2.0 이상 10.2.9 미만 / 10.2.9 이상
+CVE-2026-131181 / Splunk Enterprise / 10.4.0 이상 10.4.5 미만 / 10.4.5 이상
+CVE-2026-131188 / Splunk Enterprise / 9.4.0 이상 9.4.16 미만 / 9.4.16 이상
+CVE-2026-131188 / Splunk Enterprise / 10.0.0 이상 10.0.11 미만 / 10.0.11 이상
+CVE-2026-131188 / Splunk Enterprise / 10.2.0 이상 10.2.8 미만 / 10.2.8 이상
+CVE-2026-131188 / Splunk Enterprise / 10.4.0 이상 10.4.4 미만 / 10.4.4 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+
+□ 참고사이트
+[1] https://advisory.splunk.com/advisories/SVD-2026-1103
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-76536
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-76535
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-76538
+[5] https://nvd.nist.gov/vuln/detail/CVE-2026-76540
+[6] https://nvd.nist.gov/vuln/detail/CVE-2026-76544
+[7] https://nvd.nist.gov/vuln/detail/CVE-2026-131175
+[8] https://nvd.nist.gov/vuln/detail/CVE-2026-131178
+[9] https://nvd.nist.gov/vuln/detail/CVE-2026-131179
+[10] https://nvd.nist.gov/vuln/detail/CVE-2026-131182
+[11] https://nvd.nist.gov/vuln/detail/CVE-2026-131190
+[12] https://nvd.nist.gov/vuln/detail/CVE-2026-131192
+[13] https://nvd.nist.gov/vuln/detail/CVE-2026-131196
+[14] https://nvd.nist.gov/vuln/detail/CVE-2026-131177
+[15] https://nvd.nist.gov/vuln/detail/CVE-2026-131181
+[16] https://nvd.nist.gov/vuln/detail/CVE-2026-131188
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
