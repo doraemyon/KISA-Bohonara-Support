@@ -1,0 +1,43 @@
+제목:
+HPE 제품 보안 업데이트 권고
+
+요약:
+금일 KISA 공지 "HPE 제품 보안 업데이트 권고" 전파드리오니, 영향 버전을 가용중인 각 관계사 담당자 분들께 업데이트 권고 드리며 특이사항 있으시면 회신 바랍니다.
+
+본문:
+□ 개요
+o HPE社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]
+o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+
+□ 설명
+o HPE Integrated Lights-Out 5(iLO 5), Integrated Lights-Out 6(iLO 6)에서 발생하는 취약점(CVE-2026-65204) [1]
+o HPE Integrated Lights-Out 5(iLO 5), Integrated Lights-Out 6(iLO 6), Integrated Lights-Out 7(iLO 7)에서 발생하는 취약점(CVE-2026-65205) [1]
+o HPE Integrated Lights-Out 5(iLO 5), Integrated Lights-Out 6(iLO 6), Integrated Lights-Out 7(iLO 7)에서 발생하는 취약점(CVE-2026-65206) [1]
+o HPE Integrated Lights-Out 5(iLO 5), Integrated Lights-Out 6(iLO 6), Integrated Lights-Out 7(iLO 7)에서 발생하는 취약점(CVE-2026-65207) [1]
+o HPE Integrated Lights-Out 5(iLO 5), Integrated Lights-Out 6(iLO 6), Integrated Lights-Out 7(iLO 7)에서 발생하는 취약점(CVE-2026-65209) [1]
+
+□ 영향을 받는 제품 및 해결 방안
+취약점 / 제품명 / 영향받는 버전 / 해결 버전
+CVE-2026-65204 / Integrated Lights-Out 5(iLO 5) / 3.22 미만 / 3.22 이상
+CVE-2026-65204 / Integrated Lights-Out 6(iLO 6) / 1.79 미만 / 1.79 이상
+CVE-2026-65205 / Integrated Lights-Out 5(iLO 5) / 3.22 미만 / 3.22 이상
+CVE-2026-65205 / Integrated Lights-Out 6(iLO 6) / 1.79 미만 / 1.79 이상
+CVE-2026-65205 / Integrated Lights-Out 7(iLO 7) / 1.25.01 미만 / 1.25.01 이상
+CVE-2026-65206 / Integrated Lights-Out 5(iLO 5) / 3.22 미만 / 3.22 이상
+CVE-2026-65206 / Integrated Lights-Out 6(iLO 6) / 1.79 미만 / 1.79 이상
+CVE-2026-65206 / Integrated Lights-Out 7(iLO 7) / 1.25.01 미만 / 1.25.01 이상
+CVE-2026-65207 / Integrated Lights-Out 5(iLO 5) / 3.22 미만 / 3.22 이상
+CVE-2026-65207 / Integrated Lights-Out 6(iLO 6) / 1.79 미만 / 1.79 이상
+CVE-2026-65207 / Integrated Lights-Out 7(iLO 7) / 1.25.01 미만 / 1.25.01 이상
+CVE-2026-65209 / Integrated Lights-Out 5(iLO 5) / 3.22 미만 / 3.22 이상
+CVE-2026-65209 / Integrated Lights-Out 6(iLO 6) / 1.79 미만 / 1.79 이상
+CVE-2026-65209 / Integrated Lights-Out 7(iLO 7) / 1.25.01 미만 / 1.25.01 이상
+※ 하단의 참고 사이트를 확인하여 업데이트 수행 [1]
+
+□ 참고사이트
+[1] https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbhf05170en_us&docLocale=en_US
+
+□ 문의사항
+o 한국인터넷진흥원 사이버민원센터 : 국번없이 118
+
+□ 작성 : 디지털위협대응본부 취약점관리센터
