@@ -1,0 +1,35 @@
+Title:
+Drupal Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Drupal Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Drupal announces security update that addresses vulnerabilities in its products [1][2]
+o Users using the affected version are advised to update to the latest version as per the resolution.
+
+□ Description
+o Missing Authentication for Critical Function vulnerability occurring in Drupal core (CVE-2026-132165) [1][3]
+o Improper Check for Unusual or Exceptional Conditions vulnerability occurring in Drupal core (CVE-2026-136716) [2][4]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Fixed Version
+CVE-2026-132165 / Drupal core / Below 10.6.22 / 10.6.22 or later
+CVE-2026-132165 / Drupal core / 11.0.0 or later and below 11.3.22 / 11.3.22 or later
+CVE-2026-132165 / Drupal core / 11.4.0 or later and below 11.4.13 / 11.4.13 or later
+CVE-2026-136716 / Drupal core / Below 10.6.23 / 10.6.23 or later
+CVE-2026-136716 / Drupal core / 11.0.0 or later and below 11.3.23 / 11.3.23 or later
+CVE-2026-136716 / Drupal core / 11.4.0 or later and below 11.4.14 / 11.4.14 or later
+※ Check the reference site below to perform updates [1][2]
+
+□ Reference sites
+[1] https://www.drupal.org/sa-core-2026-017
+[2] https://www.drupal.org/sa-core-2026-019
+[3] https://nvd.nist.gov/vuln/detail/CVE-2026-132165
+[4] https://nvd.nist.gov/vuln/detail/CVE-2026-136716
+
+□ Questions and inquiries
+o Korea Internet & Security Agency Cyber ​​Complaint Center: 118 without area code
+
+□ Written by: Digital Threat Response Headquarters Vulnerability Management Center
