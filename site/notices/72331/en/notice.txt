@@ -1,0 +1,31 @@
+Title:
+Synology Product Security Update Advisory
+
+Summary:
+We are disseminating today's KISA announcement "Synology Product Security Update Advisory". We recommend that representatives at each affiliated company using an affected version update, and please reply if you have any specific issues.
+
+Body:
+□ Overview
+o Synology has released security updates addressing vulnerabilities occurring in its products [1]
+o Users utilizing affected versions are advised to update to the latest version according to the mitigation measures
+
+□ Description
+o Argument Injection vulnerability occurring in Synology DiskStation Manager (DSM) (CVE-2026-120382) [1][2]
+
+□ Affected Products and Solutions
+Vulnerability / Product Name / Affected Version / Resolution Version
+CVE-2026-120382 / DSM 7.1 / Below 7.1.1-42962-10 / 7.1.1-42962-10 or later
+CVE-2026-120382 / DSM 7.2.1 / Below 7.2.1-69057-14 / 7.2.1-69057-14 or later
+CVE-2026-120382 / DSM 7.2.2 / Below 7.2.2-72806-11 / 7.2.2-72806-11 or later
+CVE-2026-120382 / DSM 7.3 / Below 7.3.2-86009-6 / 7.3.2-86009-6 or later
+CVE-2026-120382 / DSM 7.4 / Below 7.4.1-90080-2 / 7.4.1-90080-2 or later
+※ Check the reference site below to perform the update [1]
+
+□ Reference sites
+[1] https://www.synology.com/en-global/security/advisory/Synology_SA_26_21
+[2] https://nvd.nist.gov/vuln/detail/CVE-2026-120382
+
+□ Questions and inquiries
+o Korea Internet & Security Agency (KISA) Cyber Incident Response Center: Dial 118 without an area code
+
+□ Written by: Vulnerability Management Center, Digital Threat Response Division
